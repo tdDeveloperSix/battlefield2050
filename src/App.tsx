@@ -441,13 +441,13 @@ function App() {
       </section>
 
       {/* Timeline Section */}
-      <section id="timeline" className="py-20 px-6">
+      <section id="timeline" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Evolutionens Tidslinje
             </h2>
-            <p className="text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
               Følg transformationen af militære operationer gennem seks kritiske
               faser, fra menneskelig dominans til total automation. Hver fase
               repræsenterer et fundamentalt skift i hvordan krigsførelse
@@ -460,7 +460,7 @@ function App() {
               key={section.id}
               id={section.id}
               ref={(el) => (sectionRefs.current[section.id] = el)}
-              className="mb-32 last:mb-0"
+              className="mb-20 sm:mb-24 lg:mb-32 last:mb-0"
             >
               <div
                 className={`transition-all duration-1000 ${
@@ -470,15 +470,15 @@ function App() {
                 }`}
               >
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-12 sm:mb-16">
                   <div
-                    className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r ${section.color} mb-6 shadow-lg`}
+                    className={`inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r ${section.color} mb-4 sm:mb-6 shadow-lg`}
                   >
                     {section.icon}
                   </div>
 
                   <div
-                    className={`inline-block px-4 py-2 rounded-full text-sm font-bold mb-4 ${
+                    className={`inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4 ${
                       section.status === 'past'
                         ? 'bg-green-500/20 text-green-400'
                         : section.status === 'present'
@@ -489,32 +489,32 @@ function App() {
                     {section.year}
                   </div>
 
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-white px-4">
                     {section.title}
                   </h3>
 
-                  <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+                  <p className="text-lg sm:text-xl text-slate-300 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
                     {section.subtitle}
                   </p>
 
-                  <p className="text-lg text-slate-400 max-w-4xl mx-auto leading-relaxed">
+                  <p className="text-base sm:text-lg text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
                     {section.description}
                   </p>
                 </div>
 
                 {/* Content Grid */}
-                <div className="grid md:grid-cols-2 gap-12">
+                <div className="grid gap-6 sm:gap-8 lg:gap-12 lg:grid-cols-2">
                   {/* Key Developments */}
-                  <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                    <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                      <Clock className="w-6 h-6 mr-3 text-blue-400" />
+                  <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                    <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                      <Clock className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-blue-400 flex-shrink-0" />
                       Centrale Udviklinger
                     </h4>
-                    <ul className="space-y-4">
+                    <ul className="space-y-3 sm:space-y-4">
                       {section.details.map((detail, idx) => (
                         <li key={idx} className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-slate-300 leading-relaxed">
+                          <span className="text-sm sm:text-base text-slate-300 leading-relaxed">
                             {detail}
                           </span>
                         </li>
@@ -523,16 +523,16 @@ function App() {
                   </div>
 
                   {/* Characteristics */}
-                  <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                    <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                      <Target className="w-6 h-6 mr-3 text-purple-400" />
+                  <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                    <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                      <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-purple-400 flex-shrink-0" />
                       Karakteristika
                     </h4>
-                    <ul className="space-y-4">
+                    <ul className="space-y-3 sm:space-y-4">
                       {section.characteristics.map((char, idx) => (
                         <li key={idx} className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-slate-300 leading-relaxed">
+                          <span className="text-sm sm:text-base text-slate-300 leading-relaxed">
                             {char}
                           </span>
                         </li>
@@ -543,13 +543,13 @@ function App() {
 
                 {/* Detailed Content Section for Digital Integration */}
                 {section.id === 'digital-integration' && (
-                  <div className="mt-16 space-y-8">
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Target className="w-6 h-6 mr-3 text-red-400" />
+                  <div className="mt-12 sm:mt-16 space-y-6 sm:space-y-8">
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-red-400 flex-shrink-0" />
                         Beslutningsparitet og AI Overmatch
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         En milepæl i denne udvikling er øjeblikket, hvor AI opnår{' '}
                         <span className="text-blue-400 font-semibold">
                           beslutningsparitet
@@ -572,7 +572,7 @@ function App() {
                         jagerpilot i en simuleret luftkamp – og AI'en vandt
                         overlegent med 5-0.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Den kunstige pilot fra Heron Systems formåede at udkæmpe
                         dogfights i VR-simulatoren med så aggressiv og optimal
                         manøvrering, at den menneskelige pilot ikke fik ram på
@@ -591,12 +591,12 @@ function App() {
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Brain className="w-6 h-6 mr-3 text-purple-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <Brain className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-purple-400 flex-shrink-0" />
                         Gradvis Dominans
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Beslutningsparitet forventes at dukke op gradvist, domæne
                         for domæne. Vi har allerede set det i afgrænsede miljøer
                         som luftkamp-simulationer og i skak- eller
@@ -611,7 +611,7 @@ function App() {
                         </span>{' '}
                         kunne under stress.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Efterhånden som datagrundlaget vokser og algoritmernes
                         træning raffineres, kan vi forvente paritet også i mere
                         komplekse opgaver: operative dispositioner (hvordan man
@@ -625,12 +625,12 @@ function App() {
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Shield className="w-6 h-6 mr-3 text-yellow-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <Shield className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-yellow-400 flex-shrink-0" />
                         Fra Tillid til Afhængighed
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Konsekvensen af beslutningsparitet er, at tilliden til
                         AI-beslutninger stiger markant. I starten er en
                         AI-anbefaling blot ét input blandt flere til en
@@ -642,7 +642,7 @@ function App() {
                         AI: Der er simpelthen ikke tid til menneskelig
                         dobbelttjek.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Således glider vi næsten umærkeligt fra paritet til det,
                         man kalder{' '}
                         <span className="text-red-400 font-semibold">
@@ -654,12 +654,12 @@ function App() {
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <AlertTriangle className="w-6 h-6 mr-3 text-orange-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-orange-400 flex-shrink-0" />
                         Mennesket som Flaskehals
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Et klassisk tegn på overmatch er, når mennesker bliver den
                         begrænsende faktor. Hvis fx en kampplads-AI kan analysere
                         et komplekst trusselsbillede og generere den optimale
@@ -670,7 +670,7 @@ function App() {
                         AI direkte i førersædet) vil i mellemtiden have ændret
                         situationen totalt.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         For at bevare beslutningsfordelen vil presset stige på at
                         give AI'en frie tøjler. Dette argument vinder indpas i
                         takt med, at store militærøvelser og simulationer begynder
@@ -686,12 +686,12 @@ function App() {
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Zap className="w-6 h-6 mr-3 text-indigo-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <Zap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-indigo-400 flex-shrink-0" />
                         "Speed Kills" - Hastighed som Våben
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Når AI først har overmatch på taktisk niveau, vil det
                         brede sig opad til operativt og måske strategisk niveau.
                         Overmatch betyder ikke, at AI er ufejlbarlig eller
@@ -701,7 +701,7 @@ function App() {
                         korrekte beslutninger under usikkerhed, hurtigere og med
                         færre ressourcer end selv de bedste generaler.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Et ofte citeret mantra lyder:{' '}
                         <span className="text-red-400 font-semibold">
                           "Speed kills"
@@ -715,12 +715,12 @@ function App() {
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Users className="w-6 h-6 mr-3 text-emerald-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <Users className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-emerald-400 flex-shrink-0" />
                         Kapløbets Logik
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Betydningen heraf kan næsten ikke overvurderes. Militære
                         enheder vil gradvist begynde at uddelegere flere og flere
                         kritiske beslutninger til deres AI-systemer. Hvor det i
@@ -732,14 +732,14 @@ function App() {
                         sidelinjen som overvåger eller policy-sætter snarere end
                         direkte beslutningstager.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Måske vil man stadig have en menneskelig chef, men denne
                         persons rolle vil minde om en redaktør, der godkender
                         eller forkaster forslag fra en stab af digitale
                         assistenter, fremfor en traditionel chef, der finder på
                         planen selv.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         I slutspillet, når maskinernes dominans er klar, bliver
                         det fristende helt at fjerne de resterende menneskelige
                         "flaskehalse". Hvis en krisesituation kræver splitsekunds
@@ -1481,23 +1481,7 @@ function App() {
                         </span>{' '}
                         dramatisk.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        Under U.S. Army's{' '}
-                        <span className="text-green-400 font-semibold">
-                          Project Convergence 2020
-                        </span>{' '}
-                        demonstration blev dette vist i praksis: Her arbejdede et
-                        kæde af AI- og autonome systemer sammen om at identificere
-                        trusler og udpege det optimale våben til at neutralisere
-                        dem – alt sammen på omkring 20 sekunder, en proces der før
-                        tog 20 minutter. En central komponent var det AI-drevne
-                        system kaldet{' '}
-                        <span className="text-purple-400 font-semibold">
-                          FIRESTORM
-                        </span>{' '}
-                        (Fires Synchronization to Optimize Responses in
-                        Multi-Domain Operations).
-                      </p>
+
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         Under U.S. Army's{' '}
                         <a 
@@ -1697,78 +1681,78 @@ function App() {
 
                 {/* Detailed Content Section for Singularity */}
                 {section.id === 'singularity' && (
-                  <div className="mt-16 space-y-8">
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Zap className="w-6 h-6 mr-3 text-violet-400" />
+                  <div className="mt-12 sm:mt-16 space-y-6 sm:space-y-8">
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <Zap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-violet-400 flex-shrink-0" />
                         Slaget i Østeuropa 2050
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Året er 2050. Et sted dybt i Østeuropa udspiller der sig en konflikt, som mange endnu har svært ved at forstå. På overfladen ligner det et regulært slag: missiler flyver, pansrede formationer rykker frem, droner svirrer på himlen som sorte insektsværme. Men noget er anderledes – stilheden. I et kommandocenter langt bag fronten står en håndfuld officerer og politikere bag panserglas og iagttager et digitalt holografisk kort over kampområdet. De taler dæmpet indbyrdes, men ingen råbende ordrer eller paniske meldinger lyder. På slagmarken sidder soldater i kampkøretøjer som passive passagerer, øjne på deres displays, fingre væk fra aftrækkere. Krigen udspiller sig gennem lynhurtige datastrømme mellem maskiner, ikke gennem menneskers råb og skud. Dette er kamppladsens singularitet – det punkt hvor menneskelig inddragelse ikke længere er relevant eller mulig i krigens beslutningssløjfer.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                         På få minutter opnår den ene sides netværk en sporet fordel. Satellitter og hyperspektrale droner har fodret dens AI med rig data; kvantekommunikation sikrer, at selv jamming ikke stopper informationsflowet. AI'en – lad os kalde den Prometheus Ultima – har modelleret modstanderens hver træk. Ultima finder et svagt punkt: en midlertidig ukoordineret omstilling i fjendens sværmformation. I løbet af 1,3 sekunder har Ultima omfordelt 70% af sine effektorer – autonome kampdroner på land og i luften – for at exploite bristen. Ingen menneskelig general kunne overhovedet nå at opfatte muligheden, før den er udnyttet.
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Target className="w-6 h-6 mr-3 text-red-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-red-400 flex-shrink-0" />
                         Politisk Paralysering og Fail-Safe Protokoller
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         I Washington, Moskva eller Beijing sidder forsvarslederne og holder vejret. Ingen har trykket på en "krigserklæringsknap"; konflikten eskalerede i glidende takt, et udfald af utallige små autonome hændelser ved grænsen. Nu er spørgsmålet: vil de lade maskinerne gå hele vejen? I princippet kunne menneskene stadig standse det – de kontrollerer trods alt de højeste niveauer: de strategiske nukleare våben, de overordnede målsætninger.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                         Men her, 30 år inde i AI-æraen, har man gjort sig en bitter erfaring: at gribe ind uforudset i AI-krigens gang med menneskelige justeringer kan få katastrofale følger. Historien mindes med gysen Taiwan-krisen 2045, hvor politisk tøven og forsøg på at trække "nødbremsen" på et kørende autonomt kampnet førte til kaotiske feedback loops – og et langt blodigere udfald. Siden da har alle parter nedfældet "fail-safe protocols" der mest af alt ligner autopiloter: hvis visse betingelser mødes, lader man systemet køre sin krig på maskinens præmisser, indtil en afgørelse er nået. Og betingelserne er nu mødte.
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Shield className="w-6 h-6 mr-3 text-blue-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <Shield className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-blue-400 flex-shrink-0" />
                         Informationskrig og Psykologiske Operationer
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         På jorden krymper en gruppe fjendtlige infanterister sig i skyttegraven, mens en sværm af små seksbenede jorddroner suser hen over deres hoveder og nedkæmper deres sidste bemandede støttevåben. En sergent i gruppen råber i sin radio: "Central, hvad gør vi?! Overgiver os?!" Intet svar – for Central er ikke mennesker men en kernevæg af ødelagte servere et sted, ramt af et elektromagnetisk puls-anfald. Ingen hører hans hvæsende radio.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                         På modstanderens side observerer en LLM-baseret psyops AI disse scener gennem dronernes øjne og begynder at sprede genererede beskeder på alle fjendens kommunikationskanaler: "I er omringet. Jeres kommando har forladt jer. Nedlæg våbnene for at overleve." Budskabet er skræddersyet til hver enkelt soldats profil – nogle steder er det en kvindestemme, andre en vens simulerede stemme. Informationskrig og kinetisk krig er smeltet sammen i en sømløs kampagne, alt sammen koordineret af maskiner.
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <CheckCircle className="w-6 h-6 mr-3 text-green-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-green-400 flex-shrink-0" />
                         Krigens Afslutning og Menneskelig Irrelevans
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Da solen går ned denne dag i 2050, er slaget afgjort. Ikke med en formel kapitulation eller forhandling, men ved at det tabende netværk har erkendt nederlag og automatisk standset offensive handlinger. Sensorerne viser hvide flag rejst på isolerede pansrede vrag – dem satte de tilbageværende mennesker op, selvom maskinerne allerede vidste, at de var neutraliseret. Vinderens sværme indtager nøglepositioner og låser dem ned. Menneskelige tropper rykker frem for at sikre terræn og tage sig af fanger og civile.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                         Et par generaler træder ud af kommandocentret, rystede trods sejrens tegn. Krigen blev vundet – men hvordan? De ved det godt i grove træk: Deres systemer var overlegne på visse parametre, måske bedre trænet eller med mere robust kvante-link. Men detaljerne – de utallige mikrobeslutninger der førte til dette udfald – kan ingen menneskehjerne rumme. Senere vil de få en efterretningsbrief, hvor visualiseringer forsøger at fortælle krigens historie sekund for sekund, men i virkeligheden er krigens historie nu skrevet af maskiner for maskiner. For soldaterne føltes det mest som at være statister i en storm.
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Brain className="w-6 h-6 mr-3 text-purple-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <Brain className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-purple-400 flex-shrink-0" />
                         Post-Menneskets Krigsførelse
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         Dette er post-menneskets C2-miljø. Hvor tempo, kompleksitet og integritet af beslutninger har overskredet selv den dygtigste generals fatteevne, og hvor menneskets rolle i beslutningstabeller er reduceret til overordnede policyvalg før konflikten og humanitær oprydning bagefter. Kamppladsens singularitet er indtruffet – det punkt hvor krigen har udviklet en egen, maskinel dynamik, som mennesker kun kan skimte konturerne af.
                       </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                         Man kunne fristes til at kalde det et mareridt, men i militære kredse kalder nogle det for en "clean war". Ironisk nok var de totale tab lavere end i tidligere tiders langsommelige krige – netværkene søgte jo at lamme hinanden effektivt, ikke at slægte ud i meningsløs vold. Men for menneskeheden rejser sig nye spørgsmål: Hvem kæmpede egentlig denne krig? Nationerne? Eller deres algoritmer? Og hvad sker der den dag, måske ikke så fjern, at vi integrerer disse netværk med såkaldt Artificial General Intelligence, som måske endda har egne mål?
                       </p>
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <AlertTriangle className="w-6 h-6 mr-3 text-yellow-400" />
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
+                        <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-yellow-400 flex-shrink-0" />
                         Fremtidens Udfordringer og Singularitets-Protokol
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                         I kølvandet på slaget træder NATO og andre allierede sammen for at sikre, at et nyt "Singularitets-protokol" bliver en prioritet – en aftale om hvordan man afskærmer kernen af menneskelig suverænitet, selv når maskinerne kæmper. For selv de sejrende generaler følte et strejf af irrelevans på denne dag. Den gradvise overgang fra menneskelig til digital føring har nået sit yderste punkt: Krigen er blevet maskinernes domæne. Menneskehedens udfordring fremover bliver at sikre, at når maskinerne nu bevæger sig derude i krigens kaos på vores vegne, så sker det stadig i tråd med vores værdier, vores etik – vores menneskelighed. Ellers vinder vi måske slag, men risikerer at tabe os selv.
                       </p>
                     </div>
@@ -1781,42 +1765,42 @@ function App() {
       </section>
 
       {/* Implications Section */}
-      <section className="py-20 px-6 bg-slate-900/50">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Konsekvenser og Overvejelser
             </h2>
-            <p className="text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
               Den digitale revolution i militære operationer bringer både enorme
               muligheder og betydelige udfordringer. Her er de centrale områder
               der kræver opmærksomhed og overvejelse.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
             {implications.map((implication, index) => (
               <div
                 key={index}
-                className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8 hover:bg-slate-800/50 transition-all duration-300"
+                className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8 hover:bg-slate-800/50 transition-all duration-300"
               >
-                <div className="flex items-center mb-4">
-                  <div className={`${implication.color} mr-4`}>
+                <div className="flex items-center mb-3 sm:mb-4">
+                  <div className={`${implication.color} mr-3 sm:mr-4 flex-shrink-0`}>
                     {implication.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
                     {implication.title}
                   </h3>
                 </div>
-                <p className="text-slate-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                   {implication.description}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 p-8 bg-gradient-to-r from-slate-800/40 to-slate-700/40 border border-slate-600 rounded-xl">
-            <blockquote className="text-xl text-slate-300 leading-relaxed text-center italic">
+          <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-gradient-to-r from-slate-800/40 to-slate-700/40 border border-slate-600 rounded-xl">
+            <blockquote className="text-lg sm:text-xl text-slate-300 leading-relaxed text-center italic">
               "Fremtidens slagmark vil være præget af en fundamental
               transformation, hvor traditioner om menneskelig ledelse og
               intuition gradvist vil vige for algoritmisk præcision og kunstig
@@ -1824,21 +1808,21 @@ function App() {
               forandring vil ske, men hvordan vi navigerer den etisk og
               strategisk."
             </blockquote>
-            <div className="text-center mt-6">
-              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+            <div className="text-center mt-4 sm:mt-6">
+              <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Conclusion Section */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Vejen Fremad
           </h2>
 
-          <div className="space-y-8 text-lg text-slate-300 leading-relaxed">
+          <div className="space-y-6 sm:space-y-8 text-base sm:text-lg text-slate-300 leading-relaxed px-4">
             <p>
               Kamppladsens digitale revolution er ikke blot en teknologisk
               udvikling - det er en fundamental omformning af krigsførelse som
@@ -1865,13 +1849,13 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-slate-800">
+      <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-slate-800">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-slate-400 mb-2">
+          <p className="text-sm sm:text-base text-slate-400 mb-2">
             En fremskrivning af militær teknologi og dens indvirkning på
             fremtidens konflikter
           </p>
-          <p className="text-slate-500 text-sm">
+          <p className="text-xs sm:text-sm text-slate-500">
             2025 - Kamppladsens Digitale Revolution
           </p>
         </div>
