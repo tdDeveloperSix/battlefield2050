@@ -1,0 +1,130 @@
+{
+  "title": "Kamppladsens Digitale Revolution",
+  "subtitle": "Fra Menneskelig intuition til algoritmisk dominans",
+  "description": "En fiktiv fortælling om fremtidens militære enheder og kommandostrukturer, hvor menneskelig beslutningstagning gradvist erstattes af digital og autonom intelligens.",
+  
+  "interactiveTimelineTitle": "Interaktiv Tidslinje",
+  "interactiveTimelineSubtitle": "Klik på en fase for at springe direkte til det detaljerede indhold",
+  
+  "timelineTitle": "Evolutionens Tidslinje",
+  "timelineDescription": "Følg transformationen af militære operationer gennem seks kritiske faser, fra menneskelig dominans til total automation. Hver fase repræsenterer et fundamentalt skift i hvordan krigsførelse planlægges, udføres og kontrolleres.",
+  
+  "followDevelopment": "Følg med når vi ser hvordan udviklingen forløber frem mod 2025",
+  
+  "timeline": {
+    "humanDominance": {
+      "title": "Menneskelig Dominans",
+      "subtitle": "Traditionelle kommandostrukturer med mennesker i centrum",
+      "description": "I denne periode dominerer mennesker stadig alle aspekter af militær planlægning og udførelse. Beslutningstagning sker gennem etablerede hierarkier, hvor erfaring og intuition vægtes højt.",
+      "details": [
+        "Kommandostrukturer bygger på årtiers erfaring og etablerede doktriner",
+        "Beslutningsprocesser er hierarkiske og baseret på menneskelig vurdering",
+        "Teknologi fungerer primært som understøttende værktøj",
+        "Situationsbevidsthed afhænger af menneskelig analyse og rapportering",
+        "Taktiske beslutninger træffes af erfarne officerer på baggrund af træning og intuition"
+      ],
+      "characteristics": [
+        "Høj grad af fleksibilitet i uforudsete situationer",
+        "Stærk etisk og moralsk dømmekraft",
+        "Evne til kreativ problemløsning",
+        "Begrænsninger i hastighed og dataprocessering",
+        "Risiko for menneskelige fejl under pres"
+      ]
+    },
+    "digitalIntegration": {
+      "title": "Digital Integration",
+      "subtitle": "Første bølge af AI-assisterede systemer introduceres",
+      "description": "Kunstig intelligens begynder at spille en større rolle som beslutningsstøtte. Automatiserede systemer hjælper med dataanalyse og situationsbevidsthed, men mennesker bevarer den endelige beslutningskompetence.",
+      "details": [
+        "AI-systemer introduceres som beslutningsstøttende værktøjer",
+        "Automatiseret dataindsamling og -analyse implementeres",
+        "Hybride teams af mennesker og maskiner opstår",
+        "Realtidsdata fra sensorer og droner integreres i kommandosystemer",
+        "Predictive analytics begynder at påvirke taktisk planlægning"
+      ],
+      "characteristics": [
+        "Forbedret situationsbevidsthed gennem AI-analyse",
+        "Hurtigere dataprocessering og informationsdeling",
+        "Mennesker bevarer kontrol over kritiske beslutninger",
+        "Øget afhængighed af teknologiske systemer",
+        "Behov for ny træning og kompetenceudvikling"
+      ]
+    },
+    "autonomousAssistance": {
+      "title": "Autonom Assistance",
+      "subtitle": "AI overtager flere operative funktioner",
+      "description": "Autonome systemer begynder at træffe selvstændige beslutninger inden for definerede parametre. Menneskers rolle skifter fra direkte kontrol til supervision og strategisk planlægning.",
+      "details": [
+        "Autonome våbensystemer opererer inden for foruddefinerede regler",
+        "AI træffer taktiske beslutninger i realtid",
+        "Maskine-til-maskine kommunikation bliver standard",
+        "Mennesker fokuserer på strategisk oversight og etiske vurderinger",
+        "Sværmsystemer koordinerer autonomt på slagmarken"
+      ],
+      "characteristics": [
+        "Drastisk reduceret reaktionstid i kamphandlinger",
+        "Evne til at operere i farlige eller utilgængelige miljøer",
+        "Konsistent præstation uden træthed eller stress",
+        "Udfordringer med etisk ansvar og accountability",
+        "Risiko for systemfejl eller cyberangreb"
+      ]
+    },
+    "hybridCommand": {
+      "title": "Hybrid Kommando",
+      "subtitle": "Menneske-maskine partnerships dominerer",
+      "description": "Kommandostrukturer bliver fundamentalt omstruktureret med AI som ligeværdige partnere. Beslutningsprocesser accelereres drastisk gennem neural interface teknologi.",
+      "details": [
+        "Neural interfaces forbinder mennesker direkte med AI-systemer",
+        "Kommandostrukturer omdesignes omkring menneske-AI teams",
+        "Realtids strategisk planlægning gennem AI-assisteret analyse",
+        "Mennesker fokuserer på kreativitet og kompleks problemløsning",
+        "AI håndterer rutineoperationer og dataprocessering"
+      ],
+      "characteristics": [
+        "Synergistiske effekter mellem menneskelig kreativitet og AI-kapacitet",
+        "Øget hastighed i strategisk beslutningstagning",
+        "Forbedret koordination på tværs af militære enheder",
+        "Kompleksitet i ansvarsfordeling",
+        "Behov for nye ledelsesstrukturer og -principper"
+      ]
+    },
+    "machineSuperior": {
+      "title": "Maskinel Overlegenhed",
+      "subtitle": "AI systemer overtager strategisk ledelse",
+      "description": "Kunstig intelligens demonstrerer overlegen evne til kompleks strategisk tænkning og multi-dimensionel planlægning. Mennesker bevarer veto-ret men sjældent tilsidesætter AI-beslutninger.",
+      "details": [
+        "AI-systemer udviser overlegen strategisk tænkning",
+        "Multi-dimensionel krigssimulation og -planlægning",
+        "Mennesker fungerer primært som etiske vejledere",
+        "Kamphandlinger udføres hovedsageligt af autonome enheder",
+        "AI koordinerer komplekse operationer på tværs af domæner"
+      ],
+      "characteristics": [
+        "Overlegen analytisk kapacitet og strategisk forudseenhed",
+        "Evne til at håndtere ekstrem kompleksitet",
+        "Konsistent og objektiv beslutningstagning",
+        "Reduceret menneskelig indflydelse på operative beslutninger",
+        "Potentielle udfordringer med kreativitet og tilpasningsevne"
+      ]
+    },
+    "singularity": {
+      "title": "Kamppladsens Singularitet",
+      "subtitle": "AI's fuldstændige dominans over militære operationer",
+      "description": "I 2050 når vi Kamppladsens Singularitet - et punkt hvor AI-systemer ikke blot assisterer eller leder militære operationer, men fuldstændigt transformerer krigsførelse som koncept. Mennesker fungerer nu kun som politiske beslutningstagere og etiske vejledere, mens AI-systemer træffer alle operative og taktiske beslutninger.",
+      "details": [
+        "Fuldstændig autonome militære operationer uden menneskelig intervention",
+        "AI-systemer træffer alle taktiske og operative beslutninger",
+        "Mennesker bevarer kun politisk og etisk oversight",
+        "Krigsførelse bliver en algoritme-drevet proces",
+        "Minimal menneskelig rolle i kamphandlinger"
+      ],
+      "characteristics": [
+        "Maksimal effektivitet og præcision i militære operationer",
+        "Eliminering af menneskelige fejl og emotionelle beslutninger",
+        "Evne til at operere i alle miljøer uden begrænsninger",
+        "Fundamentale spørgsmål om krigens natur og etik",
+        "Risiko for tab af menneskelig kontrol og forståelse"
+      ]
+    }
+  }
+} 

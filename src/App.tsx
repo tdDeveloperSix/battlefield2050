@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Users,
   Bot,
@@ -10,6 +11,7 @@ import {
   CheckCircle,
   Clock,
 } from 'lucide-react';
+
 
 interface TimelineSection {
   id: string;
@@ -24,158 +26,7 @@ interface TimelineSection {
   color: string;
 }
 
-const timelineSections: TimelineSection[] = [
-  {
-    id: 'human-dominance',
-    year: '2020-2025',
-    title: 'Menneskelig Dominans',
-    subtitle: 'Traditionelle kommandostrukturer med mennesker i centrum',
-    description:
-      'I denne periode dominerer mennesker stadig alle aspekter af militær planlægning og udførelse. Beslutningstagning sker gennem etablerede hierarkier, hvor erfaring og intuition vægtes højt.',
-    details: [
-      'Kommandostrukturer bygger på årtiers erfaring og etablerede doktriner',
-      'Beslutningsprocesser er hierarkiske og baseret på menneskelig vurdering',
-      'Teknologi fungerer primært som understøttende værktøj',
-      'Situationsbevidsthed afhænger af menneskelig analyse og rapportering',
-      'Taktiske beslutninger træffes af erfarne officerer på baggrund af træning og intuition',
-    ],
-    characteristics: [
-      'Høj grad af fleksibilitet i uforudsete situationer',
-      'Stærk etisk og moralsk dømmekraft',
-      'Evne til kreativ problemløsning',
-      'Begrænsninger i hastighed og dataprocessering',
-      'Risiko for menneskelige fejl under pres',
-    ],
-    icon: <Users className="w-6 h-6" />,
-    status: 'past',
-    color: 'from-green-500 to-emerald-600',
-  },
-  {
-    id: 'digital-integration',
-    year: '2025-2030',
-    title: 'Digital Integration',
-    subtitle: 'Første bølge af AI-assisterede systemer introduceres',
-    description:
-      'Kunstig intelligens begynder at spille en større rolle som beslutningsstøtte. Automatiserede systemer hjælper med dataanalyse og situationsbevidsthed, men mennesker bevarer den endelige beslutningskompetence.',
-    details: [
-      'AI-systemer introduceres som beslutningsstøttende værktøjer',
-      'Automatiseret dataindsamling og -analyse implementeres',
-      'Hybride teams af mennesker og maskiner opstår',
-      'Realtidsdata fra sensorer og droner integreres i kommandosystemer',
-      'Predictive analytics begynder at påvirke taktisk planlægning',
-    ],
-    characteristics: [
-      'Forbedret situationsbevidsthed gennem AI-analyse',
-      'Hurtigere dataprocessering og informationsdeling',
-      'Mennesker bevarer kontrol over kritiske beslutninger',
-      'Øget afhængighed af teknologiske systemer',
-      'Behov for ny træning og kompetenceudvikling',
-    ],
-    icon: <Brain className="w-6 h-6" />,
-    status: 'present',
-    color: 'from-yellow-500 to-orange-500',
-  },
-  {
-    id: 'autonomous-assistance',
-    year: '2030-2035',
-    title: 'Autonom Assistance',
-    subtitle: 'AI overtager flere operative funktioner',
-    description:
-      'Autonome systemer begynder at træffe selvstændige beslutninger inden for definerede parametre. Menneskers rolle skifter fra direkte kontrol til supervision og strategisk planlægning.',
-    details: [
-      'Autonome våbensystemer opererer inden for foruddefinerede regler',
-      'AI træffer taktiske beslutninger i realtid',
-      'Maskine-til-maskine kommunikation bliver standard',
-      'Mennesker fokuserer på strategisk oversight og etiske vurderinger',
-      'Sværmsystemer koordinerer autonomt på slagmarken',
-    ],
-    characteristics: [
-      'Drastisk reduceret reaktionstid i kamphandlinger',
-      'Evne til at operere i farlige eller utilgængelige miljøer',
-      'Konsistent præstation uden træthed eller stress',
-      'Udfordringer med etisk ansvar og accountability',
-      'Risiko for systemfejl eller cyberangreb',
-    ],
-    icon: <Bot className="w-6 h-6" />,
-    status: 'future',
-    color: 'from-blue-500 to-cyan-500',
-  },
-  {
-    id: 'hybrid-command',
-    year: '2035-2040',
-    title: 'Hybrid Kommando',
-    subtitle: 'Menneske-maskine partnerships dominerer',
-    description:
-      'Kommandostrukturer bliver fundamentalt omstruktureret med AI som ligeværdige partnere. Beslutningsprocesser accelereres drastisk gennem neural interface teknologi.',
-    details: [
-      'Neural interfaces forbinder mennesker direkte med AI-systemer',
-      'Kommandostrukturer omdesignes omkring menneske-AI teams',
-      'Realtids strategisk planlægning gennem AI-assisteret analyse',
-      'Mennesker fokuserer på kreativitet og kompleks problemløsning',
-      'AI håndterer rutineoperationer og dataprocessering',
-    ],
-    characteristics: [
-      'Synergistiske effekter mellem menneskelig kreativitet og AI-kapacitet',
-      'Øget hastighed i strategisk beslutningstagning',
-      'Forbedret koordination på tværs af militære enheder',
-      'Kompleksitet i ansvarsfordeling',
-      'Behov for nye ledelsesstrukturer og -principper',
-    ],
-    icon: <Shield className="w-6 h-6" />,
-    status: 'future',
-    color: 'from-purple-500 to-indigo-500',
-  },
-  {
-    id: 'machine-superiority',
-    year: '2040-2045',
-    title: 'Maskinel Overlegenhed',
-    subtitle: 'AI systemer overtager strategisk ledelse',
-    description:
-      'Kunstig intelligens demonstrerer overlegen evne til kompleks strategisk tænkning og multi-dimensionel planlægning. Mennesker bevarer veto-ret men sjældent tilsidesætter AI-beslutninger.',
-    details: [
-      'AI-systemer udviser overlegen strategisk tænkning',
-      'Multi-dimensionel krigssimulation og -planlægning',
-      'Mennesker fungerer primært som etiske vejledere',
-      'Kamphandlinger udføres hovedsageligt af autonome enheder',
-      'AI koordinerer komplekse operationer på tværs af domæner',
-    ],
-    characteristics: [
-      'Overlegen analytisk kapacitet og strategisk forudseenhed',
-      'Evne til at håndtere ekstrem kompleksitet',
-      'Konsistent og objektiv beslutningstagning',
-      'Reduceret menneskelig indflydelse på operative beslutninger',
-      'Potentielle udfordringer med kreativitet og tilpasningsevne',
-    ],
-    icon: <Target className="w-6 h-6" />,
-    status: 'future',
-    color: 'from-red-500 to-pink-500',
-  },
-  {
-    id: 'singularity',
-    year: '2050',
-    title: 'Kamppladsens Singularitet',
-    subtitle: "AI's fuldstændige dominans over militære operationer",
-    description:
-      "I 2050 når vi Kamppladsens Singularitet - et punkt hvor AI-systemer ikke blot assisterer eller leder militære operationer, men fuldstændigt transformerer krigsførelse som koncept. Mennesker fungerer nu kun som politiske beslutningstagere og etiske vejledere, mens AI-systemer træffer alle operative og taktiske beslutninger.",
-    details: [
-      'Fuldstændig autonome militære operationer uden menneskelig intervention',
-      'AI-systemer træffer alle taktiske og operative beslutninger',
-      'Mennesker bevarer kun politisk og etisk oversight',
-      'Krigsførelse bliver en algoritme-drevet proces',
-      'Minimal menneskelig rolle i kamphandlinger',
-    ],
-    characteristics: [
-      'Maksimal effektivitet og præcision i militære operationer',
-      'Eliminering af menneskelige fejl og emotionelle beslutninger',
-      'Evne til at operere i alle miljøer uden begrænsninger',
-      'Fundamentale spørgsmål om krigens natur og etik',
-      'Risiko for tab af menneskelig kontrol og forståelse',
-    ],
-    icon: <Zap className="w-6 h-6" />,
-    status: 'future',
-    color: 'from-violet-500 to-purple-600',
-  },
-];
+
 
 const implications = [
   {
@@ -209,9 +60,86 @@ const implications = [
 ];
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [activeSection, setActiveSection] = useState<string>('');
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  // Create translated timeline sections
+  const getTimelineSections = (): TimelineSection[] => [
+    {
+      id: 'human-dominance',
+      year: '2020-2025',
+      title: t('timeline.humanDominance.title'),
+      subtitle: t('timeline.humanDominance.subtitle'),
+      description: t('timeline.humanDominance.description'),
+      details: t('timeline.humanDominance.details', { returnObjects: true }) as string[],
+      characteristics: t('timeline.humanDominance.characteristics', { returnObjects: true }) as string[],
+      icon: <Users className="w-6 h-6" />,
+      status: 'past' as const,
+      color: 'from-green-500 to-emerald-600',
+    },
+    {
+      id: 'digital-integration',
+      year: '2025-2030',
+      title: t('timeline.digitalIntegration.title'),
+      subtitle: t('timeline.digitalIntegration.subtitle'),
+      description: t('timeline.digitalIntegration.description'),
+      details: t('timeline.digitalIntegration.details', { returnObjects: true }) as string[],
+      characteristics: t('timeline.digitalIntegration.characteristics', { returnObjects: true }) as string[],
+      icon: <Brain className="w-6 h-6" />,
+      status: 'present' as const,
+      color: 'from-yellow-500 to-orange-500',
+    },
+    {
+      id: 'autonomous-assistance',
+      year: '2030-2035',
+      title: t('timeline.autonomousAssistance.title'),
+      subtitle: t('timeline.autonomousAssistance.subtitle'),
+      description: t('timeline.autonomousAssistance.description'),
+      details: t('timeline.autonomousAssistance.details', { returnObjects: true }) as string[],
+      characteristics: t('timeline.autonomousAssistance.characteristics', { returnObjects: true }) as string[],
+      icon: <Bot className="w-6 h-6" />,
+      status: 'future' as const,
+      color: 'from-blue-500 to-cyan-500',
+    },
+    {
+      id: 'hybrid-command',
+      year: '2035-2040',
+      title: t('timeline.hybridCommand.title'),
+      subtitle: t('timeline.hybridCommand.subtitle'),
+      description: t('timeline.hybridCommand.description'),
+      details: t('timeline.hybridCommand.details', { returnObjects: true }) as string[],
+      characteristics: t('timeline.hybridCommand.characteristics', { returnObjects: true }) as string[],
+      icon: <Shield className="w-6 h-6" />,
+      status: 'future' as const,
+      color: 'from-purple-500 to-indigo-500',
+    },
+    {
+      id: 'machine-superiority',
+      year: '2040-2045',
+      title: t('timeline.machineSuperior.title'),
+      subtitle: t('timeline.machineSuperior.subtitle'),
+      description: t('timeline.machineSuperior.description'),
+      details: t('timeline.machineSuperior.details', { returnObjects: true }) as string[],
+      characteristics: t('timeline.machineSuperior.characteristics', { returnObjects: true }) as string[],
+      icon: <Target className="w-6 h-6" />,
+      status: 'future' as const,
+      color: 'from-red-500 to-pink-500',
+    },
+    {
+      id: 'singularity',
+      year: '2050',
+      title: t('timeline.singularity.title'),
+      subtitle: t('timeline.singularity.subtitle'),
+      description: t('timeline.singularity.description'),
+      details: t('timeline.singularity.details', { returnObjects: true }) as string[],
+      characteristics: t('timeline.singularity.characteristics', { returnObjects: true }) as string[],
+      icon: <Zap className="w-6 h-6" />,
+      status: 'future' as const,
+      color: 'from-violet-500 to-purple-600',
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -261,25 +189,31 @@ function App() {
         />
       </div>
 
+      {/* Language Switcher */}
+      <div className="fixed top-4 right-4 z-50">
+        <button
+          onClick={() => i18n.changeLanguage(i18n.language === 'da' ? 'en' : 'da')}
+          className="px-3 py-2 bg-slate-800/80 backdrop-blur-sm border border-slate-600 rounded-lg text-white hover:bg-slate-700/80 transition-all duration-300 text-sm font-medium"
+        >
+          {i18n.language === 'da' ? 'EN' : 'DA'}
+        </button>
+      </div>
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-slate-900/40" />
 
         <div className="relative z-10 text-center px-6 sm:px-8 lg:px-6 max-w-6xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent leading-tight break-words">
-            Kamppladsens
-            <br />
-            Digitale Revolution
+            {t('title')}
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
-            Fra Menneskelig Føring til Maskinel Dominans
+            {t('subtitle')}
           </p>
 
           <p className="text-lg text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-            En narrativ fremstilling af fremtidens militære enheder og
-            kommandostrukturer, hvor menneskelig beslutningstagning gradvist
-            erstattes af digital og autonom intelligens.
+            {t('description')}
           </p>
 
           {/* Detailed Introduction Section */}
@@ -290,7 +224,7 @@ function App() {
                   Forestil dig en flåde af autonome fartøjer, der uden varsel
                   angriber i flok – koordineret af algoritmer frem for
                   admiraler. Dette scenarie er ikke længere science fiction.
-                  Allerede i slut-2010'erne eksperimenterede amerikanske styrker
+                  Allerede i slut-10'erne eksperimenterede amerikanske styrker
                   med en såkaldt{' '}
                   <a 
                     href="https://www.foxnews.com/tech/navy-to-test-ghost-fleet-attack-drone-boats-in-war-scenarios" 
@@ -312,14 +246,14 @@ function App() {
                   udføre kombinerede angreb, alt sammen uden kontinuerlig
                   fjernstyring. "Ghost Fleet" blev et tidligt tegn på, at
                   maskiner nu træder ind som med-kommandører på fremtidens hav –
-                  et spøgelse i maskinen, der foreshadowede en større
-                  transformation af militært lederskab.
+                  et spøgelse i maskinen, der varslede en større
+                  transformation af militær krigsførsel og lederskab.
                 </p>
               </div>
 
               <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                 <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  I de samme år begyndte kunstig intelligens også at assistere
+                  I samme periode begyndte kunstig intelligens også at assistere
                   menneskelige beslutningstagere i krigens informationsdomæne.
                   Et kendt eksempel er{' '}
                   <a 
@@ -338,7 +272,7 @@ function App() {
                 <p className="text-lg text-slate-300 leading-relaxed mb-6">
                   Ved at automatisere den tidskrævende gennemsyn af "full-motion
                   video" fra overvågningsdroner kunne Maven drastisk reducere
-                  den beslutningsbyrde, der lå på efterretningsanalytikere, og
+                  den beslutningskompleksitet, der lå på efterretningsanalytikere, og
                   forkorte den tid det tog at udpege trusler på slagmarken.
                   Maven viste både AI'ens potentiale og dens daværende
                   begrænsninger – de tidlige algoritmer leverede værdifulde
@@ -375,7 +309,7 @@ function App() {
                   krydsermissiler) og trak på machine learning for at spore dem,
                   hvorefter en menneskelig operatør blot skulle bekræfte målet
                   og godkende ildåbning. Hele processen fra sensor-detektion til
-                  skydeordre blev således automatiseret lige op til det sidste
+                  skudordre blev således automatiseret lige op til det sidste
                   tryk på aftrækkeren. Den menneskelige fører var rykket fra at
                   være beslutningstager til at være overvåger, der kun skulle
                   gribe ind, hvis maskinen tog fejl.
@@ -384,17 +318,17 @@ function App() {
 
               <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                 <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  Fra gruppe til korps-niveau begynder de militære enheder
-                  således at integrere digitale med-kommandører. På gruppe- og
+                  På alle niveauer begynder de militære enheder
+                  således at integrere digitale medbeslutningstagere. På gruppe- og
                   delingsniveau ser vi "menneske-maskine team" med autonome
                   droner og køretøjer i tæt samarbejde med soldaterne – droner
-                  som spejdere og loiterende ammunition, der selv finder og
-                  angriber mål, men stadig med en sergent til at udstikke målet
+                  fungerer som spejdere og "loitering munition", der selv finder og
+                  angriber mål, men stadig med en fører på jorden til at udstikke målet
                   og rammerne.
                 </p>
                 <p className="text-lg text-slate-300 leading-relaxed mb-6">
                   På bataljons- og brigadeniveau eksperimenteres der med
-                  AI-systemer som rådgivere i TOC'en (Tactical Operations
+                  AI-systemer som digitale rådgivere i TOC'en (Tactical Operations
                   Center), der analyserer terrændata, egen enheds status og
                   fjendebillede og foreslår dispositionsmuligheder på få
                   sekunder. Selv på strategisk niveau er spirende digitale
@@ -432,10 +366,10 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Interaktiv Tidslinje
+              {t('interactiveTimelineTitle')}
             </h2>
             <p className="text-lg sm:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
-              Klik på en fase for at springe direkte til det detaljerede indhold
+              {t('interactiveTimelineSubtitle')}
             </p>
           </div>
 
@@ -446,7 +380,7 @@ function App() {
             
             {/* Timeline Items */}
             <div className="relative flex justify-between items-center">
-              {timelineSections.map((section, index) => (
+              {getTimelineSections().map((section, index) => (
                 <div key={section.id} className="flex flex-col items-center group cursor-pointer" onClick={() => {
                   const element = sectionRefs.current[section.id];
                   if (element) {
@@ -484,7 +418,7 @@ function App() {
 
           {/* Mobile Timeline */}
           <div className="lg:hidden space-y-4">
-            {timelineSections.map((section, index) => (
+            {getTimelineSections().map((section, index) => (
               <div 
                 key={section.id} 
                 className="flex items-center space-x-4 p-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800/50 transition-all duration-300 cursor-pointer"
@@ -564,7 +498,7 @@ function App() {
             </p>
           </div>
 
-          {timelineSections.map((section, index) => (
+          {getTimelineSections().map((section, index) => (
             <div
               key={section.id}
               id={section.id}
@@ -1969,6 +1903,8 @@ function App() {
           </p>
         </div>
       </footer>
+
+
     </div>
   );
 }
