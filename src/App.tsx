@@ -440,6 +440,128 @@ function App() {
         </div>
       </section>
 
+      {/* Interactive Timeline Overview */}
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Interaktiv Tidslinje
+            </h2>
+            <p className="text-lg sm:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
+              Klik på en fase for at springe direkte til det detaljerede indhold
+            </p>
+          </div>
+
+          {/* Desktop Timeline */}
+          <div className="hidden lg:block relative">
+            {/* Timeline Line */}
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-slate-700 via-blue-500 to-purple-500 transform -translate-y-1/2"></div>
+            
+            {/* Timeline Items */}
+            <div className="relative flex justify-between items-center">
+              {timelineSections.map((section, index) => (
+                <div key={section.id} className="flex flex-col items-center group cursor-pointer" onClick={() => {
+                  const element = sectionRefs.current[section.id];
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}>
+                  {/* Timeline Node */}
+                  <div className={`relative z-10 w-16 h-16 rounded-full bg-gradient-to-r ${section.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 mb-4`}>
+                    <div className="text-white text-xl">
+                      {section.icon}
+                    </div>
+                    {/* Pulse Animation */}
+                    <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${section.color} animate-ping opacity-20`}></div>
+                  </div>
+                  
+                  {/* Year Badge */}
+                  <div className={`px-3 py-1 rounded-full text-xs font-bold mb-2 ${
+                    section.status === 'past'
+                      ? 'bg-green-500/20 text-green-400'
+                      : section.status === 'present'
+                      ? 'bg-yellow-500/20 text-yellow-400'
+                      : 'bg-blue-500/20 text-blue-400'
+                  }`}>
+                    {section.year}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-sm font-bold text-white text-center max-w-32 group-hover:text-cyan-400 transition-colors duration-300">
+                    {section.title}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Timeline */}
+          <div className="lg:hidden space-y-4">
+            {timelineSections.map((section, index) => (
+              <div 
+                key={section.id} 
+                className="flex items-center space-x-4 p-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800/50 transition-all duration-300 cursor-pointer"
+                onClick={() => {
+                  const element = sectionRefs.current[section.id];
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+              >
+                {/* Icon */}
+                <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${section.color} flex items-center justify-center flex-shrink-0`}>
+                  <div className="text-white">
+                    {section.icon}
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center space-x-2 mb-1">
+                    <div className={`px-2 py-1 rounded-full text-xs font-bold ${
+                      section.status === 'past'
+                        ? 'bg-green-500/20 text-green-400'
+                        : section.status === 'present'
+                        ? 'bg-yellow-500/20 text-yellow-400'
+                        : 'bg-blue-500/20 text-blue-400'
+                    }`}>
+                      {section.year}
+                    </div>
+                  </div>
+                  <h3 className="text-base font-bold text-white mb-1">
+                    {section.title}
+                  </h3>
+                  <p className="text-sm text-slate-400 line-clamp-2">
+                    {section.subtitle}
+                  </p>
+                </div>
+                
+                {/* Arrow */}
+                <div className="text-slate-400">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Progress Indicator */}
+          <div className="mt-12 sm:mt-16">
+            <div className="text-center mb-4">
+              <span className="text-sm text-slate-400">Scroll ned for detaljeret gennemgang</span>
+            </div>
+            <div className="flex justify-center">
+              <div className="animate-bounce">
+                <svg className="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Timeline Section */}
       <section id="timeline" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
