@@ -126,5 +126,45 @@
         "Risiko for tab af menneskelig kontrol og forståelse"
       ]
     }
+  },
+  
+  "implications": {
+    "title": "Konsekvenser og Overvejelser",
+    "subtitle": "Den digitale revolution i militære operationer bringer både enorme muligheder og betydelige udfordringer. Her er de centrale områder der kræver opmærksomhed og overvejelse.",
+    "ethical": {
+      "title": "Etiske Udfordringer",
+      "description": "Overgangen til AI-domineret krigsførelse rejser fundamentale spørgsmål om ansvar, menneskelig værdi og de etiske grænser for automatiseret våbenførelse. Hvem bærer ansvaret når autonome systemer træffer livsafgørende beslutninger?"
+    },
+    "strategic": {
+      "title": "Strategiske Fordele", 
+      "description": "Automatiserede systemer tilbyder uovertruffen hastighed, præcision og evne til at operere i farlige miljøer uden at risikere menneskeliv. De kan processere massive mængder data og reagere øjeblikkeligt på trusler."
+    },
+    "technological": {
+      "title": "Teknologiske Risici",
+      "description": "Øget afhængighed af AI-systemer skaber nye sårbarheder. Cyberangreb, systemfejl og uforudsete AI-adfærd kan have katastrofale konsekvenser på fremtidens slagmark."
+    },
+    "human": {
+      "title": "Menneskelige Faktorer",
+      "description": "Selv i en AI-domineret fremtid vil menneskelig dømmekraft, kreativitet og etisk vejledning forblive kritiske elementer. Balancen mellem effektivitet og humanitet bliver central."
+    },
+    "quote": "Fremtidens slagmark vil være præget af en fundamental transformation, hvor traditioner om menneskelig ledelse og intuition gradvist vil vige for algoritmisk præcision og kunstig intelligens' overlegne analyseevner. Spørgsmålet er ikke om denne forandring vil ske, men hvordan vi navigerer den etisk og strategisk."
+  },
+  
+  "conclusion": {
+    "title": "Vejen Fremad",
+    "paragraph1": "Kamppladsens digitale revolution er ikke blot en teknologisk udvikling - det er en fundamental omformning af krigsførelse som koncept. Fra de nuværende systemer hvor mennesker træffer alle kritiske beslutninger, bevæger vi os mod en fremtid hvor kunstig intelligens gradvist overtager mere og mere ansvar.",
+    "paragraph2": "Denne transformation rejser dybe spørgsmål om ansvar, etik og den menneskelige rolle i konflikter. Mens AI-systemer tilbyder uovertruffen hastighed og præcision, må vi samtidig bevare de menneskelige værdier og den etiske dømmekraft der definerer os som civilisation.",
+    "paragraph3": "Fremtiden vil kræve en balance mellem teknologisk kapacitet og menneskelig visdom - en balance der vil definere ikke kun hvordan vi fører krig, men hvordan vi bevarer freden."
+  },
+  
+  "footer": {
+    "description": "En fremskrivning af militær teknologi og dens indvirkning på fremtidens konflikter",
+    "copyright": "2025 - Kamppladsens Digitale Revolution"
+  },
+  
+  "heroIntro": {
+    "paragraph1": "Forestil dig en flåde af autonome fartøjer, der uden varsel dukker op ved en nations kyst. De kommunikerer ikke med nogen menneskelig kommando, men koordinerer deres bevægelser gennem algoritmer, der kan processere tusindvis af variable i sekundet. Dette er ikke science fiction - det er en realistisk fremskrivning af, hvordan militære operationer kan se ud om få årtier.",
+    "paragraph2": "Kamppladsens digitale revolution handler om den gradvise overgang fra menneskelig til algoritmisk beslutningstagning i militære sammenhænge. Det er historien om, hvordan kunstig intelligens ikke blot bliver et værktøj, men gradvist overtager rollen som den primære beslutningstagere på fremtidens slagmark.",
+    "paragraph3": "Gennem seks kritiske faser - fra nutidens menneske-centrerede systemer til 2050's fuldstændigt autonome krigsmaskiner - udforsker vi de teknologiske, etiske og strategiske implikationer af denne transformation. Det er en rejse der udfordrer vores grundlæggende forståelse af krig, ansvar og menneskelig kontrol."
   }
 } 

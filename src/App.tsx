@@ -28,32 +28,29 @@ interface TimelineSection {
 
 
 
-const implications = [
+// Create translated implications function
+const getImplications = (t: any) => [
   {
-    title: 'Etiske Udfordringer',
-    description:
-      'Overgangen til AI-domineret krigsførelse rejser fundamentale spørgsmål om ansvar, menneskelig værdi og de etiske grænser for automatiseret våbenførelse. Hvem bærer ansvaret når autonome systemer træffer livsafgørende beslutninger?',
+    title: t('implications.ethical.title'),
+    description: t('implications.ethical.description'),
     icon: <AlertTriangle className="w-6 h-6" />,
     color: 'text-red-400',
   },
   {
-    title: 'Strategiske Fordele',
-    description:
-      'Automatiserede systemer tilbyder uovertruffen hastighed, præcision og evne til at operere i farlige miljøer uden at risikere menneskeliv. De kan processere massive mængder data og reagere øjeblikkeligt på trusler.',
+    title: t('implications.strategic.title'),
+    description: t('implications.strategic.description'),
     icon: <CheckCircle className="w-6 h-6" />,
     color: 'text-green-400',
   },
   {
-    title: 'Teknologiske Risici',
-    description:
-      'Øget afhængighed af AI-systemer skaber nye sårbarheder. Cyberangreb, systemfejl og uforudsete AI-adfærd kan have katastrofale konsekvenser på fremtidens slagmark.',
+    title: t('implications.technological.title'),
+    description: t('implications.technological.description'),
     icon: <Shield className="w-6 h-6" />,
     color: 'text-yellow-400',
   },
   {
-    title: 'Menneskelige Faktorer',
-    description:
-      'Selv i en AI-domineret fremtid vil menneskelig dømmekraft, kreativitet og etisk vejledning forblive kritiske elementer. Balancen mellem effektivitet og humanitet bliver central.',
+    title: t('implications.human.title'),
+    description: t('implications.human.description'),
     icon: <Users className="w-6 h-6" />,
     color: 'text-blue-400',
   },
@@ -64,6 +61,9 @@ function App() {
   const [activeSection, setActiveSection] = useState<string>('');
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+  
+  // Get translated implications
+  const implications = getImplications(t);
 
   // Create translated timeline sections
   const getTimelineSections = (): TimelineSection[] => [
@@ -347,8 +347,7 @@ function App() {
               <div className="text-center mt-8">
                 <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-full">
                   <p className="text-xl font-semibold text-blue-300">
-                    Følg med når vi ser hvordan udviklingen forløber frem mod
-                    2025
+                    {t('followDevelopment')}
                   </p>
                 </div>
               </div>
@@ -1812,12 +1811,10 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Konsekvenser og Overvejelser
+              {t('implications.title')}
             </h2>
             <p className="text-lg sm:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
-              Den digitale revolution i militære operationer bringer både enorme
-              muligheder og betydelige udfordringer. Her er de centrale områder
-              der kræver opmærksomhed og overvejelse.
+              {t('implications.subtitle')}
             </p>
           </div>
 
@@ -1844,12 +1841,7 @@ function App() {
 
           <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-gradient-to-r from-slate-800/40 to-slate-700/40 border border-slate-600 rounded-xl">
             <blockquote className="text-lg sm:text-xl text-slate-300 leading-relaxed text-center italic">
-              "Fremtidens slagmark vil være præget af en fundamental
-              transformation, hvor traditioner om menneskelig ledelse og
-              intuition gradvist vil vige for algoritmisk præcision og kunstig
-              intelligens' overlegne analyseevner. Spørgsmålet er ikke om denne
-              forandring vil ske, men hvordan vi navigerer den etisk og
-              strategisk."
+              "{t('implications.quote')}"
             </blockquote>
             <div className="text-center mt-4 sm:mt-6">
               <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
@@ -1862,30 +1854,20 @@ function App() {
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-            Vejen Fremad
+            {t('conclusion.title')}
           </h2>
 
           <div className="space-y-6 sm:space-y-8 text-base sm:text-lg text-slate-300 leading-relaxed px-4">
             <p>
-              Kamppladsens digitale revolution er ikke blot en teknologisk
-              udvikling - det er en fundamental omformning af krigsførelse som
-              koncept. Fra de nuværende systemer hvor mennesker træffer alle
-              kritiske beslutninger, bevæger vi os mod en fremtid hvor kunstig
-              intelligens gradvist overtager mere og mere ansvar.
+              {t('conclusion.paragraph1')}
             </p>
 
             <p>
-              Denne transformation rejser dybe spørgsmål om ansvar, etik og den
-              menneskelige rolle i konflikter. Mens AI-systemer tilbyder
-              uovertruffen hastighed og præcision, må vi samtidig bevare de
-              menneskelige værdier og den etiske dømmekraft der definerer os som
-              civilisation.
+              {t('conclusion.paragraph2')}
             </p>
 
             <p>
-              Fremtiden vil kræve en balance mellem teknologisk kapacitet og
-              menneskelig visdom - en balance der vil definere ikke kun hvordan
-              vi fører krig, men hvordan vi bevarer freden.
+              {t('conclusion.paragraph3')}
             </p>
           </div>
         </div>
@@ -1895,11 +1877,10 @@ function App() {
       <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-slate-800">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm sm:text-base text-slate-400 mb-2">
-            En fremskrivning af militær teknologi og dens indvirkning på
-            fremtidens konflikter
+            {t('footer.description')}
           </p>
           <p className="text-xs sm:text-sm text-slate-500">
-            2025 - Kamppladsens Digitale Revolution
+            {t('footer.copyright')}
           </p>
         </div>
       </footer>
