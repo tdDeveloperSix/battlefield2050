@@ -512,7 +512,7 @@ function App() {
                   <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
                     <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
                       <Clock className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-blue-400 flex-shrink-0" />
-                      Centrale Udviklinger
+                      {t('timeline.keyDevelopments')}
                     </h4>
                     <ul className="space-y-3 sm:space-y-4">
                       {section.details.map((detail, idx) => (
@@ -530,7 +530,7 @@ function App() {
                   <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
                     <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
                       <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-purple-400 flex-shrink-0" />
-                      Karakteristika
+                      {t('timeline.characteristics')}
                     </h4>
                     <ul className="space-y-3 sm:space-y-4">
                       {section.characteristics.map((char, idx) => (
