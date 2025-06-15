@@ -295,9 +295,14 @@ function App() {
                   admiraler. Dette scenarie er ikke længere science fiction.
                   Allerede i slut-2010'erne eksperimenterede amerikanske styrker
                   med en såkaldt{' '}
-                  <span className="text-blue-400 font-semibold">
+                  <a 
+                    href="https://www.foxnews.com/tech/navy-to-test-ghost-fleet-attack-drone-boats-in-war-scenarios" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 font-semibold hover:text-blue-300 underline"
+                  >
                     "Ghost Fleet"
-                  </span>{' '}
+                  </a>{' '}
                   af ubemandede droner og skibe, som kunne operere koordineret
                   og selvstændigt med minimal menneskelig indblanding.
                 </p>
@@ -320,9 +325,14 @@ function App() {
                   I de samme år begyndte kunstig intelligens også at assistere
                   menneskelige beslutningstagere i krigens informationsdomæne.
                   Et kendt eksempel er{' '}
-                  <span className="text-purple-400 font-semibold">
+                  <a 
+                    href="https://www.aviationtoday.com/2020/08/31/pentagon-building-foundation-al-enabled-unmanned-systems-future-conflicts/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-purple-400 font-semibold hover:text-purple-300 underline"
+                  >
                     Project Maven
-                  </span>
+                  </a>
                   , Pentagons pionerprojekt for "algoritmisk krigsførelse"
                   iværksat i 2017. Maven's formål var at anvende AI til at
                   gennemtrawle dronevideooptagelser for at identificere
@@ -348,9 +358,14 @@ function App() {
                   Sideløbende brød en ny generation af
                   forsvarsteknologivirksomheder frem og udfordrede gamle
                   doktriner for føring. Firmaer som{' '}
-                  <span className="text-cyan-400 font-semibold">
+                  <a 
+                    href="https://www.defensenews.com/digital-show-dailies/ausa/2020/10/16/anduril-adapts-tech-to-detect-cruise-missiles-in-air-force-demo/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 font-semibold hover:text-cyan-300 underline"
+                  >
                     Anduril Industries
-                  </span>{' '}
+                  </a>{' '}
                   begyndte at levere systemer, hvor AI ikke blot var et
                   analyseværktøj, men selve kernen i kommandosystemet. I et Air
                   Force eksperiment med Advanced Battle Management System
@@ -545,9 +560,14 @@ function App() {
                         officer, hvad angår hastighed, præcision og outcome. Et
                         tidligt glimt af denne fremtid så man i 2020, da DARPA
                         afholdt de opsigtsvækkende{' '}
-                        <span className="text-green-400 font-semibold">
+                        <a 
+                          href="https://aibusiness.com/verticals/ai-pilot-beats-human-5-0-in-darpa-dogfight" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-green-400 font-semibold hover:text-green-300 underline"
+                        >
                           AlphaDogfight Trials
-                        </span>
+                        </a>
                         . Her konkurrerede en avanceret AI mod en erfaren F-16
                         jagerpilot i en simuleret luftkamp – og AI'en vandt
                         overlegent med 5-0.
@@ -753,9 +773,14 @@ function App() {
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         Med AI's indtog opløses mange af de klassiske paradigmer
                         for føring og beslutningstagning.{' '}
-                        <span className="text-blue-400 font-semibold">
+                        <a 
+                          href="https://nuclearnetwork.csis.org/automating-the-ooda-loop-in-the-age-of-ai/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-blue-400 font-semibold hover:text-blue-300 underline"
+                        >
                           John Boyds berømte OODA-loop
-                        </span>{' '}
+                        </a>{' '}
                         (Observe – Orient – Decide – Act) har længe været en
                         hjørnesten i forståelsen af militær beslutningstempo. Men
                         når beslutninger træffes af neurale netværk i
@@ -930,9 +955,14 @@ function App() {
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         I over et århundrede har kerneprincipper i militær føring
                         som førerens intention, undergivet initiativ og{' '}
-                        <span className="text-blue-400 font-semibold">
+                        <a 
+                          href="https://warontherocks.com/2025/03/the-u-s-army-artificial-intelligence-and-mission-command/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-blue-400 font-semibold hover:text-blue-300 underline"
+                        >
                           auftragstaktik (opdragstaktik)
-                        </span>{' '}
+                        </a>{' '}
                         været hyldet især i vestlige doktriner. Disse idéer bygger
                         på, at mennesker på alle niveauer – når de deler en fælles
                         forståelse af målet – kan improvisere og træffe
@@ -1468,6 +1498,28 @@ function App() {
                         (Fires Synchronization to Optimize Responses in
                         Multi-Domain Operations).
                       </p>
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                        Under U.S. Army's{' '}
+                        <a 
+                          href="https://www.c4isrnet.com/artificial-intelligence/2020/09/25/the-army-just-conducted-a-massive-test-of-its-battlefield-artificial-intelligence-in-the-desert/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-green-400 font-semibold hover:text-green-300 underline"
+                        >
+                          Project Convergence 2020
+                        </a>{' '}
+                        demonstration blev dette vist i praksis: Her arbejdede et
+                        kæde af AI- og autonome systemer sammen om at identificere
+                        trusler og udpege det optimale våben til at neutralisere
+                        dem – alt sammen på omkring 20 sekunder, en proces der før
+                        tog 20 minutter. En central komponent var det AI-drevne
+                        system kaldet{' '}
+                        <span className="text-purple-400 font-semibold">
+                          FIRESTORM
+                        </span>{' '}
+                        (Fires Synchronization to Optimize Responses in
+                        Multi-Domain Operations).
+                      </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
                         FIRESTORM fungerede som et digitalt ildleder-"hjerne", der
                         modtog sensoroplysninger fra jorden, luften, rummet og
@@ -1545,9 +1597,14 @@ function App() {
                         bemærkelsesværdige evner her: under en nylig øvelse blev
                         en hel sværm af droner automatisk udsendt af et system
                         kaldet{' '}
-                        <span className="text-yellow-400 font-semibold">
+                        <a 
+                          href="https://www.defenseone.com/threats/2025/03/new-products-show-chinas-quest-automate-battle/403387/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-yellow-400 font-semibold hover:text-yellow-300 underline"
+                        >
                           Intelligent Precision Strike System
-                        </span>
+                        </a>
                         , der ikke blot sendte dronerne afsted, men også
                         automatisk udvalgte mål, planlagde angreb og koordinerede
                         skud på tværs af enheder. Ifølge kinesiske kilder foregik
