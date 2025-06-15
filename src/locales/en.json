@@ -1,196 +1,54 @@
 {
   "title": "The Digital Revolution of the Battlefield",
-  "subtitle": "From Human Intuition to Algorithmic Dominance",
-  "description": "A fictional narrative about future military units and command structures, where human decision-making is gradually replaced by digital and autonomous intelligence.",
-  
+  "subtitle": "How Artificial Intelligence is Transforming Military Command and Control",
+  "languageToggle": "Language",
   "interactiveTimelineTitle": "Interactive Timeline",
   "interactiveTimelineSubtitle": "Click on a phase to jump directly to the detailed content",
-  
-  "timelineTitle": "Evolution Timeline",
-  "timelineDescription": "Follow the transformation of military operations through six critical phases, from human dominance to total automation. Each phase represents a fundamental shift in how warfare is planned, executed, and controlled.",
-  
-  "followDevelopment": "Follow along as we see how the development unfolds towards 2025",
-  
+  "followDevelopment": "follow the development towards 2050",
   "timeline": {
-    "title": "Timeline: The Digital Revolution of the Battlefield",
-    "subtitle": "From human to machine warfare",
-    "scrollHint": "Scroll down for detailed walkthrough",
     "keyDevelopments": "Key Developments",
     "characteristics": "Characteristics",
-    "humanDominance": {
-      "title": "Human Dominance",
-      "subtitle": "Traditional command structures with humans at the center",
-      "description": "In this period, humans still dominate all aspects of military planning and execution. Decision-making occurs through established hierarchies, where experience and intuition are highly valued.",
-      "details": [
-        "Command structures built on decades of experience and established doctrines",
-        "Decision processes are hierarchical and based on human judgment",
-        "Technology functions primarily as a supporting tool",
-        "Situational awareness depends on human analysis and reporting",
-        "Tactical decisions made by experienced officers based on training and intuition"
-      ],
-      "characteristics": [
-        "High degree of flexibility in unforeseen situations",
-        "Strong ethical and moral judgment",
-        "Ability for creative problem-solving",
-        "Limitations in speed and data processing",
-        "Risk of human error under pressure"
-      ]
-    },
-    "digitalIntegration": {
-      "title": "Digital Integration",
-      "subtitle": "First wave of AI-assisted systems introduced",
-      "description": "Artificial intelligence begins to play a larger role as decision support. Automated systems help with data analysis and situational awareness, but humans retain final decision-making authority.",
-      "details": [
-        "AI systems introduced as decision support tools",
-        "Automated data collection and analysis implemented",
-        "Hybrid teams of humans and machines emerge",
-        "Real-time data from sensors and drones integrated into command systems",
-        "Predictive analytics begins to influence tactical planning"
-      ],
-      "characteristics": [
-        "Improved situational awareness through AI analysis",
-        "Faster data processing and information sharing",
-        "Humans retain control over critical decisions",
-        "Increased dependence on technological systems",
-        "Need for new training and skill development"
-      ]
-    },
-    "autonomousAssistance": {
-      "title": "Autonomous Assistance",
-      "subtitle": "AI takes over more operational functions",
-      "description": "Autonomous systems begin making independent decisions within defined parameters. Human role shifts from direct control to supervision and strategic planning.",
-      "details": [
-        "Autonomous weapon systems operate within predefined rules",
-        "AI makes tactical decisions in real-time",
-        "Machine-to-machine communication becomes standard",
-        "Humans focus on strategic oversight and ethical assessments",
-        "Swarm systems coordinate autonomously on the battlefield"
-      ],
-      "characteristics": [
-        "Drastically reduced reaction time in combat operations",
-        "Ability to operate in dangerous or inaccessible environments",
-        "Consistent performance without fatigue or stress",
-        "Challenges with ethical responsibility and accountability",
-        "Risk of system failures or cyber attacks"
-      ]
-    },
-    "hybridCommand": {
-      "title": "Hybrid Command",
-      "subtitle": "Human-machine partnerships dominate",
-      "description": "Command structures become fundamentally restructured with AI as equal partners. Decision processes accelerate drastically through neural interface technology.",
-      "details": [
-        "Neural interfaces connect humans directly with AI systems",
-        "Command structures redesigned around human-AI teams",
-        "Real-time strategic planning through AI-assisted analysis",
-        "Humans focus on creativity and complex problem-solving",
-        "AI handles routine operations and data processing"
-      ],
-      "characteristics": [
-        "Synergistic effects between human creativity and AI capacity",
-        "Increased speed in strategic decision-making",
-        "Improved coordination across military units",
-        "Complexity in responsibility distribution",
-        "Need for new leadership structures and principles"
-      ]
-    },
-    "machineSuperior": {
-      "title": "Machine Superiority",
-      "subtitle": "AI systems take over strategic leadership",
-      "description": "Artificial intelligence demonstrates superior ability for complex strategic thinking and multi-dimensional planning. Humans retain veto power but rarely override AI decisions.",
-      "details": [
-        "AI systems exhibit superior strategic thinking",
-        "Multi-dimensional war simulation and planning",
-        "Humans function primarily as ethical guides",
-        "Combat operations executed mainly by autonomous units",
-        "AI coordinates complex operations across domains"
-      ],
-      "characteristics": [
-        "Superior analytical capacity and strategic foresight",
-        "Ability to handle extreme complexity",
-        "Consistent and objective decision-making",
-        "Reduced human influence on operational decisions",
-        "Potential challenges with creativity and adaptability"
-      ]
-    },
-    "singularity": {
-      "title": "Battlefield Singularity",
-      "subtitle": "AI's complete dominance over military operations",
-      "description": "In 2050, we reach the Battlefield Singularity - a point where AI systems not only assist or lead military operations, but completely transform warfare as a concept. Humans now function only as political decision-makers and ethical guides, while AI systems make all operational and tactical decisions.",
-      "details": [
-        "Completely autonomous military operations without human intervention",
-        "AI systems make all tactical and operational decisions",
-        "Humans retain only political and ethical oversight",
-        "Warfare becomes an algorithm-driven process",
-        "Minimal human role in combat operations"
-      ],
-      "characteristics": [
-        "Maximum efficiency and precision in military operations",
-        "Elimination of human errors and emotional decisions",
-        "Ability to operate in all environments without limitations",
-        "Fundamental questions about the nature and ethics of war",
-        "Risk of loss of human control and understanding"
-      ]
+    "phases": {
+      "humanDominance": {
+        "title": "Human Dominance",
+        "period": "2020-2030",
+        "description": "Humans make all critical decisions with AI as support tools"
+      },
+      "digitalIntegration": {
+        "title": "Digital Integration", 
+        "period": "2025-2035",
+        "description": "AI systems begin to match human decision-making capabilities"
+      },
+      "autonomousAssistance": {
+        "title": "Autonomous Assistance",
+        "period": "2030-2040", 
+        "description": "AI takes over routine decisions, humans handle strategic choices"
+      },
+      "hybridCommand": {
+        "title": "Hybrid Command",
+        "period": "2035-2045",
+        "description": "Seamless collaboration between human intuition and machine precision"
+      },
+      "machineSuperiority": {
+        "title": "Machine Superiority",
+        "period": "2040-2050",
+        "description": "AI systems surpass human capabilities in most military domains"
+      },
+      "singularity": {
+        "title": "Singularity",
+        "period": "2050+",
+        "description": "Complete transformation of warfare's nature and human role"
+      }
     }
   },
-  
-  "implications": {
-    "title": "Consequences and Considerations",
-    "subtitle": "The digital revolution in military operations brings both enormous opportunities and significant challenges. Here are the central areas that require attention and consideration.",
-    "ethical": {
-      "title": "Ethical Challenges",
-      "description": "The transition to AI-dominated warfare raises fundamental questions about responsibility, human value, and the ethical boundaries of automated weapons systems. Who bears responsibility when autonomous systems make life-or-death decisions?"
-    },
-    "strategic": {
-      "title": "Strategic Advantages", 
-      "description": "Automated systems offer unmatched speed, precision, and ability to operate in dangerous environments without risking human lives. They can process massive amounts of data and respond instantly to threats."
-    },
-    "technological": {
-      "title": "Technological Risks",
-      "description": "Increased dependence on AI systems creates new vulnerabilities. Cyber attacks, system failures, and unforeseen AI behavior can have catastrophic consequences on future battlefields."
-    },
-    "human": {
-      "title": "Human Factors",
-      "description": "Even in an AI-dominated future, human judgment, creativity, and ethical guidance will remain critical elements. The balance between efficiency and humanity becomes central."
-    },
-    "quote": "The future battlefield will be characterized by a fundamental transformation, where traditions of human leadership and intuition will gradually give way to algorithmic precision and artificial intelligence's superior analytical capabilities. The question is not whether this change will happen, but how we navigate it ethically and strategically."
-  },
-  
-  "conclusion": {
-    "title": "The Path Forward",
-    "paragraph1": "The digital revolution of the battlefield is not merely a technological development - it is a fundamental transformation of warfare as a concept. From current systems where humans make all critical decisions, we are moving toward a future where artificial intelligence gradually takes over more and more responsibility.",
-    "paragraph2": "This transformation raises deep questions about responsibility, ethics, and the human role in conflicts. While AI systems offer unmatched speed and precision, we must simultaneously preserve the human values and ethical judgment that define us as a civilization.",
-    "paragraph3": "The future will require a balance between technological capacity and human wisdom - a balance that will define not only how we wage war, but how we preserve peace."
-  },
-  
-  "footer": {
-    "description": "A projection of military technology and its impact on future conflicts",
-    "copyright": "2025 - The Digital Revolution of the Battlefield"
-  },
-  
-  "heroIntro": {
-    "ghostFleet": {
-      "paragraph1": "Imagine a fleet of autonomous vessels attacking in swarms without warning – coordinated by algorithms rather than admirals. This scenario is no longer science fiction. Already in the late 2010s, American forces experimented with a so-called \"Ghost Fleet\" of unmanned drones and ships that could operate in coordination and autonomously with minimal human intervention.",
-      "paragraph2": "In a naval experiment, swarms of small attack boats were sent into simulated combat, networked together to monitor, surprise, and attack the enemy – while human operators stayed at a safe distance. Advanced algorithms controlled these vessels so they could avoid collisions, share sensor information, and execute combined attacks, all without continuous remote control. \"Ghost Fleet\" became an early sign that machines are now stepping in as co-commanders on the seas of the future – a ghost in the machine that heralded a larger transformation of military warfare and leadership."
-    },
-    "projectMaven": {
-      "paragraph1": "During the same period, artificial intelligence also began assisting human decision-makers in the information domain of warfare. A well-known example is Project Maven, the Pentagon's pioneering project for \"algorithmic warfare\" launched in 2017. Maven's purpose was to use AI to sift through drone video footage to identify enemy targets faster than tired analyst eyes.",
-      "paragraph2": "By automating the time-consuming review of \"full-motion video\" from surveillance drones, Maven could drastically reduce the decision complexity burden on intelligence analysts and shorten the time it took to identify threats on the battlefield. Maven demonstrated both AI's potential and its limitations at the time – the early algorithms delivered valuable rapid detections but also failed with false alarms and challenges in distinguishing combatants from civilians. Nevertheless, the signal was clear: algorithms could become invaluable \"assistants\" to human commanders by filtering data and highlighting what was important in time."
-    },
-    "anduril": {
-      "paragraph1": "Simultaneously, a new generation of defense technology companies emerged and challenged old doctrines of command. Companies like Anduril Industries began delivering systems where AI was not just an analytical tool, but the very core of the command system. In an Air Force experiment with the Advanced Battle Management System, Anduril's Lattice software functioned as the brain that autonomously collected data from radar, optical sensors, and acoustic sources – all in real-time at the front lines.",
-      "paragraph2": "The system identified incoming threats (e.g., cruise missiles) and used machine learning to track them, after which a human operator only had to confirm the target and approve firing. The entire process from sensor detection to firing order was thus automated right up to the last trigger pull. The human commander had moved from being a decision-maker to being a supervisor who only had to intervene if the machine made a mistake."
-    },
-    "integration": {
-      "paragraph1": "At all levels, military units are thus beginning to integrate digital co-decision-makers. At squad and platoon level, we see \"human-machine teams\" with autonomous drones and vehicles in close cooperation with soldiers – drones function as scouts and \"loitering munition\" that find and attack targets themselves, but still with a commander on the ground to designate the target and framework.",
-      "paragraph2": "At battalion and brigade level, experiments are being conducted with AI systems as digital advisors in the TOC (Tactical Operations Center), analyzing terrain data, own unit status, and enemy picture and suggesting deployment options within seconds. Even at the strategic level, emerging digital assistants are entering: algorithms that can simulate countless scenarios and predict the consequences of operational plans, giving generals unprecedented decision support.",
-      "paragraph3": "In short: The human commander is not abolished – yet – but a digital shadow commander has entered the scene, ready to take over many of the functions that were previously reserved for humans."
-    }
-  },
-
   "detailedSections": {
     "humanDominance": {
-      "intro": "On the battlefield of the future, time is the decisive factor. Making decisions faster than the opponent can mean the difference between victory and defeat. Therefore, the integration of AI has not just been about relieving humans, but about overcoming human limitations in tempo. Traditionally, long minutes could pass from when a sensor detected a target, until the information reached decision-makers and further to a weapon system that then executed an attack. With AI, this \"kill chain\" shrinks dramatically.",
-      "projectConvergence": "Under the U.S. Army's Project Convergence 2020 demonstration, this was shown in practice: Here, a chain of AI and autonomous systems worked together to identify threats and designate the optimal weapon to neutralize them – all in about 20 seconds, a process that previously took 20 minutes. A central component was the AI-driven system called FIRESTORM (Fires Synchronization to Optimize Responses in Multi-Domain Operations).",
+      "aiAsTools": {
+        "title": "AI as Tools: The Current State",
+        "intro": "Today, in 2024, artificial intelligence in military contexts primarily functions as an advanced tool set. AI systems assist with data analysis, pattern recognition, and decision support, but the final call always rests with human commanders. This represents the tail end of an era where human judgment remains supreme in military decision-making.",
+        "currentApplications": "Current applications include predictive maintenance of equipment, intelligence analysis, and logistics optimization. The US military's Project Maven, which uses AI to analyze drone footage, exemplifies this approach – AI processes vast amounts of data, but humans make the targeting decisions.",
+        "humanCentric": "This human-centric approach reflects both technological limitations and deliberate policy choices. Military leaders remain skeptical of fully autonomous systems, preferring to keep humans \"in the loop\" for critical decisions. The technology exists to automate many military functions, but institutional culture and ethical considerations maintain human oversight."
+      },
       "firestorm": "FIRESTORM functioned as a digital fire control \"brain\" that received sensor information from ground, air, space, and cyberspace, analyzed it lightning-fast, and then recommended the best firing unit for each new target. In the demonstration, FIRESTORM designated, for example, an artillery unit to destroy an enemy armored vehicle 40 km away; operators only had to approve the proposal with a click, after which fire was laid – this entire sequence was completed faster than the shell actually flew to the target. Such sensor-to-effector integration at machine speed fundamentally changes the tempo and character of combat.",
       "edgeAI": {
         "title": "Edge AI and Frontline Intelligence",

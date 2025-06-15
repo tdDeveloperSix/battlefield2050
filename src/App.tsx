@@ -11,6 +11,7 @@ import {
   CheckCircle,
   Clock,
 } from 'lucide-react';
+import MobileZoomControls from './components/MobileZoomControls';
 
 
 interface TimelineSection {
@@ -1649,6 +1650,8 @@ function App() {
         </div>
       </footer>
 
+      {/* Mobile Zoom Controls */}
+      <MobileZoomControls />
 
     </div>
   );
