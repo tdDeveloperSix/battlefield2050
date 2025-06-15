@@ -208,6 +208,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+/* Prevent gradient text clipping */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.1em 0;
+}
+
 p {
   line-height: 1.7;
 }
@@ -215,15 +223,19 @@ p {
 /* Responsive design helpers */
 @media (max-width: 768px) {
   .text-5xl {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+  }
+  
+  .text-6xl {
+    font-size: 2.75rem;
   }
   
   .text-7xl {
-    font-size: 3.5rem;
+    font-size: 3.25rem;
   }
   
   .text-4xl {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
   
   .text-3xl {
@@ -232,8 +244,16 @@ p {
 }
 
 @media (max-width: 640px) {
+  .text-4xl {
+    font-size: 1.75rem;
+  }
+  
   .text-5xl {
     font-size: 2rem;
+  }
+  
+  .text-6xl {
+    font-size: 2.25rem;
   }
   
   .text-7xl {

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  ChevronDown,
   Users,
   Bot,
   Shield,
@@ -250,9 +249,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection]);
 
-  const scrollToTimeline = () => {
-    document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' });
-  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
@@ -265,11 +262,11 @@ function App() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-slate-900/40" />
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent leading-tight">
+        <div className="relative z-10 text-center px-6 sm:px-8 lg:px-6 max-w-6xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent leading-tight break-words">
             Kamppladsens
             <br />
             Digitale Revolution
@@ -424,24 +421,14 @@ function App() {
             </div>
           </div>
 
-          <button
-            onClick={scrollToTimeline}
-            className="group flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 
-                     hover:from-blue-500 hover:to-purple-500 rounded-full transition-all duration-300 
-                     transform hover:scale-105 hover:shadow-lg mx-auto"
-          >
-            <span className="text-lg font-medium">Udforsk Evolutionen</span>
-            <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
-          </button>
+
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-6 h-6 text-slate-400" />
-        </div>
+
       </section>
 
       {/* Interactive Timeline Overview */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/30">
+      <section id="interactive-timeline" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
