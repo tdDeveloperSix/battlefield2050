@@ -6,12 +6,10 @@
   "interactiveTimelineTitle": "Interaktiv Tidslinje",
   "interactiveTimelineSubtitle": "Klik på en fase for at springe direkte til det detaljerede indhold",
   
-  "timelineTitle": "Evolutionens Tidslinje",
-  "timelineDescription": "Følg transformationen af militære operationer gennem seks kritiske faser, fra menneskelig dominans til total automation. Hver fase repræsenterer et fundamentalt skift i hvordan krigsførelse planlægges, udføres og kontrolleres.",
-  
-  "followDevelopment": "Følg med når vi ser hvordan udviklingen forløber frem mod 2025",
-  
   "timeline": {
+    "title": "Tidslinje: Kamppladsens Digitale Revolution",
+    "subtitle": "Fra menneskelig til maskinel krigsførelse",
+    "scrollHint": "Scroll ned for detaljeret gennemgang",
     "humanDominance": {
       "title": "Menneskelig Dominans",
       "subtitle": "Traditionelle kommandostrukturer med mennesker i centrum",

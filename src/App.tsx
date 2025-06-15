@@ -430,9 +430,9 @@ function App() {
 
           {/* Progress Indicator */}
           <div className="mt-12 sm:mt-16">
-            <div className="text-center mb-4">
-              <span className="text-sm text-slate-400">Scroll ned for detaljeret gennemgang</span>
-            </div>
+                            <div className="text-center mb-4">
+                  <span className="text-sm text-slate-400">{t('timeline.scrollHint')}</span>
+                </div>
             <div className="flex justify-center">
               <div className="animate-bounce">
                 <svg className="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

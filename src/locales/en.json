@@ -12,6 +12,9 @@
   "followDevelopment": "Follow along as we see how the development unfolds towards 2025",
   
   "timeline": {
+    "title": "Timeline: The Digital Revolution of the Battlefield",
+    "subtitle": "From human to machine warfare",
+    "scrollHint": "Scroll down for detailed walkthrough",
     "humanDominance": {
       "title": "Human Dominance",
       "subtitle": "Traditional command structures with humans at the center",
