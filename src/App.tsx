@@ -30,7 +30,7 @@ interface TimelineSection {
 
 
 // Create translated implications function
-const getImplications = (t: any) => [
+const getImplications = (t: (key: string) => string) => [
   {
     title: t('implications.ethical.title'),
     description: t('implications.ethical.description'),
@@ -68,67 +68,67 @@ function App() {
 
   // Create translated timeline sections
   const getTimelineSections = (): TimelineSection[] => [
-    {
-      id: 'human-dominance',
-      year: '2020-2025',
+  {
+    id: 'human-dominance',
+    year: '2020-2025',
       title: t('timeline.humanDominance.title'),
       subtitle: t('timeline.humanDominance.subtitle'),
       description: t('timeline.humanDominance.description'),
       details: t('timeline.humanDominance.details', { returnObjects: true }) as string[],
       characteristics: t('timeline.humanDominance.characteristics', { returnObjects: true }) as string[],
-      icon: <Users className="w-6 h-6" />,
+    icon: <Users className="w-6 h-6" />,
       status: 'past' as const,
-      color: 'from-green-500 to-emerald-600',
-    },
-    {
-      id: 'digital-integration',
-      year: '2025-2030',
+    color: 'from-green-500 to-emerald-600',
+  },
+  {
+    id: 'digital-integration',
+    year: '2025-2030',
       title: t('timeline.digitalIntegration.title'),
       subtitle: t('timeline.digitalIntegration.subtitle'),
       description: t('timeline.digitalIntegration.description'),
       details: t('timeline.digitalIntegration.details', { returnObjects: true }) as string[],
       characteristics: t('timeline.digitalIntegration.characteristics', { returnObjects: true }) as string[],
-      icon: <Brain className="w-6 h-6" />,
+    icon: <Brain className="w-6 h-6" />,
       status: 'present' as const,
-      color: 'from-yellow-500 to-orange-500',
-    },
-    {
-      id: 'autonomous-assistance',
-      year: '2030-2035',
+    color: 'from-yellow-500 to-orange-500',
+  },
+  {
+    id: 'autonomous-assistance',
+    year: '2030-2035',
       title: t('timeline.autonomousAssistance.title'),
       subtitle: t('timeline.autonomousAssistance.subtitle'),
       description: t('timeline.autonomousAssistance.description'),
       details: t('timeline.autonomousAssistance.details', { returnObjects: true }) as string[],
       characteristics: t('timeline.autonomousAssistance.characteristics', { returnObjects: true }) as string[],
-      icon: <Bot className="w-6 h-6" />,
+    icon: <Bot className="w-6 h-6" />,
       status: 'future' as const,
-      color: 'from-blue-500 to-cyan-500',
-    },
-    {
-      id: 'hybrid-command',
-      year: '2035-2040',
+    color: 'from-blue-500 to-cyan-500',
+  },
+  {
+    id: 'hybrid-command',
+    year: '2035-2040',
       title: t('timeline.hybridCommand.title'),
       subtitle: t('timeline.hybridCommand.subtitle'),
       description: t('timeline.hybridCommand.description'),
       details: t('timeline.hybridCommand.details', { returnObjects: true }) as string[],
       characteristics: t('timeline.hybridCommand.characteristics', { returnObjects: true }) as string[],
-      icon: <Shield className="w-6 h-6" />,
+    icon: <Shield className="w-6 h-6" />,
       status: 'future' as const,
-      color: 'from-purple-500 to-indigo-500',
-    },
-    {
-      id: 'machine-superiority',
-      year: '2040-2045',
+    color: 'from-purple-500 to-indigo-500',
+  },
+  {
+    id: 'machine-superiority',
+    year: '2040-2045',
       title: t('timeline.machineSuperior.title'),
       subtitle: t('timeline.machineSuperior.subtitle'),
       description: t('timeline.machineSuperior.description'),
       details: t('timeline.machineSuperior.details', { returnObjects: true }) as string[],
       characteristics: t('timeline.machineSuperior.characteristics', { returnObjects: true }) as string[],
-      icon: <Target className="w-6 h-6" />,
+    icon: <Target className="w-6 h-6" />,
       status: 'future' as const,
-      color: 'from-red-500 to-pink-500',
-    },
-    {
+    color: 'from-red-500 to-pink-500',
+  },
+  {
       id: 'singularity',
       year: '2050',
       title: t('timeline.singularity.title'),
@@ -136,11 +136,11 @@ function App() {
       description: t('timeline.singularity.description'),
       details: t('timeline.singularity.details', { returnObjects: true }) as string[],
       characteristics: t('timeline.singularity.characteristics', { returnObjects: true }) as string[],
-      icon: <Zap className="w-6 h-6" />,
+    icon: <Zap className="w-6 h-6" />,
       status: 'future' as const,
-      color: 'from-violet-500 to-purple-600',
-    },
-  ];
+    color: 'from-violet-500 to-purple-600',
+  },
+];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -232,7 +232,7 @@ function App() {
                           rel="noopener noreferrer"
                           className="text-blue-400 font-semibold hover:text-blue-300 underline"
                         >
-                          "Ghost Fleet"
+                    "Ghost Fleet"
                         </a>
                       </span>
                     ) : (
@@ -257,9 +257,9 @@ function App() {
                           rel="noopener noreferrer"
                           className="text-purple-400 font-semibold hover:text-purple-300 underline"
                         >
-                          Project Maven
+                    Project Maven
                         </a>
-                      </span>
+                  </span>
                     ) : (
                       <span key={index}>{part}</span>
                     )
@@ -282,7 +282,7 @@ function App() {
                           rel="noopener noreferrer"
                           className="text-cyan-400 font-semibold hover:text-cyan-300 underline"
                         >
-                          Anduril Industries
+                    Anduril Industries
                         </a>
                       </span>
                     ) : (
@@ -342,8 +342,8 @@ function App() {
             
             {/* Timeline Items */}
             <div className="relative flex justify-between items-center">
-              {getTimelineSections().map((section, index) => (
-                <div key={section.id} className="flex flex-col items-center group cursor-pointer" onClick={() => {
+                          {getTimelineSections().map((section) => (
+              <div key={section.id} className="flex flex-col items-center group cursor-pointer" onClick={() => {
                   const element = sectionRefs.current[section.id];
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -380,7 +380,7 @@ function App() {
 
           {/* Mobile Timeline */}
           <div className="lg:hidden space-y-4">
-            {getTimelineSections().map((section, index) => (
+            {getTimelineSections().map((section) => (
               <div 
                 key={section.id} 
                 className="flex items-center space-x-4 p-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800/50 transition-all duration-300 cursor-pointer"
@@ -396,8 +396,8 @@ function App() {
                   <div className="text-white">
                     {section.icon}
                   </div>
-                </div>
-                
+        </div>
+
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center space-x-2 mb-1">
@@ -460,7 +460,7 @@ function App() {
             </p>
           </div>
 
-          {getTimelineSections().map((section, index) => (
+          {getTimelineSections().map((section) => (
             <div
               key={section.id}
               id={section.id}
@@ -803,7 +803,7 @@ function App() {
                                 rel="noopener noreferrer"
                                 className="text-blue-400 font-semibold hover:text-blue-300 underline"
                               >
-                                auftragstaktik (opdragstaktik)
+                          auftragstaktik (opdragstaktik)
                               </a>
                             </span>
                           ) : (
@@ -816,8 +816,8 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-green-400 font-semibold">
-                                datastruktur
+                        <span className="text-green-400 font-semibold">
+                          datastruktur
                               </span>
                             </span>
                           ) : (
@@ -843,9 +843,9 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-cyan-400 font-semibold">
-                                algoritmisk opportunisme
-                              </span>
+                        <span className="text-cyan-400 font-semibold">
+                          algoritmisk opportunisme
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -857,9 +857,9 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-yellow-400 font-semibold">
-                                "permission space"
-                              </span>
+                        <span className="text-yellow-400 font-semibold">
+                          "permission space"
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -881,9 +881,9 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-blue-400 font-semibold">
-                                auftragstaktik 2.0
-                              </span>
+                        <span className="text-blue-400 font-semibold">
+                          auftragstaktik 2.0
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -905,8 +905,8 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-red-400 font-semibold">
-                                PLA (Kinas folkets befrielseshær)
+                        <span className="text-red-400 font-semibold">
+                          PLA (Kinas folkets befrielseshær)
                               </span>
                             </span>
                           ) : (
@@ -938,8 +938,8 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-purple-400 font-semibold">
-                                metaviden i AI'en
+                        <span className="text-purple-400 font-semibold">
+                          metaviden i AI'en
                               </span>
                             </span>
                           ) : (
@@ -964,7 +964,7 @@ function App() {
                         {t('detailedSections.hybridCommand.militaryCraft.coreLeadership').split('Intention formuleres i kode, initiativ udøves via adaptive algoritmer').map((part, index) => (
                           index === 0 ? (
                             <span key={index}>
-                              <span className="text-cyan-400 font-semibold">
+                        <span className="text-cyan-400 font-semibold">
                                 Intention formuleres i kode, initiativ udøves via adaptive algoritmer
                               </span>
                             </span>
@@ -990,9 +990,9 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-blue-400 font-semibold">
-                                Rules of Engagement (ROE)
-                              </span>
+                        <span className="text-blue-400 font-semibold">
+                          Rules of Engagement (ROE)
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -1004,8 +1004,8 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-purple-400 font-semibold">
-                                indlejrede politikker
+                        <span className="text-purple-400 font-semibold">
+                          indlejrede politikker
                               </span>
                             </span>
                           ) : (
@@ -1025,9 +1025,9 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-green-400 font-semibold">
-                                værdi-justeret læring (value-aligned AI)
-                              </span>
+                        <span className="text-green-400 font-semibold">
+                          værdi-justeret læring (value-aligned AI)
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -1042,8 +1042,8 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-yellow-400 font-semibold">
-                                "etiske neurale netværk"
+                        <span className="text-yellow-400 font-semibold">
+                          "etiske neurale netværk"
                               </span>
                             </span>
                           ) : (
@@ -1066,8 +1066,8 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-blue-400 font-semibold">
-                                "policy negotiation protocols"
+                        <span className="text-blue-400 font-semibold">
+                          "policy negotiation protocols"
                               </span>
                             </span>
                           ) : (
@@ -1080,8 +1080,8 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-purple-400 font-semibold">
-                                digitale caveats
+                        <span className="text-purple-400 font-semibold">
+                          digitale caveats
                               </span>
                             </span>
                           ) : (
@@ -1101,9 +1101,9 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-red-400 font-semibold">
-                                "killer robots"
-                              </span>
+                        <span className="text-red-400 font-semibold">
+                          "killer robots"
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -1118,9 +1118,9 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-yellow-400 font-semibold">
-                                Moralsk Dilemma vs. Overlevelsesinstinkt
-                              </span>
+                        <span className="text-yellow-400 font-semibold">
+                          Moralsk Dilemma vs. Overlevelsesinstinkt
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -1139,8 +1139,8 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-green-400 font-semibold">
-                                "failsafes"
+                        <span className="text-green-400 font-semibold">
+                          "failsafes"
                               </span>
                             </span>
                           ) : (
@@ -1182,9 +1182,9 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-violet-400 font-semibold">
-                                "Geneve-konventioner for algoritmer"
-                              </span>
+                        <span className="text-violet-400 font-semibold">
+                          "Geneve-konventioner for algoritmer"
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -1196,9 +1196,9 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-cyan-400 font-semibold">
-                                LOAC (Law of Armed Conflict)
-                              </span>
+                        <span className="text-cyan-400 font-semibold">
+                          LOAC (Law of Armed Conflict)
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -1224,8 +1224,8 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-blue-400 font-semibold">
-                                "kill chain"
+                        <span className="text-blue-400 font-semibold">
+                          "kill chain"
                               </span>
                             </span>
                           ) : (
@@ -1245,14 +1245,14 @@ function App() {
                                 rel="noopener noreferrer"
                                 className="text-green-400 font-semibold hover:text-green-300 underline"
                               >
-                                Project Convergence 2020
+                          Project Convergence 2020
                               </a>
                             </span>
                           ) : index === 1 ? (
                             <span key={index}>
                               {part.split('FIRESTORM')[0]}
-                              <span className="text-purple-400 font-semibold">
-                                FIRESTORM
+                        <span className="text-purple-400 font-semibold">
+                          FIRESTORM
                               </span>
                               {part.split('FIRESTORM')[1]}
                             </span>
@@ -1271,34 +1271,12 @@ function App() {
                         <Zap className="w-6 h-6 mr-3 text-yellow-400" />
                         {t('detailedSections.humanDominance.edgeAI.title')}
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.edgeAI.intro').split('Edge AI').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-cyan-400 font-semibold">
-                                Edge AI
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.humanDominance.edgeAI.sentryTowers').split('Sentry Towers').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-blue-400 font-semibold">
-                                Sentry Towers
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
-                      </p>
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
+                        __html: t('detailedSections.humanDominance.edgeAI.intro')
+                      }} />
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: t('detailedSections.humanDominance.edgeAI.sentryTowers')
+                      }} />
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
@@ -1306,43 +1284,12 @@ function App() {
                         <Target className="w-6 h-6 mr-3 text-red-400" />
                         {t('detailedSections.humanDominance.swarmCoordination.title')}
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.swarmCoordination.intro').split(/(\bDARPA's OFFSET program\b|\bPerdix-sværm test\b)/).map((part, index) => {
-                          if (part === "DARPA's OFFSET program") {
-                            return (
-                              <span key={index} className="text-green-400 font-semibold">
-                                DARPA's OFFSET program
-                              </span>
-                            );
-                          } else if (part === "Perdix-sværm test") {
-                            return (
-                              <span key={index} className="text-purple-400 font-semibold">
-                                Perdix-sværm test
-                              </span>
-                            );
-                          }
-                          return <span key={index}>{part}</span>;
-                        })}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.humanDominance.swarmCoordination.chineseCapabilities').split('Intelligent Precision Strike System').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <a 
-                                href="https://www.defenseone.com/threats/2025/03/new-products-show-chinas-quest-automate-battle/403387/" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-yellow-400 font-semibold hover:text-yellow-300 underline"
-                              >
-                                Intelligent Precision Strike System
-                              </a>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
-                      </p>
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
+                        __html: t('detailedSections.humanDominance.swarmCoordination.intro')
+                      }} />
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: t('detailedSections.humanDominance.swarmCoordination.chineseCapabilities')
+                      }} />
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
@@ -1350,54 +1297,15 @@ function App() {
                         <Brain className="w-6 h-6 mr-3 text-indigo-400" />
                         {t('detailedSections.humanDominance.oodaLoop.title')}
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.oodaLoop.intro').split('OODA-løkken').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-blue-400 font-semibold">
-                                OODA-løkken
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.oodaLoop.continuousDecision')}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.humanDominance.oodaLoop.speedBlitz').split('"algorithmic speed blitz"').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-red-400 font-semibold">
-                                "algorithmic speed blitz"
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
-                      </p>
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
+                        __html: t('detailedSections.humanDominance.oodaLoop.intro')
+                      }} />
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: t('detailedSections.humanDominance.oodaLoop.aiAdvantage')
+                      }} />
                     </div>
 
-                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                        <Shield className="w-6 h-6 mr-3 text-emerald-400" />
-                        {t('detailedSections.humanDominance.predictiveManeuver.title')}
-                      </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.predictiveManeuver.intro')}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.predictiveManeuver.scenarioGeneration')}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.humanDominance.predictiveManeuver.aiDueling')}
-                      </p>
-                    </div>
+
                   </div>
                 )}
 
@@ -1419,7 +1327,7 @@ function App() {
                               {part}
                               <span className="text-cyan-400 font-semibold">
                                 Prometheus Ultima
-                              </span>
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -1498,7 +1406,7 @@ function App() {
                           )
                         )}
                       </p>
-                    </div>
+                  </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
                       <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
