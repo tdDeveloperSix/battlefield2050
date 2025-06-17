@@ -237,5 +237,18 @@
         "content": "In the wake of the battle, NATO and other allies come together to ensure that a new \"Singularity Protocol\" becomes a priority – an agreement on how to shield the core of human sovereignty, even when machines fight. For even the victorious generals felt a touch of irrelevance on this day. The gradual transition from human to digital command has reached its extreme point: War has become the machines' domain. Humanity's challenge going forward will be to ensure that when machines now move out there in war's chaos on our behalf, it still happens in accordance with our values, our ethics – our humanity. Otherwise, we might win battles but risk losing ourselves."
       }
     }
+  },
+
+  "decisionWeight": {
+    "human": "human",
+    "ai": "AI",
+    "sections": {
+      "human-dominance": "Human Dominance",
+      "digital-integration": "Digital Integration", 
+      "autonomous-assistance": "Autonomous Assistance",
+      "hybrid-command": "Hybrid Command",
+      "machine-superiority": "Machine Superiority",
+      "singularity": "Singularity"
+    }
   }
 } 

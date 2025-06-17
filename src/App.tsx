@@ -12,6 +12,7 @@ import {
   Clock,
 } from 'lucide-react';
 import MobileZoomControls from './components/MobileZoomControls';
+import DecisionWeightBar from './components/DecisionWeightBar';
 
 
 interface TimelineSection {
@@ -1560,6 +1561,9 @@ function App() {
 
       {/* Mobile Zoom Controls */}
       <MobileZoomControls />
+
+      {/* Decision Weight Bar */}
+      <DecisionWeightBar activeSection={activeSection} />
 
     </div>
   );

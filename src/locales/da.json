@@ -162,6 +162,19 @@
     "description": "En fremskrivning af militær teknologi og dens indvirkning på fremtidens konflikter",
     "copyright": "2025 - Kamppladsens Digitale Revolution"
   },
+
+  "decisionWeight": {
+    "human": "menneske",
+    "ai": "AI",
+    "sections": {
+      "human-dominance": "Menneskelig Dominans",
+      "digital-integration": "Digital Integration", 
+      "autonomous-assistance": "Autonom Assistance",
+      "hybrid-command": "Hybrid Kommando",
+      "machine-superiority": "Maskinel Overlegenhed",
+      "singularity": "Singularitet"
+    }
+  },
   
   "heroIntro": {
     "ghostFleet": {
