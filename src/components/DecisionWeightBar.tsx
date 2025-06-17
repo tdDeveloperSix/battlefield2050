@@ -27,8 +27,8 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
   }), []);
 
   useEffect(() => {
-    // Only show bar when we're past "human-dominance" section
-    const shouldShow = Boolean(activeSection && activeSection !== 'human-dominance' && sectionWeights[activeSection]);
+    // Show bar starting from "human-dominance" section
+    const shouldShow = Boolean(activeSection && sectionWeights[activeSection]);
     setIsVisible(shouldShow);
   }, [activeSection, sectionWeights]);
 
