@@ -11,7 +11,7 @@ import {
   CheckCircle,
   Clock,
 } from 'lucide-react';
-import MobileZoomControls from './components/MobileZoomControls';
+
 import DecisionWeightBar from './components/DecisionWeightBar';
 
 
@@ -192,10 +192,10 @@ function App() {
       </div>
 
       {/* Language Switcher */}
-      <div className="fixed top-4 right-4 z-50">
+      <div className="fixed top-6 right-6 z-50">
         <button
           onClick={() => i18n.changeLanguage(i18n.language === 'da' ? 'en' : 'da')}
-          className="px-3 py-2 bg-slate-800/80 backdrop-blur-sm border border-slate-600 rounded-lg text-white hover:bg-slate-700/80 transition-all duration-300 text-sm font-medium"
+          className="px-4 py-2 bg-slate-800/90 backdrop-blur-sm border border-slate-600 rounded-lg text-white hover:bg-slate-700/90 transition-all duration-300 text-sm font-medium shadow-lg"
         >
           {i18n.language === 'da' ? 'EN' : 'DA'}
         </button>
@@ -1558,9 +1558,6 @@ function App() {
           </p>
         </div>
       </footer>
-
-      {/* Mobile Zoom Controls */}
-      <MobileZoomControls />
 
       {/* Decision Weight Bar */}
       <DecisionWeightBar activeSection={activeSection} />
