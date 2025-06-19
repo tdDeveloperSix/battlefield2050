@@ -192,7 +192,7 @@ function App() {
       </div>
 
       {/* Language Switcher */}
-      <div className="fixed top-16 right-6 z-50">
+      <div className="fixed top-18 right-6 z-50">
         <button
           onClick={() => i18n.changeLanguage(i18n.language === 'da' ? 'en' : 'da')}
           className="px-4 py-2 bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-lg text-white/80 hover:bg-slate-700/70 hover:text-white transition-all duration-300 text-sm font-medium shadow-lg"
