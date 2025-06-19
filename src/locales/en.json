@@ -116,17 +116,17 @@
         "speedMantra": "\"Speed kills\" was redefined: it was no longer the speed of projectiles or vehicles that was decisive, but the speed of decision-making. In this new reality, human reflection and deliberation were seen as dangerous delays rather than valuable contributions."
       },
       "raceLogic": {
-        "title": "Race Logic and Escalation Spiral",
-        "intro": "Once one country achieved AI superiority, others were forced to follow suit or accept permanent inferiority. This created an escalation spiral where each technological advance required an even greater countermove.",
-        "editorRole": "Humans were gradually reduced to \"editors\" of AI decisions – they could edit, adjust, or reject, but rarely improve the proposed actions. AI systems became so sophisticated that human interference often degraded rather than improved the outcome.",
-        "finalGame": "Decision parity was the starting shot for the final game: a world where military power was defined by algorithmic sophistication rather than human expertise. The countries that mastered this transition first would shape the geopolitical landscape of the future."
+        "title": "Race Logic and the First Escalation Spiral",
+        "intro": "As soon as the Ukraine war showed that even a 20% AI share could turn the tide of battle, the race became self-reinforcing: if one country moved just one step ahead, rivals had to copy or accept strategic inferiority. Each breakthrough – a faster kill-chain, a sharper logistics network – triggered an even more expensive countermove, and the spiral spun faster with each passing month.",
+        "editorRole": "In the field, this meant that officers now primarily functioned as editors. They corrected typos in AI-generated OPLANs, adjusted a few ethical parameters – but discovered that their own \"improvements\" often made the plan slower or less precise. It was the first time humans felt the cold logic of machine overmatch: the more complex the problem became, the more clearly human hand-trembling showed through.",
+        "finalGame": "Decision parity had thus been merely the starting shot. Now the overmatch engine systematically pulled decision time away from humans. And with the speed the spiral had already gained in 2028-29, the next phase lay ahead: Autonomous Assistance (2030-2035) – the period where AI no longer just suggests, but begins to act independently, while we only intervene if something goes wrong."
       }
     },
     "autonomousAssistance": {
       "oodaToStream": {
         "title": "From OODA Loop to Continuous Decision Stream",
-        "intro": "With AI's arrival, many of the classic paradigms for command and decision-making dissolve. John Boyd's famous OODA loop (Observe – Orient – Decide – Act) has long been a cornerstone in understanding military decision tempo. But when decisions are made by neural networks in microseconds, the OODA loop becomes more of a theoretical shadow than a practical model. We see a paradigm shift from the cyclical decision process to a continuous stream of neural output.",
-        "continuousFlow": "In practice, this means that the decision mechanics of war go from being episodic – where humans alternately observe and act – to being permanently fluid. AIs observe constantly via sensors, orient constantly through data fusion and pattern recognition, decide constantly by optimizing objective functions, and act constantly through networked effectors. The old sequence melts together into one."
+        "intro": "John Boyd's classic OODA loop – Observe, Orient, Decide, Act – was long the gospel of rapid command: whoever could complete the circle fastest won. But the moment neural networks began making choices in microseconds, the loop became a dusty blackboard drawing. AI doesn't run in circles; it flows like a river. Sensors feed the model continuously, data fusion happens in real-time, the objective function is optimized constantly, and effectors adjust course millisecond by millisecond.",
+        "continuousFlow": "The result is no longer a sequential observe-think-act process, but a permanent decision stream where all four OODA phases flow together into one incessant data pulse. In practice, this means that the decision mechanics of war go from being episodic – where humans alternately observe and act – to being permanently fluid. The old sequence melts together into one."
       },
       "judgmentToParameters": {
         "title": "From Judgment to Parameterization",
@@ -139,16 +139,16 @@
         "intro": "The classic command headquarters could in the future just as well be a server farm full of AI models as a building full of officers. The central decision nodes in the network might be neural networks rather than sharp staff officers with maps. The paradigm shift can be compared to the transition from analog to digital processing: Where one previously saw command and control as a series of discrete steps (the OODA loop), one now sees a self-adjusting system that constantly balances toward the goal without stopping."
       },
       "neuralInterfaces": {
-        "title": "Neural Interfaces and the Speed of Thought",
-        "intro": "An important element is also the integration of neural interfaces – perhaps not in 2025, but eventually. If one imagines a future where human soldiers or leaders are equipped with brain-computer connections, intentions and decisions can flow directly from the human brain to the machine without going through language or writing.",
-        "brainComputer": "Already today, experiments are being conducted with brain-computer interface technologies in both civilian and military contexts. In a command context, this would mean that a leader could potentially \"think\" an order or reaction, which would then be read by the AI and processed immediately. While this sounds futuristic, it illustrates the direction: The medium of command shifts from speech and text to data and neural signals.",
-        "continuousPipeline": "The OODA loop – which rested on an assumption of a human observer/decision-maker – thus becomes an abstraction. Instead, we might have a \"Continuous Observe-Orient-Decide-Act pipeline\" driven by machines, where humans only add adjustments occasionally."
+        "title": "Neural interfaces – command at the speed of thought (2030-2035)",
+        "intro": "By the early 2030s, the first operational brain-computer interfaces have entered the command bridge. Test subjects in the USA and China now wear a thin, skin-friendly electrode cable in their helmet lining; signals are translated by an onboard AI into digital commands before the soldier can open their mouth on the radio. The commander's intention – \"flank right\", \"kill the jammer\" – flows as raw data vectors directly into the network, where algorithms immediately translate them into action.",
+        "brainComputer": "The consequence is that the very medium of command slides from speech and movements to neuron packets. The old OODA loop, which assumed sequential human observation and decision-making, is reduced to a thin correction layer: humans adjust goals and ethics, while machines deliver a continuous Observe-Orient-Decide-Act pipeline in millisecond cycles.",
+        "continuousPipeline": "We still write order fragments for the archive's sake – but the battlefield's actual language is now electrical patterns that travel at the speed of thought."
       },
       "fogOfAutomation": {
         "title": "The Fog of Automation",
-        "intro": "The paradigm shift also carries the danger that humans lose overview. An AI's decision logic, especially for complex neural networks, is often opaque even to its programmers (\"black box problem\"). When decisions are made so quickly and continuously, what one might call \"the fog of automation\" arises.",
-        "newFog": "Just as Clausewitz spoke of the fog of war due to incomplete information, we might get a new fog consisting of our limited ability to understand why the AI does what it does in real-time. Command in the age of algorithms therefore requires new trust mechanisms and new ways to verify that neural outputs align with the overall intentions and ethical constraints that humans have defined.",
-        "controlRedefined": "In other words, we must rethink the concept of control in C2 (Command and Control): Control becomes less micromanagement and more oversight that the system stays within the right policies."
+        "intro": "When algorithms make thousands of decisions per second, the logic behind each micro-action becomes opaque, even to their creators. This \"fog of automation\" is the 2030s' answer to Clausewitz's \"fog of war\": not a lack of data, but a lack of insight into why the machine chooses as it does. Therefore, the concept of control in C2 shifts from micromanagement to political oversight: humans frame objectives, ethics, and risk thresholds, while AI solves the details itself.",
+        "newFog": "But precisely because no single brain can follow the decision stream, the period 2035-2040 requires something new – a Hybrid Command, where digital operations officers build plans, and living commanders only edit, weigh, and certify that the algorithm stays within the guardrails.",
+        "controlRedefined": "The next chapter shows how this division of labor becomes standard, and how brigades learn to wage war in the shadow of a machine they cannot fully comprehend – but must nevertheless trust."
       }
     },
     "hybridCommand": {

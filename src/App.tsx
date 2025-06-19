@@ -544,11 +544,7 @@ function App() {
                         {t('detailedSections.digitalIntegration.gradualDominance.title')}
                       </h4>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        {t('detailedSections.digitalIntegration.gradualDominance.intro').split('FAC')[0]}
-                        <span className="text-cyan-400 font-semibold">
-                          FAC (Forward Air Controller)
-                        </span>
-                        {t('detailedSections.digitalIntegration.gradualDominance.intro').split('FAC')[1]?.replace(' (Forward Air Controller)', '') || t('detailedSections.digitalIntegration.gradualDominance.intro').split('FAC (Forward Air Controller)')[1]}
+                        {t('detailedSections.digitalIntegration.gradualDominance.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         {t('detailedSections.digitalIntegration.gradualDominance.complexTasks')}
@@ -618,12 +614,7 @@ function App() {
                         {t('detailedSections.digitalIntegration.raceLogic.editorRole')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        {t('detailedSections.digitalIntegration.raceLogic.finalGame').split('Beslutningsparitet var startskuddet')[0]}{' '}
-                        <span className="text-purple-400 font-semibold">
-                          {t('detailedSections.digitalIntegration.raceLogic.finalGame').includes('Beslutningsparitet var startskuddet') 
-                            ? 'Beslutningsparitet var startskuddet; overmatch bliver motoren, der driver os mod en fremtid hvor maskinen ubestridt regerer slagmarken.'
-                            : 'Decision parity was the starting shot; overmatch becomes the engine that drives us toward a future where the machine undisputedly rules the battlefield.'}
-                        </span>
+                        {t('detailedSections.digitalIntegration.raceLogic.finalGame')}
                       </p>
                     </div>
                   </div>
@@ -650,10 +641,7 @@ function App() {
                         {t('detailedSections.autonomousAssistance.oodaToStream.intro').split('OODA-loop')[1] || t('detailedSections.autonomousAssistance.oodaToStream.intro').split('OODA loop')[1]}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.oodaToStream.continuousFlow').split('Den gamle sekvens smelter sammen til ét')[0] || t('detailedSections.autonomousAssistance.oodaToStream.continuousFlow').split('The old sequence melts together into one')[0]}
-                        <span className="text-purple-400 font-semibold">
-                          {t('detailedSections.autonomousAssistance.oodaToStream.continuousFlow').includes('Den gamle sekvens smelter sammen til ét') ? 'Den gamle sekvens smelter sammen til ét.' : 'The old sequence melts together into one.'}
-                        </span>
+                        {t('detailedSections.autonomousAssistance.oodaToStream.continuousFlow')}
                       </p>
                     </div>
 
@@ -695,25 +683,13 @@ function App() {
                         {t('detailedSections.autonomousAssistance.neuralInterfaces.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.neuralInterfaces.intro').split('neurale interfaces')[0] || t('detailedSections.autonomousAssistance.neuralInterfaces.intro').split('neural interfaces')[0]}
-                        <span className="text-blue-400 font-semibold">
-                          {t('detailedSections.autonomousAssistance.neuralInterfaces.intro').includes('neurale interfaces') ? 'neurale interfaces' : 'neural interfaces'}
-                        </span>
-                        {t('detailedSections.autonomousAssistance.neuralInterfaces.intro').split('neurale interfaces')[1] || t('detailedSections.autonomousAssistance.neuralInterfaces.intro').split('neural interfaces')[1]}
+                        {t('detailedSections.autonomousAssistance.neuralInterfaces.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.neuralInterfaces.brainComputer').split('brain-computer interface-teknologier')[0] || t('detailedSections.autonomousAssistance.neuralInterfaces.brainComputer').split('brain-computer interface technologies')[0]}
-                        <span className="text-green-400 font-semibold">
-                          {t('detailedSections.autonomousAssistance.neuralInterfaces.brainComputer').includes('brain-computer interface-teknologier') ? 'brain-computer interface-teknologier' : 'brain-computer interface technologies'}
-                        </span>
-                        {t('detailedSections.autonomousAssistance.neuralInterfaces.brainComputer').split('brain-computer interface-teknologier')[1] || t('detailedSections.autonomousAssistance.neuralInterfaces.brainComputer').split('brain-computer interface technologies')[1]}
+                        {t('detailedSections.autonomousAssistance.neuralInterfaces.brainComputer')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.autonomousAssistance.neuralInterfaces.continuousPipeline').split('"Continuous Observe-Orient-Decide-Act pipeline"')[0]}
-                        <span className="text-purple-400 font-semibold">
-                          "Continuous Observe-Orient-Decide-Act pipeline"
-                        </span>
-                        {t('detailedSections.autonomousAssistance.neuralInterfaces.continuousPipeline').split('"Continuous Observe-Orient-Decide-Act pipeline"')[1]}
+                        {t('detailedSections.autonomousAssistance.neuralInterfaces.continuousPipeline')}
                       </p>
                     </div>
 
@@ -723,25 +699,13 @@ function App() {
                         {t('detailedSections.autonomousAssistance.fogOfAutomation.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.fogOfAutomation.intro').split('"black box problem"')[0]}
-                        <span className="text-red-400 font-semibold">
-                          "black box problem"
-                        </span>
-                        {t('detailedSections.autonomousAssistance.fogOfAutomation.intro').split('"black box problem"')[1].split('"the fog of automation"')[0]}
-                        <span className="text-yellow-400 font-semibold">
-                          "the fog of automation"
-                        </span>
-                        {t('detailedSections.autonomousAssistance.fogOfAutomation.intro').split('"the fog of automation"')[1]}
+                        {t('detailedSections.autonomousAssistance.fogOfAutomation.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         {t('detailedSections.autonomousAssistance.fogOfAutomation.newFog')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.autonomousAssistance.fogOfAutomation.controlRedefined').split('C2 (Command and Control)')[0]}
-                        <span className="text-cyan-400 font-semibold">
-                          C2 (Command and Control)
-                        </span>
-                        {t('detailedSections.autonomousAssistance.fogOfAutomation.controlRedefined').split('C2 (Command and Control)')[1]}
+                        {t('detailedSections.autonomousAssistance.fogOfAutomation.controlRedefined')}
                       </p>
                     </div>
                   </div>

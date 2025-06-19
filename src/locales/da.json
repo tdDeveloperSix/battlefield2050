@@ -258,17 +258,17 @@
         "speedMantra": "\"Speed kills\" blev omdefineret: det var ikke længere hastigheden af projektiler eller køretøjer, der var afgørende, men hastigheden af beslutningstagning. I denne nye virkelighed blev menneskelig refleksion og overvejelse set som farlige forsinkelser snarere end værdifulde bidrag."
       },
       "raceLogic": {
-        "title": "Kapløbets Logik og Eskalationsspiralen",
-        "intro": "Når først ét land opnåede AI-overlegenhed, blev andre tvunget til at følge efter eller acceptere permanent underlegenhed. Dette skabte en eskalationsspiral, hvor hvert teknologiske fremskridt krævede et endnu større modtræk.",
-        "editorRole": "Mennesker blev gradvist reduceret til \"redaktører\" af AI-beslutninger – de kunne redigere, justere eller afvise, men sjældent forbedre de foreslåede handlinger. AI-systemerne blev så sofistikerede, at menneskelig indblanding ofte forringede snarere end forbedrede resultatet.",
-        "finalGame": "Beslutningsparitet var startskuddet til det endelige spil: en verden hvor militær magt blev defineret af algoritmisk sofistikering snarere end menneskelig ekspertise. De lande, der mestrede denne overgang først, ville forme fremtidens geopolitiske landskab."
+        "title": "Kapløbets Logik og den Første Eskalationsspiral",
+        "intro": "Så snart Ukraine-krigen viste, at selv en 20 % AI-andel kunne vende slagets gang, blev kapløbet selvforstærkende: hvis ét land rykkede bare ét skridt foran, måtte rivalerne kopiere eller acceptere strategisk mindrevær. Hvert gennembrud – en hurtigere kill-chain, et skarpere logistik-net – udløste et endnu dyrere modtræk, og spiralen snurrede hurtigere for hver måned.",
+        "editorRole": "I felten betød det, at officerer nu primært fungerede som redaktører. De rettede stavefejl i AI-genererede OPLAN'er, justerede et par etiske parametre – men opdagede, at egne \"forbedringer\" ofte gjorde planen langsommere eller mindre præcis. Det var første gang, mennesket mærkede den kolde logik i maskinens overmatch: jo mere komplekst problemet blev, desto tydeligere faldt den menneskelige hænderysten igennem.",
+        "finalGame": "Beslutningsparitet havde altså blot været startskuddet. Nu trak overmatch-motoren systematisk beslutningstid væk fra mennesker. Og med den fart, spiralen allerede havde taget i 2028-29, lå næste fase lige for: Autonom Assistance (2030-2035) – perioden hvor AI ikke nøjes med at foreslå, men begynder at handle selv, mens vi kun griber ind, hvis noget går galt."
       }
     },
     "autonomousAssistance": {
       "oodaToStream": {
-        "title": "Fra OODA-løkken til Kontinuerlig Beslutningsstrøm",
-        "intro": "Med AI's indtog opløses mange af de klassiske paradigmer for føring og beslutningstagning. John Boyds berømte OODA-loop (Observe – Orient – Decide – Act) har længe været en hjørnesten i forståelsen af militær beslutningstempo. Men når beslutninger træffes af neurale netværk i mikrosekunder, bliver OODA-løkken mere en teoretisk skygge end en praktisk model. Vi ser et paradigmeskift fra den cykliske beslutningsproces til en kontinuerlig strøm af neuralt output.",
-        "continuousFlow": "I praksis betyder det, at krigens beslutningsmekanik går fra at være episodisk – hvor mennesker skiftevis observerer og handler – til at være permanent flydende. AI'er observerer konstant via sensorer, orienterer sig konstant gennem datafusion og mønstergenkendelse, beslutter konstant ved at optimere mål-funktioner og handler konstant gennem netværkede effektorer. Den gamle sekvens smelter sammen til ét."
+        "title": "Fra OODA-Loop til Kontinuerlig Beslutningsstrøm",
+        "intro": "John Boyds klassiske OODA-loop – Observe, Orient, Decide, Act – var længe selve evangeliet for hurtig føring: den, der kunne gennemløbe cirklen hurtigst, vandt. Men i det øjeblik neurale netværk begyndte at træffe valg på mikro­sekunder, blev løkken en støvet tavletegning. AI'en kører ikke i cirkler; den løber som en flod. Sensorerne fodrer modellen uafbrudt, datafusionen sker i realtid, målfunktionen optimeres kontinuerligt, og effektorerne justerer kursen millisekund for millisekund.",
+        "continuousFlow": "Resultatet er ikke længere en sekventiel observer-tænk-handl-proces, men en permanent beslutningsstrøm, hvor alle fire OODA-faser flyder sammen til ét ustandseligt datapuls. I praksis betyder det, at krigens beslutningsmekanik går fra at være episodisk – hvor mennesker skiftevis observerer og handler – til at være permanent flydende. Den gamle sekvens smelter sammen til ét."
       },
       "judgmentToParameters": {
         "title": "Fra Dømmekraft til Parametrisering",
@@ -281,16 +281,16 @@
         "intro": "Det klassiske førerhovedkvarter kan i fremtiden lige så vel være en serverfarm fuld af AI-modeller som en bygning fuld af officerer. De centrale beslutningsnoder i netværket er måske neuronale netværk snarere end skarpsindige stabsofficerer med landkort. Paradigmeskiftet kan sammenlignes med overgangen fra analog til digital behandling: Hvor man før så kommando og kontrol som en serie af diskrete trin (OODA-løkken), ser man nu et selvjusterende system, der hele tiden balancerer mod målet uden stop."
       },
       "neuralInterfaces": {
-        "title": "Neurale Interfaces og Tankens Hastighed",
-        "intro": "Et vigtigt element er også integrationen af neurale interfaces – måske ikke i 2025, men på sigt. Hvis man forestiller sig en fremtid, hvor menneskelige soldater eller ledere er udstyret med hjerne-computer-forbindelser, kan intentioner og beslutninger flyde direkte fra den menneskelige hjerne til maskinen uden at gå vejen gennem sprog eller skrift.",
-        "brainComputer": "Allerede i dag eksperimenteres med brain-computer interface-teknologier i både civile og militære sammenhænge. I en kommando-sammenhæng ville det betyde, at en fører potentielt kunne \"tænke\" en ordre eller reaktion, som så aflæses af AI'en og behandles øjeblikkeligt. Selvom dette lyder futuristisk, illustrerer det retningen: Kommandoens medie skifter fra tale og tekst til data og neurale signaler.",
-        "continuousPipeline": "OODA-løkken – som hvilede på en antagelse om en menneskelig observatør/beslutningstager – bliver dermed en abstraktion. I stedet har vi måske en \"Continuous Observe-Orient-Decide-Act pipeline\" drevet af maskiner, hvor mennesker kun tilfører justeringer i ny og næ."
+        "title": "Neurale interfaces – kommando med tankens hastighed (2030-2035)",
+        "intro": "I begyndelsen af 30'erne er de første operative hjerne-computer-grænseflader trådt ind på kommandobroen. Test-personer i USA og Kina bærer nu et tyndt, hudvenligt elektrodenkabel i hjelmens foring; signalerne oversættes af en onboard-AI til digitale kommandoer, før soldaten når at åbne munden på radioen. Førerens intention – \"flankér højre\", \"sluk jammeren\" – strømmer som rå datavektorer direkte ind i netværket, hvor algoritmerne straks omsætter dem til handling.",
+        "brainComputer": "Konsekvensen er, at selve mediet for kommando glider fra tale og bevægelser til neuron-pakker. Den gamle OODA-loop, der antog sekventiel menneskelig observation og beslutning, reduceres til et tyndt korrektur­lag: mennesker justerer mål og etik, mens maskiner leverer en kontinuerlig Observe-Orient-Decide-Act-pipeline i millisekundcyklus.",
+        "continuousPipeline": "Vi skriver stadig ordre-fragmenter for arkivets skyld – men slagmarkens faktiske sprog er nu elektriske mønstre, der rejser med tankens hastighed."
       },
       "fogOfAutomation": {
         "title": "Automatiseringens Tåge",
-        "intro": "Paradigmeskiftet rummer også faren for, at mennesket mister overblikket. En AI's beslutningslogik, især for komplekse neurale netværk, er ofte uigennemsigtig selv for dens programmører (\"black box problem\"). Når beslutninger tages så hurtigt og kontinuerligt, opstår det, man kan kalde \"the fog of automation\".",
-        "newFog": "Lige som Clausewitz talte om krigens tåge pga. ufuldstændig information, kan vi få en ny tåge bestående af vores begrænsede evne til at forstå, hvorfor AI'en gør, som den gør, i realtid. Kommando i algoritmens tidsalder kræver derfor nye tillidsmekanismer og nye måder at verificere, at neurale output stemmer overens med de overordnede intentioner og etiske begrænsninger, menneskene har defineret.",
-        "controlRedefined": "Vi skal med andre ord gentænke kontrol-begrebet i C2 (Command and Control): Kontrol bliver mindre mikrostyring og mere opsyn med, at systemet holder sig inden for de rigtige politikker."
+        "intro": "Når algoritmerne træffer tusinder af beslutninger i sekundet, bliver logikken bag hver mikrohandling uigennemsigtig, selv for deres skabere. Denne \"fog of automation\" er 2030'ernes svar på Clausewitz' \"fog of war\": ikke mangel på data, men mangel på indblik i, hvorfor maskinen vælger, som den gør. Derfor skifter kontrol­begrebet i C2 fra mikrostyring til politisk opsyn: mennesket indrammer målsætning, etik og risikotærskler, mens AI'en selv løser detaljerne.",
+        "newFog": "Men netop fordi ingen enkelt hjerne kan følge beslutningsstrømmen, kræver perioden 2035-2040 noget nyt – en Hybrid Kommando, hvor digitale operations­officerer bygger planer, og levende chefer kun redigerer, vægter og certificerer, at algoritmen holder sig inden for rækværket.",
+        "controlRedefined": "Det næste kapitel viser, hvordan denne arbejdsdeling bliver standard, og hvordan brigader lærer at føre krig i skyggen af en maskine, de ikke helt kan gennemskue – men alligevel må stole på."
       }
     },
     "hybridCommand": {
