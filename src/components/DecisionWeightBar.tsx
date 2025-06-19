@@ -43,9 +43,17 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
     return t(`decisionWeight.sections.${sectionId}`);
   };
 
+  const getSectionDescription = (sectionId: string) => {
+    return t(`decisionWeight.descriptions.${sectionId}`);
+  };
+
   const currentSectionTitle = activeSection && sectionWeights[activeSection] 
     ? getSectionTitle(activeSection)
     : getSectionTitle('human-dominance');
+
+  const currentSectionDescription = activeSection && sectionWeights[activeSection] 
+    ? getSectionDescription(activeSection)
+    : getSectionDescription('human-dominance');
 
   return (
     <div 
@@ -103,10 +111,10 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
           
           <div className="text-slate-400 text-center flex-1 mx-4">
             <span className="hidden sm:inline">
-              AI overtager gradvist beslutningsprocessen
+              {currentSectionDescription}
             </span>
             <span className="sm:hidden">
-              AI gradvis overtagelse
+              {currentSectionDescription}
             </span>
           </div>
           

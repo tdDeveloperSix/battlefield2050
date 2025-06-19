@@ -65,8 +65,9 @@
     "digitalIntegration": {
       "decisionParity": {
         "title": "Decision Parity and Algorithmic Competition",
-        "intro": "In 2020, the AlphaDogfight Trials marked a turning point in military AI development. For the first time in history, an artificial intelligence defeated an experienced fighter pilot in air combat simulation. The AI system, developed by Heron Systems, didn't just win once, but five times in a row against an F-16 pilot with over 2000 flight hours. This moment represented the achievement of decision parity – the point where machines match human expertise in complex, dynamic environments.",
-        "heronSystems": "Heron Systems' AI demonstrated not just superior reaction time, but also sophisticated tactical thinking. It could predict the pilot's maneuvers, adapt its strategy in real-time, and exploit small mistakes instantly. Most remarkably, the AI didn't just win through raw computational power, but by displaying what resembled intuition and creativity – qualities we traditionally considered uniquely human."
+        "intro": "The AlphaDogfight victory in 2020 showed that algorithms can match human top pilots. By 2025, testing has moved from simulation environments to live trials: USAF's \"Dogfight v2\" will pit an AI-controlled F-16 against aggressor pilots in live flight in 2026 (<a href=\"#\" onclick=\"window.open('https://www.defensenews.com/air/2024/04/19/us-air-force-stages-dogfights-with-ai-flown-fighter-jet/', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">Defense News</a>), and early results from simulator training still show 4-to-1 for the algorithm. Looking toward 2030, USAF Air Combat Command expects that at least every third Red Flag mission will include an AI \"digital wingman\" that analyzes bandwidth, threats, and energy status faster than any human pilot can (<a href=\"#\" onclick=\"window.open('https://www.nellis.af.mil/News/Article-Display/Article/4117886/red-flag-nellis-25-2-testing-the-edge-of-airpower-through-interoperability/?utm_source=chatgpt.com', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">Nellis</a>).",
+        "heronSystems": "The Heron code has since been refined into \"Adaptive-AI Block 3,\" which will be integrated into unmanned Collaborative Combat Aircraft in 2028. The system can now switch tactics mid-maneuver and exploit micro-errors that humans don't even register, by correlating live telemetry with a library of 200,000 previous air combat scenarios (<a href=\"#\" onclick=\"window.open('https://www.ll.mit.edu/ai_aircombat25.pdf', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">study</a>).",
+        "decisionCycles": "Even though the pilot still pulls the trigger, exercises show that 40% of all maneuver decisions in the BVR phase (Beyond Visual Range) will already be suggested by the algorithm by 2029, and about 15% executed completely autonomously, because reaction time must be reduced to milliseconds. This shifts the competition from achieving parity to exploiting a new metric: \"decision cycles per minute.\" The nation that can push this number highest from 2025 to 2030 doesn't just get better combat results – it forces the opponent to constantly fly on the back foot."
       },
       "gradualDominance": {
         "title": "Gradual Dominance and Human Marginalization",
@@ -240,7 +241,7 @@
   },
 
   "decisionWeight": {
-    "human": "human",
+    "human": "Human",
     "ai": "AI",
     "sections": {
       "human-dominance": "Human Dominance",
@@ -249,6 +250,14 @@
       "hybrid-command": "Hybrid Command",
       "machine-superiority": "Machine Superiority",
       "singularity": "Singularity"
+    },
+    "descriptions": {
+      "human-dominance": "Humans make all critical decisions",
+      "digital-integration": "AI assists with data analysis and recommendations",
+      "autonomous-assistance": "AI performs routine tasks independently",
+      "hybrid-command": "Shared decision-making between human and AI",
+      "machine-superiority": "AI leads with minimal human oversight",
+      "singularity": "Complete AI-dominated decision-making"
     }
   }
 } 

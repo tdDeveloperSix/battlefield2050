@@ -1352,7 +1352,7 @@ function App() {
                               {part}
                               <span className="text-orange-400 font-semibold">
                                 "fail-safe protocols"
-                              </span>
+                        </span>
                             </span>
                           ) : (
                             <span key={index}>{part}</span>
@@ -1398,7 +1398,7 @@ function App() {
                           index === 0 ? (
                             <span key={index}>
                               {part}
-                              <span className="text-blue-400 font-semibold">
+                        <span className="text-blue-400 font-semibold">
                                 kvante-link
                               </span>
                             </span>
@@ -1440,9 +1440,9 @@ function App() {
                           ) : index === 1 ? (
                             <span key={index}>
                               {part.split('Artificial General Intelligence')[0]}
-                              <span className="text-red-400 font-semibold">
+                        <span className="text-red-400 font-semibold">
                                 Artificial General Intelligence
-                              </span>
+                        </span>
                               {part.split('Artificial General Intelligence')[1]}
                             </span>
                           ) : (

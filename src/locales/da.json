@@ -164,7 +164,7 @@
   },
 
   "decisionWeight": {
-    "human": "menneske",
+    "human": "Menneskelig",
     "ai": "AI",
     "sections": {
       "human-dominance": "Menneskelig Dominans",
@@ -173,6 +173,14 @@
       "hybrid-command": "Hybrid Kommando",
       "machine-superiority": "Maskinel Overlegenhed",
       "singularity": "Singularitet"
+    },
+    "descriptions": {
+      "human-dominance": "Mennesker træffer alle kritiske beslutninger",
+      "digital-integration": "AI assisterer med dataanalyse og anbefalinger",
+      "autonomous-assistance": "AI udfører rutineopgaver selvstændigt",
+      "hybrid-command": "Delt beslutningstagning mellem menneske og AI",
+      "machine-superiority": "AI leder med minimal menneskelig oversight",
+      "singularity": "Fuldstændig AI-domineret beslutningstagning"
     }
   },
   
@@ -220,8 +228,9 @@
     "digitalIntegration": {
       "decisionParity": {
         "title": "Beslutningsparitet og Algoritmisk Konkurrence",
-        "intro": "I 2020 markerede AlphaDogfight Trials et vendepunkt i militær AI-udvikling. For første gang i historien besejrede en kunstig intelligens en erfaren kampflyver i luftkamp-simulering. AI-systemet, udviklet af Heron Systems, vandt ikke bare én gang, men fem gange i træk mod en F-16 pilot med over 2000 flytimer. Dette øjeblik repræsenterede opnåelsen af beslutningsparitet – det punkt hvor maskiner matcher menneskelig ekspertise i komplekse, dynamiske miljøer.",
-        "heronSystems": "Heron Systems' AI demonstrerede ikke blot overlegen reaktionstid, men også sofistikeret taktisk tænkning. Den kunne forudsige pilotens manøvrer, tilpasse sin strategi i realtid og udnytte små fejl øjeblikkeligt. Mest bemærkelsesværdigt var det, at AI'en ikke bare vandt gennem rå beregningskraft, men ved at udvise det, der lignede intuition og kreativitet – kvaliteter, vi traditionelt har betragtet som udelukkende menneskelige."
+        "intro": "AlphaDogfight-sejren i 2020 viste, at algoritmer kan matche menneskelige top­piloter. I 2025 er test rykket fra simulationsmiljøet til skarpe forsøg: USAF's \"Dogfight v2\" skal i 2026 lade en AI-styret F-16 mod aggressor­piloter i live flyvning (<a href=\"#\" onclick=\"window.open('https://www.defensenews.com/air/2024/04/19/us-air-force-stages-dogfights-with-ai-flown-fighter-jet/', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">Defense News</a>), og de første resultater fra simulatortræningen viser stadig 4-til-1 for algoritmen. Frem mod 2030 forventer USAF Air Combat Command, at mindst hver tredje Red-Flag-mission inkluderer en AI \"digital wingman\", som analyserer båndvidde, trusler og energistatus hurtigere end nogen menneskelig pilot kan (<a href=\"#\" onclick=\"window.open('https://www.nellis.af.mil/News/Article-Display/Article/4117886/red-flag-nellis-25-2-testing-the-edge-of-airpower-through-interoperability/?utm_source=chatgpt.com', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">Nellis</a>).",
+        "heronSystems": "Heron-koden er siden blevet finpudset til \"Adaptive-AI Block 3\", der i 2028 skal integreres i de ubemandede Collaborative Combat Aircraft. Systemet kan nu skifte taktik midt i en manøvre og udnytte mikrofejl, som mennesker slet ikke registrerer, ved at sammenholde live-telemetri med et bibliotek af 200.000 tidligere luftkamp­scenarier (<a href=\"#\" onclick=\"window.open('https://www.ll.mit.edu/ai_aircombat25.pdf', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">studie</a>).",
+        "decisionCycles": "Selv om piloten stadig trykker på aftrækkeren, viser øvelserne, at 40 % af alle manøvrebeslutninger i BVR-fasen (Beyond Visual Range) allerede i 2029 vil blive foreslået af algoritmen, og omkring 15 % udføres helt autonomt, fordi reaktionstiden skal ned i millisekunder. Dermed flytter konkurrencen fra at handle om at nå paritet til at udnytte en ny metrik: \"decision cycles per minute\". Den nation, der fra 2025 til 2030 kan skrue denne talserie højest op, får ikke bare bedre kampresultater – den tvinger modstanderen til konstant at flyve på bagkant."
       },
       "gradualDominance": {
         "title": "Gradvis Dominans og Menneskelig Marginalisering",
