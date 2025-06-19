@@ -182,7 +182,7 @@ function App() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white w-full max-w-full overflow-x-hidden">
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-slate-800 z-50">
         <div
@@ -192,10 +192,10 @@ function App() {
       </div>
 
       {/* Language Switcher */}
-      <div className="fixed top-18 right-6 z-50">
+      <div className="fixed top-24 right-4 z-50 sm:top-20 sm:right-6">
         <button
           onClick={() => i18n.changeLanguage(i18n.language === 'da' ? 'en' : 'da')}
-          className="px-4 py-2 bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-lg text-white/80 hover:bg-slate-700/70 hover:text-white transition-all duration-300 text-sm font-medium shadow-lg"
+          className="px-3 py-1.5 bg-slate-800/40 backdrop-blur-sm border border-slate-600/30 rounded-md text-white/60 hover:bg-slate-700/60 hover:text-white/90 hover:border-slate-500/50 transition-all duration-300 text-xs font-medium shadow-md sm:px-4 sm:py-2 sm:text-sm sm:rounded-lg"
         >
           {i18n.language === 'da' ? 'EN' : 'DA'}
         </button>
