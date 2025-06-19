@@ -16,6 +16,7 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
   const { t } = useTranslation();
   const [currentWeights, setCurrentWeights] = useState({ human: 80, ai: 20 });
   const [isVisible, setIsVisible] = useState(false);
+  const [lastValidSection, setLastValidSection] = useState<string | null>(null);
 
   const sectionWeights: SectionWeights = useMemo(() => ({
     'human-dominance': { human: 95, ai: 5 },
@@ -30,6 +31,7 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
     // Show bar starting from "human-dominance" section and keep it visible once shown
     if (activeSection && sectionWeights[activeSection]) {
       setIsVisible(true);
+      setLastValidSection(activeSection);
     }
   }, [activeSection, sectionWeights]);
 
@@ -48,13 +50,12 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
     return t(`decisionWeight.descriptions.${sectionId}`);
   };
 
-  const currentSectionTitle = activeSection && sectionWeights[activeSection] 
-    ? getSectionTitle(activeSection)
-    : getSectionTitle('human-dominance');
+  const displaySection = (activeSection && sectionWeights[activeSection]) 
+    ? activeSection 
+    : (lastValidSection || 'human-dominance');
 
-  const currentSectionDescription = activeSection && sectionWeights[activeSection] 
-    ? getSectionDescription(activeSection)
-    : getSectionDescription('human-dominance');
+  const currentSectionTitle = getSectionTitle(displaySection);
+  const currentSectionDescription = getSectionDescription(displaySection);
 
   return (
     <div 
