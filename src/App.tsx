@@ -222,89 +222,58 @@ function App() {
           <div className="max-w-5xl mx-auto mt-16 mb-16">
             <div className="grid gap-8 text-left">
               <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
+                <h3 className="text-lg font-semibold text-cyan-400 mb-4">
+                  {t('heroIntro.opening.header1')}
+                </h3>
                 <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  {t('heroIntro.ghostFleet.paragraph1').split('"Ghost Fleet"').map((part, index) => (
-                    index === 0 ? (
-                      <span key={index}>
-                        {part}
-                        <a 
-                          href="https://www.foxnews.com/tech/navy-to-test-ghost-fleet-attack-drone-boats-in-war-scenarios" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-blue-400 font-semibold hover:text-blue-300 underline"
-                        >
-                    "Ghost Fleet"
-                        </a>
-                      </span>
-                    ) : (
-                      <span key={index}>{part}</span>
-                    )
-                  ))}
+                  {t('heroIntro.opening.paragraph1')}
                 </p>
-                <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  {t('heroIntro.ghostFleet.paragraph2')}
+                <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                  {t('heroIntro.opening.paragraph2')}
+                </p>
+                
+                <h3 className="text-lg font-semibold text-cyan-400 mb-4">
+                  {t('heroIntro.opening.header2')}
+                </h3>
+                <p className="text-lg text-slate-300 leading-relaxed">
+                  {t('heroIntro.opening.paragraph3')}
                 </p>
               </div>
 
               <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  {t('heroIntro.projectMaven.paragraph1').split('Project Maven').map((part, index) => (
-                    index === 0 ? (
-                      <span key={index}>
-                        {part}
-                        <a 
-                          href="https://www.aviationtoday.com/2020/08/31/pentagon-building-foundation-al-enabled-unmanned-systems-future-conflicts/" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-purple-400 font-semibold hover:text-purple-300 underline"
-                        >
-                    Project Maven
-                        </a>
-                  </span>
-                    ) : (
-                      <span key={index}>{part}</span>
-                    )
-                  ))}
-                </p>
-                <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  {t('heroIntro.projectMaven.paragraph2')}
+                <p 
+                  className="text-lg text-slate-300 leading-relaxed mb-6"
+                  dangerouslySetInnerHTML={{ __html: t('heroIntro.editorial.paragraph1') }}
+                />
+                <p className="text-lg text-slate-300 leading-relaxed">
+                  {t('heroIntro.editorial.paragraph2')}
                 </p>
               </div>
 
               <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  {t('heroIntro.anduril.paragraph1').split('Anduril Industries').map((part, index) => (
-                    index === 0 ? (
-                      <span key={index}>
-                        {part}
-                        <a 
-                          href="https://www.defensenews.com/digital-show-dailies/ausa/2020/10/16/anduril-adapts-tech-to-detect-cruise-missiles-in-air-force-demo/" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-cyan-400 font-semibold hover:text-cyan-300 underline"
-                        >
-                    Anduril Industries
-                        </a>
-                      </span>
-                    ) : (
-                      <span key={index}>{part}</span>
-                    )
-                  ))}
+                <p className="text-lg text-slate-300 leading-relaxed mb-4">
+                  {t('heroIntro.waves.paragraph1')}
                 </p>
-                <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  {t('heroIntro.anduril.paragraph2')}
+                <p className="text-lg text-slate-300 leading-relaxed mb-4">
+                  {t('heroIntro.waves.paragraph2')}
                 </p>
-              </div>
-
-              <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  {t('heroIntro.integration.paragraph1')}
+                <p className="text-lg text-slate-300 leading-relaxed mb-4">
+                  {t('heroIntro.waves.paragraph3')}
                 </p>
-                <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  {t('heroIntro.integration.paragraph2')}
+                <p className="text-lg text-slate-300 leading-relaxed mb-4">
+                  {t('heroIntro.waves.paragraph4')}
+                </p>
+                <p className="text-lg text-slate-300 leading-relaxed mb-4">
+                  {t('heroIntro.waves.paragraph5')}
                 </p>
                 <p className="text-lg text-slate-300 leading-relaxed">
-                  {t('heroIntro.integration.paragraph3')}
+                  {t('heroIntro.waves.paragraph6')}
+                </p>
+              </div>
+
+              <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
+                <p className="text-lg text-slate-300 leading-relaxed">
+                  {t('heroIntro.transition.paragraph1')}
                 </p>
               </div>
 
@@ -449,17 +418,6 @@ function App() {
       {/* Timeline Section */}
       <section id="timeline" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Evolutionens Tidslinje
-            </h2>
-            <p className="text-lg sm:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
-              Følg transformationen af militære operationer gennem seks kritiske
-              faser, fra menneskelig dominans til total automation. Hver fase
-              repræsenterer et fundamentalt skift i hvordan krigsførelse
-              planlægges, udføres og kontrolleres.
-            </p>
-          </div>
 
           {getTimelineSections().map((section) => (
             <div

@@ -2,9 +2,35 @@
   "title": "The Digital Revolution of the Battlefield",
   "subtitle": "How Artificial Intelligence is Transforming Military Command and Control",
   "languageToggle": "Language",
-  "interactiveTimelineTitle": "Interactive Timeline",
-  "interactiveTimelineSubtitle": "Click on a phase to jump directly to the detailed content",
+  "interactiveTimelineTitle": "Evolution Timeline",
+  "interactiveTimelineSubtitle": "Follow the transformation of military operations through six critical phases, from human dominance to total automation. Each phase represents a fundamental shift in how warfare is planned, executed, and controlled.",
   "followDevelopment": "follow the development towards 2050",
+  
+  "heroIntro": {
+    "opening": {
+      "header1": "Bakhmut. 100417 Z MAR23",
+      "paragraph1": "A Ukrainian soldier taps a command on a tablet; two kilometers away, a Turkish Bayraktar drone launches a laser-guided bomb at a Russian artillery battery. The enemy's EW truck tries to jam the signal, but a Starlink connection removes the delay. In the brief explosion smoke that follows, we glimpse what would later be known as the phase shift: the first time an open, high-intensity war in Europe was controlled – not by generals' orders – but by algorithms, commercial satellites, and swarms of cheap commercial drones ordered on Alibaba.",
+      "paragraph2": "\"This is the beginning,\" mutters a NATO officer as the feed hits headquarters in Ramstein. And in Beijing, PLA observers note: \"If they can do it, so can we – and we can do it faster.\"",
+      "header2": "Ramstein Airbase. 130810 Z JUN50",
+      "paragraph3": "A streak of sunlight slides into the operations room at Ramstein. On the enormous wall screen runs a log showing 1.2 million live decisions per minute – all made by machines. The older colonel standing in the doorway with his coffee remembers a time when humans debated every single fire order. Today he merely inputs an ethical filter value into the system before stepping away from the screen. \"How in the world did we end up here?\" whispers a newly arrived lieutenant. The colonel nods toward the screen, where six color zones pulse like a timeline – six waves that gradually washed humans out of the driver's seat. Let me show you the journey, he says..."
+    },
+    "editorial": {
+      "paragraph1": "Before we dive deeper into the fictional narrative, here's a glimpse behind the scenes. In June 2025, ChatGPT o3's Deep Research was given one task: \"Show how AI is transforming the battlefield from 2020 to 2050.\" The model generated 91 targeted searches and found 29 relevant sources – from DARPA reports to Russian and Chinese white papers. Subsequently, I had Gemini Pro 2.5, Claude 4, and Grok 3 review the material to ensure consistency. My own role has been purely editorial: tightening the language, adjusting formatting, and binding the sources together into the narrative you're reading now. The design and format are inspired by the famous and quite frightening <a href=\"https://ai-2027.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-400 hover:text-blue-300 underline font-semibold\">AI-2027 story</a> that went viral in early 2025.",
+      "paragraph2": "Let's now continue the story..."
+    },
+    "waves": {
+      "paragraph1": "Wave 1: Human Dominance (2020-2025) In the beginning, the pilot and company commander ruled. AI was merely a clever tool: AlphaDogfight 2020 showed that the algorithm could beat a top pilot, but in 80% of all military planning, humans still typed the final command. Frontline systems like Project Maven filtered drone video – we still made the crucial choices ourselves.",
+      "paragraph2": "Wave 2: Digital Integration (2025-2030) FIRESTORM rolled into Iran, and the kill chain went from 20 minutes to 20 seconds. Sentry Towers tracked cruise missiles, and Forward Air Controllers simply clicked Approve. The share of machine-generated decisions grew to 20%, but humans were still the ones pulling the trigger.",
+      "paragraph3": "Wave 3: Autonomous Assistance (2030-2035) Unmanned Collaborative Combat Aircraft became standard on Red Flag missions. In the air, the algorithm suggested 40% of all BVR maneuvers; the pilot only said yes or no. In the army, ATLAS sent 9-Lines without radio. \"Human-on-the-loop\" became doctrine: we approved – the machine executed.",
+      "paragraph4": "Wave 4: Hybrid Command (2035-2040) Frontline AI began planning rather than just assisting. Brigade TOCs got \"digital operations officers\" that created draft operation plans in minutes. Officers now edited more than they wrote; half of tactical decisions came directly from the algorithm.",
+      "paragraph5": "Wave 5: Machine Superiority (2040-2045) Swarms of micro-drones paralyzed enemy assault columns before they were seen. AI closed the OODA loop in under one second. In multi-domain operations, human reaction time was simply too slow; we only set objectives and maximum casualty limits. The machine led, we monitored.",
+      "paragraph6": "Wave 6: Battlefield Singularity (2050) And here we stand now: 1.2 million autonomous micro-decisions per minute. Humans define ethics and morality. The rest is mathematics, driven by sensors, quantum links, and neural policies that adjust themselves as battles flow through data fibers."
+    },
+    "transition": {
+      "paragraph1": "The colonel touches the first color field of the timeline, and the projections spring to life as small interactive film clips playing around them."
+    }
+  },
+  
   "timeline": {
     "keyDevelopments": "Key Developments",
     "characteristics": "Characteristics",

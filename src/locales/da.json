@@ -3,8 +3,8 @@
   "subtitle": "Fra Menneskelig intuition til algoritmisk dominans",
   "description": "En fiktiv fortælling om fremtidens militære enheder og kommandostrukturer, hvor menneskelig beslutningstagning gradvist erstattes af digital og autonom intelligens.",
   
-  "interactiveTimelineTitle": "Interaktiv Tidslinje",
-  "interactiveTimelineSubtitle": "Klik på en fase for at springe direkte til det detaljerede indhold",
+  "interactiveTimelineTitle": "Evolutionens Tidslinje",
+  "interactiveTimelineSubtitle": "Følg transformationen af militære operationer gennem seks kritiske faser, fra menneskelig dominans til total automation. Hver fase repræsenterer et fundamentalt skift i hvordan krigsførelse planlægges, udføres og kontrolleres.",
   "followDevelopment": "Følg udviklingen frem mod 2050",
   
   "timeline": {
@@ -185,22 +185,27 @@
   },
   
   "heroIntro": {
-    "ghostFleet": {
-      "paragraph1": "Forestil dig en flåde af autonome fartøjer, der uden varsel angriber i flok – koordineret af algoritmer frem for admiraler. Dette scenarie er ikke længere science fiction. Allerede i slut-10'erne eksperimenterede amerikanske styrker med en såkaldt \"Ghost Fleet\" af ubemandede droner og skibe, som kunne operere koordineret og selvstændigt med minimal menneskelig indblanding.",
-      "paragraph2": "I et flådeforsøg blev sværme af små angrebsbåde sendt i simuleret kamp, netværket sammen for at overvåge, overrumple og angribe fjenden – mens menneskelige operatører holdt sig på sikker afstand. Avancerede algoritmer styrede disse fartøjer, så de kunne undgå kollisioner, dele sensorinformation og udføre kombinerede angreb, alt sammen uden kontinuerlig fjernstyring. \"Ghost Fleet\" blev et tidligt tegn på, at maskiner nu træder ind som med-kommandører på fremtidens hav – et spøgelse i maskinen, der varslede en større transformation af militær krigsførsel og lederskab."
+    "opening": {
+      "header1": "Bakhmut. 100417 Z MAR23",
+      "paragraph1": "En ukrainsk soldat knipser en kommando på en tablet; to kilometer væk kaster en tyrkisk Bayraktar-drone en laser­styret bombe mod et russisk artilleribatteri. Fjendens EW-lastbil forsøger at jamme signalet, men et Starlink-forbindelse fjerner forsinkelsen. I den korte efterfølgende eksplosionsrøg aner vi, hvad der senere vil blive kendt som fase-skiftet: første gang en åben, højintensiv krig i Europa blev styret – ikke af generalers order – men af algoritmer, kommercielle satellitter og sværme af billige kommercielle droner bestilt på Alibaba.",
+      "paragraph2": "\"Det her er begyndelsen,\" mumler en NATO-officer, mens feedet rammer hovedkvarteret i Ramstein. Og i Beijing noterer PLA-observatører: \"Hvis de kan, så kan vi – og vi kan gøre det hurtigere.\"",
+      "header2": "Ramstein Airbase. 130810 Z JUN50",
+      "paragraph3": "En stribe af solskin glider ind over operationsrummet i Ramstein. På den enorme vægskærm kører en log, der viser 1,2 million live-beslutninger pr. minut – alle truffet af maskiner. Den ældre oberst, som står i døren med sin kaffe, husker en tid, hvor mennesker diskuterede hver eneste ildordre. I dag nøjes han med at lægge en etisk filter­værdi ind i systemet, før han træder væk fra skærmen. \"Hvordan i alverden endte vi her?\" hvisker en nyankommet løjtnant. Obersten nikker mod skærmen, hvor seks farvezoner pulserer som en tidslinje – seks bølger, der skyllede mennesket gradvist ud af førersædet. Lad mig vise dig rejsen, siger han…"
     },
-    "projectMaven": {
-      "paragraph1": "I samme periode begyndte kunstig intelligens også at assistere menneskelige beslutningstagere i krigens informationsdomæne. Et kendt eksempel er Project Maven, Pentagons pionerprojekt for \"algoritmisk krigsførelse\" iværksat i 2017. Maven's formål var at anvende AI til at gennemtrawle dronevideooptagelser for at identificere fjendtlige mål hurtigere end trætte analytiker-øjne.",
-      "paragraph2": "Ved at automatisere den tidskrævende gennemsyn af \"full-motion video\" fra overvågningsdroner kunne Maven drastisk reducere den beslutningskompleksitet, der lå på efterretningsanalytikere, og forkorte den tid det tog at udpege trusler på slagmarken. Maven viste både AI'ens potentiale og dens daværende begrænsninger – de tidlige algoritmer leverede værdifulde hurtige detektioner, men fejlede også med falske alarmer og udfordringer i at skelne kombattanter fra civile. Alligevel var signalet klart: algoritmer kunne blive uvurderlige \"medhjælpere\" for den menneskelige fører ved at filtrere data og fremhæve det vigtige i tide."
+    "editorial": {
+      "paragraph1": "Inden vi dykker videre ind i den fiktive fortælling, får du lige et blik bag kulissen. I juni 2025 fik ChatGPT o3's Deep Research én opgave: \"Vis, hvordan AI forandrer kamppladsen fra 2020 til 2050.\" Modellen genererede 91 målrettede søgninger og fandt 29 relevante kilder – fra DARPA-rapporter til russiske og kinesiske hvidbøger. Efterfølgende lod jeg Gemini Pro 2.5, Claude 4 og Grok 3 gennemgå materialet for at sikre konsistens. Min egen rolle har været rent redaktionel: at stramme sproget, justere formatteringen og binde kilderne sammen til det narrativ, du læser nu. Design og format er inspireret af den berømte og ret skræmmende <a href=\"https://ai-2027.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-400 hover:text-blue-300 underline font-semibold\">AI-2027 fortælling</a>, som er gået viralt i starten af 2025.",
+      "paragraph2": "Lad os nu fortsætte historien.."
     },
-    "anduril": {
-      "paragraph1": "Sideløbende brød en ny generation af forsvarsteknologivirksomheder frem og udfordrede gamle doktriner for føring. Firmaer som Anduril Industries begyndte at levere systemer, hvor AI ikke blot var et analyseværktøj, men selve kernen i kommandosystemet. I et Air Force eksperiment med Advanced Battle Management System fungerede Andurils Lattice-software som hjernen, der autonomt samlede data fra radar, optiske sensorer og akustiske kilder – alt sammen i realtid ved frontlinjen.",
-      "paragraph2": "Systemet identificerede indkommende trusler (f.eks. krydsermissiler) og trak på machine learning for at spore dem, hvorefter en menneskelig operatør blot skulle bekræfte målet og godkende ildåbning. Hele processen fra sensor-detektion til skudordre blev således automatiseret lige op til det sidste tryk på aftrækkeren. Den menneskelige fører var rykket fra at være beslutningstager til at være overvåger, der kun skulle gribe ind, hvis maskinen tog fejl."
+    "waves": {
+      "paragraph1": "Bølge 1: Menneskelig dominans (2020-2025) I begyndelsen herskede piloten og kompagnichefen. AI var blot et klogt værktøj: AlphaDogfight 2020 viste, at algoritmen kunne slå en top­pilot, men i 80 % af al militær planlægning tastede mennesker stadig sidste kommando. Frontlinje-systemer som Project Maven filtrerede dronevideo – de afgørende valg traf vi selv.",
+      "paragraph2": "Bølge 2: Digital integration (2025-2030) FIRESTORM rullede ind i Iran, og kill-chain'en gik fra 20 minutter til 20 sekunder. Sentry Towers sporede krydsermissiler, og Forward Air Controllers klikkede blot Godkend. Andelen af maskin­genererede beslutninger voksede til 20 %, men mennesket var stadig den, der trykkede på aftrækkeren.",
+      "paragraph3": "Bølge 3: Autonom assistance (2030-2035) Ubemandede Collaborative Combat Aircraft blev standard på Red Flag missioner. I luften foreslog algoritmen 40 % af alle BVR-manøvrer; piloten sagde kun ja eller nej. I hæren sendte ATLAS 9-Lines uden radio. \"Human-on-the-loop\" blev doktrin: vi godkendte – maskinen udførte.",
+      "paragraph4": "Bølge 4: Hybrid kommando (2035-2040) Frontlinjens AI begyndte at planlægge frem for blot at assistere. Brigade-TOC fik \"digitale operations­officerer\", der skabte udkast til operationsplaner på minutter. Officererne redigerede nu mere end de skrev; halvdelen af taktiske beslutninger kom direkte fra algoritmen.",
+      "paragraph5": "Bølge 5: Maskinel overlegenhed (2040-2045) Sværme af mikrodroner lagde fjendtlige angrebskolonner lamme, før de blev set. AI lukkede OODA-loopet på under ét sekund. I multidomæne-operationer var menneskelig reaktionstid simpelthen for langsom; vi satte kun mål og maximum tabstal. Maskinen førte, vi overvågede.",
+      "paragraph6": "Bølge 6: Kamppladsens singularitet (2050) Og her står vi nu: 1,2 million autonome mikrobeslutninger i minuttet. Mennesket definerer etik og moral. Resten er matematik, drevet af sensorer, kvante-links og neurale politikker, der justerer sig selv, mens kampene glider gennem datafibrene."
     },
-    "integration": {
-      "paragraph1": "På alle niveauer begynder de militære enheder således at integrere digitale medbeslutningstagere. På gruppe- og delingsniveau ser vi \"menneske-maskine team\" med autonome droner og køretøjer i tæt samarbejde med soldaterne – droner fungerer som spejdere og \"loitering munition\", der selv finder og angriber mål, men stadig med en fører på jorden til at udstikke målet og rammerne.",
-      "paragraph2": "På bataljons- og brigadeniveau eksperimenteres der med AI-systemer som digitale rådgivere i TOC'en (Tactical Operations Center), der analyserer terrændata, egen enheds status og fjendebillede og foreslår dispositionsmuligheder på få sekunder. Selv på strategisk niveau er spirende digitale hjælpere på vej ind: algoritmer, der kan simulere et utal af scenarier og forudsige konsekvenserne af operationsplaner, hvilket giver generaler en hidtil uset beslutningsstøtte.",
-      "paragraph3": "Kort sagt: Den menneskelige fører er ikke afskaffet – endnu – men en digital skyggefører er trådt ind på scenen, klar til at overtage mange af de funktioner, som tidligere var forbeholdt mennesker."
+    "transition": {
+      "paragraph1": "Obersten berører tidslinjens første farvefelt, og projektionerne springer til live som små interaktive filmklip, der afspilles rundt om dem."
     }
   },
 
