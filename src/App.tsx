@@ -720,7 +720,7 @@ function App() {
                         {t('detailedSections.hybridCommand.auftragstaktik2.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.hybridCommand.auftragstaktik2.intro').split('auftragstaktik (opdragstaktik)').map((part, index) => (
+                        {t('detailedSections.hybridCommand.auftragstaktik2.intro').split('auftragstaktik').map((part, index) => (
                           index === 0 ? (
                             <span key={index}>
                               {part}
@@ -730,7 +730,7 @@ function App() {
                                 rel="noopener noreferrer"
                                 className="text-blue-400 font-semibold hover:text-blue-300 underline"
                               >
-                          auftragstaktik (opdragstaktik)
+                          auftragstaktik
                               </a>
                             </span>
                           ) : (
@@ -1469,6 +1469,24 @@ function App() {
             <p>
               {t('conclusion.paragraph3')}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-slate-900/30">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            {t('contact.title')}
+          </h2>
+          
+          <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+            <a 
+              href="mailto:battlefield2050@proton.me" 
+              className="text-lg sm:text-xl text-blue-400 hover:text-blue-300 transition-colors duration-200 font-mono"
+            >
+              {t('contact.email')}
+            </a>
           </div>
         </div>
       </section>

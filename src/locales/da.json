@@ -158,6 +158,11 @@
     "paragraph3": "Fremtiden vil kræve en balance mellem teknologisk kapacitet og menneskelig visdom - en balance der vil definere ikke kun hvordan vi fører krig, men hvordan vi bevarer freden."
   },
   
+  "contact": {
+    "title": "Kontakt",
+    "email": "battlefield2050@proton.me"
+  },
+  
   "footer": {
     "description": "En fremskrivning af militær teknologi og dens indvirkning på fremtidens konflikter",
     "copyright": "2025 - Kamppladsens Digitale Revolution"
@@ -296,7 +301,7 @@
     "hybridCommand": {
       "auftragstaktik2": {
         "title": "Auftragstaktik 2.0: Intention og Initiativ under Algoritmisk Føring",
-        "intro": "I over et århundrede har kerneprincipper i militær føring som førerens intention, undergivet initiativ og auftragstaktik (opdragstaktik) været hyldet især i vestlige doktriner. Disse idéer bygger på, at mennesker på alle niveauer – når de deler en fælles forståelse af målet – kan improvisere og træffe beslutninger selvstændigt i overensstemmelse med chefens hensigt. Hvordan transformeres disse principper, når føringsstrukturen bliver digital og algoritmer overtager mange funktioner?",
+        "intro": "I over et århundrede har kerneprincipper i militær føring som førerens intention, undergivet initiativ og auftragstaktik været hyldet især i vestlige doktriner. Disse idéer bygger på, at mennesker på alle niveauer – når de deler en fælles forståelse af målet – kan improvisere og træffe beslutninger selvstændigt i overensstemmelse med chefens hensigt. Hvordan transformeres disse principper, når føringsstrukturen bliver digital og algoritmer overtager mange funktioner?",
         "intentionTranslation": "Til at starte med er førerens intention stadig afgørende – men den skal nu oversættes til en form, som maskiner forstår. Som War on the Rocks bemærker, vil soldater (eller chefer) skulle finde nye måder at artikulere deres intention, så en algoritme kan agere på den, fx ved at definere objektiv, formål, begrænsninger og præferencer klart, hvorefter AI'en eksekverer inden for disse rammer. Intentionen går fra at være en ofte mundtligt eller tekstuelt formuleret befaling til at være en datastruktur – et sæt af parametre eller en målfunktion i AI-systemet.",
         "sharedFramework": "For at dette virker, må man opbygge en \"fælles referenceramme\" mellem menneske og maskine. Det vil sige, at AI'en skal trænes i at forstå konteksten for førerens intention – terrænkendskab, doktrine, tidligere cases – alt det, der udgør tacit knowledge hos humane ledere. Uden denne delte kontekst kan misforståelser opstå (på katastrofal vis). Derfor kan man forestille sig databaser med \"kontekstuel reference\", som algoritmer kan slå op i for at tolke førerens hensigt korrekt."
       },
@@ -308,7 +313,7 @@
       },
       "missionTypeOrders": {
         "title": "Mission-Type Orders til Maskiner",
-        "intro": "Auftragstaktik som overordnet koncept – dvs. mission-type orders med decentraliseret udførelse – kan tilsyneladende trives i samspil med AI, men måske ikke på den måde oprindeligt tænkt. I stedet for at det er menneskelige underordnede, der selvstændigt udfører opdraget, kan det være maskiner (eller human-machine teams), der får udstukket opdragstaktiske ordrer.",
+        "intro": "Auftragstaktik som overordnet koncept – dvs. mission-type orders med decentraliseret udførelse – kan tilsyneladende trives i samspil med AI, men måske ikke på den måde oprindeligt tænkt. I stedet for at det er menneskelige underordnede, der selvstændigt udfører opgaven, kan det være maskiner (eller human-machine teams), der får udstukket order.",
         "auftragstaktik2Point0": "En kommandør kunne sige: \"Denne brigade skal erobre brohoved Y og holde det i 48 timer for at understøtte korpsets angreb\" – og i stedet for at udarbejde en detaljeret plan, overlades det til en suite af AI'er til at orkestrere de taktiske bevægelser, logistikkæden, ildstøtte osv. inden for de overordnede retningslinjer. Det er auftragstaktik 2.0: man giver en opgave og en hensigt til systemet, ikke bare til en officer, og systemet finder selv vejen.",
         "humanElement": "Samtidig vil nogle argumentere, at ægte auftragstaktik fordrer et menneskeligt element – den gensidige tillid og forståelse der opstår gennem lederskabskultur. Man kan frygte en tilbagevenden til mere centraliseret kontrol, paradoksalt nok, fordi en central AI potentielt kan koordinere alt så godt, at behovet for menneskelig decentralisering mindskes."
       },
@@ -322,7 +327,7 @@
         "title": "AI's Begrænsninger og Kreativitetens Udfordring",
         "intro": "En særlig udfordring er de indbyggede bias og begrænsninger i AI. Menneskelige ledere har bias og kan fejle, men de kan også fornemme ting, der ikke står i manualen – udvise mavefornemmelse og kreativitet. Kan algoritmer det? Deep learning-netværk kan være fremragende til at generalisere mønstre de har set før, men dårlige til at håndtere det helt nye. Auftragstaktik netop fremhæver at kunne agere i friktion og kaos.",
         "unexpectedOpportunity": "Der vil sandsynligvis opstå situationer, hvor en rigid AI falder igennem. Et klassisk eksempel: En autonom enhed har ordre (hensigt) om at rykke frem til en bestemt koordinat, men undervejs opstår en uforudset mulighed – f.eks. opdager den en ubeskyttet fjendtlig kommandoenhed i nærheden, som kunne slås ud. Har AI'en beføjelser til at gribe chancen?",
-        "metaKnowledge": "Fremtidens opdragstaktik kræver derfor en form for metaviden i AI'en – regler for hvornår den skal afvige fra planen – hvilket i bund og grund er det samme dilemma menneskelige underordnede har: hvornår er initiativ konstruktivt og hvornår er det illoyalt?"
+        "metaKnowledge": "Fremtidens auftragstaktik kræver derfor en form for metaviden i AI'en – regler for hvornår den skal afvige fra planen – hvilket i bund og grund er det samme dilemma menneskelige underordnede har: hvornår er initiativ konstruktivt og hvornår er det illoyalt?"
       },
       "militaryCraft": {
         "title": "Genopfindelsen af Militært Håndværk",
