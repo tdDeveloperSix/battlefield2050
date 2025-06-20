@@ -739,18 +739,7 @@ function App() {
                         ))}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.hybridCommand.auftragstaktik2.intentionTranslation').split('datastruktur').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-green-400 font-semibold">
-                          datastruktur
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.hybridCommand.auftragstaktik2.intentionTranslation')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
                         {t('detailedSections.hybridCommand.auftragstaktik2.sharedFramework')}
@@ -766,32 +755,10 @@ function App() {
                         {t('detailedSections.hybridCommand.algorithmicInitiative.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.hybridCommand.algorithmicInitiative.opportunism').split('algoritmisk opportunisme').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-cyan-400 font-semibold">
-                          algoritmisk opportunisme
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.hybridCommand.algorithmicInitiative.opportunism')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.hybridCommand.algorithmicInitiative.permissionSpace').split('"permission space"').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-yellow-400 font-semibold">
-                          "permission space"
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.hybridCommand.algorithmicInitiative.permissionSpace')}
                       </p>
                     </div>
 
@@ -804,18 +771,7 @@ function App() {
                         {t('detailedSections.hybridCommand.missionTypeOrders.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.hybridCommand.missionTypeOrders.auftragstaktik2Point0').split('auftragstaktik 2.0').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-blue-400 font-semibold">
-                          auftragstaktik 2.0
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.hybridCommand.missionTypeOrders.auftragstaktik2Point0')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
                         {t('detailedSections.hybridCommand.missionTypeOrders.humanElement')}
@@ -828,18 +784,7 @@ function App() {
                         {t('detailedSections.hybridCommand.doctrinalFrictions.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.hybridCommand.doctrinalFrictions.intro').split('PLA (Kinas folkets befrielseshær)').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-red-400 font-semibold">
-                          PLA (Kinas folkets befrielseshær)
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.hybridCommand.doctrinalFrictions.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         {t('detailedSections.hybridCommand.doctrinalFrictions.westernApproach')}
@@ -861,18 +806,7 @@ function App() {
                         {t('detailedSections.hybridCommand.aiLimitations.unexpectedOpportunity')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.hybridCommand.aiLimitations.metaKnowledge').split('metaviden i AI\'en').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-purple-400 font-semibold">
-                          metaviden i AI'en
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.hybridCommand.aiLimitations.metaKnowledge')}
                       </p>
                     </div>
 
@@ -888,17 +822,7 @@ function App() {
                         {t('detailedSections.hybridCommand.militaryCraft.experimentation')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.hybridCommand.militaryCraft.coreLeadership').split('Intention formuleres i kode, initiativ udøves via adaptive algoritmer').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                        <span className="text-cyan-400 font-semibold">
-                                Intention formuleres i kode, initiativ udøves via adaptive algoritmer
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.hybridCommand.militaryCraft.coreLeadership')}
                       </p>
                     </div>
                   </div>
@@ -913,32 +837,10 @@ function App() {
                         {t('detailedSections.machineSuperiority.roeToEmbeddedPolicy.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.machineSuperiority.roeToEmbeddedPolicy.intro').split('Rules of Engagement (ROE)').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-blue-400 font-semibold">
-                          Rules of Engagement (ROE)
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.roeToEmbeddedPolicy.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.machineSuperiority.roeToEmbeddedPolicy.embeddedPolicies').split('indlejrede politikker').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-purple-400 font-semibold">
-                          indlejrede politikker
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.roeToEmbeddedPolicy.embeddedPolicies')}
                       </p>
                     </div>
 

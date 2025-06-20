@@ -529,6 +529,7 @@
   "decisionWeight": {
     "human": "Human",
     "ai": "AI",
+    "dominance": "dominance",
     "sections": {
       "human-dominance": "Human Dominance",
       "digital-integration": "Digital Integration", 

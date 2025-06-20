@@ -107,7 +107,7 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
           <div className="flex items-center space-x-2">
             <div className="w-3 h-2 bg-gradient-to-r from-green-500 to-emerald-400 rounded-sm"></div>
             <span className="text-slate-300 font-medium">
-              {t('decisionWeight.human')} dominans
+              {t('decisionWeight.human')} {t('decisionWeight.dominance')}
             </span>
           </div>
           
@@ -122,7 +122,7 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
           
           <div className="flex items-center space-x-2">
             <span className="text-slate-300 font-medium">
-              AI dominans
+              {t('decisionWeight.ai')} {t('decisionWeight.dominance')}
             </span>
             <div className="w-3 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-sm"></div>
           </div>

@@ -205,6 +205,7 @@
   "decisionWeight": {
     "human": "Menneskelig",
     "ai": "AI",
+    "dominance": "dominans",
     "sections": {
       "human-dominance": "Menneskelig Dominans",
       "digital-integration": "Digital Integration", 
