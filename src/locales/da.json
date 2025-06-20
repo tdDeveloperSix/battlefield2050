@@ -2,6 +2,8 @@
   "title": "Kamppladsens Digitale Revolution",
   "subtitle": "Fra Menneskelig intuition til algoritmisk dominans",
   "description": "En fiktiv fortælling om fremtidens militære enheder og kommandostrukturer, hvor menneskelig beslutningstagning gradvist erstattes af digital og autonom intelligens.",
+  "languageToggle": "Sprog",
+  "scrollHint": "Scroll ned for at starte gennemgangen",
   
   "interactiveTimelineTitle": "Evolutionens Tidslinje",
   "interactiveTimelineSubtitle": "Følg transformationen af militære operationer gennem seks kritiske faser, fra menneskelig dominans til total automation. Hver fase repræsenterer et fundamentalt skift i hvordan krigsførelse planlægges, udføres og kontrolleres.",
@@ -13,6 +15,38 @@
     "scrollHint": "Scroll ned for at starte gennemgangen",
     "keyDevelopments": "Centrale Udviklinger",
     "characteristics": "Karakteristika",
+    "phases": {
+      "humanDominance": {
+        "title": "Menneskelig Dominans",
+        "period": "2020-2025",
+        "description": "Traditionelle kommandostrukturer med mennesker i centrum"
+      },
+      "digitalIntegration": {
+        "title": "Digital Integration",
+        "period": "2025-2030",
+        "description": "Menneske-maskine beslutningsparitet dominerer"
+      },
+      "autonomousAssistance": {
+        "title": "Autonom Assistance",
+        "period": "2030-2035",
+        "description": "AI overtager rutinebeslutninger, mennesker håndterer strategiske valg"
+      },
+      "hybridCommand": {
+        "title": "Hybrid Kommando",
+        "period": "2035-2040",
+        "description": "Menneske-maskine partnerskaber dominerer"
+      },
+      "machineSuperiority": {
+        "title": "Maskinel Overlegenhed",
+        "period": "2040-2045",
+        "description": "AI-systemer overgår mennesker i de fleste domæner"
+      },
+      "singularity": {
+        "title": "Kamppladsens Singularitet",
+        "period": "2050",
+        "description": "Fuldstændig transformation af krigsførelse og menneskelig rolle"
+      }
+    },
     "humanDominance": {
       "title": "Menneskelig Dominans",
       "subtitle": "Traditionelle kommandostrukturer med mennesker i centrum",
@@ -89,7 +123,7 @@
         "Behov for nye ledelsesstrukturer og -principper"
       ]
     },
-    "machineSuperior": {
+    "machineSuperiority": {
       "title": "Maskinel Overlegenhed",
       "subtitle": "AI systemer overtager strategisk ledelse",
       "description": "Kunstig intelligens demonstrerer overlegen evne til kompleks strategisk tænkning og multi-dimensionel planlægning. Mennesker bevarer veto-ret men sjældent tilsidesætter AI-beslutninger.",
@@ -216,6 +250,23 @@
 
   "detailedSections": {
     "humanDominance": {
+      "title": "Menneskelig Dominans",
+      "subtitle": "Traditionelle kommandostrukturer med mennesker i centrum",
+      "description": "I denne periode dominerer mennesker stadig alle aspekter af militær planlægning og udførelse. Beslutningstagning sker gennem etablerede hierarkier, hvor erfaring og intuition vægtes højt.",
+      "details": [
+        "Kommandostrukturer bygger på årtiers erfaring og etablerede doktriner",
+        "Beslutningsprocesser er hierarkiske og baseret på menneskelig vurdering",
+        "Teknologi fungerer primært som understøttende værktøj",
+        "Situational Awareness afhænger af menneskelig analyse og rapportering",
+        "Taktiske beslutninger træffes typisk af erfarne officerer på baggrund af træning og intuition"
+      ],
+      "characteristics": [
+        "Høj grad af fleksibilitet i uforudsete situationer",
+        "Stærk etisk og moralsk dømmekraft",
+        "Evne til kreativ problemløsning",
+        "Begrænsninger i hastighed og dataprocessering",
+        "Risiko for menneskelige fejl under pres"
+      ],
       "intro": "Det var før daggry i Arizonas ørken. Kaptajn Sarah Miller sad alene i det mobile kommandotelt, da den første støvsky rullede hen over lejren og efterlod en fin, rødlig film på bordet ved siden af hendes feltkrus. Hun rakte ud efter kaffen, men et rødt blink på displayet stjal opmærksomheden: ENEMY ARMOR DETECTED – 40 KM NE.\n\nI gamle dage ville Miller have grebet radioen, råbt på S-2-officeren, ventet på bekræftelse fra dronen og først derefter sendt beskeden videre til artilleristaben. Under ideelle forhold kunne det tage fem-seks minutter – i praksis som regel tyve, før de første granater lå inde. Men i dag var Project Convergence 2020 i fuld gang, og ved hendes side kørte det nye AI-system FIRESTORM.\n\nPå brøkdele af et sekund slugte FIRESTORM rådata fra satellitbaner, Predator-feeds og jordradarer. Skærmen skiftede fra rødt til grønt og præsenterede ét forslag: \"Batteri Bravo – 122 mm – fire for effect.\" Miller nåede dårligt at blinke, før hun trykkede GODKEND. Klokken på væggen viste, at det tog 18 sekunder fra første sensorhit, til haubits-batteriet sendte sin salve af sted. Granaterne var stadig i luften, da systemet genererede næste målprioritet.\n\nMiller lænede sig tilbage og mærkede et uventet sug i maven. Hun havde lige oplevet, at den klassiske \"kill chain\" – sensormelding, vurdering, ordre, ild – var krympet fra et kvarter til under et halvt minut. Den ene tast på en touch-skærm var alt, hvad der adskilte en fjendtlig panserdivision fra et præcist artillerinederlag. Og mens hun så status-ikonet skifte fra in-progress til neutralized, gik det op for hende: tempoet på fremtidens kampplads styres ikke længere af mennesker, men af algoritmer – og slagmarken vil aldrig blive den samme igen.",
       "projectConvergence": "Under U.S. Army's Project Convergence 2020 demonstration blev dette vist i praksis: Her arbejdede et kæde af AI- og autonome systemer sammen om at identificere trusler og udpege det optimale våben til at neutralisere dem – alt sammen på omkring 20 sekunder, en proces der før tog 20 minutter. En central komponent var det AI-drevne system kaldet FIRESTORM (Fires Synchronization to Optimize Responses in Multi-Domain Operations).",
       "firestorm": "FIRESTORM fungerede som et digitalt ildleder-\"hjerne\", der modtog sensoroplysninger fra jorden, luften, rummet og cyberspace, analyserede dem lynhurtigt og derefter anbefalede den bedste skydende enhed til hvert nyt mål. I demonstrationen udpegede FIRESTORM eksempelvis en artillerienhed til at nedkæmpe et fjendtligt pansret køretøj 40 km væk; operatørerne skulle blot godkende forslaget med et klik, hvorefter ilden blev lagt – hele denne sekvens var afsluttet hurtigere, end granaten faktisk fløj mod målet. Sådan en sensor-til-effektor integration i maskinhastighed ændrer fundamentalt kampens tempo og karakter.",
@@ -236,6 +287,23 @@
       }
     },
     "digitalIntegration": {
+      "title": "Digital Integration",
+      "subtitle": "Første bølge af AI-assisterede systemer introduceres",
+      "description": "Kunstig intelligens begynder at spille en større rolle som beslutningsstøtte. Automatiserede systemer hjælper med dataanalyse og situationsbevidsthed, men mennesker bevarer den endelige beslutningskompetence.",
+      "details": [
+        "AI-systemer introduceres som beslutningsstøttende værktøjer",
+        "Automatiseret dataindsamling og -analyse implementeres",
+        "Hybride teams af mennesker og maskiner opstår",
+        "Realtidsdata fra sensorer og droner integreres i kommandosystemer",
+        "Predictive analytics begynder at påvirke taktisk planlægning"
+      ],
+      "characteristics": [
+        "Forbedret situationsbevidsthed gennem AI-analyse",
+        "Hurtigere dataprocessering og informationsdeling",
+        "Mennesker bevarer kontrol over kritiske beslutninger",
+        "Øget afhængighed af teknologiske systemer",
+        "Behov for ny træning og kompetenceudvikling"
+      ],
       "decisionParity": {
         "title": "Beslutningsparitet og Algoritmisk Konkurrence",
         "intro": "Det begyndte med én blå glød på et F-16-head-up-display under DARPA's AlphaDogfight Trials i 2020. På få sekunder drejede et virtuelt jagerfly—styret af Heron Systems' algoritme—cirkler om en pilot med 2 000 flytimer i bagagen og sendte ham ud i fem nederlag på stribe. For første gang stod det klart, at en ren software­agent kunne matche – ja, overgå – menneskelig dømmekraft i den mest krævende disciplin, luftkamp.",
@@ -270,6 +338,23 @@
       }
     },
     "autonomousAssistance": {
+      "title": "Autonom Assistance",
+      "subtitle": "AI overtager flere operative funktioner",
+      "description": "Autonome systemer begynder at træffe selvstændige beslutninger inden for definerede parametre. Menneskers rolle skifter fra direkte kontrol til supervision og strategisk planlægning.",
+      "details": [
+        "Autonome våbensystemer opererer inden for foruddefinerede regler",
+        "AI træffer taktiske beslutninger i realtid",
+        "Maskine-til-maskine kommunikation bliver standard",
+        "Mennesker fokuserer på strategisk oversight og etiske vurderinger",
+        "Sværmsystemer koordinerer autonomt på slagmarken"
+      ],
+      "characteristics": [
+        "Drastisk reduceret reaktionstid i kamphandlinger",
+        "Evne til at operere i farlige eller utilgængelige miljøer",
+        "Konsistent præstation uden træthed eller stress",
+        "Udfordringer med etisk ansvar og accountability",
+        "Risiko for systemfejl eller cyberangreb"
+      ],
       "oodaToStream": {
         "title": "Fra OODA-Loop til Kontinuerlig Beslutningsstrøm",
         "intro": "John Boyds klassiske OODA-loop – Observe, Orient, Decide, Act – var længe selve evangeliet for hurtig føring: den, der kunne gennemløbe cirklen hurtigst, vandt. Men i det øjeblik neurale netværk begyndte at træffe valg på mikro­sekunder, blev løkken en støvet tavletegning. AI'en kører ikke i cirkler; den løber som en flod. Sensorerne fodrer modellen uafbrudt, datafusionen sker i realtid, målfunktionen optimeres kontinuerligt, og effektorerne justerer kursen millisekund for millisekund.",
@@ -299,6 +384,23 @@
       }
     },
     "hybridCommand": {
+      "title": "Hybrid Kommando",
+      "subtitle": "Menneske-maskine partnerships dominerer",
+      "description": "Kommandostrukturer bliver fundamentalt omstruktureret med AI som ligeværdige partnere. Beslutningsprocesser accelereres drastisk gennem neural interface teknologi.",
+      "details": [
+        "Neural interfaces forbinder mennesker direkte med AI-systemer",
+        "Kommandostrukturer omdesignes omkring menneske-AI teams",
+        "Realtids strategisk planlægning gennem AI-assisteret analyse",
+        "Mennesker fokuserer på kreativitet og kompleks problemløsning",
+        "AI håndterer rutineoperationer og dataprocessering"
+      ],
+      "characteristics": [
+        "Synergistiske effekter mellem menneskelig kreativitet og AI-kapacitet",
+        "Øget hastighed i strategisk beslutningstagning",
+        "Forbedret koordination på tværs af militære enheder",
+        "Kompleksitet i ansvarsfordeling",
+        "Behov for nye ledelsesstrukturer og -principper"
+      ],
       "auftragstaktik2": {
         "title": "Auftragstaktik 2.0: Intention og Initiativ under Algoritmisk Føring",
         "intro": "I over et århundrede har kerneprincipper i militær føring som førerens intention, undergivet initiativ og auftragstaktik været hyldet især i vestlige doktriner. Disse idéer bygger på, at mennesker på alle niveauer – når de deler en fælles forståelse af målet – kan improvisere og træffe beslutninger selvstændigt i overensstemmelse med chefens hensigt. Hvordan transformeres disse principper, når føringsstrukturen bliver digital og algoritmer overtager mange funktioner?",
@@ -337,6 +439,23 @@
       }
     },
     "machineSuperiority": {
+      "title": "Maskinel Overlegenhed",
+      "subtitle": "AI systemer overtager strategisk ledelse",
+      "description": "Kunstig intelligens demonstrerer overlegen evne til kompleks strategisk tænkning og multi-dimensionel planlægning. Mennesker bevarer veto-ret men sjældent tilsidesætter AI-beslutninger.",
+      "details": [
+        "AI-systemer udviser overlegen strategisk tænkning",
+        "Multi-dimensionel krigssimulation og -planlægning",
+        "Mennesker fungerer primært som etiske vejledere",
+        "Kamphandlinger udføres hovedsageligt af autonome enheder",
+        "AI koordinerer komplekse operationer på tværs af domæner"
+      ],
+      "characteristics": [
+        "Overlegen analytisk kapacitet og strategisk forudseenhed",
+        "Evne til at håndtere ekstrem kompleksitet",
+        "Konsistent og objektiv beslutningstagning",
+        "Reduceret menneskelig indflydelse på operative beslutninger",
+        "Potentielle udfordringer med kreativitet og tilpasningsevne"
+      ],
       "roeToEmbeddedPolicy": {
         "title": "Fra ROE til Indlejret Politik: Etik, Autonomi og Suverænitet",
         "intro": "En af de mest komplekse udfordringer ved skiftet til digital beslutningstagning er, hvordan vi indarbejder etik, jura og politik i maskinernes hjerner. I dag håndhæves krigens love og regler gennem Rules of Engagement (ROE), som er detaljerede direktiver for hvornår og hvordan styrker må anvende magt. Disse ROE fortolkes og anvendes af menneskelige soldater og officerer, der med deres dømmekraft kan afgøre fx om et mål er lovligt, om risikoen for civile tab er for høj, osv.",
@@ -381,6 +500,23 @@
       }
     },
     "singularity": {
+      "title": "Kamppladsens Singularitet",
+      "subtitle": "AI's fuldstændige dominans over militære operationer",
+      "description": "I 2050 når vi Kamppladsens Singularitet - et punkt hvor AI-systemer ikke blot assisterer eller leder militære operationer, men fuldstændigt transformerer krigsførelse som koncept. Mennesker fungerer nu kun som politiske beslutningstagere og etiske vejledere, mens AI-systemer træffer alle operative og taktiske beslutninger.",
+      "details": [
+        "Fuldstændig autonome militære operationer uden menneskelig intervention",
+        "AI-systemer træffer alle taktiske og operative beslutninger",
+        "Mennesker bevarer kun politisk og etisk oversight",
+        "Krigsførelse bliver en algoritme-drevet proces",
+        "Minimal menneskelig rolle i kamphandlinger"
+      ],
+      "characteristics": [
+        "Maksimal effektivitet og præcision i militære operationer",
+        "Eliminering af menneskelige fejl og emotionelle beslutninger",
+        "Evne til at operere i alle miljøer uden begrænsninger",
+        "Fundamentale spørgsmål om krigens natur og etik",
+        "Risiko for tab af menneskelig kontrol og forståelse"
+      ],
       "battleEasternEurope": {
         "title": "Slaget i Østeuropa 2050",
         "intro": "Året er 2050. Et sted dybt i Østeuropa udspiller der sig en konflikt, som mange endnu har svært ved at forstå. På overfladen ligner det et regulært slag: missiler flyver, pansrede formationer rykker frem, droner svirrer på himlen som sorte insektsværme. Men noget er anderledes – stilheden. I et kommandocenter langt bag fronten står en håndfuld officerer og politikere bag panserglas og iagttager et digitalt holografisk kort over kampområdet. De taler dæmpet indbyrdes, men ingen råbende ordrer eller paniske meldinger lyder. På slagmarken sidder soldater i kampkøretøjer som passive passagerer, øjne på deres displays, fingre væk fra aftrækkere. Krigen udspiller sig gennem lynhurtige datastrømme mellem maskiner, ikke gennem menneskers råb og skud. Dette er kamppladsens singularitet – det punkt hvor menneskelig inddragelse ikke længere er relevant eller mulig i krigens beslutningssløjfer.",
