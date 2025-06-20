@@ -294,9 +294,9 @@
         "Need for new training and doctrine development"
       ],
       "oodaToStream": {
-        "title": "From OODA Loop to Continuous Decision Stream",
-        "intro": "John Boyd's classic OODA loop – Observe, Orient, Decide, Act – was long the gospel of rapid command: whoever could complete the circle fastest won. But the moment neural networks began making choices in microseconds, the loop became a dusty blackboard drawing. AI doesn't run in circles; it flows like a river. Sensors feed the model continuously, data fusion happens in real-time, the objective function is optimized constantly, and effectors adjust course millisecond by millisecond.",
-        "continuousFlow": "The result is no longer a sequential observe-think-act process, but a permanent decision stream where all four OODA phases flow together into one incessant data pulse. In practice, this means that the decision mechanics of war go from being episodic – where humans alternately observe and act – to being permanently fluid. The old sequence melts together into one."
+        "title": "From OODA-Loop to Continuous Decision Stream",
+        "intro": "John Boyd's classic <span class=\"text-emerald-400 font-semibold\">OODA-loop</span> – Observe, Orient, Decide, Act – was long the very gospel of rapid command: whoever could complete the circle fastest, won. But the moment <span class=\"text-blue-400 font-semibold\">neural networks</span> began making choices in microseconds, the loop became a dusty blackboard drawing. The AI doesn't run in circles; it flows like a river. Sensors feed the model continuously, <span class=\"text-purple-400 font-semibold\">data fusion</span> happens in real-time, the objective function is optimized continuously, and effectors adjust course millisecond by millisecond.",
+        "continuousFlow": "The result is no longer a sequential observe-think-act process, but a permanent <span class=\"text-cyan-400 font-semibold\">decision stream</span>, where all four OODA phases flow together into one incessant data pulse. In practice, this means that war's decision mechanics go from being episodic – where humans alternately observe and act – to being permanently fluid. The old sequence melts together into one."
       },
       "judgmentToParameters": {
         "title": "From Judgment to Parameterization",
@@ -546,5 +546,10 @@
       "machine-superiority": "AI leads with minimal human oversight",
       "singularity": "Complete AI-dominated decision-making"
     }
+  },
+
+  "podcast": {
+    "title": "Listen to the Story as a Podcast",
+    "description": "Prefer to listen? Experience the entire story of the battlefield's digital revolution as an engaging podcast. Perfect for commuting, exercising, or just relaxing."
   }
 } 

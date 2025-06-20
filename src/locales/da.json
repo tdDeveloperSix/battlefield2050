@@ -358,8 +358,8 @@
       ],
       "oodaToStream": {
         "title": "Fra OODA-Loop til Kontinuerlig Beslutningsstrøm",
-        "intro": "John Boyds klassiske OODA-loop – Observe, Orient, Decide, Act – var længe selve evangeliet for hurtig føring: den, der kunne gennemløbe cirklen hurtigst, vandt. Men i det øjeblik neurale netværk begyndte at træffe valg på mikro­sekunder, blev løkken en støvet tavletegning. AI'en kører ikke i cirkler; den løber som en flod. Sensorerne fodrer modellen uafbrudt, datafusionen sker i realtid, målfunktionen optimeres kontinuerligt, og effektorerne justerer kursen millisekund for millisekund.",
-        "continuousFlow": "Resultatet er ikke længere en sekventiel observer-tænk-handl-proces, men en permanent beslutningsstrøm, hvor alle fire OODA-faser flyder sammen til ét ustandseligt datapuls. I praksis betyder det, at krigens beslutningsmekanik går fra at være episodisk – hvor mennesker skiftevis observerer og handler – til at være permanent flydende. Den gamle sekvens smelter sammen til ét."
+        "intro": "John Boyds klassiske <span class=\"text-emerald-400 font-semibold\">OODA-loop</span> – Observe, Orient, Decide, Act – var længe selve evangeliet for hurtig føring: den, der kunne gennemløbe cirklen hurtigst, vandt. Men i det øjeblik <span class=\"text-blue-400 font-semibold\">neurale netværk</span> begyndte at træffe valg på mikro­sekunder, blev løkken en støvet tavletegning. AI'en kører ikke i cirkler; den løber som en flod. Sensorerne fodrer modellen uafbrudt, <span class=\"text-purple-400 font-semibold\">datafusionen</span> sker i realtid, målfunktionen optimeres kontinuerligt, og effektorerne justerer kursen millisekund for millisekund.",
+        "continuousFlow": "Resultatet er ikke længere en sekventiel observer-tænk-handl-proces, men en permanent <span class=\"text-cyan-400 font-semibold\">beslutningsstrøm</span>, hvor alle fire OODA-faser flyder sammen til ét ustandseligt datapuls. I praksis betyder det, at krigens beslutningsmekanik går fra at være episodisk – hvor mennesker skiftevis observerer og handler – til at være permanent flydende. Den gamle sekvens smelter sammen til ét."
       },
       "judgmentToParameters": {
         "title": "Fra Dømmekraft til Parametrisering",
@@ -548,5 +548,10 @@
         "content": "I kølvandet på slaget træder NATO og andre allierede sammen for at sikre, at et nyt \"Singularitets-protokol\" bliver en prioritet – en aftale om hvordan man afskærmer kernen af menneskelig suverænitet, selv når maskinerne kæmper. For selv de sejrende generaler følte et strejf af irrelevans på denne dag. Den gradvise overgang fra menneskelig til digital føring har nået sit yderste punkt: Krigen er blevet maskinernes domæne. Menneskehedens udfordring fremover bliver at sikre, at når maskinerne nu bevæger sig derude i krigens kaos på vores vegne, så sker det stadig i tråd med vores værdier, vores etik – vores menneskelighed. Ellers vinder vi måske slag, men risikerer at tabe os selv."
       }
     }
+  },
+
+  "podcast": {
+    "title": "Lyt til Historien som Podcast",
+    "description": "Foretrækker du at lytte? Oplev hele historien om kamppladsens digitale revolution som en engagerende podcast. Perfekt til pendling, træning eller bare til at slappe af med."
   }
 } 

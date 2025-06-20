@@ -13,6 +13,10 @@ import {
 } from 'lucide-react';
 
 import DecisionWeightBar from './components/DecisionWeightBar';
+import HighlightedText from './components/HighlightedText';
+import { highlightText } from './utils/textHighlighter';
+import { useHighlightedText, highlightRules } from './hooks/useHighlightedText';
+import PodcastPlayer from './components/PodcastPlayer';
 
 
 interface TimelineSection {
@@ -288,6 +292,11 @@ function App() {
                   </p>
                 </div>
               </div>
+
+              {/* Podcast Player */}
+              <div className="mt-12">
+                <PodcastPlayer />
+              </div>
             </div>
           </div>
 
@@ -518,11 +527,24 @@ function App() {
                         {t('detailedSections.digitalIntegration.decisionParity.title')}
                       </h4>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        {t('detailedSections.digitalIntegration.decisionParity.intro')}
+                        <HighlightedText
+                          text={t('detailedSections.digitalIntegration.oodaToStream.intro')}
+                          highlights={[
+                            { word: 'OODA-loop', className: 'text-emerald-400 font-semibold' },
+                            { word: 'neurale netværk', className: 'text-blue-400 font-semibold' },
+                            { word: 'neural networks', className: 'text-blue-400 font-semibold' }
+                          ]}
+                        />
                       </p>
-                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        {t('detailedSections.digitalIntegration.decisionParity.heronSystems')}
-                      </p>
+                      <p 
+                        className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6"
+                        dangerouslySetInnerHTML={{ 
+                          __html: highlightText(
+                            t('detailedSections.digitalIntegration.decisionParity.heronSystems'), 
+                            i18n.language as 'da' | 'en'
+                          ) 
+                        }}
+                      />
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
