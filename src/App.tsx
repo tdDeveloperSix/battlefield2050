@@ -518,20 +518,7 @@ function App() {
                         {t('detailedSections.digitalIntegration.decisionParity.title')}
                       </h4>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        {t('detailedSections.digitalIntegration.decisionParity.intro').split('AlphaDogfight Trials')[0]}
-                        <span className="text-blue-400 font-semibold">
-                          {t('detailedSections.digitalIntegration.decisionParity.intro').includes('beslutningsparitet') ? 'beslutningsparitet' : 'decision parity'}
-                        </span>
-                        {t('detailedSections.digitalIntegration.decisionParity.intro').split('beslutningsparitet')[1]?.split('decision parity')[1] || t('detailedSections.digitalIntegration.decisionParity.intro').split('decision parity')[1]}{' '}
-                        <a 
-                          href="https://aibusiness.com/verticals/ai-pilot-beats-human-5-0-in-darpa-dogfight" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-green-400 font-semibold hover:text-green-300 underline"
-                        >
-                          AlphaDogfight Trials
-                        </a>
-                        {t('detailedSections.digitalIntegration.decisionParity.intro').split('AlphaDogfight Trials')[1]}
+                        {t('detailedSections.digitalIntegration.decisionParity.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         {t('detailedSections.digitalIntegration.decisionParity.heronSystems')}
@@ -560,11 +547,7 @@ function App() {
                         {t('detailedSections.digitalIntegration.trustToDependency.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        {t('detailedSections.digitalIntegration.trustToDependency.aiOvermatch').split('AI overmatch')[0]}
-                        <span className="text-red-400 font-semibold">
-                          AI overmatch
-                        </span>
-                        {t('detailedSections.digitalIntegration.trustToDependency.aiOvermatch').split('AI overmatch')[1]}
+                        {t('detailedSections.digitalIntegration.trustToDependency.aiOvermatch')}
                       </p>
                     </div>
 
@@ -577,11 +560,7 @@ function App() {
                         {t('detailedSections.digitalIntegration.humanBottleneck.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        {t('detailedSections.digitalIntegration.humanBottleneck.c2System').split('C2-system')[0]}
-                        <span className="text-blue-400 font-semibold">
-                          C2-system ({t('detailedSections.digitalIntegration.humanBottleneck.c2System').includes('kommando-og-kontrol') ? 'kommando-og-kontrol' : 'command and control'})
-                        </span>
-                        {t('detailedSections.digitalIntegration.humanBottleneck.c2System').split('C2-system')[1]?.replace(' (kommando-og-kontrol)', '').replace(' (command and control)', '') || t('detailedSections.digitalIntegration.humanBottleneck.c2System').split('C2 system')[1]?.replace(' (command and control)', '')}
+                        {t('detailedSections.digitalIntegration.humanBottleneck.c2System')}
                       </p>
                     </div>
 
@@ -594,11 +573,7 @@ function App() {
                         {t('detailedSections.digitalIntegration.speedKills.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        {t('detailedSections.digitalIntegration.speedKills.speedMantra').split('"Speed kills"')[0]}
-                        <span className="text-red-400 font-semibold">
-                          "Speed kills"
-                        </span>
-                        {t('detailedSections.digitalIntegration.speedKills.speedMantra').split('"Speed kills"')[1]}
+                        {t('detailedSections.digitalIntegration.speedKills.speedMantra')}
                       </p>
                     </div>
 
@@ -629,16 +604,7 @@ function App() {
                         {t('detailedSections.autonomousAssistance.oodaToStream.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.oodaToStream.intro').split('John Boyd')[0]}
-                        <a 
-                          href="https://nuclearnetwork.csis.org/automating-the-ooda-loop-in-the-age-of-ai/" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-blue-400 font-semibold hover:text-blue-300 underline"
-                        >
-                          {t('detailedSections.autonomousAssistance.oodaToStream.intro').includes('John Boyds berømte') ? 'John Boyds berømte OODA-loop' : 'John Boyd\'s famous OODA loop'}
-                        </a>
-                        {t('detailedSections.autonomousAssistance.oodaToStream.intro').split('OODA-loop')[1] || t('detailedSections.autonomousAssistance.oodaToStream.intro').split('OODA loop')[1]}
+                        {t('detailedSections.autonomousAssistance.oodaToStream.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         {t('detailedSections.autonomousAssistance.oodaToStream.continuousFlow')}
@@ -654,11 +620,7 @@ function App() {
                         {t('detailedSections.autonomousAssistance.judgmentToParameters.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.judgmentToParameters.parameterization').split('parametrisering')[0] || t('detailedSections.autonomousAssistance.judgmentToParameters.parameterization').split('parameterization')[0]}
-                        <span className="text-cyan-400 font-semibold">
-                          {t('detailedSections.autonomousAssistance.judgmentToParameters.parameterization').includes('parametrisering') ? 'parametrisering' : 'parameterization'}
-                        </span>
-                        {t('detailedSections.autonomousAssistance.judgmentToParameters.parameterization').split('parametrisering')[1] || t('detailedSections.autonomousAssistance.judgmentToParameters.parameterization').split('parameterization')[1]}
+                        {t('detailedSections.autonomousAssistance.judgmentToParameters.parameterization')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
                         <span className="text-yellow-400 font-semibold">
@@ -720,23 +682,7 @@ function App() {
                         {t('detailedSections.hybridCommand.auftragstaktik2.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.hybridCommand.auftragstaktik2.intro').split('auftragstaktik').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <a 
-                                href="https://warontherocks.com/2025/03/the-u-s-army-artificial-intelligence-and-mission-command/" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-blue-400 font-semibold hover:text-blue-300 underline"
-                              >
-                          auftragstaktik
-                              </a>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.hybridCommand.auftragstaktik2.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         {t('detailedSections.hybridCommand.auftragstaktik2.intentionTranslation')}
@@ -850,35 +796,13 @@ function App() {
                         {t('detailedSections.machineSuperiority.embeddedPolicyPractice.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.machineSuperiority.embeddedPolicyPractice.intro').split('værdi-justeret læring (value-aligned AI)').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-green-400 font-semibold">
-                          værdi-justeret læring (value-aligned AI)
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.embeddedPolicyPractice.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         {t('detailedSections.machineSuperiority.embeddedPolicyPractice.misinterpretation')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.machineSuperiority.embeddedPolicyPractice.ethicalNetworks').split('"etiske neurale netværk"').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-yellow-400 font-semibold">
-                          "etiske neurale netværk"
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.embeddedPolicyPractice.ethicalNetworks')}
                       </p>
                     </div>
 
@@ -891,32 +815,10 @@ function App() {
                         {t('detailedSections.machineSuperiority.sovereigntyMultinational.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.machineSuperiority.sovereigntyMultinational.policyNegotiation').split('"policy negotiation protocols"').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-blue-400 font-semibold">
-                          "policy negotiation protocols"
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.sovereigntyMultinational.policyNegotiation')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.machineSuperiority.sovereigntyMultinational.digitalCaveats').split('digitale caveats').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-purple-400 font-semibold">
-                          digitale caveats
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.sovereigntyMultinational.digitalCaveats')}
                       </p>
                     </div>
 
@@ -926,35 +828,13 @@ function App() {
                         {t('detailedSections.machineSuperiority.autonomousWeaponsNorms.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.machineSuperiority.autonomousWeaponsNorms.intro').split('"killer robots"').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-red-400 font-semibold">
-                          "killer robots"
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.autonomousWeaponsNorms.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         {t('detailedSections.machineSuperiority.autonomousWeaponsNorms.militaryImperative')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.machineSuperiority.autonomousWeaponsNorms.moralDilemma').split('Moralsk Dilemma vs. Overlevelsesinstinkt').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-yellow-400 font-semibold">
-                          Moralsk Dilemma vs. Overlevelsesinstinkt
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.autonomousWeaponsNorms.moralDilemma')}
                       </p>
                     </div>
 
@@ -964,18 +844,7 @@ function App() {
                         {t('detailedSections.machineSuperiority.failsafesControl.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.machineSuperiority.failsafesControl.intro').split('"failsafes"').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-green-400 font-semibold">
-                          "failsafes"
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.failsafesControl.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         {t('detailedSections.machineSuperiority.failsafesControl.logging')}
@@ -1007,32 +876,10 @@ function App() {
                         {t('detailedSections.machineSuperiority.genevaConventionsAlgorithms.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.machineSuperiority.genevaConventionsAlgorithms.intro').split('"Geneve-konventioner for algoritmer"').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-violet-400 font-semibold">
-                          "Geneve-konventioner for algoritmer"
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.genevaConventionsAlgorithms.intro')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.machineSuperiority.genevaConventionsAlgorithms.loac').split('LOAC (Law of Armed Conflict)').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-cyan-400 font-semibold">
-                          LOAC (Law of Armed Conflict)
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.machineSuperiority.genevaConventionsAlgorithms.loac')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         {t('detailedSections.machineSuperiority.genevaConventionsAlgorithms.moralProgramming')}
@@ -1049,46 +896,11 @@ function App() {
                   <div className="mt-16 space-y-8">
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.intro').split('"kill chain"').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-blue-400 font-semibold">
-                          "kill chain"
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.humanDominance.intro')}
                       </p>
 
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.projectConvergence').split('Project Convergence 2020').map((part, index) => (
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <a 
-                                href="https://www.c4isrnet.com/artificial-intelligence/2020/09/25/the-army-just-conducted-a-massive-test-of-its-battlefield-artificial-intelligence-in-the-desert/" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-green-400 font-semibold hover:text-green-300 underline"
-                              >
-                          Project Convergence 2020
-                              </a>
-                            </span>
-                          ) : index === 1 ? (
-                            <span key={index}>
-                              {part.split('FIRESTORM')[0]}
-                        <span className="text-purple-400 font-semibold">
-                          FIRESTORM
-                              </span>
-                              {part.split('FIRESTORM')[1]}
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        ))}
+                        {t('detailedSections.humanDominance.projectConvergence')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
                         {t('detailedSections.humanDominance.firestorm')}
@@ -1150,18 +962,7 @@ function App() {
                         {t('detailedSections.singularity.battleEasternEurope.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.singularity.battleEasternEurope.prometheusUltima').split('Prometheus Ultima').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-cyan-400 font-semibold">
-                                Prometheus Ultima
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.singularity.battleEasternEurope.prometheusUltima')}
                       </p>
                     </div>
 
@@ -1174,18 +975,7 @@ function App() {
                         {t('detailedSections.singularity.politicalParalysis.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.singularity.politicalParalysis.failSafeProtocols').split('"fail-safe protocols"').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-orange-400 font-semibold">
-                                "fail-safe protocols"
-                        </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.singularity.politicalParalysis.failSafeProtocols')}
                       </p>
                     </div>
 
@@ -1198,18 +988,7 @@ function App() {
                         {t('detailedSections.singularity.informationWarfare.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.singularity.informationWarfare.psyops').split('LLM-baseret').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-purple-400 font-semibold">
-                                LLM-baseret
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.singularity.informationWarfare.psyops')}
                       </p>
                     </div>
 
@@ -1222,18 +1001,7 @@ function App() {
                         {t('detailedSections.singularity.warConclusion.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.singularity.warConclusion.generalsBewilderment').split('kvante-link').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                        <span className="text-blue-400 font-semibold">
-                                kvante-link
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.singularity.warConclusion.generalsBewilderment')}
                       </p>
                   </div>
 
@@ -1243,40 +1011,10 @@ function App() {
                         {t('detailedSections.singularity.postHumanWarfare.title')}
                       </h4>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        {t('detailedSections.singularity.postHumanWarfare.intro').split('C2-miljø').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-cyan-400 font-semibold">
-                                C2-miljø
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.singularity.postHumanWarfare.intro')}
                       </p>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.singularity.postHumanWarfare.cleanWar').split('"clean war"').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-green-400 font-semibold">
-                                "clean war"
-                              </span>
-                            </span>
-                          ) : index === 1 ? (
-                            <span key={index}>
-                              {part.split('Artificial General Intelligence')[0]}
-                        <span className="text-red-400 font-semibold">
-                                Artificial General Intelligence
-                        </span>
-                              {part.split('Artificial General Intelligence')[1]}
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.singularity.postHumanWarfare.cleanWar')}
                       </p>
                     </div>
 
@@ -1286,18 +1024,7 @@ function App() {
                         {t('detailedSections.singularity.futureChallenges.title')}
                       </h4>
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.singularity.futureChallenges.content').split('"Singularitets-protokol"').map((part, index) => 
-                          index === 0 ? (
-                            <span key={index}>
-                              {part}
-                              <span className="text-yellow-400 font-semibold">
-                                "Singularitets-protokol"
-                              </span>
-                            </span>
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {t('detailedSections.singularity.futureChallenges.content')}
                       </p>
                     </div>
                   </div>
