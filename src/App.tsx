@@ -258,26 +258,7 @@ function App() {
                 </p>
               </div>
 
-              <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                <p className="text-lg text-slate-300 leading-relaxed mb-4">
-                  {t('heroIntro.waves.paragraph1')}
-                </p>
-                <p className="text-lg text-slate-300 leading-relaxed mb-4">
-                  {t('heroIntro.waves.paragraph2')}
-                </p>
-                <p className="text-lg text-slate-300 leading-relaxed mb-4">
-                  {t('heroIntro.waves.paragraph3')}
-                </p>
-                <p className="text-lg text-slate-300 leading-relaxed mb-4">
-                  {t('heroIntro.waves.paragraph4')}
-                </p>
-                <p className="text-lg text-slate-300 leading-relaxed mb-4">
-                  {t('heroIntro.waves.paragraph5')}
-                </p>
-                <p className="text-lg text-slate-300 leading-relaxed">
-                  {t('heroIntro.waves.paragraph6')}
-                </p>
-              </div>
+
 
               <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                 <p className="text-lg text-slate-300 leading-relaxed">
