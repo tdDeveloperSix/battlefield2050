@@ -9,6 +9,7 @@ const PodcastPlayer: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
+  const [previousVolume, setPreviousVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -17,7 +18,7 @@ const PodcastPlayer: React.FC = () => {
     if (!audio) return;
 
     const updateTime = () => setCurrentTime(audio.currentTime);
-    const updateDuration = () => setDuration(audio.duration);
+    const updateDuration = () => setDuration(Number.isFinite(audio.duration) ? audio.duration : 0);
     const handleLoadStart = () => setIsLoading(true);
     const handleCanPlay = () => setIsLoading(false);
     const handleEnded = () => setIsPlaying(false);
@@ -27,6 +28,10 @@ const PodcastPlayer: React.FC = () => {
     audio.addEventListener('loadstart', handleLoadStart);
     audio.addEventListener('canplay', handleCanPlay);
     audio.addEventListener('ended', handleEnded);
+
+    // Init volume/mute fra element (iOS kan starte lavere)
+    setVolume(audio.volume);
+    setIsMuted(audio.muted || audio.volume === 0);
 
     return () => {
       audio.removeEventListener('timeupdate', updateTime);
@@ -54,34 +59,59 @@ const PodcastPlayer: React.FC = () => {
     }
   };
 
-  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSeek = (newTime: number) => {
     const audio = audioRef.current;
     if (!audio) return;
-    
-    const newTime = parseFloat(e.target.value);
-    audio.currentTime = newTime;
-    setCurrentTime(newTime);
+    const clamped = Math.max(0, Math.min(duration || 0, newTime));
+    audio.currentTime = clamped;
+    setCurrentTime(clamped);
+  };
+
+  const handleSeekChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleSeek(parseFloat(e.target.value));
+  };
+
+  const handleSeekInput = (e: React.FormEvent<HTMLInputElement>) => {
+    handleSeek(parseFloat((e.target as HTMLInputElement).value));
+  };
+
+  const handleVolume = (newVolume: number) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const vol = Math.max(0, Math.min(1, newVolume));
+    audio.volume = vol;
+    setVolume(vol);
+    if (vol === 0) {
+      audio.muted = true;
+      setIsMuted(true);
+    } else {
+      if (isMuted) audio.muted = false;
+      setIsMuted(false);
+      setPreviousVolume(vol);
+    }
   };
 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    
-    const newVolume = parseFloat(e.target.value);
-    audio.volume = newVolume;
-    setVolume(newVolume);
-    setIsMuted(newVolume === 0);
+    handleVolume(parseFloat(e.target.value));
+  };
+
+  const handleVolumeInput = (e: React.FormEvent<HTMLInputElement>) => {
+    handleVolume(parseFloat((e.target as HTMLInputElement).value));
   };
 
   const toggleMute = () => {
     const audio = audioRef.current;
     if (!audio) return;
-
-    if (isMuted) {
-      audio.volume = volume;
+    if (isMuted || audio.muted || audio.volume === 0) {
+      // Unmute til previousVolume (fallback 0.5)
+      const restore = previousVolume > 0 ? previousVolume : 0.5;
+      audio.muted = false;
+      audio.volume = restore;
+      setVolume(restore);
       setIsMuted(false);
     } else {
-      audio.volume = 0;
+      setPreviousVolume(volume);
+      audio.muted = true;
       setIsMuted(true);
     }
   };
@@ -89,8 +119,7 @@ const PodcastPlayer: React.FC = () => {
   const skip = (seconds: number) => {
     const audio = audioRef.current;
     if (!audio) return;
-    
-    audio.currentTime = Math.max(0, Math.min(duration, audio.currentTime + seconds));
+    handleSeek(audio.currentTime + seconds);
   };
 
   const pct = duration ? (currentTime / duration) * 100 : 0;
@@ -118,6 +147,7 @@ const PodcastPlayer: React.FC = () => {
         ref={audioRef}
         src="https://mcdn.podbean.com/mf/web/sx32mfva5mewwxhx/AI_Battlefield_Transformation9nwsd.mp3"
         preload="metadata"
+        playsInline
       />
 
       <div className="bg-slate-900/50 rounded-lg p-4">
@@ -131,36 +161,37 @@ const PodcastPlayer: React.FC = () => {
             type="range"
             min="0"
             max={duration || 0}
+            step="0.1"
             value={currentTime}
-            onChange={handleSeek}
+            onChange={handleSeekChange}
+            onInput={handleSeekInput}
             className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
             style={{
               background: `linear-gradient(to right, #3B82F6 0%, #3B82F6 ${pct}%, #374151 ${pct}%, #374151 100%)`
             }}
+            aria-label="Søg i afspilning"
           />
         </div>
-
         {/* Controls */}
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             {/* Skip Back */}
             <button
-                          onClick={() => skip(-10)}
-                          className="p-2 text-slate-400 hover:text-white transition-colors"
-                          title="Skip back 10s"
-                          aria-label="Skip back 10 seconds"
-                        >
+              onClick={() => skip(-10)}
+              className="p-2 text-slate-400 hover:text-white transition-colors"
+              title="Skip back 10s"
+              aria-label="Skip back 10 seconds"
+            >
               <RotateCcw className="w-5 h-5" />
             </button>
-
             {/* Play/Pause */}
             <button
-                          onClick={togglePlay}
-                          disabled={isLoading}
-                          className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-white p-3 rounded-full transition-colors flex items-center justify-center"
-                          aria-label={isPlaying ? 'Pause' : 'Play'}
-                          title={isPlaying ? 'Pause' : 'Play'}
-                        >
+              onClick={togglePlay}
+              disabled={isLoading}
+              className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-white p-3 rounded-full transition-colors flex items-center justify-center"
+              aria-label={isPlaying ? 'Pause' : 'Play'}
+              title={isPlaying ? 'Pause' : 'Play'}
+            >
               {isLoading ? (
                 <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               ) : isPlaying ? (
@@ -169,27 +200,25 @@ const PodcastPlayer: React.FC = () => {
                 <Play className="w-6 h-6 ml-1" />
               )}
             </button>
-
             {/* Skip Forward */}
             <button
-                          onClick={() => skip(30)}
-                          className="p-2 text-slate-400 hover:text-white transition-colors"
-                          title="Skip forward 30s"
-                          aria-label="Skip forward 30 seconds"
-                        >
+              onClick={() => skip(30)}
+              className="p-2 text-slate-400 hover:text-white transition-colors"
+              title="Skip forward 30s"
+              aria-label="Skip forward 30 seconds"
+            >
               <FastForward className="w-5 h-5" />
             </button>
           </div>
-
           {/* Volume Control */}
           <div className="flex items-center space-x-2">
             <button
-                          onClick={toggleMute}
-                          className="p-2 text-slate-400 hover:text-white transition-colors"
-                          aria-label={isMuted || volume === 0 ? 'Unmute' : 'Mute'}
-                          title={isMuted || volume === 0 ? 'Unmute' : 'Mute'}
-                        >
-              {isMuted || volume === 0 ? (
+              onClick={toggleMute}
+              className="p-2 text-slate-400 hover:text-white transition-colors"
+              aria-label={isMuted ? 'Unmute' : 'Mute'}
+              title={isMuted ? 'Unmute' : 'Mute'}
+            >
+              {isMuted ? (
                 <VolumeX className="w-5 h-5" />
               ) : (
                 <Volume2 className="w-5 h-5" />
@@ -199,13 +228,15 @@ const PodcastPlayer: React.FC = () => {
               type="range"
               min="0"
               max="1"
-              step="0.1"
-              value={isMuted ? 0 : volume}
+              step="0.01"
+              value={volume}
               onChange={handleVolumeChange}
+              onInput={handleVolumeInput}
               className="w-20 h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
               style={{
-                background: `linear-gradient(to right, #3B82F6 0%, #3B82F6 ${(isMuted ? 0 : volume) * 100}%, #374151 ${(isMuted ? 0 : volume) * 100}%, #374151 100%)`
+                background: `linear-gradient(to right, #3B82F6 0%, #3B82F6 ${volume * 100}%, #374151 ${volume * 100}%, #374151 100%)`
               }}
+              aria-label="Lydstyrke"
             />
           </div>
         </div>
