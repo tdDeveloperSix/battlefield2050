@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -58,6 +59,70 @@
   
   /* Box sizing already handled in base layer */
 }
+
+/* Matrix theme overrides */
+.matrix-theme {
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: #000000 !important;
+  color: #00ff66;
+  position: relative;
+}
+
+.matrix-theme a { color: #00ff66; text-decoration: underline; }
+.matrix-theme a:hover { color: #66ffb2; }
+
+.matrix-theme .scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 102, 0.03) 0px,
+    rgba(0, 255, 102, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 3px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  z-index: 1;
+}
+
+/* Make most panels transparent with green borders for retro look */
+.matrix-theme .backdrop-blur-sm { backdrop-filter: none !important; }
+.matrix-theme .rounded-xl { border-radius: 2px !important; }
+.matrix-theme .rounded-lg { border-radius: 2px !important; }
+.matrix-theme .shadow-lg, .matrix-theme .shadow-xl, .matrix-theme .shadow-inner { box-shadow: none !important; }
+
+/* Force common backgrounds to be darker/transparent */
+.matrix-theme [class*="bg-slate-"] { background-color: rgba(0,0,0,0.35) !important; }
+.matrix-theme [class*="bg-slate-"] { border-color: #00ff66 !important; }
+.matrix-theme .border, .matrix-theme [class*="border-slate-"] { border-color: #00ff66 !important; }
+
+/* Headings glow */
+.matrix-theme h1, .matrix-theme h2, .matrix-theme h3, .matrix-theme h4 {
+  color: #a7ffcf !important;
+  text-shadow: 0 0 8px rgba(0, 255, 102, 0.6), 0 0 16px rgba(0, 255, 102, 0.25);
+}
+
+/* Primary buttons -> green retro */
+.matrix-theme .btn-primary,
+.matrix-theme button {
+  background: transparent !important;
+  color: #00ff66 !important;
+  border: 1px solid #00ff66 !important;
+}
+.matrix-theme button:hover { color: #111 !important; background: #00ff66 !important; }
+
+/* Progress bars in green */
+.matrix-theme .progress-bar {
+  background: linear-gradient(90deg, #00ff66, #00cc52, #00ff8a) !important;
+}
+
+/* Scrollbar green */
+.matrix-theme ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #00ff66, #00cc52) !important; }
+
+/* Matrix slider knob */
+.matrix-theme .slider::-webkit-slider-thumb { background: #00ff66 !important; border-color: #003B1F !important; }
+.matrix-theme .slider::-moz-range-thumb { background: #00ff66 !important; border-color: #003B1F !important; }
 
 @layer utilities {
   .animate-fadeIn {

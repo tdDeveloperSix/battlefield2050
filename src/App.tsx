@@ -15,8 +15,9 @@ import {
 import DecisionWeightBar from './components/DecisionWeightBar';
 import HighlightedText from './components/HighlightedText';
 import { highlightText } from './utils/textHighlighter';
-import { useHighlightedText, highlightRules } from './hooks/useHighlightedText';
+
 import PodcastPlayer from './components/PodcastPlayer';
+import MatrixRain from './components/MatrixRain';
 
 
 interface TimelineSection {
@@ -186,11 +187,12 @@ function App() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div className="min-h-screen matrix-theme text-green-400 relative">
+      <MatrixRain />
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-slate-800 z-50">
         <div
-          className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-300"
+          className="h-full bg-gradient-to-r from-green-500 to-emerald-500 transition-all duration-300"
           style={{ width: `${scrollProgress * 100}%` }}
         />
       </div>
@@ -214,7 +216,7 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-slate-900/40" />
 
         <div className="relative z-10 text-center px-6 sm:px-8 lg:px-6 max-w-6xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent leading-tight break-words">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent leading-tight break-words">
             {t('title')}
           </h1>
 
@@ -288,10 +290,10 @@ function App() {
       </section>
 
       {/* Interactive Timeline Overview */}
-      <section id="interactive-timeline" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/30">
+      <section id="interactive-timeline" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-black/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
               {t('interactiveTimelineTitle')}
             </h2>
             <p className="text-lg sm:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
@@ -1039,10 +1041,10 @@ function App() {
       </section>
 
       {/* Implications Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-slate-900/50">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-black/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
               {t('implications.title')}
             </h2>
             <p className="text-lg sm:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
@@ -1083,7 +1085,7 @@ function App() {
       </section>
 
       {/* Conclusion Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-black/60">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             {t('conclusion.title')}
@@ -1108,7 +1110,7 @@ function App() {
       {/* Contact Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-slate-900/30">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-green-400">
             {t('contact.title')}
           </h2>
           
