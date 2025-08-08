@@ -612,9 +612,9 @@ function App() {
                         <Brain className="w-6 h-6 mr-3 text-blue-400" />
                         {t('detailedSections.autonomousAssistance.oodaToStream.title')}
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.oodaToStream.intro')}
-                      </p>
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(t('detailedSections.autonomousAssistance.oodaToStream.intro'))
+                      }} />
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         {t('detailedSections.autonomousAssistance.oodaToStream.continuousFlow')}
                       </p>

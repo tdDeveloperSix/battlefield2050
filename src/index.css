@@ -264,11 +264,16 @@
   color: white;
 }
 
-/* Focus styles */
-button:focus,
-[role="button"]:focus {
+/* Focus styles (opt-in via .focus-ring) */
+button.focus-ring:focus,
+[role="button"].focus-ring:focus {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
+}
+
+/* Remove default focus ring on sliders */
+input[type="range"]:focus {
+  outline: none;
 }
 
 /* Smooth transitions for all interactive elements */

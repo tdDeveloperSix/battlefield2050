@@ -178,7 +178,7 @@ const PodcastPlayer: React.FC = () => {
             {/* Skip Back */}
             <button
               onClick={() => skip(-10)}
-              className="p-2 text-slate-400 hover:text-white transition-colors"
+              className="p-2 text-slate-400 hover:text-white transition-colors focus:outline-none"
               title="Skip back 10s"
               aria-label="Skip back 10 seconds"
             >
@@ -188,7 +188,7 @@ const PodcastPlayer: React.FC = () => {
             <button
               onClick={togglePlay}
               disabled={isLoading}
-              className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-white p-3 rounded-full transition-colors flex items-center justify-center"
+              className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-white p-3 rounded-full transition-colors flex items-center justify-center focus:outline-none"
               aria-label={isPlaying ? 'Pause' : 'Play'}
               title={isPlaying ? 'Pause' : 'Play'}
             >
@@ -203,7 +203,7 @@ const PodcastPlayer: React.FC = () => {
             {/* Skip Forward */}
             <button
               onClick={() => skip(30)}
-              className="p-2 text-slate-400 hover:text-white transition-colors"
+              className="p-2 text-slate-400 hover:text-white transition-colors focus:outline-none"
               title="Skip forward 30s"
               aria-label="Skip forward 30 seconds"
             >
@@ -214,7 +214,7 @@ const PodcastPlayer: React.FC = () => {
           <div className="flex items-center space-x-2">
             <button
               onClick={toggleMute}
-              className="p-2 text-slate-400 hover:text-white transition-colors"
+              className="p-2 text-slate-400 hover:text-white transition-colors focus:outline-none"
               aria-label={isMuted ? 'Unmute' : 'Mute'}
               title={isMuted ? 'Unmute' : 'Mute'}
             >
