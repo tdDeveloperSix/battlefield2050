@@ -19,6 +19,7 @@ import { sanitizeHtml } from './utils/sanitizeHtml';
 
 import PodcastPlayer from './components/PodcastPlayer';
 import MatrixRain from './components/MatrixRain';
+import BackToTop from './components/BackToTop';
 
 
 interface TimelineSection {
@@ -1142,6 +1143,10 @@ function App() {
 
       {/* Decision Weight Bar */}
       <DecisionWeightBar activeSection={activeSection} />
+
+      {/* Back To Top */}
+      {/* Placeres sidst for høj z-index over indhold men under evt. modaler */}
+      <BackToTop />
 
     </div>
   );
