@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   Users,
@@ -69,11 +69,11 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
   
-  // Get translated implications
-  const implications = getImplications(t);
+  // Get translated implications (memoized)
+  const implications = useMemo(() => getImplications(t), [t]);
 
-  // Create translated timeline sections
-  const getTimelineSections = (): TimelineSection[] => [
+  // Create translated timeline sections (memoized factory)
+  const timelineSections = useMemo((): TimelineSection[] => [
   {
     id: 'human-dominance',
     year: '2020-2025',
@@ -146,9 +146,9 @@ function App() {
       status: 'future' as const,
     color: 'from-violet-500 to-purple-600',
   },
-];
-
-  useEffect(() => {
+ ], [t, i18n.language]);
+ 
+   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight =
@@ -182,7 +182,7 @@ function App() {
     handleScroll(); // Initial call
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection]);
+  }, []);
 
 
 
@@ -308,7 +308,7 @@ function App() {
             
             {/* Timeline Items */}
             <div className="relative flex justify-between items-center">
-                          {getTimelineSections().map((section) => (
+                          {timelineSections.map((section: TimelineSection) => (
               <div key={section.id} className="flex flex-col items-center group cursor-pointer" onClick={() => {
                   const element = sectionRefs.current[section.id];
                   if (element) {
@@ -346,7 +346,7 @@ function App() {
 
           {/* Mobile Timeline */}
           <div className="lg:hidden space-y-4">
-            {getTimelineSections().map((section) => (
+            {timelineSections.map((section: TimelineSection) => (
               <div 
                 key={section.id} 
                 className="flex items-center space-x-4 p-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl hover:bg-slate-800/50 transition-all duration-300 cursor-pointer"
@@ -415,7 +415,7 @@ function App() {
       <section id="timeline" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
 
-          {getTimelineSections().map((section) => (
+          {timelineSections.map((section: TimelineSection) => (
             <div
               key={section.id}
               id={section.id}
@@ -471,7 +471,7 @@ function App() {
                       {t('timeline.keyDevelopments')}
                     </h4>
                     <ul className="space-y-3 sm:space-y-4">
-                      {section.details.map((detail, idx) => (
+                      {section.details.map((detail: string, idx: number) => (
                         <li key={idx} className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
                           <span className="text-sm sm:text-base text-slate-300 leading-relaxed">
@@ -489,7 +489,7 @@ function App() {
                       {t('timeline.characteristics')}
                     </h4>
                     <ul className="space-y-3 sm:space-y-4">
-                      {section.characteristics.map((char, idx) => (
+                      {section.characteristics.map((char: string, idx: number) => (
                         <li key={idx} className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
                           <span className="text-sm sm:text-base text-slate-300 leading-relaxed">

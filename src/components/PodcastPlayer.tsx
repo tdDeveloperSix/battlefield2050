@@ -93,6 +93,8 @@ const PodcastPlayer: React.FC = () => {
     audio.currentTime = Math.max(0, Math.min(duration, audio.currentTime + seconds));
   };
 
+  const pct = duration ? (currentTime / duration) * 100 : 0;
+
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
@@ -133,7 +135,7 @@ const PodcastPlayer: React.FC = () => {
             onChange={handleSeek}
             className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
             style={{
-              background: `linear-gradient(to right, #3B82F6 0%, #3B82F6 ${(currentTime / duration) * 100}%, #374151 ${(currentTime / duration) * 100}%, #374151 100%)`
+              background: `linear-gradient(to right, #3B82F6 0%, #3B82F6 ${pct}%, #374151 ${pct}%, #374151 100%)`
             }}
           />
         </div>
@@ -143,19 +145,22 @@ const PodcastPlayer: React.FC = () => {
           <div className="flex items-center space-x-3">
             {/* Skip Back */}
             <button
-              onClick={() => skip(-10)}
-              className="p-2 text-slate-400 hover:text-white transition-colors"
-              title="Skip back 10s"
-            >
+                          onClick={() => skip(-10)}
+                          className="p-2 text-slate-400 hover:text-white transition-colors"
+                          title="Skip back 10s"
+                          aria-label="Skip back 10 seconds"
+                        >
               <RotateCcw className="w-5 h-5" />
             </button>
 
             {/* Play/Pause */}
             <button
-              onClick={togglePlay}
-              disabled={isLoading}
-              className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-white p-3 rounded-full transition-colors flex items-center justify-center"
-            >
+                          onClick={togglePlay}
+                          disabled={isLoading}
+                          className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-white p-3 rounded-full transition-colors flex items-center justify-center"
+                          aria-label={isPlaying ? 'Pause' : 'Play'}
+                          title={isPlaying ? 'Pause' : 'Play'}
+                        >
               {isLoading ? (
                 <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               ) : isPlaying ? (
@@ -167,10 +172,11 @@ const PodcastPlayer: React.FC = () => {
 
             {/* Skip Forward */}
             <button
-              onClick={() => skip(30)}
-              className="p-2 text-slate-400 hover:text-white transition-colors"
-              title="Skip forward 30s"
-            >
+                          onClick={() => skip(30)}
+                          className="p-2 text-slate-400 hover:text-white transition-colors"
+                          title="Skip forward 30s"
+                          aria-label="Skip forward 30 seconds"
+                        >
               <FastForward className="w-5 h-5" />
             </button>
           </div>
@@ -178,9 +184,11 @@ const PodcastPlayer: React.FC = () => {
           {/* Volume Control */}
           <div className="flex items-center space-x-2">
             <button
-              onClick={toggleMute}
-              className="p-2 text-slate-400 hover:text-white transition-colors"
-            >
+                          onClick={toggleMute}
+                          className="p-2 text-slate-400 hover:text-white transition-colors"
+                          aria-label={isMuted || volume === 0 ? 'Unmute' : 'Mute'}
+                          title={isMuted || volume === 0 ? 'Unmute' : 'Mute'}
+                        >
               {isMuted || volume === 0 ? (
                 <VolumeX className="w-5 h-5" />
               ) : (

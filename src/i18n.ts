@@ -27,9 +27,9 @@ i18n
     detection: {
       // Rækkefølge af sprogdetektering metoder
       order: [
-        'navigator',        // Browser sprog indstillinger (navigator.language)
         'localStorage',     // Gemt bruger præference
         'sessionStorage',   // Session præference
+        'navigator',        // Browser sprog indstillinger (navigator.language)
         'htmlTag',          // HTML lang attribut
         'path',             // URL path (f.eks. /en/page)
         'subdomain'         // Subdomain (f.eks. en.example.com)
