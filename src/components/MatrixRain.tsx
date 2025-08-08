@@ -1,5 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 
+interface Column {
+  x: number; // px
+  y: number; // px (head position)
+  speed: number; // px/sec
+  tail: number; // antal tegn i halen
+}
+
 const MatrixRain: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);
@@ -11,47 +18,101 @@ const MatrixRain: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const dpr = Math.max(1, Math.floor(window.devicePixelRatio || 1));
+
     const setSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
     setSize();
 
-    const fontSize = 16;
-    const columns = Math.floor(window.innerWidth / fontSize);
-    const drops: number[] = Array(columns).fill(1);
+    const fontSize = 16; // px i CSS-pixels
+    const baseSpeedPxPerSec = 60; // lavere hastighed for mindre distraktion
+
+    const chars =
+      'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+    let columns: Column[] = [];
+
+    const initColumns = () => {
+      const numCols = Math.ceil(window.innerWidth / fontSize);
+      columns = new Array(numCols).fill(0).map((_, i) => ({
+        x: i * fontSize,
+        y: Math.random() * window.innerHeight,
+        speed: baseSpeedPxPerSec * (0.75 + Math.random() * 0.6), // 75% - 135%
+        tail: Math.floor(10 + Math.random() * 18), // 10 - 28 tegn i halen
+      }));
+      ctx.font = `${fontSize}px monospace`;
+      ctx.textBaseline = 'top';
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
+    };
+
+    initColumns();
+
+    let lastTime = performance.now();
 
     const draw = () => {
-      if (!ctx || !canvas) return;
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      const now = performance.now();
+      const dt = (now - lastTime) / 1000; // sekunder
+      lastTime = now;
 
-      ctx.fillStyle = '#00ff66';
-      ctx.font = `${fontSize}px monospace`;
+      // Ryd helt for at undgå motion-blur/ghosting
+      ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
 
-      for (let i = 0; i < drops.length; i += 1) {
-        const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
-        ctx.fillText(text, x, y);
+      for (let i = 0; i < columns.length; i += 1) {
+        const col = columns[i];
 
-        if (y > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+        // Tegn head + hale med tydelige, skarpe glyphs
+        for (let j = 0; j < col.tail; j += 1) {
+          const yPos = Math.floor(col.y - j * fontSize);
+          if (yPos < -fontSize || yPos > window.innerHeight) continue;
+
+          const ch = chars.charAt(Math.floor(Math.random() * chars.length));
+
+          if (j === 0) {
+            // Head
+            ctx.fillStyle = '#CFFFE0';
+            ctx.globalAlpha = 1;
+          } else {
+            // Fading hale uden blur
+            const alpha = Math.max(0.08, 1 - j / col.tail);
+            ctx.fillStyle = '#00FF66';
+            ctx.globalAlpha = alpha * 0.9;
+          }
+
+          ctx.fillText(ch, col.x, yPos);
         }
-        drops[i] += 1;
+
+        // Opdater position (tidsbaseret)
+        col.y += col.speed * dt;
+
+        // Reset når hele hale er forbi bunden
+        if (col.y - col.tail * fontSize > window.innerHeight) {
+          col.y = -Math.random() * 200; // genstart lidt over toppen
+          col.speed = baseSpeedPxPerSec * (0.75 + Math.random() * 0.6);
+          col.tail = Math.floor(10 + Math.random() * 18);
+        }
       }
 
+      ctx.globalAlpha = 1;
       animationRef.current = requestAnimationFrame(draw);
     };
 
     animationRef.current = requestAnimationFrame(draw);
 
     const handleResize = () => {
-      // Debounce resize
       if (resizeTimeoutRef.current) cancelAnimationFrame(resizeTimeoutRef.current);
       resizeTimeoutRef.current = window.setTimeout(() => {
         setSize();
+        initColumns();
+        lastTime = performance.now();
       }, 150) as unknown as number;
     };
 
@@ -66,7 +127,7 @@ const MatrixRain: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-0 opacity-30 pointer-events-none"
+      className="fixed inset-0 z-0 opacity-20 pointer-events-none"
       aria-hidden
     />
   );
