@@ -63,6 +63,7 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
       className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}
+      style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
     >
       {/* Bottom Bar Container */}
       <div className="bg-slate-900/95 backdrop-blur-md border-t border-slate-700 px-4 py-3 sm:px-6 sm:py-4">

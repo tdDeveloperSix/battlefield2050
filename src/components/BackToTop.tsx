@@ -22,7 +22,8 @@ const BackToTop: React.FC = () => {
       aria-label="Til toppen"
       title="Til toppen"
       onClick={handleClick}
-      className={`fixed right-4 bottom-20 sm:right-6 sm:bottom-24 z-50 rounded-full border border-emerald-400/50 text-emerald-300 bg-black/40 hover:bg-black/60 px-3 py-2 sm:px-4 sm:py-3 shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 ${
+      style={{ bottom: 'calc(env(safe-area-inset-bottom, 0px) + 7rem)' }}
+      className={`fixed right-4 sm:right-6 z-50 rounded-full border border-emerald-400/50 text-emerald-300 bg-black/40 hover:bg-black/60 px-3 py-2 sm:px-4 sm:py-3 shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 pointer-events-none translate-y-3'
       }`}
     >
