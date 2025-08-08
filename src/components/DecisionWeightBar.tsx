@@ -59,6 +59,7 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
 
   return (
     <div 
+      role="region" aria-label="Decision weight bar"
       className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}

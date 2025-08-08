@@ -15,6 +15,7 @@ import {
 import DecisionWeightBar from './components/DecisionWeightBar';
 import HighlightedText from './components/HighlightedText';
 import { highlightText } from './utils/textHighlighter';
+import { sanitizeHtml } from './utils/sanitizeHtml';
 
 import PodcastPlayer from './components/PodcastPlayer';
 import MatrixRain from './components/MatrixRain';
@@ -253,7 +254,7 @@ function App() {
               <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                 <p 
                   className="text-lg text-slate-300 leading-relaxed mb-6"
-                  dangerouslySetInnerHTML={{ __html: t('heroIntro.editorial.paragraph1') }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(t('heroIntro.editorial.paragraph1')) }}
                 />
                 <p className="text-lg text-slate-300 leading-relaxed">
                   {t('heroIntro.editorial.paragraph2')}
@@ -522,10 +523,12 @@ function App() {
                       <p 
                         className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6"
                         dangerouslySetInnerHTML={{ 
-                          __html: highlightText(
-                            t('detailedSections.digitalIntegration.decisionParity.heronSystems'), 
-                            i18n.language as 'da' | 'en'
-                          ) 
+                          __html: sanitizeHtml(
+                            highlightText(
+                              t('detailedSections.digitalIntegration.decisionParity.heronSystems'), 
+                              i18n.language as 'da' | 'en'
+                            )
+                          )
                         }}
                       />
                     </div>
@@ -918,10 +921,10 @@ function App() {
                         {t('detailedSections.humanDominance.edgeAI.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
-                        __html: t('detailedSections.humanDominance.edgeAI.intro')
+                        __html: sanitizeHtml(t('detailedSections.humanDominance.edgeAI.intro'))
                       }} />
                       <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
-                        __html: t('detailedSections.humanDominance.edgeAI.sentryTowers')
+                        __html: sanitizeHtml(t('detailedSections.humanDominance.edgeAI.sentryTowers'))
                       }} />
                     </div>
 
@@ -931,10 +934,10 @@ function App() {
                         {t('detailedSections.humanDominance.swarmCoordination.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
-                        __html: t('detailedSections.humanDominance.swarmCoordination.intro')
+                        __html: sanitizeHtml(t('detailedSections.humanDominance.swarmCoordination.intro'))
                       }} />
                       <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
-                        __html: t('detailedSections.humanDominance.swarmCoordination.chineseCapabilities')
+                        __html: sanitizeHtml(t('detailedSections.humanDominance.swarmCoordination.chineseCapabilities'))
                       }} />
                     </div>
 
@@ -944,10 +947,10 @@ function App() {
                         {t('detailedSections.humanDominance.oodaLoop.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
-                        __html: t('detailedSections.humanDominance.oodaLoop.intro')
+                        __html: sanitizeHtml(t('detailedSections.humanDominance.oodaLoop.intro'))
                       }} />
                       <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
-                        __html: t('detailedSections.humanDominance.oodaLoop.aiAdvantage')
+                        __html: sanitizeHtml(t('detailedSections.humanDominance.oodaLoop.aiAdvantage'))
                       }} />
                     </div>
 

@@ -18,6 +18,8 @@ const MatrixRain: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const dpr = Math.max(1, Math.floor(window.devicePixelRatio || 1));
 
     const setSize = () => {
@@ -63,13 +65,11 @@ const MatrixRain: React.FC = () => {
       const dt = (now - lastTime) / 1000; // sekunder
       lastTime = now;
 
-      // Ryd helt for at undgå motion-blur/ghosting
       ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
 
       for (let i = 0; i < columns.length; i += 1) {
         const col = columns[i];
 
-        // Tegn head + hale med tydelige, skarpe glyphs
         for (let j = 0; j < col.tail; j += 1) {
           const yPos = Math.floor(col.y - j * fontSize);
           if (yPos < -fontSize || yPos > window.innerHeight) continue;
@@ -77,11 +77,9 @@ const MatrixRain: React.FC = () => {
           const ch = chars.charAt(Math.floor(Math.random() * chars.length));
 
           if (j === 0) {
-            // Head
             ctx.fillStyle = '#CFFFE0';
             ctx.globalAlpha = 1;
           } else {
-            // Fading hale uden blur
             const alpha = Math.max(0.08, 1 - j / col.tail);
             ctx.fillStyle = '#00FF66';
             ctx.globalAlpha = alpha * 0.9;
@@ -90,12 +88,10 @@ const MatrixRain: React.FC = () => {
           ctx.fillText(ch, col.x, yPos);
         }
 
-        // Opdater position (tidsbaseret)
         col.y += col.speed * dt;
 
-        // Reset når hele hale er forbi bunden
         if (col.y - col.tail * fontSize > window.innerHeight) {
-          col.y = -Math.random() * 200; // genstart lidt over toppen
+          col.y = -Math.random() * 200;
           col.speed = baseSpeedPxPerSec * (0.75 + Math.random() * 0.6);
           col.tail = Math.floor(10 + Math.random() * 18);
         }
@@ -105,7 +101,9 @@ const MatrixRain: React.FC = () => {
       animationRef.current = requestAnimationFrame(draw);
     };
 
-    animationRef.current = requestAnimationFrame(draw);
+    if (!prefersReducedMotion) {
+      animationRef.current = requestAnimationFrame(draw);
+    }
 
     const handleResize = () => {
       if (resizeTimeoutRef.current) cancelAnimationFrame(resizeTimeoutRef.current);
@@ -113,7 +111,10 @@ const MatrixRain: React.FC = () => {
         setSize();
         initColumns();
         lastTime = performance.now();
-      }, 150) as unknown as number;
+        if (!prefersReducedMotion && !animationRef.current) {
+          animationRef.current = requestAnimationFrame(draw);
+        }
+      }, 250) as unknown as number;
     };
 
     window.addEventListener('resize', handleResize);
