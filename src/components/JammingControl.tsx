@@ -28,6 +28,14 @@ const JammingControl: React.FC = () => {
   const masterGainRef = useRef<Nullable<GainNode>>(null);
 
   const jOverS = useMemo(() => 0.1 * ratio, [ratio]);
+  const level = useMemo(() => {
+    const x = ratio / 100;
+    if (x < 0.20) return 0;
+    if (x < 0.40) return 1;
+    if (x < 0.65) return 2;
+    if (x < 0.85) return 3;
+    return 4;
+  }, [ratio]);
 
   function getRootEl(): HTMLElement | null {
     return document.querySelector('.matrix-theme');
@@ -91,19 +99,12 @@ const JammingControl: React.FC = () => {
     if (!root) return;
     root.classList.toggle('jamming-active', enabled);
     if (!enabled) {
-      root.style.removeProperty('--jamming-intensity');
-      root.style.removeProperty('--jamming-eased');
+      root.removeAttribute('data-jam-level');
       stop();
       return;
     }
     // When enabled set initial intensity and start audio
-    // Visual intensity scaled to full range only near slider end
-    // jOverS in [0,10] -> intensity in [0,1]
-    const intensity = Math.min(1, jOverS / 10);
-    const eased = Math.pow(intensity, 1.6); // gradvis start, men tydelig slut
-    root.style.setProperty('--jamming-intensity', String(eased));
-    root.style.setProperty('--jamming-eased', String(eased));
-    root.classList.toggle('jamming-max', eased > 0.9);
+    root.setAttribute('data-jam-level', String(level));
     start();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled]);
@@ -111,13 +112,10 @@ const JammingControl: React.FC = () => {
   useEffect(() => {
     const root = getRootEl();
     if (!root || !enabled) return;
-    const intensity = Math.min(1, jOverS / 10);
-    const eased = Math.pow(intensity, 1.6);
-    root.style.setProperty('--jamming-intensity', String(eased));
-    root.style.setProperty('--jamming-eased', String(eased));
-    root.classList.toggle('jamming-max', eased > 0.9);
+    root.setAttribute('data-jam-level', String(level));
     const signalAmp = signalGainRef.current?.gain?.value ?? 0.2;
-    const noiseAmp = Math.sqrt(jOverS) * signalAmp;
+    const noiseScale = [0.0, 0.4, 0.9, 1.6, 2.2][level] ?? 0;
+    const noiseAmp = noiseScale * signalAmp;
     if (noiseGainRef.current && audioContextRef.current) {
       noiseGainRef.current.gain.setTargetAtTime(noiseAmp, audioContextRef.current.currentTime, 0.05);
     }

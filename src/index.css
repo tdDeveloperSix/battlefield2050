@@ -98,20 +98,38 @@
 .matrix-theme .border, .matrix-theme [class*="border-slate-"] { border-color: #00ff66 !important; }
 
 /* Global jamming intensity affects all text blocks via CSS variables */
-.matrix-theme.jamming-active {
-  --jamming-intensity: var(--jamming-intensity, 0);
+.matrix-theme.jamming-active {}
+
+.matrix-theme.jamming-active[data-jam-level="0"] :where(p, li, span, a, blockquote, h1, h2, h3, h4, h5, h6, strong, em) {
+  /* almost clean */
+  text-shadow: 0.5px 0 0 rgba(255,0,0,0.3), -0.5px 0 0 rgba(0,255,255,0.3);
 }
 
-.matrix-theme.jamming-active :where(p, li, span, a, blockquote, h1, h2, h3, h4, h5, h6, strong, em) {
+.matrix-theme.jamming-active[data-jam-level="1"] :where(p, li, span, a, blockquote, h1, h2, h3, h4, h5, h6, strong, em) {
   position: relative;
   text-shadow:
-    calc(var(--jamming-eased, var(--jamming-intensity)) * 2px) 0 0 rgba(255, 0, 0, 0.7),
-    calc(var(--jamming-eased, var(--jamming-intensity)) * -2px) 0 0 rgba(0, 255, 255, 0.7);
-  filter: blur(calc(var(--jamming-eased, var(--jamming-intensity)) * 0.6px));
+    1.2px 0 0 rgba(255,0,0,0.55),
+    -1.2px 0 0 rgba(0,255,255,0.55);
+  filter: blur(0.4px);
 }
 
 /* Extreme jamming: heavy split, jitter and scanline offset */
-.matrix-theme.jamming-active.jamming-max :where(p, li, span, a, blockquote, h1, h2, h3, h4, h5, h6, strong, em) {
+.matrix-theme.jamming-active[data-jam-level="2"] :where(p, li, span, a, blockquote, h1, h2, h3, h4, h5, h6, strong, em) {
+  text-shadow:
+    2px 0 0 rgba(255,0,0,0.7),
+    -2px 0 0 rgba(0,255,255,0.7);
+  filter: blur(1px) contrast(1.1);
+}
+
+.matrix-theme.jamming-active[data-jam-level="3"] :where(p, li, span, a, blockquote, h1, h2, h3, h4, h5, h6, strong, em) {
+  text-shadow:
+    3px 0 0 rgba(255,0,0,0.85),
+    -3px 0 0 rgba(0,255,255,0.85);
+  filter: blur(1.6px) contrast(1.25) saturate(1.2);
+  animation: glitch-jitter 0.5s steps(2,end) infinite;
+}
+
+.matrix-theme.jamming-active[data-jam-level="4"] :where(p, li, span, a, blockquote, h1, h2, h3, h4, h5, h6, strong, em) {
   text-shadow:
     4px 0 0 rgba(255,0,0,0.9),
     -4px 0 0 rgba(0,255,255,0.9),
