@@ -1211,7 +1211,7 @@ function App() {
           
           <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
             <a 
-              href="mailto:battlefield2050@proton.me" 
+              href="mailto:Djason6@proton.me" 
               className="text-lg sm:text-xl text-blue-400 hover:text-blue-300 transition-colors duration-200 font-mono"
             >
               {t('contact.email')}
