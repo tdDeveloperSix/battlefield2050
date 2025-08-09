@@ -140,7 +140,8 @@
         "title": "Beslutningsparitet og Algoritmisk Konkurrence",
         "intro": "Det begyndte med én blå glød på et F-16-head-up-display under DARPA's AlphaDogfight Trials i 2020. På få sekunder drejede et virtuelt jagerfly—styret af Heron Systems' algoritme—cirkler om en pilot med 2 000 flytimer i bagagen og sendte ham ud i fem nederlag på stribe. For første gang stod det klart, at en ren software­agent kunne matche – ja, overgå – menneskelig dømmekraft i den mest krævende disciplin, luftkamp.",
         "heronSystems": "Men talenterne rakte videre end rå reaktions­tid. Algoritmen læste pilotens energibalance, gættede hans næste rul, justerede sin egen vinkel i realtid og straffede selv de mindste fejl, som var det en erfaren instruktør. Observatører beskrev manøvren som instinktiv—næsten kreativ. Dermed var beslutnings­paritet en realitet: øjeblikket hvor maskinen ikke blot regner hurtigere, men tænker på højde med sin menneskelige modpart i et komplekst, dynamisk miljø.",
-        "decisionCycles": "AlphaDogfight blev vendepunktet, der skubbede forsvars­verdenen ind i Digital Integration-æraen. Fra nu af handlede spørgsmålet ikke om, om AI kunne kæmpe, men om hvordan mennesker og maskiner skulle dele førersædet—og hvor længe mennesket overhovedet kunne blive siddende."
+        "decisionCycles": "AlphaDogfight blev vendepunktet, der skubbede forsvars­verdenen ind i Digital Integration-æraen. Fra nu af handlede spørgsmålet ikke om, om AI kunne kæmpe, men om hvordan mennesker og maskiner skulle dele førersædet—og hvor længe mennesket overhovedet kunne blive siddende.",
+        "tryGame": "Vil du selv prøve? Lige herunder kan du teste en lille AI Dogfight simulator og flyve mod en simpel AI, som gradvist bliver bedre."
       },
       "gradualDominance": {
         "title": "Gradvis Dominans og Menneskelig Marginalisering",

@@ -279,7 +279,8 @@
         "title": "Decision Parity and Algorithmic Competition",
         "intro": "It began with a single blue glow on an F-16 head-up display during DARPA's AlphaDogfight Trials in 2020. Within seconds, a virtual fighter—controlled by Heron Systems' algorithm—circled around a pilot with 2,000 flight hours and sent him to five straight defeats. For the first time, it became clear that a pure software agent could match—indeed, surpass—human judgment in the most demanding discipline: air combat.",
         "heronSystems": "But the talents extended beyond raw reaction time. The algorithm read the pilot's energy balance, guessed his next roll, adjusted its own angle in real-time, and punished even the smallest errors, like an experienced instructor. Observers described the maneuvers as instinctive—almost creative. Thus, decision parity became reality: the moment when the machine not only calculates faster but thinks on par with its human counterpart in a complex, dynamic environment.",
-        "decisionCycles": "AlphaDogfight became the turning point that pushed the defense world into the Digital Integration era. From now on, the question was not whether AI could fight, but how humans and machines should share the cockpit—and how long humans could even remain seated."
+        "decisionCycles": "AlphaDogfight became the turning point that pushed the defense world into the Digital Integration era. From now on, the question was not whether AI could fight, but how humans and machines should share the cockpit—and how long humans could even remain seated.",
+        "tryGame": "Want to try it yourself? Just below you can test a small AI Dogfight simulator and fly against a simple AI that gradually improves."
       },
       "gradualDominance": {
         "title": "Gradual Dominance and Human Marginalization",

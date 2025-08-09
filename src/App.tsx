@@ -544,6 +544,14 @@ function App() {
                           )
                         }}
                       />
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                        {t('timeline.digitalIntegration.decisionParity.tryGame')}
+                      </p>
+                    </div>
+
+                    {/* AI Dogfight simulator placeret mellem Beslutningsparitet og Gradvis Dominans */}
+                    <div className="mt-6">
+                      <XnetAirRace />
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
