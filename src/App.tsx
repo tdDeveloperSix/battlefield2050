@@ -20,6 +20,7 @@ import { sanitizeHtml } from './utils/sanitizeHtml';
 import PodcastPlayer from './components/PodcastPlayer';
 import MatrixRain from './components/MatrixRain';
 import BackToTop from './components/BackToTop';
+import XnetAirRace from './components/XnetAirRace';
 import JammingControl from './components/JammingControl';
 
 
@@ -1114,6 +1115,13 @@ function App() {
 
       {/* Side Jamming Control */}
       <JammingControl />
+
+      {/* AI Dogfight simulator – sektion */}
+      <section id="xnet-air-race" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-transparent">
+        <div className="max-w-7xl mx-auto">
+          <XnetAirRace />
+        </div>
+      </section>
 
       {/* Implications Section */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-transparent">

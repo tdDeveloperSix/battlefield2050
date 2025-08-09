@@ -619,4 +619,56 @@
     "title": "Listen to the Story as a Podcast",
     "description": "Prefer to listen? Experience the entire story of the battlefield's digital revolution as an engaging podcast. Perfect for commuting, exercising, or just relaxing."
   }
-} 
+,
+  "dogfight": {
+    "title": "AI Dogfight simulator",
+    "gen": "Gen",
+    "aiBest": "AI best",
+    "aiAvg": "AI avg",
+    "rules": {
+      "title": "Rules",
+      "start": "Start",
+      "item1": "Steer with ← → ↑ ↓, fire with Space.",
+      "item2": "Missiles fly straight and disappear off the field.",
+      "item3": "Edge = death. Plane-plane collision = both die.",
+      "item4": "Score shown top-right. AI learns continuously."
+    },
+    "buttons": {
+      "pause": "Pause game",
+      "resume": "Resume game",
+      "pauseLearning": "Pause learning",
+      "startLearning": "Start learning",
+      "reset": "Reset"
+    },
+    "labels": {
+      "guides": "Guides",
+      "explainAI": "Explain AI",
+      "prefDistance": "Preferred distance",
+      "shootWilling": "Willingness to shoot",
+      "evasion": "Evasion",
+      "weave": "Weave",
+      "tempo": "Tempo"
+    },
+    "controls": "Controls",
+    "aiProgress": "AI progress",
+    "generation": "Generation",
+    "best": "Best",
+    "average": "Average",
+    "improvement": "Improvement",
+    "strategyTitle": "AI strategy (simplified)",
+    "distance": {"close": "close", "mid": "mid-range", "far": "far"},
+    "shoot": {"aggressive": "aggressive", "balanced": "balanced", "cautious": "cautious"},
+    "evade": {"high": "very hard", "medium": "moderate", "low": "low"},
+    "jinkAmp": {"strong": "strong", "medium": "medium", "weak": "weak"},
+    "jinkFreq": {"fast": "fast", "medium": "medium", "slow": "slow"},
+    "sidebar": {
+      "title": "What’s happening?",
+      "item1": "Missiles fly straight; disappear when off screen.",
+      "item2": "Edge = death. Plane-plane collision = both die.",
+      "item3": "ES-learning runs in the background; UI shows progress."
+    },
+    "hud": {"player": "Player", "ai": "AI", "alive": "ALIVE", "hit": "HIT"},
+    "highscoreTitle": "Highscore (Top 5)",
+    "diedReset": "Player died – resetting round"
+  }
+}

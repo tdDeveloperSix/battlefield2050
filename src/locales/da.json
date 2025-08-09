@@ -454,6 +454,58 @@
     "copyright": "2025 - Kamppladsens Digitale Revolution"
   },
 
+  "dogfight": {
+    "title": "AI Dogfight simulator",
+    "gen": "Gen",
+    "aiBest": "AI bedst",
+    "aiAvg": "AI gns",
+    "rules": {
+      "title": "Regler",
+      "start": "Start",
+      "item1": "Styr med ← → ↑ ↓, affyr med Space.",
+      "item2": "Missiler flyver ligeud og forsvinder uden for banen.",
+      "item3": "Kant = død. Fly-fly kollision = begge dør.",
+      "item4": "Score vises øverst højre. AI lærer løbende."
+    },
+    "buttons": {
+      "pause": "Pause spil",
+      "resume": "Fortsæt spil",
+      "pauseLearning": "Pause læring",
+      "startLearning": "Start læring",
+      "reset": "Nulstil"
+    },
+    "labels": {
+      "guides": "Guides",
+      "explainAI": "Forklar AI",
+      "prefDistance": "Foretrukken afstand",
+      "shootWilling": "Skydevillighed",
+      "evasion": "Undvigelse",
+      "weave": "Slingren",
+      "tempo": "Tempo"
+    },
+    "controls": "Styring",
+    "aiProgress": "AI fremskridt",
+    "generation": "Generation",
+    "best": "Bedste",
+    "average": "Gennemsnit",
+    "improvement": "Forbedring",
+    "strategyTitle": "AI’s strategi (forenklet)",
+    "distance": {"close": "tæt på", "mid": "mellemafstand", "far": "på afstand"},
+    "shoot": {"aggressive": "aggressiv", "balanced": "balanceret", "cautious": "forsigtig"},
+    "evade": {"high": "meget hård", "medium": "moderat", "low": "lav"},
+    "jinkAmp": {"strong": "kraftig", "medium": "moderat", "weak": "svag"},
+    "jinkFreq": {"fast": "hurtigt", "medium": "mellem", "slow": "langsomt"},
+    "sidebar": {
+      "title": "Hvad sker der?",
+      "item1": "Missiler flyver ligeud; forsvinder når de er uden for rammen.",
+      "item2": "Kant = død. Fly-fly kollision = begge dør.",
+      "item3": "ES-læring fortsætter i baggrunden; UI viser fremgang."
+    },
+    "hud": {"player": "Spiller", "ai": "AI", "alive": "ALIVE", "hit": "TRUFFET"},
+    "highscoreTitle": "Highscore (Top 5)",
+    "diedReset": "Spilleren døde – runden nulstilles"
+  },
+
   "decisionWeight": {
     "human": "Menneske",
     "ai": "AI",
