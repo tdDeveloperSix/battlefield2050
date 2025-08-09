@@ -57,14 +57,21 @@ const JammingControl: React.FC = () => {
       const start = sectionTop - viewH * 0.1;
       const end = sectionTop + sectionHeight - viewH * 0.1;
       const t = Math.min(1, Math.max(0, (docTop - start) / (end - start)));
-      if (enabled) {
+      if (enabled && !panelOpen) {
         setRatio(Math.round(t * 100));
       }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
-  }, [enabled]);
+  }, [enabled, panelOpen]);
+
+  // Auto-hide panelet efter inaktivitet, især på mobil
+  useEffect(() => {
+    if (!panelOpen) return;
+    const timer = setTimeout(() => setPanelOpen(false), 4000);
+    return () => clearTimeout(timer);
+  }, [panelOpen]);
 
   function getRootEl(): HTMLElement | null {
     return document.querySelector('.matrix-theme');
@@ -157,34 +164,41 @@ const JammingControl: React.FC = () => {
   }, []);
 
   return (
-    <div className={`fixed right-3 top-1/2 -translate-y-1/2 z-40 transition-opacity ${isZoneActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+    <div
+      className={`fixed right-3 bottom-20 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 translate-y-0 z-40 transition-opacity ${isZoneActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      aria-hidden={!isZoneActive}
+    >
       {/* Toggle button */}
       <div className="flex flex-col items-center space-y-2">
         <button
-          onClick={() => setManualPaused(p => !p)}
+          onClick={() => {
+            setManualPaused(p => !p);
+            setPanelOpen(true);
+          }}
           title={t('jamming.title') ?? 'Jamming'}
-          className={`w-12 h-12 rounded-full border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black transition ${enabled ? 'bg-emerald-400 text-black' : 'bg-transparent'}`}
+          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black transition opacity-70 hover:opacity-100 focus:opacity-100 ${enabled ? 'bg-emerald-400 text-black' : 'bg-transparent'}`}
+          aria-pressed={enabled}
         >
           {enabled ? '■' : '▶'}
         </button>
         {/* Small panel */}
-        {isZoneActive && (
-          <div className="bg-black/70 border border-emerald-400 rounded-md p-3 w-56 shadow-lg">
+        {isZoneActive && panelOpen && (
+          <div className="bg-black/70 backdrop-blur-sm border border-emerald-400 rounded-md p-3 w-52 sm:w-56 shadow-lg">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs text-slate-300">{t('jamming.sliderAria')}</span>
               <button
-                className="text-xs text-slate-400 hover:text-white"
-                onClick={() => setPanelOpen(p => !p)}
+                className="text-xs px-2 py-1 rounded border border-emerald-400 text-emerald-300 hover:bg-emerald-400 hover:text-black"
+                onClick={() => setManualPaused(p => !p)}
+                aria-pressed={manualPaused}
               >
-                {panelOpen ? '−' : '+'}
+                {manualPaused ? '▶' : '■'}
               </button>
             </div>
-            <input type="range" min={0} max={100} value={ratio} readOnly className="w-full accent-emerald-400" />
-            {panelOpen && (
-              <div className="mt-2 text-xs text-slate-300 font-mono">
-                J/S≈{jOverS.toFixed(2)} • {t('jamming.db')}: {jOverS > 0 ? (10 * Math.log10(jOverS)).toFixed(1) : '-∞'} dB
-              </div>
-            )}
+            <input
+              type="range" min={0} max={100} value={ratio}
+              onChange={(e) => setRatio(Number(e.target.value))}
+              className="w-full accent-emerald-400 h-1.5"
+            />
             <div className="flex items-center justify-between mt-2 text-xs">
               <span className="text-slate-400">{t('jamming.clean')}</span>
               <span className="text-slate-400">{t('jamming.jammed')}</span>
