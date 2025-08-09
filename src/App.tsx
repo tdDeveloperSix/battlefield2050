@@ -732,6 +732,16 @@ function App() {
                 {/* Detailed Content Section for Hybrid Command */}
                 {section.id === 'hybrid-command' && (
                   <div className="mt-16 space-y-8">
+                    {/* Narrative Box (Hybrid Command) */}
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
+                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
+                        <Users className="w-6 h-6 mr-3 text-blue-400" />
+                        {t('timeline.hybridCommand.narrative.title')}
+                      </h4>
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(t('timeline.hybridCommand.narrative.content'))
+                      }} />
+                    </div>
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
                         <Users className="w-6 h-6 mr-3 text-blue-400" />
@@ -833,6 +843,16 @@ function App() {
                 {/* Detailed Content Section for Machine Superiority */}
                 {section.id === 'machine-superiority' && (
                   <div className="mt-16 space-y-8">
+                    {/* Narrative Box (Machine Superiority) */}
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
+                      <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
+                        <Shield className="w-6 h-6 mr-3 text-cyan-400" />
+                        {t('timeline.machineSuperiority.narrative.title')}
+                      </h4>
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(t('timeline.machineSuperiority.narrative.content'))
+                      }} />
+                    </div>
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
                         <Shield className="w-6 h-6 mr-3 text-red-400" />
