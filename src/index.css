@@ -97,6 +97,37 @@
 .matrix-theme [class*="bg-slate-"] { border-color: #00ff66 !important; }
 .matrix-theme .border, .matrix-theme [class*="border-slate-"] { border-color: #00ff66 !important; }
 
+/* Global jamming intensity affects all text blocks via CSS variables */
+.matrix-theme.jamming-active {
+  --jamming-intensity: var(--jamming-intensity, 0);
+}
+
+.matrix-theme.jamming-active :where(p, li, span, a, blockquote, h1, h2, h3, h4, h5, h6, strong, em) {
+  position: relative;
+  text-shadow:
+    calc(var(--jamming-eased, var(--jamming-intensity)) * 2px) 0 0 rgba(255, 0, 0, 0.7),
+    calc(var(--jamming-eased, var(--jamming-intensity)) * -2px) 0 0 rgba(0, 255, 255, 0.7);
+  filter: blur(calc(var(--jamming-eased, var(--jamming-intensity)) * 0.6px));
+}
+
+/* Extreme jamming: heavy split, jitter and scanline offset */
+.matrix-theme.jamming-active.jamming-max :where(p, li, span, a, blockquote, h1, h2, h3, h4, h5, h6, strong, em) {
+  text-shadow:
+    4px 0 0 rgba(255,0,0,0.9),
+    -4px 0 0 rgba(0,255,255,0.9),
+    0 0 8px rgba(0,0,0,0.9);
+  filter: blur(2.5px) contrast(1.45) saturate(1.45);
+  animation: heavy-glitch 0.2s steps(2, end) infinite;
+}
+
+@keyframes heavy-glitch {
+  0% { transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+  25% { transform: translate(1px, -1px) skewX(0.3deg); clip-path: inset(0 0 60% 0); }
+  50% { transform: translate(-1px, 0.5px); clip-path: inset(40% 0 0 0); }
+  75% { transform: translate(1px, -0.5px); clip-path: inset(10% 0 20% 0); }
+  100% { transform: translate(-1px, 0.5px); clip-path: inset(0 0 0 0); }
+}
+
 /* Headings glow */
 .matrix-theme h1, .matrix-theme h2, .matrix-theme h3, .matrix-theme h4 {
   color: #a7ffcf !important;
@@ -363,6 +394,44 @@ p {
   .text-7xl {
     font-size: 2.5rem;
   }
+}
+
+/* Glitch styles for JammingSlider */
+.glitch-container {
+  --glitch-intensity: 0; /* 0..1 */
+}
+
+.glitch-text {
+  position: relative;
+  text-shadow:
+    calc(var(--glitch-intensity) * 2px) 0 0 rgba(255, 0, 0, 0.8),
+    calc(var(--glitch-intensity) * -2px) 0 0 rgba(0, 255, 255, 0.8);
+  filter: blur(calc(var(--glitch-intensity) * 0.6px));
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  opacity: calc(var(--glitch-intensity) * 0.6);
+  pointer-events: none;
+}
+
+@keyframes glitch-jitter {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(0.3px, -0.5px); }
+  50% { transform: translate(-0.4px, 0.4px); }
+  75% { transform: translate(0.5px, 0.2px); }
+  100% { transform: translate(0, 0); }
+}
+
+.glitch-text {
+  animation: glitch-jitter 0.6s steps(2, end) infinite;
 }
 
 /* Dark mode optimizations */

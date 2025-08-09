@@ -20,6 +20,7 @@ import { sanitizeHtml } from './utils/sanitizeHtml';
 import PodcastPlayer from './components/PodcastPlayer';
 import MatrixRain from './components/MatrixRain';
 import BackToTop from './components/BackToTop';
+import JammingControl from './components/JammingControl';
 
 
 interface TimelineSection {
@@ -1110,6 +1111,9 @@ function App() {
           ))}
         </div>
       </section>
+
+      {/* Side Jamming Control */}
+      <JammingControl />
 
       {/* Implications Section */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-transparent">

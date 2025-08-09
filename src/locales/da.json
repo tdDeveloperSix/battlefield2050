@@ -8,6 +8,19 @@
   "interactiveTimelineTitle": "Evolutionens Tidslinje",
   "interactiveTimelineSubtitle": "Følg transformationen af militære operationer gennem seks kritiske faser, fra menneskelig dominans til total automation. Hver fase repræsenterer et fundamentalt skift i hvordan krigsførelse planlægges, udføres og kontrolleres.",
   "followDevelopment": "Følg udviklingen frem mod 2050",
+
+  "jamming": {
+    "title": "Jamming-demo: SNR og læsbarhed",
+    "lead": "Skru op for støjen (J/S) og se hvordan signalet forsvinder – både i lyd og tekst.",
+    "subtitle": "Jamming virker ved at sænke SNR hos modtageren; allerede ved J/S ≈ 1 (0 dB) kan decoding fejle.",
+    "sliderAria": "Jamming-styrke",
+    "clean": "Rent signal",
+    "jammed": "Jammed",
+    "db": "dB",
+    "play": "Afspil",
+    "stop": "Stop",
+    "sampleText": "Dette er en prøve på brødtekst. Når støjen øges, bliver farvekanalerne forskudt og teksten svær at læse – præcis som når J/S nærmer sig 0 dB og SNR kollapser."
+  },
   
   "heroIntro": {
     "opening": {

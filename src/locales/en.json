@@ -6,6 +6,19 @@
   "interactiveTimelineTitle": "Evolution Timeline",
   "interactiveTimelineSubtitle": "Follow the transformation of military operations through six critical phases, from human dominance to total automation. Each phase represents a fundamental shift in how warfare is planned, executed, and controlled.",
   "followDevelopment": "follow the development towards 2050",
+
+  "jamming": {
+    "title": "Jamming demo: SNR and readability",
+    "lead": "Increase the noise (J/S) and watch the signal disappear – in both audio and text.",
+    "subtitle": "Jamming reduces the receiver's SNR; even J/S ≈ 1 (0 dB) can break decoding.",
+    "sliderAria": "Jamming strength",
+    "clean": "Clean signal",
+    "jammed": "Jammed",
+    "db": "dB",
+    "play": "Play",
+    "stop": "Stop",
+    "sampleText": "This is a sample paragraph. As noise increases, color channels split and the text becomes hard to read – much like when J/S approaches 0 dB and SNR collapses."
+  },
   "scrollHint": "Scroll down to start the walkthrough",
   
   "heroIntro": {
