@@ -20,6 +20,7 @@ const JammingControl: React.FC = () => {
   const [panelOpen, setPanelOpen] = useState(false);
   const [isZoneActive, setIsZoneActive] = useState(false);
   const [manualPaused, setManualPaused] = useState(false);
+  const [bottomOffset, setBottomOffset] = useState<number>(112);
 
   const audioContextRef = useRef<Nullable<AudioContext>>(null);
   const signalOscRef = useRef<Nullable<OscillatorNode>>(null);
@@ -39,6 +40,22 @@ const JammingControl: React.FC = () => {
   }, [ratio]);
 
   const enabled = isZoneActive && !manualPaused;
+
+  // Match BackToTop bottom offset so the control hovers lige over den
+  useEffect(() => {
+    const updateOffset = () => {
+      const bar = document.querySelector('[data-role="decision-weight-bar"]') as HTMLElement | null;
+      const barHeight = bar ? bar.getBoundingClientRect().height : 0;
+      const safe = (window as any).visualViewport ? (window as any).visualViewport.height - window.innerHeight : 0;
+      const base = 24; // px ekstra luft
+      const backToTopGap = 64; // placer knappen tydeligt OVER "Til top"-knappen
+      const off = Math.max(96, Math.ceil(barHeight) + base + safe);
+      setBottomOffset(off + backToTopGap);
+    };
+    updateOffset();
+    window.addEventListener('resize', updateOffset);
+    return () => window.removeEventListener('resize', updateOffset);
+  }, []);
 
   // Track when "Machine Superiority" section is in view and compute progress
   useEffect(() => {
@@ -165,7 +182,8 @@ const JammingControl: React.FC = () => {
 
   return (
     <div
-      className={`fixed right-3 bottom-20 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 translate-y-0 z-40 transition-opacity ${isZoneActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      style={{ bottom: `calc(env(safe-area-inset-bottom, 0px) + ${bottomOffset}px)` }}
+      className={`fixed right-4 sm:right-6 z-[55] transition-opacity ${isZoneActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       aria-hidden={!isZoneActive}
     >
       {/* Toggle button */}
@@ -176,14 +194,18 @@ const JammingControl: React.FC = () => {
             setPanelOpen(true);
           }}
           title={t('jamming.title') ?? 'Jamming'}
-          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black transition opacity-70 hover:opacity-100 focus:opacity-100 ${enabled ? 'bg-emerald-400 text-black' : 'bg-transparent'}`}
+          className={`jam-toggle w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-emerald-400 text-emerald-300 transition opacity-90 hover:opacity-100 focus:opacity-100 ${enabled ? 'bg-emerald-500/95 text-black' : 'bg-black/70'}`}
           aria-pressed={enabled}
         >
-          {enabled ? '■' : '▶'}
+          {enabled ? (
+            <svg className="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
+          ) : (
+            <svg className="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          )}
         </button>
         {/* Small panel */}
         {isZoneActive && panelOpen && (
-          <div className="bg-black/70 backdrop-blur-sm border border-emerald-400 rounded-md p-3 w-52 sm:w-56 shadow-lg">
+          <div className="bg-black/70 backdrop-blur-sm border border-emerald-400 rounded-md p-3 w-60 sm:w-64 shadow-lg mt-2">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs text-slate-300">{t('jamming.sliderAria')}</span>
               <button
