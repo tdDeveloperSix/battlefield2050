@@ -16,9 +16,10 @@ function createNoiseBuffer(context: AudioContext, durationSeconds = 2): AudioBuf
 
 const JammingControl: React.FC = () => {
   const { t } = useTranslation();
-  const [enabled, setEnabled] = useState(false);
   const [ratio, setRatio] = useState<number>(0); // 0..100 → J/S 0..10
   const [panelOpen, setPanelOpen] = useState(false);
+  const [isZoneActive, setIsZoneActive] = useState(false);
+  const [manualPaused, setManualPaused] = useState(false);
 
   const audioContextRef = useRef<Nullable<AudioContext>>(null);
   const signalOscRef = useRef<Nullable<OscillatorNode>>(null);
@@ -36,6 +37,34 @@ const JammingControl: React.FC = () => {
     if (x < 0.85) return 3;
     return 4;
   }, [ratio]);
+
+  const enabled = isZoneActive && !manualPaused;
+
+  // Track when "Machine Superiority" section is in view and compute progress
+  useEffect(() => {
+    const section = document.getElementById('machine-superiority');
+    if (!section) return;
+    const onScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      // Active when any part of section is visible
+      const active = rect.bottom > 0 && rect.top < viewH;
+      setIsZoneActive(active);
+      // Progress (0 top -> 1 bottom) with small margins
+      const docTop = window.scrollY;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const start = sectionTop - viewH * 0.1;
+      const end = sectionTop + sectionHeight - viewH * 0.1;
+      const t = Math.min(1, Math.max(0, (docTop - start) / (end - start)));
+      if (enabled) {
+        setRatio(Math.round(t * 100));
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [enabled]);
 
   function getRootEl(): HTMLElement | null {
     return document.querySelector('.matrix-theme');
@@ -119,7 +148,7 @@ const JammingControl: React.FC = () => {
     if (noiseGainRef.current && audioContextRef.current) {
       noiseGainRef.current.gain.setTargetAtTime(noiseAmp, audioContextRef.current.currentTime, 0.05);
     }
-  }, [jOverS, enabled]);
+  }, [level, enabled]);
 
   useEffect(() => {
     return () => {
@@ -128,18 +157,18 @@ const JammingControl: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed right-3 top-1/2 -translate-y-1/2 z-40">
+    <div className={`fixed right-3 top-1/2 -translate-y-1/2 z-40 transition-opacity ${isZoneActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
       {/* Toggle button */}
       <div className="flex flex-col items-center space-y-2">
         <button
-          onClick={() => setEnabled(v => !v)}
+          onClick={() => setManualPaused(p => !p)}
           title={t('jamming.title') ?? 'Jamming'}
           className={`w-12 h-12 rounded-full border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black transition ${enabled ? 'bg-emerald-400 text-black' : 'bg-transparent'}`}
         >
-          JS
+          {enabled ? '■' : '▶'}
         </button>
         {/* Small panel */}
-        {enabled && (
+        {isZoneActive && (
           <div className="bg-black/70 border border-emerald-400 rounded-md p-3 w-56 shadow-lg">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs text-slate-300">{t('jamming.sliderAria')}</span>
@@ -150,14 +179,7 @@ const JammingControl: React.FC = () => {
                 {panelOpen ? '−' : '+'}
               </button>
             </div>
-            <input
-              type="range"
-              min={0}
-              max={100}
-              value={ratio}
-              onChange={(e) => setRatio(Number(e.target.value))}
-              className="w-full accent-emerald-400"
-            />
+            <input type="range" min={0} max={100} value={ratio} readOnly className="w-full accent-emerald-400" />
             {panelOpen && (
               <div className="mt-2 text-xs text-slate-300 font-mono">
                 J/S≈{jOverS.toFixed(2)} • {t('jamming.db')}: {jOverS > 0 ? (10 * Math.log10(jOverS)).toFixed(1) : '-∞'} dB
