@@ -383,6 +383,28 @@
   "implications": {
     "title": "Konsekvenser og Overvejelser",
     "subtitle": "Den digitale revolution i militære operationer rummer både enorme muligheder og betydelige udfordringer. Her er de centrale områder, der kræver opmærksomhed.",
+    "overview": {
+      "strategicAftermath": {
+        "title": "Strategisk efterspil",
+        "content": "I ugerne efter slaget i Østeuropa er verdenskortet uændret for det blotte øje – ingen nye besatte territorier, ingen opløste stater. Alligevel er magtbalancen fundamentalt forskudt.<br><br>De stater, der råder over de mest avancerede autonome netværk, kan nu udøve strategisk pres uden nogensinde at affyre et skud. Demonstrationen af maskinel overlegenhed fungerer som en stille trussel: <em>Vi kan gøre det igen – og hurtigere.</em>"
+      },
+      "politicalReaction": {
+        "title": "Politisk reaktion",
+        "content": "I FN’s Sikkerhedsråd taler diplomaterne om nødvendigheden af nye traktater, der begrænser brugen af fuldautonome våbensystemer. Men i kulisserne ved alle, at forbud er illusoriske – ingen stormagt vil afgive et forspring i maskinel beslutningstid. Resultatet er en ny form for strategisk kapløb, ikke om atomvåben, men om algoritmers reaktionstid og præcision."
+      },
+      "militaryDoctrines": {
+        "title": "Militære doktriner",
+        "content": "Forsvarsalliancer som NATO ændrer pludselig doktrin: Menneskelig kommandostruktur opretholdes kun for at sikre politisk legitimitet, men operativt er beslutningsprocesserne lagt i hænderne på maskiner. Øvelser handler ikke længere om manøvrer, men om <em>integration</em> – at sikre, at menneskelige og maskinelle strategiske lag kan udveksle information uden flaskehalse."
+      },
+      "economicShift": {
+        "title": "Økonomisk forskydning",
+        "content": "Teknologivirksomheder med specialer i kvantekommunikation, hyperspektrale sensorer og autonome beslutningssystemer bliver de nye globale magtspillere. Nationale budgetter omprioriteres: færre penge til bemandet materiel, flere til software, datacentre og orbital infrastruktur."
+      },
+      "newNormal": {
+        "title": "Den nye normal",
+        "content": "Slaget i Østeuropa 2050 bliver senere omtalt som \"den stille krig\" – ikke fordi den var uden vold, men fordi den manglede det menneskelige drama, der tidligere definerede krig. I stedet var det et øjeblik, hvor maskiner førte krigen fra første til sidste træk, mens mennesker blot var vidner.<br><br>For politiske ledere står én realitet tilbage: Fra dette punkt er det ikke længere nok at have en stærk hær. Man må have et stærkt netværk – og en maskinel hjerne, der kan bruge det."
+      }
+    },
     "ethical": {
       "title": "Etiske Udfordringer",
       "description": "Overgangen til AI-domineret krigsførelse rejser grundlæggende spørgsmål om ansvar, menneskelig værdi og de etiske grænser for autonome våben. Hvem bærer ansvaret, når autonome systemer træffer liv-og-død-beslutninger?"

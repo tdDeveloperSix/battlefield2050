@@ -350,6 +350,28 @@
   "implications": {
     "title": "Consequences and Considerations",
     "subtitle": "The digital revolution in military operations brings both enormous opportunities and significant challenges. Here are the central areas that require attention and consideration.",
+    "overview": {
+      "strategicAftermath": {
+        "title": "Strategic aftermath",
+        "content": "In the weeks after the battle in Eastern Europe, the world map looks unchanged to the naked eye – no new occupied territories, no dissolved states. Yet the balance of power has fundamentally shifted.<br><br>States that control the most advanced autonomous networks can now exert strategic pressure without ever firing a shot. The demonstration of machine superiority functions as a quiet threat: <em>We can do it again – and faster.</em>"
+      },
+      "politicalReaction": {
+        "title": "Political reaction",
+        "content": "In the UN Security Council, diplomats speak about the need for new treaties limiting the use of fully autonomous weapon systems. But behind the scenes everyone knows that bans are illusory – no great power will relinquish an edge in machine decision time. The result is a new form of strategic race, not about nuclear weapons, but about the reaction time and precision of algorithms."
+      },
+      "militaryDoctrines": {
+        "title": "Military doctrines",
+        "content": "Defense alliances like NATO suddenly change doctrine: Human command structure is maintained only to secure political legitimacy, but operationally decision processes are placed in the hands of machines. Exercises are no longer about maneuvers, but about <em>integration</em> – ensuring that human and machine strategic layers can exchange information without bottlenecks."
+      },
+      "economicShift": {
+        "title": "Economic shift",
+        "content": "Technology companies specializing in quantum communications, hyperspectral sensors, and autonomous decision systems become the new global power players. National budgets are reallocated: fewer funds for manned materiel, more for software, data centers, and orbital infrastructure."
+      },
+      "newNormal": {
+        "title": "The new normal",
+        "content": "The battle in Eastern Europe 2050 is later referred to as \"the silent war\" – not because it lacked violence, but because it lacked the human drama that used to define war. Instead, it was a moment where machines waged the war from first to last move, while humans were mere witnesses.<br><br>For political leaders one reality remains: From this point, it is no longer enough to have a strong army. One must have a strong network – and a machine brain capable of using it."
+      }
+    },
     "ethical": {
       "title": "Ethical Challenges",
       "description": "The transition to AI-dominated warfare raises fundamental questions about responsibility, human value, and the ethical boundaries of automated weapons. Who bears responsibility when autonomous systems make life-or-death decisions?"

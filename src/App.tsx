@@ -1123,6 +1123,30 @@ function App() {
             </p>
           </div>
 
+          {/* Implications Narrative Overview */}
+          <div className="grid gap-6 sm:gap-8 mb-12">
+            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white">{t('implications.overview.strategicAftermath.title')}</h3>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: sanitizeHtml(t('implications.overview.strategicAftermath.content')) }} />
+            </div>
+            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white">{t('implications.overview.politicalReaction.title')}</h3>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: sanitizeHtml(t('implications.overview.politicalReaction.content')) }} />
+            </div>
+            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white">{t('implications.overview.militaryDoctrines.title')}</h3>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: sanitizeHtml(t('implications.overview.militaryDoctrines.content')) }} />
+            </div>
+            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white">{t('implications.overview.economicShift.title')}</h3>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: sanitizeHtml(t('implications.overview.economicShift.content')) }} />
+            </div>
+            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white">{t('implications.overview.newNormal.title')}</h3>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: sanitizeHtml(t('implications.overview.newNormal.content')) }} />
+            </div>
+          </div>
+
           <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
             {implications.map((implication, index) => (
               <div
