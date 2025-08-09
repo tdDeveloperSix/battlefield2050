@@ -20,7 +20,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'da',
+    // Fallback til engelsk først, derefter dansk, hvis en nøgle mangler
+    fallbackLng: ['en', 'da'],
     supportedLngs: ['da', 'en'],
     debug: false,
     
@@ -50,6 +51,9 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    // Sikr at tomme eller null-oversættelser ikke vises som tomme strenge
+    returnNull: false,
+    returnEmptyString: false,
   });
 
 export default i18n; 

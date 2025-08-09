@@ -1,7 +1,7 @@
 export function sanitizeHtml(input: string): string {
   if (!input) return '';
 
-  const allowedTags = new Set(['A', 'SPAN', 'B', 'I', 'STRONG', 'EM']);
+  const allowedTags = new Set(['A', 'SPAN', 'B', 'I', 'STRONG', 'EM', 'BR']);
   const allowedAttrs: Record<string, Set<string>> = {
     A: new Set(['href', 'target', 'rel', 'class']),
     SPAN: new Set(['class']),
@@ -51,7 +51,6 @@ export function sanitizeHtml(input: string): string {
       if (node.tagName === 'A' && attr.name === 'href') {
         const val = attr.value.trim();
         if (/^javascript:/i.test(val) || val === '#') {
-          // behold evt. tidligere sat href fra onclick-konvertering, ellers no-op
           if (!node.getAttribute('href') || node.getAttribute('href') === '#') {
             node.setAttribute('href', '#');
           }

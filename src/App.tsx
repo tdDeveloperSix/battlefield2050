@@ -215,7 +215,7 @@ function App() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-slate-900/40" />
+        <div className="absolute inset-0" />
 
         <div className="relative z-10 text-center px-6 sm:px-8 lg:px-6 max-w-6xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent leading-tight break-words">
@@ -292,7 +292,7 @@ function App() {
       </section>
 
       {/* Interactive Timeline Overview */}
-      <section id="interactive-timeline" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-black/40">
+      <section id="interactive-timeline" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-transparent">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
@@ -506,27 +506,37 @@ function App() {
                 {/* Detailed Content Section for Digital Integration */}
                 {section.id === 'digital-integration' && (
                   <div className="mt-12 sm:mt-16 space-y-6 sm:space-y-8">
+                    {/* Narrative Box (Digital Integration) */}
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white">
+                        {t('timeline.digitalIntegration.narrative.title')}
+                      </h4>
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(t('timeline.digitalIntegration.narrative.content'))
+                      }} />
+                    </div>
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
                       <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
                         <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-red-400 flex-shrink-0" />
-                        {t('detailedSections.digitalIntegration.decisionParity.title')}
+                        {t('timeline.digitalIntegration.decisionParity.title')}
                       </h4>
-                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                        <HighlightedText
-                          text={t('detailedSections.digitalIntegration.oodaToStream.intro')}
-                          highlights={[
-                            { word: 'OODA-loop', className: 'text-emerald-400 font-semibold' },
-                            { word: 'neurale netværk', className: 'text-blue-400 font-semibold' },
-                            { word: 'neural networks', className: 'text-blue-400 font-semibold' }
-                          ]}
-                        />
-                      </p>
+                      <p 
+                        className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6"
+                        dangerouslySetInnerHTML={{
+                          __html: sanitizeHtml(
+                            highlightText(
+                              t('timeline.digitalIntegration.decisionParity.intro'),
+                              i18n.language as 'da' | 'en'
+                            )
+                          )
+                        }}
+                      />
                       <p 
                         className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6"
                         dangerouslySetInnerHTML={{ 
                           __html: sanitizeHtml(
                             highlightText(
-                              t('detailedSections.digitalIntegration.decisionParity.heronSystems'), 
+                              t('timeline.digitalIntegration.decisionParity.heronSystems'), 
                               i18n.language as 'da' | 'en'
                             )
                           )
@@ -607,6 +617,15 @@ function App() {
                 {/* Detailed Content Section for Autonomous Assistance */}
                 {section.id === 'autonomous-assistance' && (
                   <div className="mt-16 space-y-8">
+                    {/* Narrative Box (Autonomous Assistance) */}
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
+                      <h4 className="text-2xl font-bold mb-6 text-white">
+                        {t('timeline.autonomousAssistance.narrative.title')}
+                      </h4>
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(t('timeline.autonomousAssistance.narrative.content'))
+                      }} />
+                    </div>
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
                         <Brain className="w-6 h-6 mr-3 text-blue-400" />
@@ -615,9 +634,9 @@ function App() {
                       <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
                         __html: sanitizeHtml(t('detailedSections.autonomousAssistance.oodaToStream.intro'))
                       }} />
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.oodaToStream.continuousFlow')}
-                      </p>
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(t('detailedSections.autonomousAssistance.oodaToStream.continuousFlow'))
+                      }} />
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
@@ -625,17 +644,30 @@ function App() {
                         <Users className="w-6 h-6 mr-3 text-green-400" />
                         {t('detailedSections.autonomousAssistance.judgmentToParameters.title')}
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.judgmentToParameters.intro')}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.judgmentToParameters.parameterization')}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
-                        <span className="text-yellow-400 font-semibold">
-                          {t('detailedSections.autonomousAssistance.judgmentToParameters.humanMachineDialogue')}
-                        </span>
-                      </p>
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(
+                          highlightText(
+                            t('detailedSections.autonomousAssistance.judgmentToParameters.intro'),
+                            i18n.language as 'da' | 'en'
+                          )
+                        )
+                      }} />
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(
+                          highlightText(
+                            t('detailedSections.autonomousAssistance.judgmentToParameters.parameterization'),
+                            i18n.language as 'da' | 'en'
+                          )
+                        )
+                      }} />
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(
+                          highlightText(
+                            t('detailedSections.autonomousAssistance.judgmentToParameters.humanMachineDialogue'),
+                            i18n.language as 'da' | 'en'
+                          )
+                        )
+                      }} />
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
@@ -653,15 +685,30 @@ function App() {
                         <Zap className="w-6 h-6 mr-3 text-indigo-400" />
                         {t('detailedSections.autonomousAssistance.neuralInterfaces.title')}
                       </h4>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.neuralInterfaces.intro')}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.autonomousAssistance.neuralInterfaces.brainComputer')}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.autonomousAssistance.neuralInterfaces.continuousPipeline')}
-                      </p>
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(
+                          highlightText(
+                            t('detailedSections.autonomousAssistance.neuralInterfaces.intro'),
+                            i18n.language as 'da' | 'en'
+                          )
+                        )
+                      }} />
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(
+                          highlightText(
+                            t('detailedSections.autonomousAssistance.neuralInterfaces.brainComputer'),
+                            i18n.language as 'da' | 'en'
+                          )
+                        )
+                      }} />
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(
+                          highlightText(
+                            t('detailedSections.autonomousAssistance.neuralInterfaces.continuousPipeline'),
+                            i18n.language as 'da' | 'en'
+                          )
+                        )
+                      }} />
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
@@ -905,53 +952,53 @@ function App() {
                   <div className="mt-16 space-y-8">
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.intro')}
+                        {t('timeline.humanDominance.description')}
                       </p>
 
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('detailedSections.humanDominance.projectConvergence')}
+                        {t('timeline.humanDominance.projectConvergence')}
                       </p>
                       <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('detailedSections.humanDominance.firestorm')}
+                        {t('timeline.humanDominance.firestorm')}
                       </p>
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
                         <Zap className="w-6 h-6 mr-3 text-yellow-400" />
-                        {t('detailedSections.humanDominance.edgeAI.title')}
+                        {t('timeline.humanDominance.edgeAI.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
-                        __html: sanitizeHtml(t('detailedSections.humanDominance.edgeAI.intro'))
+                        __html: sanitizeHtml(t('timeline.humanDominance.edgeAI.intro'))
                       }} />
                       <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
-                        __html: sanitizeHtml(t('detailedSections.humanDominance.edgeAI.sentryTowers'))
+                        __html: sanitizeHtml(t('timeline.humanDominance.edgeAI.sentryTowers'))
                       }} />
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
                         <Target className="w-6 h-6 mr-3 text-red-400" />
-                        {t('detailedSections.humanDominance.swarmCoordination.title')}
+                        {t('timeline.humanDominance.swarmCoordination.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
-                        __html: sanitizeHtml(t('detailedSections.humanDominance.swarmCoordination.intro'))
+                        __html: sanitizeHtml(t('timeline.humanDominance.swarmCoordination.intro'))
                       }} />
                       <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
-                        __html: sanitizeHtml(t('detailedSections.humanDominance.swarmCoordination.chineseCapabilities'))
+                        __html: sanitizeHtml(t('timeline.humanDominance.swarmCoordination.chineseCapabilities'))
                       }} />
                     </div>
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
                         <Brain className="w-6 h-6 mr-3 text-indigo-400" />
-                        {t('detailedSections.humanDominance.oodaLoop.title')}
+                        {t('timeline.humanDominance.oodaLoop.title')}
                       </h4>
                       <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
-                        __html: sanitizeHtml(t('detailedSections.humanDominance.oodaLoop.intro'))
+                        __html: sanitizeHtml(t('timeline.humanDominance.oodaLoop.intro'))
                       }} />
                       <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
-                        __html: sanitizeHtml(t('detailedSections.humanDominance.oodaLoop.aiAdvantage'))
+                        __html: sanitizeHtml(t('timeline.humanDominance.oodaLoop.aiAdvantage'))
                       }} />
                     </div>
 
@@ -1045,7 +1092,7 @@ function App() {
       </section>
 
       {/* Implications Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-black/50">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">

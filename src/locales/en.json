@@ -49,7 +49,24 @@
         "Ability for creative problem-solving",
         "Limitations in speed and data processing",
         "Risk of human error under pressure"
-      ]
+      ],
+      "projectConvergence": "The US Army's Project Convergence (2020–2022) showed early large-scale experiments connecting sensors, decision support and fires – but with humans as required approvers in every loop.",
+      "firestorm": "British exercises with FIRESTORM demonstrated faster target nomination via AI-assisted data fusion, but shots still required an officer's approval.",
+      "edgeAI": {
+        "title": "Edge AI and local decisions",
+        "intro": "Small models at the network edge helped units filter signal noise and prioritize contact points. Pre-approved rules governed advice only – not triggers.",
+        "sentryTowers": "At bases and outposts, autonomous sentry towers began alerting via pattern recognition (vehicle types, movement profiles), but human guards still commanded effectors."
+      },
+      "swarmCoordination": {
+        "title": "Swarm coordination in miniature",
+        "intro": "Experimental drones could already in the early 2020s distribute reconnaissance tasks among themselves, but without weapons autonomy.",
+        "chineseCapabilities": "Reports of Chinese field trials with swarms pressured the West to accelerate – an early warning of the race that followed."
+      },
+      "oodaLoop": {
+        "title": "OODA loop still central",
+        "intro": "Observe–Orient–Decide–Act still served as the mental model for command; AI merely delivered faster observations and suggested options.",
+        "aiAdvantage": "Even here it became clear that algorithms could compress the OODA cycle – an edge that later became decisive."
+      }
     },
     "digitalIntegration": {
       "title": "Digital Integration",
@@ -68,173 +85,11 @@
         "Humans retain control over critical decisions",
         "Increased dependence on technological systems",
         "Need for new training and competency development"
-      ]
-    },
-    "autonomousAssistance": {
-      "title": "Autonomous Assistance",
-      "subtitle": "AI takes over more operational functions",
-      "description": "Autonomous systems begin to make independent decisions within defined parameters. Humans' role shifts from direct control to supervision and strategic planning.",
-      "details": [
-        "Autonomous weapon systems operate within predefined rules",
-        "AI makes tactical decisions in real-time",
-        "Machine-to-machine communication becomes standard",
-        "Humans focus on strategic oversight and ethical assessments",
-        "Swarm systems coordinate autonomously on the battlefield"
       ],
-      "characteristics": [
-        "Drastically reduced reaction time in combat",
-        "Ability to operate in dangerous or inaccessible environments",
-        "Consistent performance without fatigue or stress",
-        "Challenges with ethical responsibility and accountability",
-        "Risk of system failures or cyber attacks"
-      ]
-    },
-    "hybridCommand": {
-      "title": "Hybrid Command",
-      "subtitle": "Human-machine partnerships dominate",
-      "description": "Command structures are fundamentally restructured with AI as equal partners. Decision processes are drastically accelerated through neural interface technology.",
-      "details": [
-        "Neural interfaces connect humans directly with AI systems",
-        "Command structures redesigned around human-AI teams",
-        "Real-time strategic planning through AI-assisted analysis",
-        "Humans focus on creativity and complex problem-solving",
-        "AI handles routine operations and data processing"
-      ],
-      "characteristics": [
-        "Synergistic effects between human creativity and AI capacity",
-        "Increased speed in strategic decision-making",
-        "Improved coordination across military units",
-        "Complexity in responsibility distribution",
-        "Need for new leadership structures and principles"
-      ]
-    },
-    "machineSuperiority": {
-      "title": "Machine Superiority",
-      "subtitle": "AI systems take over strategic leadership",
-      "description": "Artificial intelligence demonstrates superior ability for complex strategic thinking and multi-dimensional planning. Humans retain veto power but rarely override AI decisions.",
-      "details": [
-        "AI systems demonstrate superior strategic thinking",
-        "Multi-dimensional war simulation and planning",
-        "Humans function primarily as ethical guides",
-        "Combat operations conducted mainly by autonomous units",
-        "AI coordinates complex operations across domains"
-      ],
-      "characteristics": [
-        "Superior analytical capacity and strategic foresight",
-        "Ability to handle extreme complexity",
-        "Consistent and objective decision-making",
-        "Reduced human influence on operational decisions",
-        "Potential challenges with creativity and adaptability"
-      ]
-    },
-    "singularity": {
-      "title": "Battlefield Singularity",
-      "subtitle": "AI's complete dominance over military operations",
-      "description": "In 2050, we reach the Battlefield Singularity - a point where AI systems not only assist or lead military operations, but completely transform warfare as a concept. Humans now function only as political decision-makers and ethical guides, while AI systems make all operational and tactical decisions.",
-      "details": [
-        "Completely autonomous military operations without human intervention",
-        "AI systems make all tactical and operational decisions",
-        "Humans retain only political and ethical oversight",
-        "Warfare becomes an algorithm-driven process",
-        "Minimal human role in combat operations"
-      ],
-      "characteristics": [
-        "Maximum efficiency and precision in military operations",
-        "Elimination of human errors and emotional decisions",
-        "Ability to operate in all environments without limitations",
-        "Fundamental questions about the nature and ethics of war",
-        "Risk of loss of human control and understanding"
-      ]
-    },
-    "phases": {
-      "humanDominance": {
-        "title": "Human Dominance",
-        "period": "2020-2025",
-        "description": "Traditional command structures with humans at the center"
+      "narrative": {
+        "title": "Over the Nevada Desert, August 2025",
+        "content": "An F-16 Falcon cuts through the shimmering heat over the Nevada desert. In the cockpit sits Captain Jason \"Hawk\" Reynolds, 2,000 flight hours behind him, sweat beading under the helmet. On his head-up display a blue marker flashes – a hostile fighter rapidly approaching from behind.<br><br>But the opponent is not a pilot of flesh and blood. It is an algorithm – an experiment called Heron.<br><br>The fight begins like any dogfight: turn, roll, seek position. Hawk tries to shake the opponent with a tight right pull. Normally that would buy him a little air, but the digital adversary reacts instantly, as if it had anticipated the move. Within seconds Heron is back on his tail, in firing range.<br><br>\"Fox Two,\" the screen reads before Hawk can even consider his next maneuver. In the virtual simulation he is hit. The first round is lost.<br><br>Five rounds later the result is clear: 6–0 to the algorithm. Not because it pushes buttons faster – but because it reads the patterns of the fight, predicts the opponent’s next move, and adjusts its plan in real time.<br><br>For the spectators on the base, it is the turning point. At that moment the question is no longer whether digital decision systems can match human judgment – but how long humans can remain in the cockpit at all."
       },
-      "digitalIntegration": {
-        "title": "Digital Integration", 
-        "period": "2025-2030",
-        "description": "Human-machine decision parity dominates"
-      },
-      "autonomousAssistance": {
-        "title": "Autonomous Assistance",
-        "period": "2030-2035", 
-        "description": "AI takes over routine decisions, humans handle strategic choices"
-      },
-      "hybridCommand": {
-        "title": "Hybrid Command",
-        "period": "2035-2040",
-        "description": "Human-machine partnerships dominate"
-      },
-      "machineSuperiority": {
-        "title": "Machine Superiority",
-        "period": "2040-2045",
-        "description": "AI systems surpass humans in most domains"
-      },
-      "singularity": {
-        "title": "Battlefield Singularity",
-        "period": "2050",
-        "description": "Complete transformation of warfare's nature and human role"
-      }
-    }
-  },
-  "detailedSections": {
-    "humanDominance": {
-      "title": "Human Dominance",
-      "subtitle": "Traditional command structures with humans at the center",
-      "description": "In this period, humans still dominate all aspects of military planning and execution. Decision-making occurs through established hierarchies, where experience and intuition are highly valued.",
-      "details": [
-        "Command structures are built on decades of experience and established doctrines",
-        "Decision processes are hierarchical and based on human judgment",
-        "Technology functions primarily as a supporting tool",
-        "Situational Awareness depends on human analysis and reporting",
-        "Tactical decisions are typically made by experienced officers based on training and intuition"
-      ],
-      "characteristics": [
-        "High degree of flexibility in unpredictable situations",
-        "Strong ethical and moral judgment",
-        "Ability for creative problem-solving",
-        "Limitations in speed and data processing",
-        "Risk of human error under pressure"
-      ],
-      "intro": "It was before dawn in the Arizona desert. Captain Sarah Miller sat alone in the mobile command tent when the first dust cloud rolled over the camp, leaving a fine, reddish film on the table beside her field mug. She reached for the coffee, but a red blink on the display stole her attention: ENEMY ARMOR DETECTED – 40 KM NE.\n\nIn the old days, Miller would have grabbed the radio, shouted for the S-2 officer, waited for confirmation from the drone, and only then sent the message on to the artillery staff. Under ideal conditions, it could take five to six minutes – in practice usually twenty, before the first shells were on target. But today Project Convergence 2020 was in full swing, and beside her ran the new AI system FIRESTORM.\n\nIn fractions of a second, FIRESTORM devoured raw data from satellite orbits, Predator feeds, and ground radars. The screen shifted from red to green and presented one proposal: \"Battery Bravo – 122 mm – fire for effect.\" Miller barely had time to blink before she pressed APPROVE. The clock on the wall showed it took 18 seconds from first sensor hit until the howitzer battery sent its salvo on its way. The shells were still in the air when the system generated the next target priority.\n\nMiller leaned back and felt an unexpected pit in her stomach. She had just experienced the classic \"kill chain\" – sensor report, assessment, order, fire – shrink from a quarter hour to under half a minute. One key on a touch screen was all that separated an enemy armored division from a precise artillery barrage. And as she watched the status icon shift from in-progress to neutralized, it dawned on her: the tempo of the future battlefield is no longer controlled by humans, but by algorithms – and the battlefield will never be the same again.",
-      "projectConvergence": "Under U.S. Army's Project Convergence 2020 demonstration, this was shown in practice: Here, a chain of AI and autonomous systems worked together to identify threats and designate the optimal weapon to neutralize them – all in about 20 seconds, a process that previously took 20 minutes. A central component was the AI-driven system called FIRESTORM (Fires Synchronization to Optimize Responses in Multi-Domain Operations).",
-      "firestorm": "FIRESTORM functioned as a digital fire control \"brain\" that received sensor information from ground, air, space, and cyberspace, analyzed it lightning-fast, and then recommended the best firing unit for each new target. In the demonstration, FIRESTORM designated, for example, an artillery unit to destroy an enemy armored vehicle 40 km away; operators only had to approve the proposal with a click, after which fire was laid – this entire sequence was completed faster than the shell actually flew to the target. Such sensor-to-effector integration at machine speed fundamentally changes the tempo and character of combat.",
-      "edgeAI": {
-        "title": "Edge AI and Frontline Intelligence",
-        "intro": "The FIRESTORM field trial showed how far 2025 technology has already come toward decisions at *machine tempo*. The system shortened the entire chain from sensor to effect to approximately 20 seconds – previously the same process took 15-20 minutes (<a href=\"#\" onclick=\"window.open('https://breakingdefense.com/2020/09/target-gone-in-20-seconds-army-sensor-shooter-test/', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">Breaking Defense</a>, <a href=\"#\" onclick=\"window.open('https://www.c4isrnet.com/artificial-intelligence/2020/09/25/the-army-just-conducted-a-massive-test-of-its-battlefield-artificial-intelligence-in-the-desert/', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">C4ISRNET</a>).",
-        "sentryTowers": "The key is Edge AI: algorithms running locally on drones, sensor towers, and combat vehicles. Even when the enemy jams communications, units can detect, classify, and alert targets without waiting for a distant headquarters. A good example is Anduril's Sentry Towers; during an ABMS demo, their local AI filter removed about 90% of the \"noise\" before anything reached the operator's screen, bringing response time close to zero (<a href=\"#\" onclick=\"window.open('https://www.defensenews.com/digital-show-dailies/ausa/2020/10/16/anduril-adapts-tech-to-detect-cruise-missiles-in-us-air-force-demo/', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">Defense News</a>, <a href=\"#\" onclick=\"window.open('https://www.anduril.com/article/anduril-at-abms/', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">Anduril</a>)."
-      },
-      "swarmCoordination": {
-        "title": "Swarm Coordination and Collective Intelligence",
-        "intro": "Where FIRESTORM connects few sensors to few effectors, swarm technology must control dozens of autonomous units as one unified organism. <a href=\"#\" onclick=\"window.open('https://www.darpa.mil/research/programs/offensive-swarm-enabled-tactics', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">DARPA's OFFSET program</a> has already shown micro-drones that autonomously distribute surveillance and attack from multiple angles without direct remote control. As early as 2016, the Pentagon demonstrated a swarm of 103 <a href=\"#\" onclick=\"window.open('https://en.wikipedia.org/wiki/Perdix_%28drone%29', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">**Perdix** drones</a> released from F/A-18 aircraft that flew as a coordinated flock.",
-        "chineseCapabilities": "China is following the same path. The People's Liberation Army's (PLA) Intelligent Precision Strike System lets drones select targets, plan missions, and only asks the operator to press \"approve\" before opening fire (<a href=\"#\" onclick=\"window.open('https://www.washingtontimes.com/news/2025/apr/23/chinese-military-advances-drone-swarm-warfare/', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">Washington Times</a>). The prototypes show a near future where hundreds of small sensors divide, converge, and strike faster than any human network can follow."
-      },
-      "oodaLoop": {
-        "title": "The OODA Loop and Decision Superiority",
-        "intro": "John Boyd's OODA loop (Observe–Orient–Decide–Act) gives advantages to those who complete the loop fastest. The FIRESTORM episode shows how 2025 AIs are beginning to push humans completely out of the circle: the system observed, oriented through data fusion, proposed the decision, and artillery fired – while a classical chain would still have been in \"Orient\".",
-        "aiAdvantage": "Military analysts call it an \"algorithmic speed blitz\": when an AI network closes the OODA loop in seconds, the opponent is constantly forced on the back foot (<a href=\"#\" onclick=\"window.open('https://nationalinterest.org/blog/buzz/future-war-will-be-%E2%80%98hyperactive-battlefields%E2%80%99-us-army-general-177371', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">National Interest</a>, <a href=\"#\" onclick=\"window.open('https://warriormaven.com/land/hyperactive-future-battlefield', '_blank'); return false;\" class=\"text-blue-400 hover:text-blue-300 underline\">Warrior Maven</a>). Today, most shots still require a human click, but the difference between 20 seconds and 20 minutes is enough for artillery to hit before the enemy can move. The next step – already on the drawing board in simulated duels in 2025 – is predictive maneuvers, where two AI systems guess each other's next move and adjust the plan within milliseconds. Even in its current form, Edge AI and swarm coordination give a clear foretaste of how future combat tempo is measured in processor speed rather than human decision speed."
-      }
-    },
-    "digitalIntegration": {
-      "title": "Digital Integration",
-      "subtitle": "Human-machine decision parity dominates",
-      "description": "AI systems begin to match human decision-making capabilities in specific domains. The balance between human and machine decision-making shifts as algorithms prove their worth in complex scenarios.",
-      "details": [
-        "AI systems demonstrate superior performance in specific tactical scenarios",
-        "Forward Air Controller tasks become semi-automated",
-        "Planning AIs simulate hundreds of combat scenarios in minutes",
-        "Officers transition from authors to editors of AI-generated plans",
-        "20% of tactical decisions now made by algorithms, 80% by humans"
-      ],
-      "characteristics": [
-        "Rapid decision-making in specific domains",
-        "Consistent performance under pressure",
-        "Superior data processing capabilities",
-        "Limited creativity and contextual understanding",
-        "Dependency on quality training data and scenarios"
-      ],
       "decisionParity": {
         "title": "Decision Parity and Algorithmic Competition",
         "intro": "It began with a single blue glow on an F-16 head-up display during DARPA's AlphaDogfight Trials in 2020. Within seconds, a virtual fighter—controlled by Heron Systems' algorithm—circled around a pilot with 2,000 flight hours and sent him to five straight defeats. For the first time, it became clear that a pure software agent could match—indeed, surpass—human judgment in the most demanding discipline: air combat.",
@@ -312,6 +167,10 @@
         "intro": "When algorithms make thousands of decisions per second, the logic behind each micro-action becomes opaque, even to their creators. This \"fog of automation\" is the 2030s' answer to Clausewitz's \"fog of war\": not a lack of data, but a lack of insight into why the machine chooses as it does. Therefore, the concept of control in C2 shifts from micromanagement to political oversight: humans frame objectives, ethics, and risk thresholds, while AI solves the details itself.",
         "newFog": "But precisely because no single brain can follow the decision stream, the period 2035-2040 requires something new – a Hybrid Command, where digital operations officers build plans, and living commanders only edit, weigh, and certify that the algorithm stays within the guardrails.",
         "controlRedefined": "The next chapter shows how this division of labor becomes standard, and how brigades learn to wage war in the shadow of a machine they cannot fully comprehend – but must nevertheless trust."
+      },
+      "narrative": {
+        "title": "Over the South China Sea, May 2032",
+        "content": "Rain lashes against the cockpit canopy, but Major Elena Park barely looks at the weather. Her eyes are fixed on the holographic projection in front of her: a living map of an island chain where ten small red markers blink rhythmically. Enemy artillery positions.<br><br>She gives no traditional orders. Instead she dictates to the system through her neural interface: \"Neutralize the batteries. Minimal collateral damage. Timeline: execute ASAP.\" That is all.<br><br>The swarm of autonomous combat drones – 48 units divided between air and sea surface – is already moving before her last thought has even formed. They communicate machine-to-machine without delay, exchange sensor data, distribute tasks. Two drones climb high to act as relays, others skim low between the islands, hidden by the rain haze.<br><br>Park sees only the top-level status icons change color: en route, engaged, neutralized. On her screen the process is almost beautiful – a synchronized ballet of machines adjusting formations in milliseconds, as if they shared a single mind.<br><br>After three minutes all markers are green. No human operator has issued detailed commands. No one has confirmed a shot. The mission is completed solely on the basis of the parameters Park set at the start.<br><br>She leans back and feels a twinge of unease. Her role has been reduced to defining what – not how. It is no longer an OODA loop she is part of. It is a continuous stream, where the machines themselves observe, orient, decide, and act – without pause, without looking back."
       }
     },
     "hybridCommand": {
