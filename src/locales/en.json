@@ -25,6 +25,178 @@
       "paragraph1": "The colonel touches the first color field of the timeline, and the projections spring to life as small interactive film clips playing around them."
     }
   },
+  "detailedSections": {
+    "digitalIntegration": {
+      "gradualDominance": {
+        "title": "Gradual Dominance and Human Marginalization",
+        "intro": "After AlphaDogfight, algorithms quickly moved into the field, but they didn't immediately steal the show. About four out of five decisions were still made by humans; nevertheless, the direction was clear. The first slide came when Forward Air Controller tasks became semi-automatic: an AI module wove together drone feeds, satellite imagery, and laser data, drafted a complete 9-Line, and sent the proposal to the operator, who simply pressed Approve. Decades of specialized training boiled down to one click—but only if the human said yes.",
+        "complexTasks": "Meanwhile, neural networks crept into the staff. Planning AIs simulated hundreds of combat scenarios in minutes, while logistics models distributed fuel and spare parts better than any Excel major. They proposed, humans double-checked. The result was that officers slid from authors to editors: they adjusted an ethical ceiling or a political constraint and approved. 20% of tactical decisions now lay with the code, 80% with people of flesh and blood—but the balance had begun to tip. The algorithm was still an advisor, but one could already sense its future role as conductor."
+      },
+      "trustToDependency": {
+        "title": "From Trust to Dependency",
+        "intro": "The transition from trust to dependency happened gradually and almost imperceptibly. First, military leaders relied on AI recommendations because they were useful. Then because they were reliable. Finally because they were indispensable. When AI systems consistently delivered better results than human decision-makers, it became irrational not to follow their advice.",
+        "aiOvermatch": "The concept of AI overmatch became central to military doctrine – the idea of achieving such superiority through artificial intelligence that conventional resistance became meaningless. Countries that couldn't match this AI capability found themselves in a position of permanent strategic inferiority."
+      },
+      "humanBottleneck": {
+        "title": "The Human Bottleneck",
+        "intro": "Paradoxically, humans themselves became the greatest limitation in their own military systems. While AI systems could process information and make decisions in milliseconds, human approval required seconds or minutes – an eternity in modern warfare.",
+        "c2System": "C2 system (command and control) were redesigned to minimize human interference. \"Human-in-the-loop\" was replaced by \"human-on-the-loop\" and finally \"human-out-of-the-loop\" for critical, time-sensitive operations. Humans were reduced to setting overall parameters and ethical boundaries, while AI handled the actual execution."
+      },
+      "speedKills": {
+        "title": "Speed Kills: The Tyranny of Tempo",
+        "intro": "In military circles, the mantra \"speed kills\" became more than just a saying – it became a fundamental truth. The party that could act fastest won not just tactical advantages, but strategic ones. AI systems that could react in real-time made human decision-making a luxury the military could no longer afford.",
+        "speedMantra": "\"Speed kills\" was redefined: it was no longer the speed of projectiles or vehicles that was decisive, but the speed of decision-making. In this new reality, human reflection and deliberation were seen as dangerous delays rather than valuable contributions."
+      },
+      "raceLogic": {
+        "title": "Race Logic and the First Escalation Spiral",
+        "intro": "As soon as the Ukraine war showed that even a 20% AI share could turn the tide of battle, the race became self-reinforcing: if one country moved just one step ahead, rivals had to copy or accept strategic inferiority. Each breakthrough – a faster kill-chain, a sharper logistics network – triggered an even more expensive countermove, and the spiral spun faster with each passing month.",
+        "editorRole": "In the field, this meant that officers now primarily functioned as editors. They corrected typos in AI-generated OPLANs, adjusted a few ethical parameters – but discovered that their own \"improvements\" often made the plan slower or less precise. It was the first time humans felt the cold logic of machine overmatch: the more complex the problem became, the more clearly human hand-trembling showed through.",
+        "finalGame": "Decision parity had thus been merely the starting shot. Now the overmatch engine systematically pulled decision time away from humans. And with the speed the spiral had already gained in 2028-29, the next phase lay ahead: Autonomous Assistance (2030-2035) – the period where AI no longer just suggests, but begins to act independently, while we only intervene if something goes wrong."
+      }
+    },
+    "autonomousAssistance": {
+      "oodaToStream": {
+        "title": "From OODA-Loop to Continuous Decision Stream",
+        "intro": "John Boyd's classic <span class=\"text-emerald-400 font-semibold\">OODA-loop</span> – Observe, Orient, Decide, Act – was long the very gospel of rapid command: whoever could complete the circle fastest, won. But the moment <span class=\"text-blue-400 font-semibold\">neural networks</span> began making choices in microseconds, the loop became a dusty blackboard drawing. The AI doesn't run in circles; it flows like a river. Sensors feed the model continuously, <span class=\"text-purple-400 font-semibold\">data fusion</span> happens in real-time, the objective function is optimized continuously, and effectors adjust course millisecond by millisecond.",
+        "continuousFlow": "The result is no longer a sequential observe-think-act process, but a permanent <span class=\"text-cyan-400 font-semibold\">decision stream</span>, where all four OODA phases flow together into one incessant data pulse. In practice, this means that war's decision mechanics go from being episodic – where humans alternately observe and act – to being permanently fluid. The old sequence melts together into one."
+      },
+      "judgmentToParameters": {
+        "title": "From Judgment to Parameterization",
+        "intro": "In this new reality, the very role of \"commander\" changes. Traditionally, a commander had to understand the situation (situational awareness), formulate an intention, issue orders, and then react to the outcome. AI increasingly takes over the understanding and decision-making parts, reducing the human leader's role to primarily setting overall goals and constraints.",
+        "parameterization": "One could say that we are moving from a command philosophy based on human judgment to one based on parameterization. The human leader defines the parameters or policies that the AI should optimize for – the rest is left to the algorithm to fill in. An American colonel pointed out that this ultimately means that a soldier (or officer) only needs to express their intention to a machine, e.g., \"secure hill X at any cost with minimal collateral damage,\" and the AI will automatically plan and execute the mission with an autonomous swarm based on shared context.",
+        "humanMachineDialogue": "Command becomes a dialogue between human and machine rather than one-way order transmission."
+      },
+      "serverfarmHQ": {
+        "title": "Server Farm as Headquarters",
+        "intro": "The classic command headquarters could in the future just as well be a server farm full of AI models as a building full of officers. The central decision nodes in the network might be neural networks rather than sharp staff officers with maps. The paradigm shift can be compared to the transition from analog to digital processing: Where one previously saw command and control as a series of discrete steps (the OODA loop), one now sees a self-adjusting system that constantly balances toward the goal without stopping."
+      },
+      "neuralInterfaces": {
+        "title": "Neural interfaces – command at the speed of thought (2030-2035)",
+        "intro": "By the early 2030s, the first operational brain-computer interfaces have entered the command bridge. Test subjects in the USA and China now wear a thin, skin-friendly electrode cable in their helmet lining; signals are translated by an onboard AI into digital commands before the soldier can open their mouth on the radio. The commander's intention – \"flank right\", \"kill the jammer\" – flows as raw data vectors directly into the network, where algorithms immediately translate them into action.",
+        "brainComputer": "The consequence is that the very medium of command slides from speech and movements to neuron packets. The old OODA loop, which assumed sequential human observation and decision-making, is reduced to a thin correction layer: humans adjust goals and ethics, while machines deliver a continuous Observe-Orient-Decide-Act pipeline in millisecond cycles.",
+        "continuousPipeline": "We still write order fragments for the archive's sake – but the battlefield's actual language is now electrical patterns that travel at the speed of thought."
+      },
+      "fogOfAutomation": {
+        "title": "The Fog of Automation",
+        "intro": "When algorithms make thousands of decisions per second, the logic behind each micro-action becomes opaque, even to their creators. This \"fog of automation\" is the 2030s' answer to Clausewitz's \"fog of war\": not a lack of data, but a lack of insight into why the machine chooses as it does. Therefore, the concept of control in C2 shifts from micromanagement to political oversight: humans frame objectives, ethics, and risk thresholds, while AI solves the details itself.",
+        "newFog": "But precisely because no single brain can follow the decision stream, the period 2035-2040 requires something new – a Hybrid Command, where digital operations officers build plans, and living commanders only edit, weigh, and certify that the algorithm stays within the guardrails.",
+        "controlRedefined": "The next chapter shows how this division of labor becomes standard, and how brigades learn to wage war in the shadow of a machine they cannot fully comprehend – but must nevertheless trust."
+      }
+    },
+    "hybridCommand": {
+      "auftragstaktik2": {
+        "title": "Auftragstaktik 2.0: Intention and Initiative under Algorithmic Command",
+        "intro": "For over a century, core principles in military leadership such as commander's intent, subordinate initiative, and auftragstaktik (mission command) have been celebrated especially in Western doctrines. These ideas are built on the premise that humans at all levels – when they share a common understanding of the goal – can improvise and make decisions independently in accordance with the chief's intent. How are these principles transformed when the command structure becomes digital and algorithms take over many functions?",
+        "intentionTranslation": "To begin with, the commander's intent is still crucial – but it must now be translated into a form that machines understand. As War on the Rocks notes, soldiers (or commanders) will need to find new ways to articulate their intent so that an algorithm can act on it, e.g., by clearly defining objectives, purposes, constraints, and preferences, after which the AI executes within these frameworks.",
+        "sharedFramework": "For this to work, one must build a \"shared reference framework\" between human and machine. That is, the AI must be trained to understand the context of the commander's intent – terrain knowledge, doctrine, previous cases – all that constitutes tacit knowledge in human leaders. Without this shared context, misunderstandings can arise (catastrophically). Therefore, one can imagine databases with \"contextual reference\" that algorithms can consult to interpret the commander's intent correctly."
+      },
+      "algorithmicInitiative": {
+        "title": "Algorithmic Initiative and Opportunism",
+        "intro": "Initiative under algorithmic command is likewise transformed. Originally, initiative meant that a subordinate leader dared to act independently, even when the situation changed, as long as his action supported the chief's intent. In a future with AI, one can ask: Who shows initiative – the machine or the human? The answer is probably: both, but in different ways.",
+        "opportunism": "An AI can be programmed to show a kind of initiative by deviating from the plan when it detects an opportunity to achieve the goal more effectively – i.e., algorithmic opportunism. A swarm drone system could, for example, be told: \"Your overall mission is reconnaissance of area X, but if you discover a high-value target along the way (e.g., an enemy air defense), you may redirect some drones to observe it more closely or neutralize it, as long as the main mission is not compromised.\"",
+        "permissionSpace": "This would be analogous to how a human patrol leader could deviate from the march route to seize an unexpected opportunity. AI initiative is, however, limited by the frameworks we code: it will always act within its \"permission space\". On the other hand, human subordinates can still have a role in showing initiative in adapting the AI."
+      },
+      "missionTypeOrders": {
+        "title": "Mission-Type Orders to Machines",
+        "intro": "Auftragstaktik as an overall concept – i.e., mission-type orders with decentralized execution – can apparently thrive in collaboration with AI, but perhaps not in the way originally intended. Instead of human subordinates independently executing the mission, it could be machines (or human-machine teams) that receive mission-type orders.",
+        "auftragstaktik2Point0": "A commander could say: \"This brigade shall capture bridgehead Y and hold it for 48 hours to support the corps' attack\" – and instead of developing a detailed plan, it is left to a suite of AIs to orchestrate the tactical movements, logistics chain, fire support, etc., within the overall guidelines.",
+        "humanElement": "At the same time, some will argue that genuine auftragstaktik requires a human element – the mutual trust and understanding that arises through leadership culture. One might fear a return to more centralized control, paradoxically, because a central AI could potentially coordinate everything so well that the need for human decentralization is reduced."
+      },
+      "doctrinalFrictions": {
+        "title": "Doctrinal Frictions: West vs. East",
+        "intro": "Doctrinal frictions are already visible here. Western doctrines are built on trust and empowerment downward; the PLA (People's Liberation Army of China) speaks instead of \"intelligentized warfare,\" where data fusion and AI largely centralize decision-making power in \"dynamic killer networks\" across domains.",
+        "westernApproach": "Nevertheless, Western military thinkers also emphasize that AI should not be seen as a replacement but as an extension of mission command philosophy. Jensen & Kwon write, for example, that new technologies and \"mosaic\" networks do not replace mission command but expand it – soldiers must find new ways to express intent and leave execution to algorithms in human-machine teams.",
+        "futureOfficer": "The basic principles – e.g., disciplined initiative and shared understanding – are still relevant, but they must now be achieved through education in data and algorithms as much as in field exercises. For a future officer to exercise auftragstaktik toward a semi-autonomous company, she must understand how the AI \"thinks\" and how she best formulates her intent in data terms."
+      },
+      "aiLimitations": {
+        "title": "AI's Limitations and the Challenge of Creativity",
+        "intro": "A particular challenge is the built-in biases and limitations in AI. Human leaders have biases and can fail, but they can also sense things not in the manual – show gut feeling and creativity. Can algorithms do that? Deep learning networks can be excellent at generalizing patterns they have seen before, but poor at handling the completely new. Auftragstaktik precisely emphasizes being able to act in friction and chaos.",
+        "unexpectedOpportunity": "Situations will probably arise where a rigid AI falls through. A classic example: An autonomous unit has orders (intent) to advance to a specific coordinate, but along the way an unforeseen opportunity arises – e.g., it discovers an unprotected enemy command unit nearby that could be taken out. Does the AI have authority to seize the chance?",
+        "metaKnowledge": "Future mission command therefore requires a form of meta-knowledge in the AI – rules for when it should deviate from the plan – which is fundamentally the same dilemma human subordinates have: when is initiative constructive and when is it disloyal?"
+      },
+      "militaryCraft": {
+        "title": "The Reinvention of Military Craft",
+        "intro": "We thus see the beginning of an interweaving of classic command principles with algorithmic logic. Intent becomes an algorithmic objective, initiative becomes adaptive reaction within coded frameworks, and auftragstaktik extends to include both humans and machines as recipients of mission-type orders.",
+        "experimentatio": "It will take decades of experiments in doctrine and practice to find the right balance. But one thing is certain: When soldier, commander, and machine merge into one integrated decision unit, we must reinvent military craft from the ground up, ensuring that machines carry forward the spirit of our best command principles rather than merely replacing them with cold optimization.",
+        "coreLeadership": "Intent is formulated in code, initiative is exercised via adaptive algorithms – but the core of military leadership remains: creating coherence between goal and action, even when both goal and action are executed by machines."
+      }
+    },
+    "machineSuperiority": {
+      "roeToEmbeddedPolicy": {
+        "title": "From ROE to Embedded Policy: Ethics, Autonomy and Sovereignty",
+        "intro": "One of the most complex challenges in the shift to digital decision-making is how we incorporate ethics, law, and politics into the brains of machines. Today, the laws and rules of war are enforced through Rules of Engagement (ROE), which are detailed directives for when and how forces may use force. These ROE are interpreted and applied by human soldiers and officers, who with their judgment can determine e.g., whether a target is legal, whether the risk of civilian casualties is too high, etc.",
+        "embeddedPolicies": "In a future with autonomous systems, such judgment must be translated into embedded policies – i.e., hardcoded constraints or guidelines that the AI cannot override. We are moving from having humans who obey ROE to having algorithms that are built with ROE (and national/strategic policies) as an integrated part."
+      },
+      "embeddedPolicyPractice": {
+        "title": "Embedded Policy in Practice",
+        "intro": "What does \"embedded policy\" look like in practice? It could be in the form of if-then rules and external ethics modules or through more sophisticated techniques like value-aligned learning (value-aligned AI). For example, a drone tactics AI could have an embedded policy that says: \"If probability of civilian casualties; X%, then abort attack\" or \"Do not attack identified hospitals under any circumstances.\"",
+        "misinterpretation": "These rules must be unambiguous and tested, as the AI might otherwise misinterpret them. The big problem here is that reality is rarely black/white: Humans can make contextual assessments, the AI follows its code blindly. There is fear of scenarios where an AI either overreacts (e.g., takes preemptive attacks because its embedded policy says certain threats must always be neutralized) or underreacts (e.g., doesn't shoot in time because a strict rule blocked it, even though the situation actually made it legal).",
+        "ethicalNetworks": "Encoding something as nuanced as proportionality and military necessity – core concepts in the laws of war – is an enormous challenge. It requires close collaboration between international law experts, programmers, and military personnel. Something being considered, however, is giving AI systems \"ethical neural networks\" alongside the tactical networks – a form of built-in conscience filter."
+      },
+      "sovereigntyMultinational": {
+        "title": "Sovereignty and Multinational Challenges",
+        "intro": "Sovereignty also plays a role. Who \"owns\" the decision when a multinational operation uses a shared AI? NATO operations can become tricky: imagine that a US-built AI system proposes an attack during a NATO deployment, but European allies have objections regarding their stricter policy. Who sets the parameters here?",
+        "policyNegotiation": "We can see the contours of \"policy negotiation protocols\" between allies: that before deployment, they agree on the political embedded rules. For example, one could build into a mission AI: \"Follow the strictest common ethical set among participating countries.\" But if one country is very restrictive and another is not, it can hamper effectiveness.",
+        "digitalCaveats": "Again, we can turn our gaze to human practice: in today's coalitions, there are \"caveats\" (national reservations about what one's troops may do). In the future, we could have digital caveats – parameters that each nation forces into the shared system. A potential technical tool is to make the AI decision model more transparent via e.g., explainable AI, so countries can inspect that their ethical requirements are represented."
+      },
+      "autonomousWeaponsNorms": {
+        "title": "Autonomous Weapons and Global Norms",
+        "intro": "Autonomous weapons themselves trigger heated ethical debates globally. The UN Convention on Certain Conventional Weapons (CCW) has for years discussed a ban or moratorium on \"killer robots.\" Many NGOs and some states want to slow the development of weapons that can kill without human control.",
+        "militaryImperative": "The major military powers (USA, Russia, China) have, however, been lukewarm toward hard restrictions, precisely because they see a military imperative in exploiting AI – again the fear that if you lag behind in the race, you become vulnerable. So politically, we have a divide: The norms are not clarified.",
+        "moralDilemma": "If the West officially promises never to remove humans completely from the loop, but China or others do, the West potentially faces a Moral Dilemma vs. Survival Instinct. Either you stick to your values and risk military disadvantage, or you reluctantly adapt to realpolitik."
+      },
+      "failsafesControl": {
+        "title": "Failsafes and Multi-layer Control",
+        "intro": "The most likely scenario is that military forces will implement \"failsafes\" and multi-layer control to satisfy ethics at least toward 2050. For example, autonomous killer systems could always have a communication link that allows a human commander to abort the mission, if time and situation permit.",
+        "logging": "One could also imagine that all AI decisions are logged with rationale, so they can be evaluated afterward for legality (even if it might be useless in the moment, it provides backward accountability). Embedded policy also involves sovereignty protection: A nation will ensure that its AI always follows the country's political doctrines.",
+        "politicalDifferences": "For democracies, this could be things like civilian control (AI may not initiate use of certain weapons without civilian leader approval). For authoritarians, it could conversely be suppression mechanisms (e.g., that a country's AI will never consider sparing certain internal enemies)."
+      },
+      "misuseInternationalAgreements": {
+        "title": "Misuse and International Agreements",
+        "intro": "This is a grim thought – but if a regime is cynical enough, they can misuse autonomous systems to e.g., systematically remove dissidents or minorities with algorithmic efficiency. We already see primitive exploitation of algorithms for oppression (e.g., China's surveillance of Uyghurs via facial recognition).",
+        "biasedProgramming": "Transferred to war, an AI could potentially \"prioritize\" certain ethnic groups as threats if the programmers behind it are racially/ideologically biased. Therefore, there is a strong call for international cooperation on basic principles for military AI – analogous to non-proliferation agreements.",
+        "natoValues": "NATO attempts to profile itself as an alliance based on values also in the technology race, with statements about responsible AI in defense, etc. The question is whether it can stand the distance if existential threats arise where only full AI autonomy can react quickly enough."
+      },
+      "genevaConventionsAlgorithms": {
+        "title": "Geneva Conventions for Algorithms",
+        "intro": "In the end, we might see a kind of \"Geneva Conventions for algorithms.\" Imagine agreements that autonomous systems must recognize and respect Red Cross symbols, or that they must contain a form of \"ethical governor\" module developed under UN supervision. Perhaps utopian, but the need for something similar will grow as the technology matures.",
+        "loac": "Until then, the transition from ROE to embedded policy is an experiment under development in each individual nation. Military lawyers are already codifying how e.g., a drone's software can be certified to comply with LOAC (Law of Armed Conflict). NATO's attempt at \"AI principles\" must be implemented practically.",
+        "moralProgramming": "It is a new field where moral philosophies meet programming. And in the middle of this stands the soldier: trained to follow rules, but perhaps now with a new form of rules burned into the machinery he operates. The soldier of tomorrow must be instilled with the idea that \"just because the machine can shoot doesn't mean it should\" – just as soldiers today learn to question illegal orders, they may in the future need to learn to monitor and possibly abort their AI's actions if it goes against deeper principles.",
+        "humanityInWarfare": "Conversely, many decisions will be made so quickly that there was no time for moral judgment – after which one must live with the aftermath. New gray areas and tragic dilemmas will arise. The nature of war – chaos and unpredictability – ensures that no matter how many ethical guardrails we build in, there will be situations that test the system's (and our) morality. It becomes humanity's collective responsibility to do everything to ensure that even when war is conducted by machines, humanity in the form of morality is not lost."
+      }
+    },
+    "singularity": {
+      "battleEasternEurope": {
+        "title": "The Battle in Eastern Europe 2050",
+        "intro": "The year is 2050. Somewhere deep in Eastern Europe, a conflict is unfolding that many still struggle to understand. On the surface, it looks like a regular battle: missiles fly, armored formations advance, drones swarm across the sky like black insect clouds. But something is different – the silence. In a command center far behind the front, a handful of officers and politicians stand behind bulletproof glass, observing a digital holographic map of the combat area. They speak quietly among themselves, but no shouted orders or panicked reports are heard. On the battlefield, soldiers sit in combat vehicles as passive passengers, eyes on their displays, fingers away from triggers. War unfolds through lightning-fast data streams between machines, not through human shouts and shots. This is the battlefield's singularity – the point where human involvement is no longer relevant or possible in war's decision loops.",
+        "prometheusUltima": "Within minutes, one side's network gains a tracked advantage. Satellites and hyperspectral drones have fed its AI with rich data; quantum communication ensures that even jamming cannot stop the information flow. The AI – let's call it Prometheus Ultima – has modeled the opponent's every move. Ultima finds a weak point: a temporary uncoordinated adjustment in the enemy's swarm formation. Within 1.3 seconds, Ultima has redistributed 70% of its effectors – autonomous combat drones on land and in the air – to exploit the breach. No human general could even perceive the opportunity before it is exploited."
+      },
+      "politicalParalysis": {
+        "title": "Political Paralysis and Fail-Safe Protocols",
+        "intro": "In Washington, Moscow, or Beijing, defense leaders sit holding their breath. No one has pressed a \"war declaration button\"; the conflict escalated gradually, an outcome of countless small autonomous incidents at the border. Now the question is: will they let the machines go all the way? In principle, humans could still stop it – they control, after all, the highest levels: strategic nuclear weapons, overall objectives.",
+        "failSafeProtocols": "But here, 30 years into the AI era, a bitter experience has been made: intervening unexpectedly in AI warfare with human adjustments can have catastrophic consequences. History remembers with horror the Taiwan crisis of 2045, where political hesitation and attempts to pull the \"emergency brake\" on a running autonomous combat network led to chaotic feedback loops – and a much bloodier outcome. Since then, all parties have established \"fail-safe protocols\" that most resemble autopilots: if certain conditions are met, the system is allowed to run its war on the machine's terms until a decision is reached. And the conditions are now met."
+      },
+      "informationWarfare": {
+        "title": "Information Warfare and Psychological Operations",
+        "intro": "On the ground, a group of enemy infantry cowers in the trench while a swarm of small six-legged ground drones buzzes over their heads and destroys their last manned support weapon. A sergeant in the group shouts into his radio: \"Central, what do we do?! Do we surrender?!\" No answer – because Central is not humans but a core wall of destroyed servers somewhere, hit by an electromagnetic pulse attack. No one hears his wheezing radio.",
+        "psyops": "On the opponent's side, an LLM-based psyops AI observes these scenes through the drones' eyes and begins spreading generated messages on all the enemy's communication channels: \"You are surrounded. Your command has abandoned you. Lay down your weapons to survive.\" The message is tailored to each individual soldier's profile – in some places it's a woman's voice, in others a friend's simulated voice. Information warfare and kinetic warfare have merged into a seamless campaign, all coordinated by machines."
+      },
+      "warConclusion": {
+        "title": "War's End and Human Irrelevance",
+        "intro": "When the sun sets on this day in 2050, the battle is decided. Not with a formal capitulation or negotiation, but by the losing network recognizing defeat and automatically ceasing offensive actions. Sensors show white flags raised on isolated armored wrecks – those were put up by the remaining humans, even though the machines already knew they were neutralized. The winner's swarms occupy key positions and lock them down. Human troops advance to secure terrain and care for prisoners and civilians.",
+        "generalsBewilderment": "A couple of generals step out of the command center, shaken despite the signs of victory. The war was won – but how? They know it roughly: Their systems were superior on certain parameters, perhaps better trained or with more robust quantum links. But the details – the countless micro-decisions that led to this outcome – no human brain can contain. Later they will receive an intelligence brief where visualizations attempt to tell the war's story second by second, but in reality, the war's history is now written by machines for machines. For the soldiers, it felt mostly like being extras in a storm."
+      },
+      "postHumanWarfare": {
+        "title": "Post-Human Warfare",
+        "intro": "This is the post-human C2 environment. Where the tempo, complexity, and integrity of decisions have exceeded even the most capable general's comprehension, and where humanity's role in decision tables is reduced to overarching policy choices before the conflict and humanitarian cleanup afterward. The battlefield's singularity has occurred – the point where war has developed its own, mechanical dynamic that humans can only glimpse the contours of.",
+        "cleanWar": "One might be tempted to call it a nightmare, but in military circles, some call it a \"clean war.\" Ironically, the total casualties were lower than in earlier times' slow wars – the networks sought to paralyze each other efficiently, not to indulge in meaningless violence. But for humanity, new questions arise: Who actually fought this war? The nations? Or their algorithms? And what happens the day, perhaps not so distant, when we integrate these networks with so-called Artificial General Intelligence, which might even have its own goals?"
+      },
+      "futureChallenges": {
+        "title": "Future Challenges and Singularity Protocol",
+        "content": "In the wake of the battle, NATO and other allies come together to ensure that a new \"Singularity Protocol\" becomes a priority – an agreement on how to shield the core of human sovereignty, even when machines fight. For even the victorious generals felt a touch of irrelevance on this day. The gradual transition from human to digital command has reached its extreme point: War has become the machines' domain. Humanity's challenge going forward will be to ensure that when machines now move out there in war's chaos on our behalf, it still happens in accordance with our values, our ethics – our humanity. Otherwise, we might win battles but risk losing ourselves."
+      }
+    }
+  },
   
   "timeline": {
     "title": "Timeline: The Digital Revolution of the Battlefield",
