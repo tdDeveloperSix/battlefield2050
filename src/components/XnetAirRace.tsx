@@ -228,6 +228,7 @@ export default function XnetAirRace(){
   const theme = useMemo(()=>readTheme(),[]);
   const keys = useKeys();
   const { t } = useTranslation();
+  const containerRef = useRef<HTMLDivElement|null>(null);
 
   // UI
   const [showRules,setShowRules]=useState(true);
@@ -273,6 +274,22 @@ export default function XnetAirRace(){
     const ctx = canvasRef.current?.getContext("2d");
     if(!ctx) return;
     let raf=0, last=performance.now();
+
+    // Responsive fit of canvas within container, preserving world coords (W×H)
+    const fit = ()=>{
+      if(!canvasRef.current || !containerRef.current) return;
+      const cssW = Math.max(280, Math.min(containerRef.current.clientWidth || W, 1200));
+      const cssH = Math.round(cssW * (H / W));
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      canvasRef.current.style.width = cssW + 'px';
+      canvasRef.current.style.height = cssH + 'px';
+      canvasRef.current.width = Math.floor(cssW * dpr);
+      canvasRef.current.height = Math.floor(cssH * dpr);
+      ctx.setTransform((cssW * dpr) / W, 0, 0, (cssH * dpr) / H, 0, 0);
+    };
+    fit();
+    const ro = new ResizeObserver(fit);
+    if(containerRef.current) ro.observe(containerRef.current);
 
     const loop=(ts:number)=>{
       const dt=Math.min((ts-last)/1000,DT_CAP); last=ts;
@@ -370,7 +387,7 @@ export default function XnetAirRace(){
       raf=requestAnimationFrame(loop);
     };
     raf=requestAnimationFrame(loop);
-    return ()=>cancelAnimationFrame(raf);
+    return ()=>{ cancelAnimationFrame(raf); ro.disconnect(); };
   },[theme,showGuides,keys,pScore,aScore,paused,highscores,showHigh,t]);
 
   // Learning loop (samme som før)
@@ -403,7 +420,7 @@ export default function XnetAirRace(){
   useEffect(()=>{ setHighscores(loadHighscores()); },[]);
 
   return (
-    <div className="mx-auto max-w-6xl p-6 text-gray-100">
+    <div className="mx-auto max-w-6xl p-6 text-gray-100" ref={containerRef}>
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2 rounded-2xl bg-zinc-900/80 p-4 shadow-xl ring-1 ring-white/10">
           <div className="flex items-center justify-between">
@@ -438,6 +455,25 @@ export default function XnetAirRace(){
             <label className="flex items-center gap-2 text-xs text-zinc-300"><input type="checkbox" className="accent-emerald-500" checked={showGuides} onChange={e=>setShowGuides(e.target.checked)} />{t('dogfight.labels.guides','Guides')}</label>
             <label className="flex items-center gap-2 text-xs text-zinc-300"><input type="checkbox" className="accent-emerald-500" checked={showExplain} onChange={e=>setShowExplain(e.target.checked)} />{t('dogfight.labels.explainAI','Explain AI')}</label>
             <div className="ml-auto text-xs text-zinc-400">{t('dogfight.controls','Controls')}: ← → · ↑ · ↓ · Space</div>
+          </div>
+
+          {/* Simple mobile touch controls */}
+          <div className="mt-3 sm:hidden select-none">
+            <div className="grid grid-cols-3 gap-3">
+              <div className="col-span-2 grid grid-cols-3 gap-2">
+                <button className="py-3 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.left=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.left=false;}}>&larr;</button>
+                <button className="py-3 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.up=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.up=false;}}>&uarr;</button>
+                <button className="py-3 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.right=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.right=false;}}>&rarr;</button>
+                <div></div>
+                <button className="py-3 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.down=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.down=false;}}>&darr;</button>
+                <div></div>
+              </div>
+              <div className="col-span-1 flex items-center">
+                <button className="w-full py-8 rounded-xl bg-emerald-600/80 text-black font-semibold border border-emerald-400 active:bg-emerald-500" onTouchStart={(e)=>{e.preventDefault(); keys.current.fire=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.fire=false;}}>
+                  FIRE
+                </button>
+              </div>
+            </div>
           </div>
 
           {showExplain && (
