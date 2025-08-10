@@ -43,6 +43,7 @@
     "title": "Tidslinje: Kamppladsens Digitale Revolution",
     "subtitle": "Fra menneskelig til maskinel krigsførelse",
     "scrollHint": "Scroll ned for at starte gennemgangen",
+    "overviewTitle": "Overblik",
     "keyDevelopments": "Centrale Udviklinger",
     "characteristics": "Karakteristika",
     "phases": {
@@ -81,6 +82,10 @@
       "title": "Menneskelig Dominans",
       "subtitle": "Traditionelle kommandostrukturer med mennesker i centrum",
       "description": "I denne periode dominerer mennesker stadig alle aspekter af militær planlægning og udførelse. Beslutningstagning sker gennem etablerede hierarkier, hvor erfaring og intuition vægtes højt.",
+      "narrative": {
+        "title": "Arizonaørkenen, juli 2021",
+        "content": "Det var før daggry i Arizonas ørken. Kaptajn Sarah Miller sad alene i det mobile kommandotelt, da den første støvsky rullede hen over lejren og efterlod en fin, rødlig film på bordet ved siden af hendes feltkrus. Hun rakte ud efter kaffen, men et rødt blink på displayet stjal opmærksomheden: <em>ENEMY ARMOR DETECTED – 40 KM NE</em>.<br><br>I gamle dage ville Miller have grebet radioen, råbt på S-2-officeren, ventet på bekræftelse fra dronen og først derefter sendt beskeden videre til artilleristaben. Under ideelle forhold kunne det tage fem–seks minutter – i praksis som regel tyve, før de første granater lå inde. Men i dag var Project Convergence 2020 i fuld gang, og ved hendes side kørte det nye AI-system <span class=\"text-emerald-400 font-semibold\">FIRESTORM</span>.<br><br>På brøkdele af et sekund slugte FIRESTORM rådata fra satellitbaner, Predator-feeds og jordradarer. Skærmen skiftede fra rødt til grønt og præsenterede ét forslag: <em>“Batteri Bravo – 122 mm – fire for effect.”</em> Miller nåede dårligt at blinke, før hun trykkede <em>GODKEND</em>. Klokken på væggen viste, at der gik 18 sekunder fra første sensorhit, til haubits-batteriet sendte sin salve af sted. Granaterne var stadig i luften, da systemet genererede næste målprioritet.<br><br>Miller lænede sig tilbage og mærkede et uventet sug i maven. Hun havde lige oplevet, at den klassiske “kill chain” – sensormelding, vurdering, ordre, ild – var krympet fra et kvarter til under et halvt minut. Den ene tast på en touch-skærm var alt, hvad der adskilte en fjendtlig panserdivision fra et præcist artillerinederlag. Og mens hun så status-ikonet skifte fra <em>in‑progress</em> til <em>neutralized</em>, gik det op for hende: tempoet på fremtidens kampplads styres ikke længere af mennesker, men af algoritmer – og slagmarken vil aldrig blive den samme igen."
+      },
       "details": [
         "Kommandostrukturer bygger på årtiers erfaring og etablerede doktriner",
         "Beslutningsprocesser er hierarkiske og baseret på menneskelig vurdering",
@@ -99,7 +104,7 @@
       "firestorm": "Britiske øvelser med FIRESTORM demonstrerede hurtigere måludpegning via AI-assisteret datafusion, men skuddet gik stadig først, når en officer sagde ja.",
       "edgeAI": {
         "title": "Edge AI og lokale beslutninger",
-        "intro": "Små modeller placeret ved kanten af netværket hjalp enheder med at filtrere støj fra signaler og prioriterede kontaktpunkter. På forhånd godkendte regler styrede kun rådgivning – ikke aftræk.",
+        "intro": "I denne periode dominerer mennesker stadig alle aspekter af militær planlægning og udførelse. Beslutningstagning sker gennem etablerede hierarkier, hvor erfaring og intuition vægtes højt.<br><br>US Army's Project Convergence (2020-2022) viste de første, brede eksperimenter med at kæde sensorer, beslutningsstøtte og ild sammen – men med mennesker som afgørende godkendere i hver sløjfe.<br><br>Britiske øvelser med <span class=\"font-semibold\">FIRESTORM</span> demonstrerede hurtigere måludpegning via AI‑assisteret datafusion, men skuddet gik stadig først, når en officer sagde ja.",
         "sentryTowers": "I baser og forposter begyndte autonome vagttårne at alarmerer ved mønstergenkendelse (køretøjstyper, bevægelsesprofiler), men menneskelig vagt afgav fortsat ordre til virkemidler."
       },
       "swarmCoordination": {

@@ -10,6 +10,7 @@ import {
   AlertTriangle,
   CheckCircle,
   Clock,
+  BookOpen,
 } from 'lucide-react';
 
 import DecisionWeightBar from './components/DecisionWeightBar';
@@ -461,9 +462,17 @@ function App() {
                     {section.subtitle}
                   </p>
 
-                  <p className="text-base sm:text-lg text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
-                    {section.description}
-                  </p>
+                  {section.id !== 'human-dominance' && (
+                    <div className="max-w-4xl mx-auto bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-emerald-400 flex items-center drop-shadow">
+                        <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-emerald-400 flex-shrink-0" />
+                        {t('timeline.overviewTitle')}
+                      </h4>
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed border-t border-emerald-500/30 pt-4">
+                        {section.description}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content Grid */}
@@ -980,18 +989,16 @@ function App() {
                 {/* Detailed Content Section for Human Dominance */}
                 {section.id === 'human-dominance' && (
                   <div className="mt-16 space-y-8">
+                    {/* Narrative: Captain Miller */}
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('timeline.humanDominance.description')}
-                      </p>
-
-                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        {t('timeline.humanDominance.projectConvergence')}
-                      </p>
-                      <p className="text-lg text-slate-300 leading-relaxed">
-                        {t('timeline.humanDominance.firestorm')}
-                      </p>
+                      <h4 className="text-2xl font-bold mb-6 text-white">
+                        {t('timeline.humanDominance.narrative.title')}
+                      </h4>
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(t('timeline.humanDominance.narrative.content'))
+                      }} />
                     </div>
+                    {/* Fjernet overlappende “overblik”-tekst for Human Dominance pr. brugerønske */}
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
@@ -1124,12 +1131,7 @@ function App() {
       {/* Side Jamming Control */}
       <JammingControl />
 
-      {/* AI Dogfight simulator – sektion */}
-      <section id="xnet-air-race" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-transparent">
-        <div className="max-w-7xl mx-auto">
-          <XnetAirRace />
-        </div>
-      </section>
+      {/* AI Dogfight simulator er nu indlejret i tidslinjen (Decision Parity). Den tidligere bundsektion er fjernet. */}
 
       {/* Implications Section */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-transparent">

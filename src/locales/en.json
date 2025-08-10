@@ -215,12 +215,17 @@
     "title": "Timeline: The Digital Revolution of the Battlefield",
     "subtitle": "From human to machine warfare",
     "scrollHint": "Scroll down to start the walkthrough",
+    "overviewTitle": "Overview",
     "keyDevelopments": "Key Developments",
     "characteristics": "Characteristics",
     "humanDominance": {
       "title": "Human Dominance",
       "subtitle": "Traditional command structures with humans at the center",
       "description": "In this period, humans still dominate all aspects of military planning and execution. Decision-making occurs through established hierarchies, where experience and intuition are highly valued.",
+      "narrative": {
+        "title": "Arizona Desert, July 2021",
+        "content": "Before dawn in the Arizona desert. Captain Sarah Miller sat alone in the mobile command tent when the first dust cloud rolled over the camp, leaving a fine reddish film on the table beside her field mug. She reached for the coffee, but a red flash on the display stole her attention: <em>ENEMY ARMOR DETECTED – 40 KM NE</em>.<br><br>In the old days, Miller would have grabbed the radio, called for the S‑2 officer, waited for drone confirmation, and only then passed the message to the artillery staff. Under ideal conditions it could take five–six minutes – in practice usually twenty – before the first shells were on target. But today, <strong>Project Convergence 2020</strong> was in full swing, and at her side ran the new AI system <span class=\"text-emerald-400 font-semibold\">FIRESTORM</span>.<br><br>In fractions of a second, FIRESTORM ingested raw data from satellites, Predator feeds, and ground radars. The screen flipped from red to green and presented a single recommendation: <em>“Battery Bravo – 122 mm – fire for effect.”</em> Miller barely blinked before tapping <em>APPROVE</em>. The wall clock showed 18 seconds from the first sensor hit until the howitzer battery sent its salvo. The shells were still in the air when the system generated the next target priority.<br><br>Miller leaned back, feeling a sudden pull in her stomach. She had just watched the classic kill chain – sensor cue, assessment, order, fire – shrink from a quarter hour to under thirty seconds. One tap on a touch screen was all that separated an enemy armored formation from a precise artillery defeat. And as the status icon shifted from <em>in‑progress</em> to <em>neutralized</em>, it dawned on her: the tempo of tomorrow’s battlefield would no longer be set by humans, but by algorithms – and the battlespace would never be the same again."
+      },
       "details": [
         "Command structures are built on decades of experience and established doctrines",
         "Decision processes are hierarchical and based on human judgment",
@@ -239,7 +244,7 @@
       "firestorm": "British exercises with FIRESTORM demonstrated faster target nomination via AI-assisted data fusion, but shots still required an officer's approval.",
       "edgeAI": {
         "title": "Edge AI and local decisions",
-        "intro": "Small models at the network edge helped units filter signal noise and prioritize contact points. Pre-approved rules governed advice only – not triggers.",
+        "intro": "In this period, humans still dominate all aspects of military planning and execution. Decision-making occurs through established hierarchies, where experience and intuition are highly valued.<br><br>The US Army's Project Convergence (2020–2022) showed early large-scale experiments connecting sensors, decision support and fires – but with humans as required approvers in every loop.<br><br>British exercises with <span class=\"font-semibold\">FIRESTORM</span> demonstrated faster target nomination via AI‑assisted data fusion, but shots still required an officer’s approval.",
         "sentryTowers": "At bases and outposts, autonomous sentry towers began alerting via pattern recognition (vehicle types, movement profiles), but human guards still commanded effectors."
       },
       "swarmCoordination": {
