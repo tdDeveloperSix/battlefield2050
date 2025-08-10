@@ -9,3 +9,19 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>
 );
+
+// SPA tracking for Plausible (cookieless)
+declare global {
+  interface Window { plausible?: (event: string, opts?: any) => void }
+}
+
+let lastPath = location.pathname + location.search + location.hash;
+const track = () => {
+  const current = location.pathname + location.search + location.hash;
+  if (current !== lastPath && typeof window.plausible === 'function') {
+    window.plausible('pageview');
+    lastPath = current;
+  }
+};
+window.addEventListener('popstate', track);
+window.addEventListener('hashchange', track);
