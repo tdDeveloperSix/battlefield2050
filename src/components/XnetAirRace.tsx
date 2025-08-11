@@ -44,19 +44,7 @@ const len = (dx:number,dy:number)=>Math.hypot(dx,dy);
 const angWrap=(a:number)=>{a=(a+Math.PI)%(2*Math.PI); if(a<0)a+=2*Math.PI; return a-Math.PI;};
 const dot=(ax:number,ay:number,bx:number,by:number)=>ax*bx+ay*by;
 
-// Highscore persistence (lokal lagring)
-const HIGHSCORE_KEY = "xnet-airrace-highscores-v1";
-function loadHighscores(): number[] {
-  try{
-    const raw = localStorage.getItem(HIGHSCORE_KEY);
-    if(!raw) return [];
-    const arr = JSON.parse(raw) as number[];
-    return Array.isArray(arr) ? arr.filter(n=>Number.isFinite(n)).slice(0,5) : [];
-  }catch{ return []; }
-}
-function saveHighscores(list:number[]){
-  try{ localStorage.setItem(HIGHSCORE_KEY, JSON.stringify(list.slice(0,5))); }catch{}
-}
+// Highscore fjernet — behold evt. nøgler her til fremtidig brug
 
 function readTheme(){
   const root=getComputedStyle(document.documentElement);
@@ -423,7 +411,7 @@ export default function XnetAirRace(){
     };
     raf=requestAnimationFrame(loop);
     return ()=>{ cancelAnimationFrame(raf); ro.disconnect(); };
-  },[theme,showGuides,keys,pScore,aScore,paused,highscores,showHigh,t,showRules]);
+  },[theme,showGuides,keys,pScore,aScore,paused,t,showRules,gameOver,scale]);
 
   // Når brugeren trykker start (skjuler regler), nulstil runde så trails ikke hænger ved
   useEffect(()=>{
