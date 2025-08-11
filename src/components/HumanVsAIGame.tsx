@@ -7,13 +7,13 @@ function defineHumanVsAIGame(): void {
   const TEMPLATE = document.createElement('template');
   TEMPLATE.innerHTML = `
   <style>
-    :host { --bg:#070a16; --panel:#0e1533; --muted:#9fb2d0; --ok:#66ffad; --warn:#ffd26b; --bad:#ff6d8a; --blue:#69b3ff; --edge:#1b244a; --green:#18cc75; }
+    :host { --bg:#070a16; --panel:#0e1533; --muted:#9fb2d0; --ok:#66ffad; --warn:#ffd26b; --bad:#ff6d8a; --blue:#69b3ff; --edge:#1b244a; --green:#18cc75; font-family: inherit; }
     *,*::before,*::after { box-sizing: border-box; }
     .game { background: linear-gradient(180deg, #0a1026 0%, #070a16 100%); border:1px solid rgba(255,255,255,.06); border-radius:18px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.35); }
     header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; background:rgba(255,255,255,.03); gap:8px; }
     .brand { display:flex; align-items:center; gap:10px; }
     .logo { width:38px; height:38px; border-radius:12px; background: radial-gradient(circle at 30% 30%, #69b3ff, #2c5ea8 70%); display:grid; place-items:center; color:#051024; font-weight:900; }
-    h1 { margin:0; font-size:18px; }
+    h1 { margin:0; font-size:16px; font-weight:700; }
     .small { margin:0; font-size:12px; color:var(--muted); }
     .chip { font-size:12px; background:#0e1533; border:1px solid rgba(255,255,255,.07); color:#cfe6ff; padding:6px 10px; border-radius:999px; white-space:nowrap; }
 
@@ -32,7 +32,7 @@ function defineHumanVsAIGame(): void {
     .arena .msg p { margin:0; color:var(--muted); }
 
     .controls { display:flex; gap:8px; }
-    .btn { appearance:none; border:none; background:#162257; color:#e9eef6; padding:10px 14px; border-radius:12px; font-weight:700; cursor:pointer; }
+    .btn { appearance:none; border:none; background:#162257; color:#e9eef6; padding:10px 14px; border-radius:12px; font-weight:600; cursor:pointer; font-family: inherit; }
     .btn.secondary { background:#0e1533; border:1px solid rgba(255,255,255,.08); font-weight:600; }
     .btn:disabled { opacity:.6; cursor:not-allowed; }
 
@@ -311,12 +311,9 @@ function defineHumanVsAIGame(): void {
 export default function HumanVsAIGame(): JSX.Element {
   useEffect(()=>{ defineHumanVsAIGame(); },[]);
   return (
-    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-4 sm:p-6">
-      <div className="text-white font-semibold mb-3">Human vs AI – Reaktionstest</div>
-      <div className="rounded-xl overflow-hidden ring-1 ring-white/10">
-        {/* eslint-disable-next-line react/no-unknown-property */}
-        <human-vs-ai-game style={{display:'block'}} />
-      </div>
+    <div className="rounded-xl overflow-hidden ring-1 ring-white/10">
+      {/* eslint-disable-next-line react/no-unknown-property */}
+      <human-vs-ai-game style={{display:'block'}} />
     </div>
   );
 }

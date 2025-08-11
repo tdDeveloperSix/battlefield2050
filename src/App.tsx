@@ -1045,9 +1045,7 @@ function App() {
                     </div>
 
                   {/* Mini-spillet placeres nedenfor afsnittet – ikke indlejret */}
-                  <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8 mt-6">
-                    <HumanVsAIGame />
-                  </div>
+                  <HumanVsAIGame />
 
 
                   </div>
