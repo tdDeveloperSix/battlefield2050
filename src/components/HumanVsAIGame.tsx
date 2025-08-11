@@ -116,8 +116,8 @@ function defineHumanVsAIGame(): void {
 
   const DIFFS: Record<string, { name: string; aiMu: number; aiSigma: number; targetFactor: number }>= {
     easy: { name:'Let',     aiMu: 310, aiSigma: 45, targetFactor: 1.05 },
-    med:  { name:'Mellem',  aiMu: 270, aiSigma: 40, targetFactor: 0.95 },
-    hard: { name:'Svær',    aiMu: 240, aiSigma: 35, targetFactor: 0.88 },
+    med:  { name:'Mellem',  aiMu: 250, aiSigma: 36, targetFactor: 0.90 },
+    hard: { name:'Svær',    aiMu: 220, aiSigma: 30, targetFactor: 0.85 },
   };
 
   class HumanVsAIGame extends HTMLElement{
