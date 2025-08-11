@@ -1035,20 +1035,17 @@ function App() {
                       <p className="text-lg text-slate-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{
                         __html: sanitizeHtml(t('timeline.humanDominance.oodaLoop.intro'))
                       }} />
-                    <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
-                      __html: sanitizeHtml(t('timeline.humanDominance.oodaLoop.aiAdvantage'))
-                    }} />
-                  </div>
-
-                  {/* Lead-in + spil under OODA-afsnittet */}
-                  <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8 mt-6">
-                    <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
-                      <Zap className="w-6 h-6 mr-3 text-emerald-400" />
-                      {`Prøv kræfter med AI`}
-                    </h4>
-                    <p className="text-lg text-slate-300 leading-relaxed mb-4">
-                      Vent til feltet bliver grønt og tap så hurtigt du kan. Bedst af 5 runder – kan du slå AI’en?
+                      <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(t('timeline.humanDominance.oodaLoop.aiAdvantage'))
+                      }} />
+                    {/* Lead-in til mini-spil (vises under afsnittet) */}
+                    <p className="mt-4 text-sm text-slate-400">
+                      Vil du prøve kræfter med en AI? Test din reaktionsevne i mini-spillet nedenfor.
                     </p>
+                    </div>
+
+                  {/* Mini-spillet placeres nedenfor afsnittet – ikke indlejret */}
+                  <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8 mt-6">
                     <HumanVsAIGame />
                   </div>
 
