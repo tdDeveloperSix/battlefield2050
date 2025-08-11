@@ -239,7 +239,9 @@ function defineHumanVsAIGame(): void {
     onPointer(){
       if (this.state.waiting){
         this.state.early = true;
-        this.showRoundResult(400 + Math.floor(Math.random()*80), this.sampleAI());
+        const ai = this.sampleAI();
+        // Tving AI-sejr og vis tydelig besked om fejlstart
+        this.showRoundResult(999, Math.min(ai, 450), { early: true });
         return;
       }
       if (!this.state.goAt){ return; }
@@ -266,16 +268,20 @@ function defineHumanVsAIGame(): void {
       return mu + z*sigma;
     }
 
-    showRoundResult(humanMs:number, aiMs:number){
+    showRoundResult(humanMs:number, aiMs:number, opts?: { early?: boolean }){
       this.state.humanTimes.push(humanMs);
       this.state.aiTimes.push(aiMs);
       if (!this.state.humanPB || humanMs < this.state.humanPB){ this.state.humanPB = humanMs; }
       this.renderHeader();
-      const humanWin = humanMs < aiMs;
+      const humanWin = !opts?.early && humanMs < aiMs;
       this.ui.ovTitle.textContent = `Runde ${this.state.round}`;
-      this.ui.ht.textContent = humanMs + ' ms';
+      this.ui.ht.textContent = opts?.early ? 'Fejlstart' : (humanMs + ' ms');
       this.ui.at.textContent = aiMs + ' ms';
-      this.ui.winner.innerHTML = humanWin ? `<span class="win">Du vinder runden!</span>` : `<span class="lose">AI vinder runden.</span>`;
+      this.ui.winner.innerHTML = humanWin
+        ? `<span class="win">Du vinder runden!</span>`
+        : (opts?.early
+            ? `<span class="lose">Fejlstart – AI vinder runden.</span>`
+            : `<span class="lose">AI vinder runden.</span>`);
       this.ui.ov.classList.add('show');
       this.state.round += 1;
       this.ui.round.textContent = `Runde ${Math.min(this.state.round, this.state.bestOf)}/${this.state.bestOf}`;
