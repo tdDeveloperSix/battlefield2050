@@ -23,6 +23,7 @@ import MatrixRain from './components/MatrixRain';
 import BackToTop from './components/BackToTop';
 import XnetAirRace from './components/XnetAirRace';
 import JammingControl from './components/JammingControl';
+import HumanVsAIGame from './components/HumanVsAIGame';
 
 
 interface TimelineSection {
@@ -1037,6 +1038,10 @@ function App() {
                       <p className="text-lg text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{
                         __html: sanitizeHtml(t('timeline.humanDominance.oodaLoop.aiAdvantage'))
                       }} />
+                    {/* OODA-løkken mini-spil */}
+                    <div className="mt-6">
+                      <HumanVsAIGame />
+                    </div>
                     </div>
 
 
