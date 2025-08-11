@@ -477,6 +477,7 @@ export default function XnetAirRace(){
             )}
           </div>
 
+          {!showRules && !gameOver && (
           <div className="mt-4 flex flex-wrap items-center gap-2 text-sm max-sm:sticky max-sm:top-2 max-sm:z-10 max-sm:bg-zinc-900/80 max-sm:p-2 max-sm:rounded-xl">
             <button onClick={()=>setPaused(v=>!v)} className={`rounded-xl border border-white/10 px-3 py-2 ${paused?"bg-yellow-600/40":"bg-zinc-800 hover:bg-zinc-700"}`}>{paused?t('dogfight.buttons.resume','Resume game'):t('dogfight.buttons.pause','Pause game')}</button>
             <button onClick={()=>setLearning(v=>!v)} className={`rounded-xl border border-white/10 px-3 py-2 ${learning?"bg-emerald-700/50":"bg-zinc-800 hover:bg-zinc-700"}`}>{learning?t('dogfight.buttons.pauseLearning','Pause learning'):t('dogfight.buttons.startLearning','Start learning')}</button>
@@ -485,6 +486,7 @@ export default function XnetAirRace(){
             <label className="flex items-center gap-2 text-xs text-zinc-300"><input type="checkbox" className="accent-emerald-500" checked={showExplain} onChange={e=>setShowExplain(e.target.checked)} />{t('dogfight.labels.explainAI','Explain AI')}</label>
             <div className="ml-auto text-xs text-zinc-400 hidden sm:block">{t('dogfight.controls','Controls')}: ← → · ↑ · ↓ · Space</div>
           </div>
+          )}
 
           {/* Game over overlay */}
           {gameOver && (
@@ -501,28 +503,30 @@ export default function XnetAirRace(){
           )}
 
           {/* Simple mobile touch controls + skalering */}
-          <div className="mt-3 sm:hidden select-none sticky bottom-2 z-10">
-            <div className="grid grid-cols-3 gap-3 bg-zinc-900/70 rounded-xl p-2 ring-1 ring-white/10 backdrop-blur">
+          {!showRules && !gameOver && (
+          <div className="mt-3 sm:hidden select-none sticky bottom-2 z-10" style={{touchAction:'none'}}>
+            <div className="grid grid-cols-3 gap-3 bg-zinc-900/70 rounded-xl p-2 ring-1 ring-white/10 backdrop-blur" onContextMenu={(e)=>e.preventDefault()}>
               <div className="col-span-2 grid grid-cols-3 gap-2">
-                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.left=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.left=false;}}>&larr;</button>
-                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.up=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.up=false;}}>&uarr;</button>
-                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.right=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.right=false;}}>&rarr;</button>
+                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onPointerDown={()=>{ keys.current.left=true; }} onPointerUp={()=>{ keys.current.left=false; }} onPointerCancel={()=>{ keys.current.left=false; }}>&larr;</button>
+                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onPointerDown={()=>{ keys.current.up=true; }} onPointerUp={()=>{ keys.current.up=false; }} onPointerCancel={()=>{ keys.current.up=false; }}>&uarr;</button>
+                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onPointerDown={()=>{ keys.current.right=true; }} onPointerUp={()=>{ keys.current.right=false; }} onPointerCancel={()=>{ keys.current.right=false; }}>&rarr;</button>
                 <div></div>
-                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.down=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.down=false;}}>&darr;</button>
+                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onPointerDown={()=>{ keys.current.down=true; }} onPointerUp={()=>{ keys.current.down=false; }} onPointerCancel={()=>{ keys.current.down=false; }}>&darr;</button>
                 <div></div>
               </div>
               <div className="col-span-1 flex items-center">
-                <button className="w-full py-10 rounded-xl bg-emerald-600/90 text-black font-semibold border border-emerald-400 active:bg-emerald-500" onTouchStart={(e)=>{e.preventDefault(); keys.current.fire=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.fire=false;}}>
+                <button className="w-full py-10 rounded-xl bg-emerald-600/90 text-black font-semibold border border-emerald-400 active:bg-emerald-500" onPointerDown={()=>{ keys.current.fire=true; }} onPointerUp={()=>{ keys.current.fire=false; }} onPointerCancel={()=>{ keys.current.fire=false; }}>
                   FIRE
                 </button>
               </div>
               <div className="col-span-3 flex items-center gap-2 text-xs text-zinc-300 mt-1">
                 <span>Skalér:</span>
-                <input type="range" min={1.2} max={3.6} step={0.2} value={scale} onChange={e=>setScale(parseFloat(e.target.value))} className="w-full" />
+                <input id="scale-range" aria-label="Skalér" type="range" min={1.2} max={3.6} step={0.2} value={scale} onChange={e=>setScale(parseFloat(e.target.value))} className="w-full" />
                 <span className="text-white">{scale.toFixed(1)}x</span>
               </div>
             </div>
           </div>
+          )}
 
           {showExplain && (
             <div className="mt-3 grid grid-cols-2 gap-3 text-xs text-zinc-300">
