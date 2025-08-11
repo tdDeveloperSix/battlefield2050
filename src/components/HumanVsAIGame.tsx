@@ -7,7 +7,7 @@ function defineHumanVsAIGame(): void {
   const TEMPLATE = document.createElement('template');
   TEMPLATE.innerHTML = `
   <style>
-    :host { --bg:#070a16; --panel:#0e1533; --muted:#9fb2d0; --ok:#66ffad; --warn:#ffd26b; --bad:#ff6d8a; --blue:#69b3ff; --edge:#1b244a; --green:#18cc75; font-family: inherit; }
+    :host { --bg:#070a16; --panel:#0e1533; --muted:#9fb2d0; --ok:#66ffad; --warn:#ffd26b; --bad:#ff6d8a; --blue:#69b3ff; --edge:#1b244a; --green:#18cc75; font-family: inherit; position:relative; display:block; }
     *,*::before,*::after { box-sizing: border-box; }
     .game { background: linear-gradient(180deg, #0a1026 0%, #070a16 100%); border:1px solid rgba(255,255,255,.06); border-radius:18px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.35); }
     header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; background:rgba(255,255,255,.03); gap:8px; }
@@ -41,7 +41,7 @@ function defineHumanVsAIGame(): void {
 
     .result { display:grid; gap:6px; background:#0e1533; border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:10px; font-size:14px; }
 
-    .overlay { position:fixed; inset:0; background:rgba(6,9,20,.82); display:none; place-items:center; padding:14px; }
+    .overlay { position:absolute; inset:0; background:rgba(6,9,20,.82); display:none; place-items:center; padding:14px; z-index:40; }
     .overlay.show { display:grid; }
     .card { width:100%; max-width:440px; border-radius:18px; background:#0e1533; border:1px solid rgba(255,255,255,.1); padding:14px; display:grid; gap:10px; text-align:center; }
     .card h3{ margin:0; font-size:20px; }
@@ -311,7 +311,7 @@ function defineHumanVsAIGame(): void {
 export default function HumanVsAIGame(): JSX.Element {
   useEffect(()=>{ defineHumanVsAIGame(); },[]);
   return (
-    <div className="rounded-xl overflow-hidden ring-1 ring-white/10">
+    <div className="relative rounded-xl overflow-hidden ring-1 ring-white/10">
       {/* eslint-disable-next-line react/no-unknown-property */}
       <human-vs-ai-game style={{display:'block'}} />
     </div>
