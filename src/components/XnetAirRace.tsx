@@ -250,8 +250,7 @@ export default function XnetAirRace(){
   const [aScore,setAScore]=useState(0);
   const awardedRef=useRef(false);
   const deathHandledRef=useRef(false);
-  const [highscores,setHighscores]=useState<number[]>([]);
-  const [showHigh,setShowHigh]=useState(false);
+  const [gameOver,setGameOver]=useState(false);
 
   // Entities
   const player=useRef<Plane>({pos:{x:W*0.3,y:H*0.5},a:0,v:MIN_SPEED+10,color:theme.accent2,trail:[],alive:true,cd:0});
@@ -285,7 +284,7 @@ export default function XnetAirRace(){
   function resetRound(){
     player.current={pos:{x:W*0.3,y:H*0.5},a:0,v:MIN_SPEED+10,color:theme.accent2,trail:[],alive:true,cd:0};
     ais.current=[createEnemy()];
-    missiles.current=[]; awardedRef.current=false; deathHandledRef.current=false; setShowHigh(false);
+    missiles.current=[]; awardedRef.current=false; deathHandledRef.current=false; setGameOver(false);
   }
 
   // Game loop
@@ -315,7 +314,7 @@ export default function XnetAirRace(){
     const loop=(ts:number)=>{
       const dt=Math.min((ts-last)/1000,DT_CAP); last=ts;
 
-      if (!paused && !showRules) {
+      if (!paused && !showRules && !gameOver) {
         // Player
         const turnP=(keys.current.right?1:0)-(keys.current.left?1:0);
         const thrP =(keys.current.up?1:0)-(keys.current.down?1:0);
@@ -405,7 +404,7 @@ export default function XnetAirRace(){
 
       // tegn
       const playerDead = !player.current.alive;
-      const over = playerDead; // kun game over når spilleren dør
+      const over = playerDead || gameOver; // game over overlay
       const strings = {
         playerLabel: t('dogfight.hud.player','Player'),
         aiLabel: t('dogfight.hud.ai','AI'),
@@ -414,17 +413,10 @@ export default function XnetAirRace(){
         highscoreTitle: t('dogfight.highscoreTitle','Highscore (Top 5)'),
         diedResetText: t('dogfight.diedReset','Player died – resetting round')
       };
-      drawScene(ctx, theme, player.current, ais.current, missiles.current, showGuides, over, pScore, aScore, paused || showRules, showHigh? highscores : null, playerDead, strings, scale);
+      drawScene(ctx, theme, player.current, ais.current, missiles.current, showGuides, over, pScore, aScore, paused || showRules || gameOver, playerDead, strings, scale);
       if(playerDead && !deathHandledRef.current){
-        const newList=[...highscores, pScore].sort((a,b)=>b-a).slice(0,5);
-        setHighscores(newList); saveHighscores(newList);
-        setShowHigh(true);
-        setPScore(0); setAScore(0);
         deathHandledRef.current=true;
-      }
-      if(over){
-        const delay = 2200;
-        setTimeout(()=>resetRound(),delay);
+        setGameOver(true);
       }
 
       raf=requestAnimationFrame(loop);
@@ -466,8 +458,7 @@ export default function XnetAirRace(){
     return ()=>{ stop=true; };
   },[learning,learnDelay]);
 
-  // indlæs highscores ved mount
-  useEffect(()=>{ setHighscores(loadHighscores()); },[]);
+  // ingen highscores længere
 
   return (
     <div className="mx-auto max-w-6xl p-6 text-gray-100" ref={containerRef}>
@@ -506,6 +497,20 @@ export default function XnetAirRace(){
             <label className="flex items-center gap-2 text-xs text-zinc-300"><input type="checkbox" className="accent-emerald-500" checked={showExplain} onChange={e=>setShowExplain(e.target.checked)} />{t('dogfight.labels.explainAI','Explain AI')}</label>
             <div className="ml-auto text-xs text-zinc-400 hidden sm:block">{t('dogfight.controls','Controls')}: ← → · ↑ · ↓ · Space</div>
           </div>
+
+          {/* Game over overlay */}
+          {gameOver && (
+            <div className="absolute inset-0 grid place-items-center">
+              <div className="w-full max-w-sm rounded-2xl bg-zinc-900/95 p-5 text-center ring-1 ring-white/10">
+                <div className="text-xl font-bold text-white mb-2">{t('dogfight.over.gameOver','Game over')}</div>
+                <div className="text-zinc-300 mb-4">{t('dogfight.over.tryAgain','Vil du spille igen?')}</div>
+                <div className="flex gap-2 justify-center">
+                  <button onClick={()=>{ setPScore(0); setAScore(0); resetRound(); setGameOver(false); }} className="rounded-lg border border-emerald-400 bg-emerald-600/80 px-4 py-2 text-black font-semibold hover:bg-emerald-500">{t('dogfight.over.playAgain','Spil igen')}</button>
+                  <button onClick={()=>setGameOver(false)} className="rounded-lg border border-white/10 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700">{t('dogfight.over.close','Luk')}</button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Simple mobile touch controls + skalering */}
           <div className="mt-3 sm:hidden select-none sticky bottom-2 z-10">
@@ -593,7 +598,6 @@ function drawScene(
   scoreP:number,
   scoreA:number,
   paused:boolean,
-  highscores: number[] | null,
   playerDead:boolean,
   strings?: { playerLabel:string; aiLabel:string; aliveText:string; hitText:string; highscoreTitle:string; diedResetText:string; },
   scaleOverride?: number
@@ -660,22 +664,7 @@ function drawScene(
 
   if(showOver){ ctx.fillStyle="rgba(0,0,0,0.45)"; ctx.fillRect(0,0,W,H); }
   if(paused){ ctx.fillStyle="rgba(0,0,0,0.35)"; ctx.fillRect(0,0,W,H); }
-  if(highscores && playerDead){
-    const boxW=300, boxH=200; const x=(W-boxW)/2, y=(H-boxH)/2;
-    ctx.fillStyle="rgba(0,0,0,0.75)"; ctx.fillRect(x,y,boxW,boxH);
-    ctx.strokeStyle="rgba(255,255,255,0.2)"; ctx.strokeRect(x,y,boxW,boxH);
-    ctx.fillStyle=theme.text; ctx.font="bold 18px ui-sans-serif"; ctx.textAlign="center";
-    ctx.fillText(strings?.highscoreTitle || "Highscore (Top 5)", x+boxW/2, y+18);
-    ctx.textAlign="left"; ctx.font="14px ui-sans-serif";
-    const list = highscores.slice(0,5);
-    for(let i=0;i<list.length;i++){
-      const s=list[i];
-      ctx.fillStyle=i===0? theme.accent2 : "#e5e7eb";
-      ctx.fillText(`${i+1}. ${s}`, x+24, y+50+i*26);
-    }
-    ctx.fillStyle="rgba(255,255,255,0.7)"; ctx.font="12px ui-sans-serif"; ctx.textAlign="center";
-    ctx.fillText(strings?.diedResetText || "Player died – resetting round", x+boxW/2, y+boxH-18);
-  }
+  // ingen highscore overlay — håndteres i React overlay
 }
 
 function drawTrail(ctx:CanvasRenderingContext2D, trail:Vec[], color:string){
