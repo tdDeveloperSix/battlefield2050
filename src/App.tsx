@@ -24,6 +24,7 @@ import BackToTop from './components/BackToTop';
 import XnetAirRace from './components/XnetAirRace';
 import JammingControl from './components/JammingControl';
 import HumanVsAIGame from './components/HumanVsAIGame';
+import Sources from './components/Sources';
 
 
 interface TimelineSection {
@@ -1249,6 +1250,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Kilder nederst */}
+      <Sources />
 
       {/* Footer */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-slate-800">
