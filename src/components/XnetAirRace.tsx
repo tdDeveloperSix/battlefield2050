@@ -24,11 +24,11 @@ const TURN_RATE = Math.PI;
 
 const MISSILE_SPEED = 320;
 const MISSILE_TTL = 7.0;           // stadig der, men udløb bruges kun som failsafe
-const MISSILE_BLAST_R = 22;        // kill-radius for missiler
+const BASE_MISSILE_BLAST_R = 22;   // basis kill-radius (skaleres pr. enhed)
 const MISSILE_LOCK_RANGE = 260;    // krav for at affyre
 const MISSILE_COOLDOWN = 1.4;
 
-const PLANE_COLLIDE_R = 18;        // ~flyets halve længde for fly-fly kollision
+const BASE_PLANE_COLLIDE_R = 18;   // basis kollision-radius (skaleres pr. enhed)
 
 /* =================== Typer =================== */
 type Vec = { x: number; y: number };
@@ -94,15 +94,22 @@ function useKeys(){
 }
 
 /* =================== Fysik =================== */
-function stepPlane(pl:Plane, turn:number, throttle:number, dt:number){
+function stepPlane(pl:Plane, turn:number, throttle:number, dt:number, edgeMode: 'die'|'wrap'='die'){
   pl.a += turn*TURN_RATE*dt;
   pl.v += throttle*ACCEL*dt;
   pl.v = clamp(pl.v*(1-DRAG*dt), MIN_SPEED, MAX_SPEED);
   pl.pos.x += Math.cos(pl.a)*pl.v*dt;
   pl.pos.y += Math.sin(pl.a)*pl.v*dt;
-  // INGEN WRAP — kant = død
-  if (pl.pos.x < 0 || pl.pos.x > W || pl.pos.y < 0 || pl.pos.y > H) {
-    pl.alive = false;
+  // Kant-håndtering
+  if (edgeMode === 'die') {
+    if (pl.pos.x < 0 || pl.pos.x > W || pl.pos.y < 0 || pl.pos.y > H) {
+      pl.alive = false;
+    }
+  } else if (edgeMode === 'wrap') {
+    if (pl.pos.x < 0) pl.pos.x = W;
+    else if (pl.pos.x > W) pl.pos.x = 0;
+    if (pl.pos.y < 0) pl.pos.y = H;
+    else if (pl.pos.y > H) pl.pos.y = 0;
   }
   // trail
   pl.trail.push({x:pl.pos.x,y:pl.pos.y}); if(pl.trail.length>120) pl.trail.shift();
@@ -188,7 +195,7 @@ function evalPolicy(pol:Policy):number{
     if(miss){
       stepMissileStraight(miss,dt);
       if(!miss.active) miss=null;
-      else if(len(miss.pos.x-tgt.pos.x, miss.pos.y-tgt.pos.y)<=MISSILE_BLAST_R) return t;
+      else if(len(miss.pos.x-tgt.pos.x, miss.pos.y-tgt.pos.y)<=BASE_MISSILE_BLAST_R*1.6) return t;
     }
     t+=dt;
   }
@@ -229,6 +236,7 @@ export default function XnetAirRace(){
   const keys = useKeys();
   const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement|null>(null);
+  const [scale, setScale] = useState<number>(typeof window !== 'undefined' && window.innerWidth <= 640 ? 3.2 : 1.9);
 
   // UI
   const [showRules,setShowRules]=useState(true);
@@ -247,7 +255,18 @@ export default function XnetAirRace(){
 
   // Entities
   const player=useRef<Plane>({pos:{x:W*0.3,y:H*0.5},a:0,v:MIN_SPEED+10,color:theme.accent2,trail:[],alive:true,cd:0});
-  const ai=useRef<Plane>({pos:{x:W*0.7,y:H*0.5},a:Math.PI,v:MIN_SPEED+10,color:theme.danger,trail:[],alive:true,cd:0});
+  // Dynamisk skala: større fly på små skærme
+  const createEnemy = (): Plane => ({
+    pos: { x: W - 6, y: Math.random() * (H * 0.8) + H * 0.1 },
+    a: Math.PI,
+    v: MIN_SPEED + 10,
+    color: theme.danger,
+    trail: [],
+    alive: true,
+    cd: 0,
+  });
+
+  const ais = useRef<Plane[]>([createEnemy()]);
   const missiles=useRef<Missile[]>([]);
 
   // Learning visning
@@ -265,7 +284,7 @@ export default function XnetAirRace(){
 
   function resetRound(){
     player.current={pos:{x:W*0.3,y:H*0.5},a:0,v:MIN_SPEED+10,color:theme.accent2,trail:[],alive:true,cd:0};
-    ai.current={pos:{x:W*0.7,y:H*0.5},a:Math.PI,v:MIN_SPEED+10,color:theme.danger,trail:[],alive:true,cd:0};
+    ais.current=[createEnemy()];
     missiles.current=[]; awardedRef.current=false; deathHandledRef.current=false; setShowHigh(false);
   }
 
@@ -277,8 +296,10 @@ export default function XnetAirRace(){
 
     // Responsive fit of canvas within container, preserving world coords (W×H)
     const fit = ()=>{
-      if(!canvasRef.current || !containerRef.current) return;
-      const cssW = Math.max(280, Math.min(containerRef.current.clientWidth || W, 1200));
+      if(!canvasRef.current) return;
+      const parentEl = canvasRef.current.parentElement as HTMLElement | null;
+      const boxW = parentEl?.clientWidth || W;
+      const cssW = Math.max(280, Math.min(boxW, 1200));
       const cssH = Math.round(cssW * (H / W));
       const dpr = Math.min(2, window.devicePixelRatio || 1);
       canvasRef.current.style.width = cssW + 'px';
@@ -294,41 +315,41 @@ export default function XnetAirRace(){
     const loop=(ts:number)=>{
       const dt=Math.min((ts-last)/1000,DT_CAP); last=ts;
 
-      if (!paused) {
+      if (!paused && !showRules) {
         // Player
         const turnP=(keys.current.right?1:0)-(keys.current.left?1:0);
         const thrP =(keys.current.up?1:0)-(keys.current.down?1:0);
         if (player.current.alive) {
-          stepPlane(player.current, turnP, thrP, dt);
+          stepPlane(player.current, turnP, thrP, dt, 'die');
         }
 
         // Fire fra spiller
         if(keys.current.fire && player.current.cd<=0 && player.current.alive){
-          const d=len(player.current.pos.x-ai.current.pos.x, player.current.pos.y-ai.current.pos.y);
-          if(d<=MISSILE_LOCK_RANGE){
-            missiles.current.push(spawnMissile("player",player.current));
-            player.current.cd=MISSILE_COOLDOWN;
-          }
+          // tillad affyring uanset afstand; lock-range bruges i AI logik
+          missiles.current.push(spawnMissile("player",player.current));
+          player.current.cd=MISSILE_COOLDOWN;
         }
 
-        // AI
-        let threat:Missile|null=null;
-        for(const m of missiles.current){
-          if(m.owner==="player" && m.active){
-            const d=len(m.pos.x-ai.current.pos.x, m.pos.y-ai.current.pos.y);
-            if(d<MISSILE_LOCK_RANGE){ threat=m; break; }
+        // AI (alle fjender)
+        const nowSec = performance.now()/1000;
+        for (const enemy of ais.current) {
+          if (!enemy.alive) continue;
+          // find nærmeste trussel (spiller-missil)
+          let threat:Missile|null=null;
+          for(const m of missiles.current){
+            if(m.owner==="player" && m.active){
+              const d=len(m.pos.x-enemy.pos.x, m.pos.y-enemy.pos.y);
+              if(d<MISSILE_LOCK_RANGE){ threat=m; break; }
+            }
           }
-        }
-        if (ai.current.alive) {
-          const nowSec = performance.now()/1000;
-          const ev=aiEvasion(muRef.current, ai.current, threat, nowSec);
-          const atk=aiTurnThrottle(muRef.current, ai.current, player.current, nowSec);
+          const ev=aiEvasion(muRef.current, enemy, threat, nowSec);
+          const atk=aiTurnThrottle(muRef.current, enemy, player.current, nowSec);
           const turnA=clamp(atk.turn+(ev.evading?ev.turnBias:0),-1,1);
           const thrA =clamp(atk.throttle+(ev.evading?ev.throttleBias:0),-1,1);
-          stepPlane(ai.current, turnA, thrA, dt);
-          if(aiShouldFire(muRef.current, ai.current, player.current)){
-            missiles.current.push(spawnMissile("ai", ai.current));
-            ai.current.cd=MISSILE_COOLDOWN;
+          stepPlane(enemy, turnA, thrA, dt, 'wrap');
+          if(aiShouldFire(muRef.current, enemy, player.current)){
+            missiles.current.push(spawnMissile("ai", enemy));
+            enemy.cd=MISSILE_COOLDOWN;
           }
         }
 
@@ -337,32 +358,54 @@ export default function XnetAirRace(){
           if(!m.active) continue;
           stepMissileStraight(m,dt);
           // kollision med mål?
-          const tgt = m.owner==="ai"? player.current : ai.current;
-          if (tgt.alive && m.active && len(m.pos.x-tgt.pos.x, m.pos.y-tgt.pos.y) <= MISSILE_BLAST_R){
-            tgt.alive=false; m.active=false;
-            if(!awardedRef.current){
-              if(tgt===ai.current && m.owner==="player") setPScore(s=>s+1);
-              else if(tgt===player.current && m.owner==="ai") setAScore(s=>s+1);
-              awardedRef.current=true;
+          if (m.owner === "ai") {
+            const tgt = player.current;
+            {
+              const scale = (window.innerWidth <= 640 ? 2.4 : 1.6);
+              const blast = BASE_MISSILE_BLAST_R * scale;
+              if (tgt.alive && m.active && len(m.pos.x-tgt.pos.x, m.pos.y-tgt.pos.y) <= blast){
+              tgt.alive=false; m.active=false; setAScore(s=>s+1);
+              }
+            }
+          } else {
+            // spiller-missil: tjek mod alle fjender
+            for (const enemy of ais.current) {
+              if (!enemy.alive || !m.active) continue;
+              const scale = (window.innerWidth <= 640 ? 2.4 : 1.6);
+              const blast = BASE_MISSILE_BLAST_R * scale;
+              if (len(m.pos.x-enemy.pos.x, m.pos.y-enemy.pos.y) <= blast) {
+                enemy.alive=false; m.active=false; setPScore(s=>s+1);
+              }
             }
           }
         }
         missiles.current=missiles.current.filter(m=>m.active);
 
         // FLY-FLY KOLLISION ⇒ begge dør (ingen point tildeles her)
-        if (player.current.alive && ai.current.alive) {
-          const d = len(player.current.pos.x - ai.current.pos.x, player.current.pos.y - ai.current.pos.y);
-          if (d <= PLANE_COLLIDE_R*2) {
-            player.current.alive = false;
-            ai.current.alive = false;
-            awardedRef.current = true; // ingen point
+        if (player.current.alive) {
+          for (const enemy of ais.current) {
+            if (!enemy.alive) continue;
+            const d = len(player.current.pos.x - enemy.pos.x, player.current.pos.y - enemy.pos.y);
+            const scale = (window.innerWidth <= 640 ? 2.4 : 1.6);
+            const collideR = BASE_PLANE_COLLIDE_R * scale;
+            if (d <= collideR*2) {
+              player.current.alive = false;
+              enemy.alive = false;
+            }
           }
+        }
+
+        // Fjern døde fjender og spawn nye efter behov baseret på kills
+        ais.current = ais.current.filter(e=>e.alive);
+        const desired = Math.min(1 + Math.floor(pScore/5), 3);
+        while (ais.current.length < desired) {
+          ais.current.push(createEnemy());
         }
       }
 
       // tegn
       const playerDead = !player.current.alive;
-      const over = playerDead || !ai.current.alive;
+      const over = playerDead; // kun game over når spilleren dør
       const strings = {
         playerLabel: t('dogfight.hud.player','Player'),
         aiLabel: t('dogfight.hud.ai','AI'),
@@ -371,7 +414,7 @@ export default function XnetAirRace(){
         highscoreTitle: t('dogfight.highscoreTitle','Highscore (Top 5)'),
         diedResetText: t('dogfight.diedReset','Player died – resetting round')
       };
-      drawScene(ctx, theme, player.current, ai.current, missiles.current, showGuides, over, pScore, aScore, paused, showHigh? highscores : null, playerDead, strings);
+      drawScene(ctx, theme, player.current, ais.current, missiles.current, showGuides, over, pScore, aScore, paused || showRules, showHigh? highscores : null, playerDead, strings, scale);
       if(playerDead && !deathHandledRef.current){
         const newList=[...highscores, pScore].sort((a,b)=>b-a).slice(0,5);
         setHighscores(newList); saveHighscores(newList);
@@ -380,7 +423,7 @@ export default function XnetAirRace(){
         deathHandledRef.current=true;
       }
       if(over){
-        const delay = playerDead ? 2200 : 600;
+        const delay = 2200;
         setTimeout(()=>resetRound(),delay);
       }
 
@@ -388,7 +431,14 @@ export default function XnetAirRace(){
     };
     raf=requestAnimationFrame(loop);
     return ()=>{ cancelAnimationFrame(raf); ro.disconnect(); };
-  },[theme,showGuides,keys,pScore,aScore,paused,highscores,showHigh,t]);
+  },[theme,showGuides,keys,pScore,aScore,paused,highscores,showHigh,t,showRules]);
+
+  // Når brugeren trykker start (skjuler regler), nulstil runde så trails ikke hænger ved
+  useEffect(()=>{
+    if(!showRules){
+      resetRound();
+    }
+  },[showRules]);
 
   // Learning loop (samme som før)
   useEffect(()=>{
@@ -429,7 +479,7 @@ export default function XnetAirRace(){
           </div>
 
           <div className="relative">
-            <canvas ref={canvasRef} width={W} height={H} className="mt-3 w-full rounded-xl bg-black" />
+            <canvas ref={canvasRef} width={W} height={H} className="mt-3 w-full rounded-xl bg-black" style={{display:'block'}} />
             {showRules && (
               <div className="pointer-events-auto absolute inset-0 grid place-items-center">
                 <div className="max-w-xl rounded-2xl bg-zinc-900/95 p-4 text-sm ring-1 ring-white/10">
@@ -448,30 +498,35 @@ export default function XnetAirRace(){
             )}
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm max-sm:sticky max-sm:top-2 max-sm:z-10 max-sm:bg-zinc-900/80 max-sm:p-2 max-sm:rounded-xl">
             <button onClick={()=>setPaused(v=>!v)} className={`rounded-xl border border-white/10 px-3 py-2 ${paused?"bg-yellow-600/40":"bg-zinc-800 hover:bg-zinc-700"}`}>{paused?t('dogfight.buttons.resume','Resume game'):t('dogfight.buttons.pause','Pause game')}</button>
             <button onClick={()=>setLearning(v=>!v)} className={`rounded-xl border border-white/10 px-3 py-2 ${learning?"bg-emerald-700/50":"bg-zinc-800 hover:bg-zinc-700"}`}>{learning?t('dogfight.buttons.pauseLearning','Pause learning'):t('dogfight.buttons.startLearning','Start learning')}</button>
             <button onClick={()=>{ setPScore(0); setAScore(0); resetRound(); }} className="rounded-xl border border-white/10 bg-zinc-800 px-3 py-2 hover:bg-zinc-700">{t('dogfight.buttons.reset','Reset')}</button>
             <label className="flex items-center gap-2 text-xs text-zinc-300"><input type="checkbox" className="accent-emerald-500" checked={showGuides} onChange={e=>setShowGuides(e.target.checked)} />{t('dogfight.labels.guides','Guides')}</label>
             <label className="flex items-center gap-2 text-xs text-zinc-300"><input type="checkbox" className="accent-emerald-500" checked={showExplain} onChange={e=>setShowExplain(e.target.checked)} />{t('dogfight.labels.explainAI','Explain AI')}</label>
-            <div className="ml-auto text-xs text-zinc-400">{t('dogfight.controls','Controls')}: ← → · ↑ · ↓ · Space</div>
+            <div className="ml-auto text-xs text-zinc-400 hidden sm:block">{t('dogfight.controls','Controls')}: ← → · ↑ · ↓ · Space</div>
           </div>
 
-          {/* Simple mobile touch controls */}
-          <div className="mt-3 sm:hidden select-none">
-            <div className="grid grid-cols-3 gap-3">
+          {/* Simple mobile touch controls + skalering */}
+          <div className="mt-3 sm:hidden select-none sticky bottom-2 z-10">
+            <div className="grid grid-cols-3 gap-3 bg-zinc-900/70 rounded-xl p-2 ring-1 ring-white/10 backdrop-blur">
               <div className="col-span-2 grid grid-cols-3 gap-2">
-                <button className="py-3 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.left=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.left=false;}}>&larr;</button>
-                <button className="py-3 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.up=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.up=false;}}>&uarr;</button>
-                <button className="py-3 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.right=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.right=false;}}>&rarr;</button>
+                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.left=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.left=false;}}>&larr;</button>
+                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.up=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.up=false;}}>&uarr;</button>
+                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.right=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.right=false;}}>&rarr;</button>
                 <div></div>
-                <button className="py-3 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.down=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.down=false;}}>&darr;</button>
+                <button className="py-4 rounded-lg bg-zinc-800 border border-white/10 text-zinc-200 active:bg-zinc-700" onTouchStart={(e)=>{e.preventDefault(); keys.current.down=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.down=false;}}>&darr;</button>
                 <div></div>
               </div>
               <div className="col-span-1 flex items-center">
-                <button className="w-full py-8 rounded-xl bg-emerald-600/80 text-black font-semibold border border-emerald-400 active:bg-emerald-500" onTouchStart={(e)=>{e.preventDefault(); keys.current.fire=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.fire=false;}}>
+                <button className="w-full py-10 rounded-xl bg-emerald-600/90 text-black font-semibold border border-emerald-400 active:bg-emerald-500" onTouchStart={(e)=>{e.preventDefault(); keys.current.fire=true;}} onTouchEnd={(e)=>{e.preventDefault(); keys.current.fire=false;}}>
                   FIRE
                 </button>
+              </div>
+              <div className="col-span-3 flex items-center gap-2 text-xs text-zinc-300 mt-1">
+                <span>Skalér:</span>
+                <input type="range" min={1.2} max={3.6} step={0.2} value={scale} onChange={e=>setScale(parseFloat(e.target.value))} className="w-full" />
+                <span className="text-white">{scale.toFixed(1)}x</span>
               </div>
             </div>
           </div>
@@ -531,7 +586,7 @@ function drawScene(
   ctx:CanvasRenderingContext2D,
   theme:Theme,
   player:Plane,
-  ai:Plane,
+  aiList:Plane[],
   missiles:Missile[],
   guides:boolean,
   showOver:boolean,
@@ -540,56 +595,68 @@ function drawScene(
   paused:boolean,
   highscores: number[] | null,
   playerDead:boolean,
-  strings?: { playerLabel:string; aiLabel:string; aliveText:string; hitText:string; highscoreTitle:string; diedResetText:string; }
+  strings?: { playerLabel:string; aiLabel:string; aliveText:string; hitText:string; highscoreTitle:string; diedResetText:string; },
+  scaleOverride?: number
 ){
   // baggrund
   const g=ctx.createLinearGradient(0,0,W,H);
   g.addColorStop(0,theme.bg); g.addColorStop(1,theme.surface);
   ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
 
-  // grid
+  // grid — giv margen i toppen så UI ikke overlapper
   ctx.strokeStyle=theme.grid; ctx.lineWidth=1;
-  for(let y=40;y<H;y+=22){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+  const topMargin = 30; // undgå overlap med top-UI
+  for(let y=40;y<H;y+=22){
+    if (y < topMargin) continue;
+    ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
+  }
 
   // trails
   drawTrail(ctx, player.trail, theme.accent2);
-  drawTrail(ctx, ai.trail, theme.danger);
+  for (const e of aiList) drawTrail(ctx, e.trail, theme.danger);
 
   // guides (LOS-linjer)
   if(guides){
-    ctx.setLineDash([6,6]);
-    ctx.strokeStyle=theme.accent2; ctx.lineWidth=1.5;
-    ctx.beginPath(); ctx.moveTo(player.pos.x,player.pos.y); ctx.lineTo(ai.pos.x,ai.pos.y); ctx.stroke();
-    ctx.strokeStyle=theme.danger; ctx.beginPath(); ctx.moveTo(ai.pos.x,ai.pos.y); ctx.lineTo(player.pos.x,player.pos.y); ctx.stroke();
-    ctx.setLineDash([]);
+    const foe = aiList[0];
+    if (foe) {
+      ctx.setLineDash([6,6]);
+      ctx.strokeStyle=theme.accent2; ctx.lineWidth=1.5;
+      ctx.beginPath(); ctx.moveTo(player.pos.x,player.pos.y); ctx.lineTo(foe.pos.x,foe.pos.y); ctx.stroke();
+      ctx.strokeStyle=theme.danger; ctx.beginPath(); ctx.moveTo(foe.pos.x,foe.pos.y); ctx.lineTo(player.pos.x,player.pos.y); ctx.stroke();
+      ctx.setLineDash([]);
+    }
   }
 
   // fly
-  drawPlane(ctx, player, player.color);
-  drawPlane(ctx, ai, ai.color);
+  drawPlane(ctx, player, player.color, scaleOverride);
+  for (const e of aiList) drawPlane(ctx, e, e.color, scaleOverride);
 
   // missiler
-  for(const m of missiles) drawMissile(ctx, m, m.owner==="ai"? theme.danger : theme.accent2);
+  for(const m of missiles) drawMissile(ctx, m, m.owner==="ai"? theme.danger : theme.accent2, scaleOverride);
 
-  // HUD venstre
-  ctx.fillStyle=theme.text; ctx.font="12px ui-sans-serif"; ctx.textAlign="left"; ctx.textBaseline="alphabetic";
-  const p=player.alive?(strings?.aliveText||"ALIVE"):(strings?.hitText||"HIT");
-  const a=ai.alive?(strings?.aliveText||"ALIVE"):(strings?.hitText||"HIT");
-  ctx.fillText(`${strings?.playerLabel||'Player'}: ${p}   ${strings?.aiLabel||'AI'}: ${a}`, 12, 18);
+  // HUD venstre (vises ikke når paused/rules)
+  if(!paused){
+    ctx.fillStyle=theme.text; ctx.font="12px ui-sans-serif"; ctx.textAlign="left"; ctx.textBaseline="alphabetic";
+    const p=player.alive?(strings?.aliveText||"ALIVE"):(strings?.hitText||"HIT");
+    const aliveAIs = aiList.filter(a=>a.alive).length;
+    ctx.fillText(`${strings?.playerLabel||'Player'}: ${p}   ${strings?.aiLabel||'AI'}: ${aliveAIs}`, 12, 18);
+  }
 
-  // SCORE højre top (canvas)
-  ctx.save();
-  ctx.font="bold 26px ui-sans-serif"; ctx.textBaseline="top";
-  const pad=8, xRight=W-12, yTop=10;
-  const pText=String(scoreP), aText=String(scoreA), colon=":";
-  const pW=ctx.measureText(pText).width, cW=ctx.measureText(colon).width, aW=ctx.measureText(aText).width;
-  const total=pW+cW+aW, boxW=total+pad*2, boxH=28+pad;
-  ctx.fillStyle="rgba(0,0,0,0.60)"; ctx.fillRect(xRight-boxW, yTop, boxW, boxH);
-  let cur=xRight-pad; ctx.textAlign="right";
-  ctx.fillStyle=theme.danger; ctx.fillText(aText, cur, yTop+pad); cur-=aW;
-  ctx.fillStyle="rgba(255,255,255,0.65)"; ctx.fillText(colon, cur, yTop+pad); cur-=cW;
-  ctx.fillStyle=theme.accent2; ctx.fillText(pText, cur, yTop+pad);
-  ctx.restore();
+  // SCORE højre top (canvas) — skjul når paused/rules, og placer over canvas-kanten
+  if(!paused){
+    ctx.save();
+    ctx.font="bold 26px ui-sans-serif"; ctx.textBaseline="top";
+    const pad=8, xRight=W-12, yTop=6; // lidt lavere for at undgå overlappet
+    const pText=String(scoreP), aText=String(scoreA), colon=":";
+    const pW=ctx.measureText(pText).width, cW=ctx.measureText(colon).width, aW=ctx.measureText(aText).width;
+    const total=pW+cW+aW, boxW=total+pad*2, boxH=28+pad;
+    ctx.fillStyle="rgba(0,0,0,0.60)"; ctx.fillRect(xRight-boxW, yTop, boxW, boxH);
+    let cur=xRight-pad; ctx.textAlign="right";
+    ctx.fillStyle=theme.danger; ctx.fillText(aText, cur, yTop+pad); cur-=aW;
+    ctx.fillStyle="rgba(255,255,255,0.65)"; ctx.fillText(colon, cur, yTop+pad); cur-=cW;
+    ctx.fillStyle=theme.accent2; ctx.fillText(pText, cur, yTop+pad);
+    ctx.restore();
+  }
 
   if(showOver){ ctx.fillStyle="rgba(0,0,0,0.45)"; ctx.fillRect(0,0,W,H); }
   if(paused){ ctx.fillStyle="rgba(0,0,0,0.35)"; ctx.fillRect(0,0,W,H); }
@@ -619,25 +686,28 @@ function drawTrail(ctx:CanvasRenderingContext2D, trail:Vec[], color:string){
   ctx.stroke(); ctx.globalAlpha=1;
 }
 
-function drawPlane(ctx:CanvasRenderingContext2D, pl:Plane, color:string){
+function drawPlane(ctx:CanvasRenderingContext2D, pl:Plane, color:string, scaleOverride?:number){
   ctx.save();
   ctx.translate(pl.pos.x, pl.pos.y);
   ctx.rotate(pl.a);
   ctx.fillStyle=color;
   ctx.beginPath();
-  ctx.moveTo(16,0); ctx.lineTo(-10,-6); ctx.lineTo(-6,0); ctx.lineTo(-10,6); ctx.closePath();
+  const scale = scaleOverride ?? (window.innerWidth <= 640 ? 2.4 : 1.6);
+  const nose=16*scale, tail=10*scale, wing=6*scale;
+  ctx.moveTo(nose,0); ctx.lineTo(-tail,-wing); ctx.lineTo(-tail*0.6,0); ctx.lineTo(-tail,wing); ctx.closePath();
   ctx.fill();
-  if(!pl.alive){ ctx.fillStyle="rgba(255,255,255,0.08)"; ctx.beginPath(); ctx.arc(0,0,20,0,Math.PI*2); ctx.fill(); }
+  if(!pl.alive){ ctx.fillStyle="rgba(255,255,255,0.08)"; ctx.beginPath(); ctx.arc(0,0,20*scale,0,Math.PI*2); ctx.fill(); }
   ctx.restore();
 }
 
-function drawMissile(ctx:CanvasRenderingContext2D, m:Missile, color:string){
+function drawMissile(ctx:CanvasRenderingContext2D, m:Missile, color:string, scaleOverride?:number){
   ctx.save();
   ctx.translate(m.pos.x, m.pos.y);
   ctx.rotate(m.a);
   ctx.fillStyle=color;
   ctx.beginPath();
-  ctx.moveTo(10,0); ctx.lineTo(-6,-3); ctx.lineTo(-6,3); ctx.closePath();
+  const scale = scaleOverride ?? (window.innerWidth <= 640 ? 2.4 : 1.6);
+  ctx.moveTo(10*scale,0); ctx.lineTo(-6*scale,-3*scale); ctx.lineTo(-6*scale,3*scale); ctx.closePath();
   ctx.fill();
   ctx.restore();
 }
