@@ -218,6 +218,16 @@ function defineHumanVsAIGame(): void {
       this.ui.msg.innerHTML = `<h2>Vent til GRØN</h2><p>For tidlig tap = fejlstart</p>`;
       clearTimeout(this.state.goTimer);
       this.state.goTimer = window.setTimeout(()=> this.goSignal(), jitter);
+      // Sikkerhed: auto-timeout runden hvis tab skifter/fryser (>2.5s efter GO mangler)
+      const startedAt = performance.now();
+      const guard = () => {
+        // hvis vi stadig venter efter 3 sek, markér som AFK og lad AI vinde med μ
+        if (this.state.waiting && performance.now() - startedAt > 3000) {
+          const ai = this.sampleAI();
+          this.showRoundResult(2999, Math.min(ai, 600), { early: true });
+        }
+      };
+      window.setTimeout(guard, 3200);
     }
 
     goSignal(){
@@ -245,7 +255,7 @@ function defineHumanVsAIGame(): void {
         return;
       }
       if (!this.state.goAt){ return; }
-      const t = Math.max(0, Math.round(performance.now() - this.state.goAt));
+      const t = Math.min(4000, Math.max(0, Math.round(performance.now() - this.state.goAt)));
       this.showRoundResult(t, this.sampleAI());
     }
 
@@ -273,16 +283,20 @@ function defineHumanVsAIGame(): void {
       this.state.aiTimes.push(aiMs);
       if (!this.state.humanPB || humanMs < this.state.humanPB){ this.state.humanPB = humanMs; }
       this.renderHeader();
-      const humanWin = !opts?.early && humanMs < aiMs;
+      const clampedHuman = Math.min(humanMs, 4000);
+      const clampedAI = Math.min(aiMs, 4000);
+      const humanWin = !opts?.early && clampedHuman < clampedAI;
       this.ui.ovTitle.textContent = `Runde ${this.state.round}`;
-      this.ui.ht.textContent = opts?.early ? 'Fejlstart' : (humanMs + ' ms');
-      this.ui.at.textContent = aiMs + ' ms';
+      this.ui.ht.textContent = opts?.early ? 'Fejlstart' : (clampedHuman + ' ms');
+      this.ui.at.textContent = clampedAI + ' ms';
       this.ui.winner.innerHTML = humanWin
         ? `<span class="win">Du vinder runden!</span>`
         : (opts?.early
             ? `<span class="lose">Fejlstart – AI vinder runden.</span>`
             : `<span class="lose">AI vinder runden.</span>`);
       this.ui.ov.classList.add('show');
+      // Scroll overlay i view på mobil for at undgå at det gemmer sig bag UI
+      this.ui.ov.scrollIntoView({ behavior: 'smooth', block: 'center' });
       this.state.round += 1;
       this.ui.round.textContent = `Runde ${Math.min(this.state.round, this.state.bestOf)}/${this.state.bestOf}`;
       const w = Math.min(100, ((this.state.round-1)/this.state.bestOf)*100);
