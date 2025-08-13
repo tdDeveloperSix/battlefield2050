@@ -212,22 +212,12 @@ function defineHumanVsAIGame(): void {
     scheduleRound(){
       this.resetArena();
       const jitter = 700 + Math.random()*1300;
-      this.state.waiting = true; this.state.early = false;
+      this.state.waiting = true; this.state.early = false; this.state.goAt = 0;
       this.ui.arena.classList.remove('go');
       this.ui.arena.classList.add('wait');
       this.ui.msg.innerHTML = `<h2>Vent til GRØN</h2><p>For tidlig tap = fejlstart</p>`;
       clearTimeout(this.state.goTimer);
       this.state.goTimer = window.setTimeout(()=> this.goSignal(), jitter);
-      // Sikkerhed: auto-timeout runden hvis tab skifter/fryser (>2.5s efter GO mangler)
-      const startedAt = performance.now();
-      const guard = () => {
-        // hvis vi stadig venter efter 3 sek, markér som AFK og lad AI vinde med μ
-        if (this.state.waiting && performance.now() - startedAt > 3000) {
-          const ai = this.sampleAI();
-          this.showRoundResult(2999, Math.min(ai, 600), { early: true });
-        }
-      };
-      window.setTimeout(guard, 3200);
     }
 
     goSignal(){
@@ -244,9 +234,10 @@ function defineHumanVsAIGame(): void {
       this.ui.arena.classList.add('ready');
       this.ui.msg.innerHTML = `<h2>Klar?</h2><p>Tryk på "Start match"</p>`;
       clearTimeout(this.state.goTimer);
+      this.state.goAt = 0; this.state.waiting = true;
     }
 
-    onPointer(){
+    onPointer(_e?: PointerEvent){
       if (this.state.waiting){
         this.state.early = true;
         const ai = this.sampleAI();
@@ -255,21 +246,17 @@ function defineHumanVsAIGame(): void {
         return;
       }
       if (!this.state.goAt){ return; }
-      const t = Math.min(4000, Math.max(0, Math.round(performance.now() - this.state.goAt)));
+      const t = Math.max(0, Math.round(performance.now() - this.state.goAt));
       this.showRoundResult(t, this.sampleAI());
     }
 
     sampleAI(){
+      // Stabil AI pr. runde: brug baseline for valgt sværhedsgrad
       const { difficulty } = this.state;
-      const targetFactor = DIFFS[difficulty].targetFactor;
-      const hAvg = this.state.humanTimes.length ? this.state.humanTimes.reduce((a:number,b:number)=>a+b,0)/this.state.humanTimes.length : null;
-      if (hAvg){
-        const target = Math.max(150, hAvg * targetFactor);
-        this.state.aiMu = 0.7*this.state.aiMu + 0.3*target;
-        this.state.aiSigma = Math.max(18, this.state.aiSigma*0.98);
-      }
-      const v = Math.round(this.randn(this.state.aiMu, this.state.aiSigma));
-      return Math.max(120, v);
+      const baseMu = DIFFS[difficulty].aiMu;
+      const baseSigma = DIFFS[difficulty].aiSigma;
+      const v = Math.round(this.randn(baseMu, baseSigma));
+      return Math.min(800, Math.max(120, v));
     }
 
     randn(mu=0, sigma=1){
@@ -283,20 +270,18 @@ function defineHumanVsAIGame(): void {
       this.state.aiTimes.push(aiMs);
       if (!this.state.humanPB || humanMs < this.state.humanPB){ this.state.humanPB = humanMs; }
       this.renderHeader();
-      const clampedHuman = Math.min(humanMs, 4000);
-      const clampedAI = Math.min(aiMs, 4000);
-      const humanWin = !opts?.early && clampedHuman < clampedAI;
+      const humanWin = !opts?.early && humanMs < aiMs;
       this.ui.ovTitle.textContent = `Runde ${this.state.round}`;
-      this.ui.ht.textContent = opts?.early ? 'Fejlstart' : (clampedHuman + ' ms');
-      this.ui.at.textContent = clampedAI + ' ms';
+      this.ui.ht.textContent = opts?.early ? 'Fejlstart' : (humanMs + ' ms');
+      this.ui.at.textContent = aiMs + ' ms';
       this.ui.winner.innerHTML = humanWin
         ? `<span class="win">Du vinder runden!</span>`
         : (opts?.early
             ? `<span class="lose">Fejlstart – AI vinder runden.</span>`
             : `<span class="lose">AI vinder runden.</span>`);
       this.ui.ov.classList.add('show');
-      // Scroll overlay i view på mobil for at undgå at det gemmer sig bag UI
-      this.ui.ov.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Stop måling og ignorér tryk indtil næste runde
+      this.state.goAt = 0; this.state.waiting = true;
       this.state.round += 1;
       this.ui.round.textContent = `Runde ${Math.min(this.state.round, this.state.bestOf)}/${this.state.bestOf}`;
       const w = Math.min(100, ((this.state.round-1)/this.state.bestOf)*100);
@@ -310,7 +295,8 @@ function defineHumanVsAIGame(): void {
     renderHeader(){
       this.ui.round.textContent = `Runde ${this.state.round}/${this.state.bestOf}`;
       this.ui.humanPB.textContent = 'PB: ' + (this.state.humanPB ? this.state.humanPB + ' ms' : '–');
-      this.ui.aimu.textContent = 'AI μ: ' + Math.round(this.state.aiMu) + ' ms';
+      const mu = DIFFS[this.state.difficulty].aiMu;
+      this.ui.aimu.textContent = 'AI μ: ' + Math.round(mu) + ' ms';
     }
 
     fullReset(){
