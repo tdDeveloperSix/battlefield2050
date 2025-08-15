@@ -25,6 +25,7 @@ import XnetAirRace from './components/XnetAirRace';
 import JammingControl from './components/JammingControl';
 import HumanVsAIGame from './components/HumanVsAIGame';
 import Sources from './components/Sources';
+import PlatOgKroneBars from './components/PlatOgKroneBars';
 
 
 interface TimelineSection {
@@ -565,6 +566,8 @@ function App() {
                       <XnetAirRace />
                     </div>
 
+                    {/* (FJERNET) Tidligere placering af Plat & Krone */}
+
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
                       <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center">
                         <Brain className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-purple-400 flex-shrink-0" />
@@ -631,6 +634,16 @@ function App() {
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         {t('detailedSections.digitalIntegration.raceLogic.finalGame')}
                       </p>
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                        Som opvarmning til næste kapitel kan du lige under denne boks prøve et lille eksperiment: kast en
+                        mønt tusindvis af gange i realtid og se, hvordan tilfældig støj glatter ud til stabile mønstre. Det
+                        er den samme statistik, vi bygger på, når autonome assistenter skal være robuste i praksis.
+                      </p>
+                    </div>
+
+                    {/* Plat & Krone — placeret direkte under "Kapløbets Logik ..." i én samlet ramme */}
+                    <div className="mt-6 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <PlatOgKroneBars />
                     </div>
                   </div>
                 )}
@@ -732,6 +745,8 @@ function App() {
                       }} />
                     </div>
 
+                    {/* (Flyttet lead-in fjernet herfra) */}
+
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
                         <AlertTriangle className="w-6 h-6 mr-3 text-red-400" />
@@ -746,6 +761,14 @@ function App() {
                       <p className="text-lg text-slate-300 leading-relaxed">
                         {t('detailedSections.autonomousAssistance.fogOfAutomation.controlRedefined')}
                       </p>
+                      <p className="text-lg text-slate-300 leading-relaxed mt-6" dangerouslySetInnerHTML={{
+                        __html: sanitizeHtml(t('detailedSections.autonomousAssistance.fogOfAutomation.coinExperiment'))
+                      }} />
+                    </div>
+
+                    {/* Plat & Krone eksperiment (spillet forbliver her under "Algoritmens tåge") */}
+                    <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
+                      <PlatOgKroneBars />
                     </div>
                   </div>
                 )}
