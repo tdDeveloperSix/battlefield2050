@@ -263,7 +263,8 @@ export default function XnetAirRace(){
   const [improve,setImprove]=useState<number|null>(null);
   const bestRef=useRef<number|null>(null);
   const [learnDelay,setLearnDelay]=useState(900);
-  const [learning,setLearning]=useState(true);
+  // Slå læring fra som default for at undgå UI-jitter når brugeren ikke spiller
+  const [learning,setLearning]=useState(false);
 
   // Start med en forholdsvis dårlig politik, så forbedringer kan ses tydeligt
   const muRef=useRef<Policy>({attackR:120,fireBias:0.9,breakG:0.1,jinkAmp:0.05,jinkFreq:0.2,pnN:3});
@@ -281,16 +282,31 @@ export default function XnetAirRace(){
     if(!ctx) return;
     let raf=0, last=performance.now();
 
-    // Statisk canvas-opsætning (ingen resize events)
-    const initCanvas = ()=>{
+    // Responsive fit of canvas within container, preserving world coords (W×H)
+    const fit = ()=>{
       if(!canvasRef.current) return;
+      const parentEl = canvasRef.current.parentElement as HTMLElement | null;
+      const boxW = parentEl?.clientWidth || W;
+      const cssW = Math.max(280, Math.min(boxW, 1200));
+      const cssH = Math.round(cssW * (H / W));
       const dpr = Math.min(2, window.devicePixelRatio || 1);
-      // Canvas får naturlig størrelse fra CSS — ingen dynamisk ændring
-      canvasRef.current.width = Math.floor(W * dpr);
-      canvasRef.current.height = Math.floor(H * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      canvasRef.current.style.width = cssW + 'px';
+      canvasRef.current.style.height = cssH + 'px';
+      canvasRef.current.width = Math.floor(cssW * dpr);
+      canvasRef.current.height = Math.floor(cssH * dpr);
+      ctx.setTransform((cssW * dpr) / W, 0, 0, (cssH * dpr) / H, 0, 0);
     };
-    initCanvas();
+    fit();
+    // Undgå observer-baseret reflow på mobil: brug kun window.resize
+    let resizeTimeout: number | null = null;
+    const throttledFit = () => {
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(() => {
+        fit();
+        resizeTimeout = null;
+      }, 150);
+    };
+    window.addEventListener('resize', throttledFit);
 
     const loop=(ts:number)=>{
       const dt=Math.min((ts-last)/1000,DT_CAP); last=ts;
@@ -403,19 +419,23 @@ export default function XnetAirRace(){
       raf=requestAnimationFrame(loop);
     };
     raf=requestAnimationFrame(loop);
-    return ()=>{ cancelAnimationFrame(raf); };
+    return ()=>{ cancelAnimationFrame(raf); window.removeEventListener('resize', throttledFit); };
   },[theme,showGuides,keys,pScore,aScore,paused,t,showRules,gameOver,scale]);
 
   // Når brugeren trykker start (skjuler regler), nulstil runde så trails ikke hænger ved
   useEffect(()=>{
     if(!showRules){
       resetRound();
+      // Start først læring når brugeren starter spillet
+      setLearning(true);
+    } else {
+      setLearning(false);
     }
   },[showRules]);
 
   // Learning loop (samme som før)
   useEffect(()=>{
-    if(!learning) return; let stop=false;
+    if(!learning || showRules || paused || gameOver) return; let stop=false;
     const tick=()=>{
       if (stop) return;
       const POP=24, ELITE=5;
@@ -437,7 +457,7 @@ export default function XnetAirRace(){
     };
     tick();
     return ()=>{ stop=true; };
-  },[learning,learnDelay]);
+  },[learning,learnDelay,showRules,paused,gameOver]);
 
   // ingen highscores længere
 
