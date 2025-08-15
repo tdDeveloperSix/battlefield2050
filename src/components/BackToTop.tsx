@@ -17,13 +17,22 @@ const BackToTop: React.FC = () => {
     const updateOffset = () => {
       const bar = document.querySelector('[data-role="decision-weight-bar"]') as HTMLElement | null;
       const barHeight = bar ? bar.getBoundingClientRect().height : 0;
-      const safe = (window as any).visualViewport ? (window as any).visualViewport.height - window.innerHeight : 0;
+      // Fjern visualViewport kode der kan forårsage uventede scroll-jumps
       const base = 24; // px ekstra luft
-      setBottomOffset(Math.max(96, Math.ceil(barHeight) + base + safe));
+      setBottomOffset(Math.max(96, Math.ceil(barHeight) + base));
     };
     updateOffset();
-    window.addEventListener('resize', updateOffset);
-    return () => window.removeEventListener('resize', updateOffset);
+    // Throttle resize events for at mindske layout thrashing
+    let resizeTimeout: number | null = null;
+    const throttledUpdate = () => {
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(updateOffset, 100);
+    };
+    window.addEventListener('resize', throttledUpdate);
+    return () => {
+      window.removeEventListener('resize', throttledUpdate);
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+    };
   }, []);
 
   const handleClick = () => {

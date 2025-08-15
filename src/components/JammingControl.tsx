@@ -46,15 +46,24 @@ const JammingControl: React.FC = () => {
     const updateOffset = () => {
       const bar = document.querySelector('[data-role="decision-weight-bar"]') as HTMLElement | null;
       const barHeight = bar ? bar.getBoundingClientRect().height : 0;
-      const safe = (window as any).visualViewport ? (window as any).visualViewport.height - window.innerHeight : 0;
+      // Fjern visualViewport kode der kan forårsage scroll-spring
       const base = 24; // px ekstra luft
       const backToTopGap = 64; // placer knappen tydeligt OVER "Til top"-knappen
-      const off = Math.max(96, Math.ceil(barHeight) + base + safe);
+      const off = Math.max(96, Math.ceil(barHeight) + base);
       setBottomOffset(off + backToTopGap);
     };
     updateOffset();
-    window.addEventListener('resize', updateOffset);
-    return () => window.removeEventListener('resize', updateOffset);
+    // Throttle resize events for stabilitet
+    let resizeTimeout: number | null = null;
+    const throttledUpdate = () => {
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(updateOffset, 100);
+    };
+    window.addEventListener('resize', throttledUpdate);
+    return () => {
+      window.removeEventListener('resize', throttledUpdate);
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+    };
   }, []);
 
   // Track when "Machine Superiority" section is in view and compute progress

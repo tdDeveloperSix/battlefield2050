@@ -296,7 +296,16 @@ export default function XnetAirRace(){
       ctx.setTransform((cssW * dpr) / W, 0, 0, (cssH * dpr) / H, 0, 0);
     };
     fit();
-    const ro = new ResizeObserver(fit);
+    // Throttle ResizeObserver til at mindske layout-spring på mobil
+    let resizeTimeout: number | null = null;
+    const throttledFit = () => {
+      if (resizeTimeout) return;
+      resizeTimeout = window.setTimeout(() => {
+        fit();
+        resizeTimeout = null;
+      }, 150);
+    };
+    const ro = new ResizeObserver(throttledFit);
     if(containerRef.current) ro.observe(containerRef.current);
 
     const loop=(ts:number)=>{
