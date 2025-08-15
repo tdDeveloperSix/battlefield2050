@@ -490,8 +490,8 @@ export default function XnetAirRace(){
 
           {/* Game over overlay */}
           {gameOver && (
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="w-full max-w-sm rounded-2xl bg-zinc-900/95 p-5 text-center ring-1 ring-white/10">
+            <div className="absolute inset-0 grid place-items-center p-4">
+              <div className="w-full max-w-sm rounded-2xl bg-zinc-900/95 p-5 text-center ring-1 ring-white/10 max-h-screen overflow-y-auto">
                 <div className="text-xl font-bold text-white mb-2">{t('dogfight.over.gameOver','Game over')}</div>
                 <div className="text-zinc-300 mb-4">{t('dogfight.over.tryAgain','Vil du spille igen?')}</div>
                 <div className="flex gap-2 justify-center">
