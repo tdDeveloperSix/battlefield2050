@@ -97,6 +97,7 @@ export default function PlatOgKroneBars(): JSX.Element {
     let h = 0;
     for (let i = 0; i < k; i++) if (Math.random() < p) h++;
     const t = k - h;
+    // Batcher state-opdateringer for at reducere re-renders på mobil
     setHeads((x) => x + h);
     setTails((x) => x + t);
   }
@@ -114,6 +115,13 @@ export default function PlatOgKroneBars(): JSX.Element {
 
     // Begræns så vi ikke overskrider målet
     if (played + casts > targetN) casts = Math.max(0, targetN - played);
+
+    // Batching: maksimum antal kast pr. frame for at undgå hakken på mobil
+    const maxCastsPerFrame = 100;
+    if (casts > maxCastsPerFrame) {
+      casts = maxCastsPerFrame;
+      fracRef.current += (casts - Math.floor(castsFloat)); // bevar overskydende
+    }
 
     if (casts > 0) step(casts);
 
@@ -137,7 +145,7 @@ export default function PlatOgKroneBars(): JSX.Element {
         rafRef.current = null;
       };
     }
-  }, [playing, speed, p, targetN, played]);
+  }, [playing, speed, p, targetN]);
 
   // Farver
   const txt = '#E6EEF8';
