@@ -296,17 +296,16 @@ export default function XnetAirRace(){
       ctx.setTransform((cssW * dpr) / W, 0, 0, (cssH * dpr) / H, 0, 0);
     };
     fit();
-    // Throttle ResizeObserver til at mindske layout-spring på mobil
+    // Undgå observer-baseret reflow på mobil: brug kun window.resize
     let resizeTimeout: number | null = null;
     const throttledFit = () => {
-      if (resizeTimeout) return;
+      if (resizeTimeout) clearTimeout(resizeTimeout);
       resizeTimeout = window.setTimeout(() => {
         fit();
         resizeTimeout = null;
       }, 150);
     };
-    const ro = new ResizeObserver(throttledFit);
-    if(containerRef.current) ro.observe(containerRef.current);
+    window.addEventListener('resize', throttledFit);
 
     const loop=(ts:number)=>{
       const dt=Math.min((ts-last)/1000,DT_CAP); last=ts;
@@ -419,7 +418,7 @@ export default function XnetAirRace(){
       raf=requestAnimationFrame(loop);
     };
     raf=requestAnimationFrame(loop);
-    return ()=>{ cancelAnimationFrame(raf); ro.disconnect(); };
+    return ()=>{ cancelAnimationFrame(raf); window.removeEventListener('resize', throttledFit); };
   },[theme,showGuides,keys,pScore,aScore,paused,t,showRules,gameOver,scale]);
 
   // Når brugeren trykker start (skjuler regler), nulstil runde så trails ikke hænger ved
