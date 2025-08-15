@@ -475,6 +475,19 @@ export default function XnetAirRace(){
                 </div>
               </div>
             )}
+            {/* Game over overlay - kun over canvas-området */}
+            {gameOver && (
+              <div className="absolute inset-0 grid place-items-center p-4">
+                <div className="w-full max-w-sm rounded-2xl bg-zinc-900/95 p-5 text-center ring-1 ring-white/10 max-h-screen overflow-y-auto">
+                  <div className="text-xl font-bold text-white mb-2">{t('dogfight.over.gameOver','Game over')}</div>
+                  <div className="text-zinc-300 mb-4">{t('dogfight.over.tryAgain','Vil du spille igen?')}</div>
+                  <div className="flex gap-2 justify-center">
+                    <button onClick={()=>{ setPScore(0); setAScore(0); resetRound(); setGameOver(false); }} className="rounded-lg border border-emerald-400 bg-emerald-600/80 px-4 py-2 text-black font-semibold hover:bg-emerald-500">{t('dogfight.over.playAgain','Spil igen')}</button>
+                    <button onClick={()=>setGameOver(false)} className="rounded-lg border border-white/10 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700">{t('dogfight.over.close','Luk')}</button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {!showRules && !gameOver && (
@@ -488,19 +501,7 @@ export default function XnetAirRace(){
           </div>
           )}
 
-          {/* Game over overlay */}
-          {gameOver && (
-            <div className="absolute inset-0 grid place-items-center p-4">
-              <div className="w-full max-w-sm rounded-2xl bg-zinc-900/95 p-5 text-center ring-1 ring-white/10 max-h-screen overflow-y-auto">
-                <div className="text-xl font-bold text-white mb-2">{t('dogfight.over.gameOver','Game over')}</div>
-                <div className="text-zinc-300 mb-4">{t('dogfight.over.tryAgain','Vil du spille igen?')}</div>
-                <div className="flex gap-2 justify-center">
-                  <button onClick={()=>{ setPScore(0); setAScore(0); resetRound(); setGameOver(false); }} className="rounded-lg border border-emerald-400 bg-emerald-600/80 px-4 py-2 text-black font-semibold hover:bg-emerald-500">{t('dogfight.over.playAgain','Spil igen')}</button>
-                  <button onClick={()=>setGameOver(false)} className="rounded-lg border border-white/10 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700">{t('dogfight.over.close','Luk')}</button>
-                </div>
-              </div>
-            </div>
-          )}
+
 
           {/* Simple mobile touch controls + skalering */}
           {!showRules && !gameOver && (
