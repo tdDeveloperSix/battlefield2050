@@ -641,10 +641,7 @@ function App() {
                       </p>
                     </div>
 
-                    {/* Plat & Krone — placeret direkte under "Kapløbets Logik ..." i én samlet ramme */}
-                    <div className="mt-6 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
-                      <PlatOgKroneBars />
-                    </div>
+                    {/* Plat & Krone er flyttet til "Algoritmens tåge" sektionen */}
                   </div>
                 )}
 
