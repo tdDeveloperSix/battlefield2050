@@ -19,7 +19,12 @@
     "db": "dB",
     "play": "Afspil",
     "stop": "Stop",
-    "sampleText": "Dette er en prøve på brødtekst. Når støjen øges, bliver farvekanalerne forskudt og teksten svær at læse – præcis som når J/S nærmer sig 0 dB og SNR kollapser."
+    "sampleText": "Dette er en prøve på brødtekst. Når støjen øges, bliver farvekanalerne forskudt og teksten svær at læse – præcis som når J/S nærmer sig 0 dB og SNR kollapser.",
+    "info": {
+      "title": "Hvorfor jamming betyder alt",
+      "body": "Jamming er kunsten at kvæle modstanderens signal med støj. I en fremtid med AI‑styrede sensorer, links og beslutninger bliver evnen til at forstyrre – og modstå forstyrrelse – en kernekompetence. Parter vil konkurrere benhårdt om at mestre både angreb (støj) og forsvar (robuste protokoller). Den side, der holder forbindelsen renest, får AI‑overlegenhed.",
+      "gotIt": "Forstået"
+    }
   },
   
   "heroIntro": {

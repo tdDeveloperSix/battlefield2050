@@ -21,6 +21,7 @@ const JammingControl: React.FC = () => {
   const [isZoneActive, setIsZoneActive] = useState(false);
   const [manualPaused, setManualPaused] = useState(false);
   const [bottomOffset, setBottomOffset] = useState<number>(112);
+  const [showInfo, setShowInfo] = useState(false);
 
   const audioContextRef = useRef<Nullable<AudioContext>>(null);
   const signalOscRef = useRef<Nullable<OscillatorNode>>(null);
@@ -65,6 +66,17 @@ const JammingControl: React.FC = () => {
       if (resizeTimeout) clearTimeout(resizeTimeout);
     };
   }, []);
+
+  // Engangs-pop-up ved første stop (manuelt pause)
+  function maybeShowInfo(nextPaused: boolean) {
+    if (!nextPaused) return;
+    try {
+      const key = 'jammingInfoSeen';
+      if (localStorage.getItem(key)) return;
+      localStorage.setItem(key, '1');
+      setShowInfo(true);
+    } catch {}
+  }
 
   // Track when "Machine Superiority" section is in view and compute progress
   useEffect(() => {
@@ -190,6 +202,7 @@ const JammingControl: React.FC = () => {
   }, []);
 
   return (
+    <>
     <div
       style={{ bottom: `calc(env(safe-area-inset-bottom, 0px) + ${bottomOffset}px)` }}
       className={`fixed right-4 sm:right-6 z-[55] transition-opacity ${isZoneActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
@@ -199,7 +212,11 @@ const JammingControl: React.FC = () => {
       <div className="flex flex-col items-center space-y-2">
         <button
           onClick={() => {
-            setManualPaused(p => !p);
+            setManualPaused(p => {
+              const next = !p;
+              if (next) maybeShowInfo(true);
+              return next;
+            });
             setPanelOpen(true);
           }}
           title={t('jamming.title') ?? 'Jamming'}
@@ -219,7 +236,11 @@ const JammingControl: React.FC = () => {
               <span className="text-xs text-slate-300">{t('jamming.sliderAria')}</span>
               <button
                 className="text-xs px-2 py-1 rounded border border-emerald-400 text-emerald-300 hover:bg-emerald-400 hover:text-black"
-                onClick={() => setManualPaused(p => !p)}
+                onClick={() => setManualPaused(p => {
+                  const next = !p;
+                  if (next) maybeShowInfo(true);
+                  return next;
+                })}
                 aria-pressed={manualPaused}
               >
                 {manualPaused ? '▶' : '■'}
@@ -238,6 +259,22 @@ const JammingControl: React.FC = () => {
         )}
       </div>
     </div>
+
+    {showInfo && (
+      <div className="fixed inset-0 z-[70] grid place-items-center p-4">
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowInfo(false)} />
+        <div className="relative w-full max-w-md rounded-2xl bg-zinc-900/95 ring-1 ring-white/10 p-5 text-slate-200">
+          <div className="text-lg font-semibold text-emerald-300 mb-2">{t('jamming.info.title')}</div>
+          <p className="text-sm text-slate-300 mb-4">{t('jamming.info.body')}</p>
+          <div className="flex justify-end">
+            <button className="rounded-md border border-emerald-400 bg-emerald-600/90 text-black px-4 py-2 text-sm font-semibold hover:bg-emerald-500" onClick={() => setShowInfo(false)}>
+              {t('jamming.info.gotIt')}
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 };
 

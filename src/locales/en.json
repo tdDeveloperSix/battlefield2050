@@ -17,7 +17,12 @@
     "db": "dB",
     "play": "Play",
     "stop": "Stop",
-    "sampleText": "This is a sample paragraph. As noise increases, color channels split and the text becomes hard to read – much like when J/S approaches 0 dB and SNR collapses."
+    "sampleText": "This is a sample paragraph. As noise increases, color channels split and the text becomes hard to read – much like when J/S approaches 0 dB and SNR collapses.",
+    "info": {
+      "title": "Why jamming matters",
+      "body": "Jamming is the art of drowning the opponent’s signal in noise. In an AI‑driven future of sensors, links, and decisions, the ability to disrupt – and to resist disruption – becomes a core skill. Adversaries will compete to master both offense (noise) and defense (robust protocols). The side that keeps the link cleanest gains AI superiority.",
+      "gotIt": "Got it"
+    }
   },
   "scrollHint": "Scroll down to start the walkthrough",
   
