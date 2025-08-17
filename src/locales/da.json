@@ -1,7 +1,7 @@
 {
   "title": "Kamppladsens Digitale Revolution",
   "subtitle": "Fra Menneskelig intuition til algoritmisk dominans",
-  "description": "En fiktiv fortælling om fremtidens militære enheder og kommandostrukturer, hvor menneskelig beslutningstagning gradvist erstattes af digital og autonom intelligens.",
+  "description": "En fiktiv fortælling om fremtidens militære enheder og kommandostrukturer, hvor menneskelig beslutningstagning gradvist erstattes af autonom, kunstig intelligens.",
   "languageToggle": "Sprog",
   "scrollHint": "Scroll ned for at starte gennemgangen",
   
@@ -10,9 +10,9 @@
   "followDevelopment": "Følg udviklingen frem mod 2050",
 
   "jamming": {
-    "title": "Jamming-demo: SNR og læsbarhed",
+    "title": "Jamming-demo: Støj og læsbarhed",
     "lead": "Skru op for støjen (J/S) og se hvordan signalet forsvinder – både i lyd og tekst.",
-    "subtitle": "Jamming virker ved at sænke SNR hos modtageren; allerede ved J/S ≈ 1 (0 dB) kan decoding fejle.",
+    "subtitle": "Jamming virker ved at overdøve signalet hos modtageren; allerede ved J/S ≈ 1 (0 dB) kan decoding fejle.",
     "sliderAria": "Jamming-styrke",
     "clean": "Rent signal",
     "jammed": "Jammed",
@@ -22,7 +22,7 @@
     "sampleText": "Dette er en prøve på brødtekst. Når støjen øges, bliver farvekanalerne forskudt og teksten svær at læse – præcis som når J/S nærmer sig 0 dB og SNR kollapser.",
     "info": {
       "title": "Hvorfor jamming betyder alt",
-      "body": "Jamming er kunsten at kvæle modstanderens signal med støj. I en fremtid med AI‑styrede sensorer, links og beslutninger bliver evnen til at forstyrre – og modstå forstyrrelse – en kernekompetence. Parter vil konkurrere benhårdt om at mestre både angreb (støj) og forsvar (robuste protokoller). Den side, der holder forbindelsen renest, får AI‑overlegenhed.",
+      "body": "Jamming er kunsten at kvæle modstanderens signal med støj. I en fremtid med AI‑styrede sensorer, links og beslutninger bliver evnen til at forstyrre – og modstå forstyrrelse – en kernekompetence. Parter vil konkurrere benhårdt om at mestre både angreb (støj) og forsvar (robuste systemer). Den side, der holder forbindelsen renest, får AI‑overlegenhed.",
       "gotIt": "Forstået"
     }
   },
@@ -30,13 +30,13 @@
   "heroIntro": {
     "opening": {
       "header1": "Bakhmut. 100417 Z MAR23",
-      "paragraph1": "En ukrainsk soldat trykker en kommando ind på en tablet; to kilometer derfra slipper en tyrkisk Bayraktar-drone en laserstyret bombe mod en russisk artilleristilling. Fjendens EW-lastbil forsøger at jamme signalet, men en Starlink-forbindelse fjerner forsinkelsen. I den korte røgsky efter eksplosionen skimter vi det, der senere bliver kendt som faseskiftet: første gang en åben, højintens krig i Europa blev styret – ikke af generalers ordrer – men af algoritmer, kommercielle satellitter og sværme af billige droner købt på Alibaba.",
-      "paragraph2": "\"Det er begyndelsen,\" mumler en NATO-officer, da feedet rammer hovedkvarteret i Ramstein. Og i Beijing noterer PLA-observatører: \"Hvis de kan, kan vi også – og vi kan gøre det hurtigere.\"",
+      "paragraph1": "En ukrainsk soldat trykker en kommando ind på en tablet; to kilometer derfra slipper en drone en laserstyret bombe mod en russisk artilleristilling. Fjendens EW-lastbil forsøger at jamme signalet, men en Starlink-forbindelse fjerner forsinkelsen. I den korte røgsky efter eksplosionen skimter vi det, der senere bliver kendt som faseskiftet: første gang en åben, højintens krig i Europa blev styret – ikke af generalers ordrer – men af algoritmer, kommercielle satellitter og sværme af billige droner købt på Alibaba.",
+      "paragraph2": "\"Det er begyndelsen,\" mumler en NATO-officer, da nyheden rammer hovedkvarteret i Ramstein. Og i Beijing noterer PLA-observatører: \"Hvis de kan, kan vi også – og vi kan gøre det hurtigere.\"",
       "header2": "Ramstein Air Base. 130810 Z JUN50",
-      "paragraph3": "En solstribe glider ind i operationsrummet på Ramstein. På den enorme vægskærm kører en log med 1,2 millioner live-beslutninger i minuttet – alle truffet af maskiner. Den ældre oberst i døråbningen med sin kaffe husker en tid, hvor mennesker diskuterede hver eneste ildordre. I dag indtaster han blot en etisk filterværdi i systemet, før han træder til side. \"Hvordan i alverden endte vi her?\" hvisker en nytilkommen løjtnant. Obersten nikker mod skærmen, hvor seks farvezoner pulserer som en tidslinje – seks bølger, der gradvist skyllede mennesket ud af førersædet. Lad mig vise dig rejsen, siger han..."
+      "paragraph3": "En solstribe glider ind i operationsrummet på Ramstein. På den enorme vægskærm kører en log med 1,2 millioner live-beslutninger i minuttet – alle truffet af maskiner. Den ældre oberst står i døråbningen med sin kaffe og husker en tid, hvor mennesker diskuterede hver eneste skudordre. I dag indtaster han blot en etisk filterværdi i systemet, før han træder til side. \"Hvordan i alverden endte vi her?\" hvisker en nytilkommen ung kaptajn. Obersten nikker mod skærmen, hvor seks farvezoner pulserer som en tidslinje – seks bølger, der gradvist skyllede mennesket ud af førersædet. Lad mig vise dig rejsen, siger han..."
     },
     "editorial": {
-        "paragraph1": "Før vi dykker dybere ned i den fiktive fortælling, et kig bag kulissen. I juni 2025 fik ChatGPT o3's Deep Research én opgave: \"Vis hvordan AI transformerer kamppladsen fra 2020 til 2050.\" Modellen udførte 91 målrettede søgninger og fandt 29 relevante kilder – fra DARPA-rapporter til russiske og kinesiske hvidbøger. Efterfølgende gennemgik Gemini Pro 2.5, Claude 4 og Grok 3 materialet for konsistens. Min egen rolle har været redaktionel: stramme sproget, justere formatering og binde kilderne sammen i den fortælling, du læser nu. Design og format er inspireret af den berømte og ret skræmmende <a href=\"https://ai-2027.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-400 hover:text-blue-300 underline font-semibold\">AI-2027-fortælling</a>, der gik viralt i begyndelsen af 2025. <strong>Kilderne kan ses nederst på siden.</strong>",
+        "paragraph1": "Før vi dykker dybere ned i den fiktive fortælling, et kig bag kulissen. I juni 2025 fik ChatGPT o3's Deep Research én opgave: \"Vis hvordan AI transformerer kamppladsen fra 2020 til 2050.\" Modellen udførte 91 målrettede søgninger og fandt 29 relevante kilder. Efterfølgende gennemgik Gemini Pro 2.5, Claude 4 og Grok 3 materialet for konsistens. Min egen rolle har været primært været redaktionel: stramme sproget, justere formatering og binde kilderne sammen i den interaktive fortælling, du læser nu. Formatet er inspireret af den ret skræmmende <a href=\"https://ai-2027.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-400 hover:text-blue-300 underline font-semibold\">AI-2027-fortælling</a>, der gik viralt i begyndelsen af 2025. Efter fremkomsten af OpenAI ChatGPT 5 er indholdet finpudset og interaktive elementer er tilføjet. <strong> Kilderne kan ses nederst på siden.</strong>",
       "paragraph2": "Lad os nu fortsætte historien..."
     },
     "transition": {
@@ -89,13 +89,13 @@
       "description": "I denne periode dominerer mennesker stadig alle aspekter af militær planlægning og udførelse. Beslutningstagning sker gennem etablerede hierarkier, hvor erfaring og intuition vægtes højt.",
       "narrative": {
         "title": "Arizonaørkenen, juli 2021",
-        "content": "Det var før daggry i Arizonas ørken. Kaptajn Sarah Miller sad alene i det mobile kommandotelt, da den første støvsky rullede hen over lejren og efterlod en fin, rødlig film på bordet ved siden af hendes feltkrus. Hun rakte ud efter kaffen, men et rødt blink på displayet stjal opmærksomheden: <em>ENEMY ARMOR DETECTED – 40 KM NE</em>.<br><br>I gamle dage ville Miller have grebet radioen, råbt på S-2-officeren, ventet på bekræftelse fra dronen og først derefter sendt beskeden videre til artilleristaben. Under ideelle forhold kunne det tage fem–seks minutter – i praksis som regel tyve, før de første granater lå inde. Men i dag var Project Convergence 2020 i fuld gang, og ved hendes side kørte det nye AI-system <span class=\"text-emerald-400 font-semibold\">FIRESTORM</span>.<br><br>På brøkdele af et sekund slugte FIRESTORM rådata fra satellitbaner, Predator-feeds og jordradarer. Skærmen skiftede fra rødt til grønt og præsenterede ét forslag: <em>“Batteri Bravo – 122 mm – fire for effect.”</em> Miller nåede dårligt at blinke, før hun trykkede <em>GODKEND</em>. Klokken på væggen viste, at der gik 18 sekunder fra første sensorhit, til haubits-batteriet sendte sin salve af sted. Granaterne var stadig i luften, da systemet genererede næste målprioritet.<br><br>Miller lænede sig tilbage og mærkede et uventet sug i maven. Hun havde lige oplevet, at den klassiske “kill chain” – sensormelding, vurdering, ordre, ild – var krympet fra et kvarter til under et halvt minut. Den ene tast på en touch-skærm var alt, hvad der adskilte en fjendtlig panserdivision fra et præcist artillerinederlag. Og mens hun så status-ikonet skifte fra <em>in‑progress</em> til <em>neutralized</em>, gik det op for hende: tempoet på fremtidens kampplads styres ikke længere af mennesker, men af algoritmer – og slagmarken vil aldrig blive den samme igen."
+        "content": "Det var før daggry i Arizonas ørken. Kaptajn Sarah Miller sad alene i det mobile kommandotelt, da den første støvsky rullede hen over lejren og efterlod en fin, rødlig film på bordet ved siden af hendes feltkrus. Hun rakte ud efter kaffen, men et rødt blink på displayet stjal opmærksomheden: <em>ENEMY ARMOR DETECTED – 40 KM NE</em>.<br><br>I gamle dage ville Miller have grebet radioen, fået bekræftelse fra efterretningscellen, ventet på bekræftelse fra dronen og først derefter sendt beskeden videre til artilleristaben. Under ideelle forhold kunne det tage fem–seks minutter – i praksis som regel tyve, før de første granater lå inde i målet. Men i dag var Project Convergence 2021 i fuld gang, og ved hendes side kørte det nye AI-system <span class=\"text-emerald-400 font-semibold\">FIRESTORM</span>.<br><br>På brøkdele af et sekund slugte FIRESTORM rådata fra satellitbaner, Predator-feeds og jordradarer. Skærmen skiftede fra rødt til grønt og præsenterede ét forslag: <em>“Batteri Bravo – 122 mm – fire for effect.”</em> Miller nåede dårligt at blinke, før hun trykkede <em>GODKEND</em>. Klokken på væggen viste, at der gik 18 sekunder fra første sensorhit, til haubits-batteriet sendte sin salve af sted. Granaterne var stadig i luften, da systemet genererede næste målprioritet.<br><br>Miller lænede sig tilbage og mærkede et uventet sug i maven. Hun havde lige oplevet, at den klassiske “kill chain” – fjendemelding, vurdering, ordre, ild – var krympet fra et kvarter til under et halvt minut. Den ene tast på en touch-skærm var alt, hvad der adskilte en fjendtlig panserdivision fra et præcist artillerilag. Og mens hun så status-ikonet skifte fra <em>in‑progress</em> til <em>neutralized</em>, gik det op for hende: tempoet på fremtidens kampplads styres ikke længere af mennesker, men af algoritmer – og at slagmarken aldrig vil blive den samme igen."
       },
       "details": [
         "Kommandostrukturer bygger på årtiers erfaring og etablerede doktriner",
         "Beslutningsprocesser er hierarkiske og baseret på menneskelig vurdering",
         "Teknologi fungerer primært som understøttende værktøj",
-        "Situational Awareness afhænger af menneskelig analyse og rapportering",
+        "Situational Awareness afhænger af menneskelig analyse, tiden til rådghed og rapporteringstempo",
         "Taktiske beslutninger træffes typisk af erfarne officerer på baggrund af træning og intuition"
       ],
       "characteristics": [
@@ -110,23 +110,23 @@
       "edgeAI": {
         "title": "Edge AI og lokale beslutninger",
         "intro": "I denne periode dominerer mennesker stadig alle aspekter af militær planlægning og udførelse. Beslutningstagning sker gennem etablerede hierarkier, hvor erfaring og intuition vægtes højt.<br><br>US Army's Project Convergence (2020-2022) viste de første, brede eksperimenter med at kæde sensorer, beslutningsstøtte og ild sammen – men med mennesker som afgørende godkendere i hver sløjfe.<br><br>Britiske øvelser med <span class=\"font-semibold\">FIRESTORM</span> demonstrerede hurtigere måludpegning via AI‑assisteret datafusion, men skuddet gik stadig først, når en officer sagde ja.",
-        "sentryTowers": "I baser og forposter begyndte autonome vagttårne at alarmerer ved mønstergenkendelse (køretøjstyper, bevægelsesprofiler), men menneskelig vagt afgav fortsat ordre til virkemidler."
+        "sentryTowers": "I baser og forposter begyndte autonome vagttårne at alarmerer ved mønstergenkendelse (køretøjstyper, bevægelsesprofiler), men menneskelig vagter afgav fortsat ordre til virkemidler."
       },
       "swarmCoordination": {
-        "title": "Sværmskoordination i det små",
-        "intro": "Eksperimentelle droner kunne allerede i begyndelsen af 2020'erne fordele rekognosceringsopgaver imellem sig, men uden våbenautonomi.",
-        "chineseCapabilities": "Rapporter om kinesiske feltforsøg med sværme pressede Vesten til at accelerere – et tidligt forvarsel om kapløbet, der fulgte."
+        "title": "Sværmkoordination i det små",
+        "intro": "Allerede i de tidlige 2020’ere så man eksperimentelle droner, der kunne fordele rekognosceringsopgaver indbyrdes. De fløj som en flok fugle, men uden egen våbenautonomi – en teknologisk prøveballon snarere end et fuldt våbensystem.",
+        "chineseCapabilities": "Samtidig dukkede rapporter op om kinesiske feltforsøg med egentlige dronesværme. Mange husker stadig de spektakulære drone-nytårsshows, hvor tusinder af enheder malede himlen med lys. Bag det festlige skær lå en alvorlig demonstration: teknologien til at koordinere store sværme var ikke længere science fiction, men en kapabilitet under udvikling. Det satte Vesten under pres. Forestillingen om modstandere med tusinder af koordinerede, billige droner fik investeringerne til at accelerere, og et nyt kapløb blev indledt – et kapløb, der snart skulle ændre magtbalancen på slagmarken."
       },
       "oodaLoop": {
         "title": "OODA-løkken stadig i centrum",
-        "intro": "Observe–Orient–Decide–Act fungerede stadig som mental model for føring; AI leverede blot hurtigere observationer og foreslog muligheder.",
-        "aiAdvantage": "Allerede her blev det tydeligt, at algoritmer kunne komprimere OODA-cyklussen – et forspring, der senere blev afgørende."
+        "intro": "OOODA-cyklussen – Observe, Orient, Decide, Act – var fortsat den grundlæggende mentale model for militær føring. Den beskriver det klassiske beslutningskredsløb: Først observerer man situationen, derefter orienterer man sig og skaber overblik, hvorefter man træffer en beslutning og til sidst handler. Hele kunsten består i at gennemføre dette kredsløb hurtigere og mere præcist end modstanderen.",
+        "aiAdvantage": "Med kunstig intelligens blev tempoet skruet dramatisk op. Algoritmer kunne på få øjeblikke indsamle, sortere og sammenstille enorme mængder information, som mennesker ville have brugt langt længere tid på at bearbejde. De kunne endda foreslå mulige handlemuligheder, før beslutningstageren overhovedet var færdig med at orientere sig."
       }
     },
     "digitalIntegration": {
       "title": "Digital Integration",
       "subtitle": "Første bølge af AI-assisterede systemer introduceres",
-      "description": "Kunstig intelligens begynder at spille en større rolle som beslutningsstøtte. Automatiserede systemer hjælper med dataanalyse og situationsbevidsthed, men mennesker bevarer den endelige beslutningskompetence.",
+      "description": "Kunstig intelligens begynder at spille en større rolle i beslutningsstøtte. Automatiserede systemer hjælper med dataanalyse og situationsbevidsthed, men mennesker bevarer den endelige beslutningskompetence.",
       "details": [
         "AI-systemer introduceres som beslutningsstøttende værktøjer",
         "Automatiseret dataindsamling og -analyse implementeres",
@@ -148,14 +148,14 @@
 
       "decisionParity": {
         "title": "Beslutningsparitet og Algoritmisk Konkurrence",
-        "intro": "Det begyndte med én blå glød på et F-16-head-up-display under DARPA's AlphaDogfight Trials i 2020. På få sekunder drejede et virtuelt jagerfly—styret af Heron Systems' algoritme—cirkler om en pilot med 2 000 flytimer i bagagen og sendte ham ud i fem nederlag på stribe. For første gang stod det klart, at en ren software­agent kunne matche – ja, overgå – menneskelig dømmekraft i den mest krævende disciplin, luftkamp.",
+        "intro": "Det begyndte med én blå glød på et F-16-head-up-display under DARPA's AlphaDogfight Trials. På få sekunder drejede et virtuelt jagerfly—styret af Heron Systems' algoritme—cirkler om en pilot med 2 000 flytimer i bagagen og sendte ham ud i fem nederlag på stribe. For første gang stod det klart, at en ren software­agent kunne matche – ja, overgå – menneskelig dømmekraft i en af de mest krævende discipliner, luftkamp.",
         "heronSystems": "Men talenterne rakte videre end rå reaktions­tid. Algoritmen læste pilotens energibalance, gættede hans næste rul, justerede sin egen vinkel i realtid og straffede selv de mindste fejl, som var det en erfaren instruktør. Observatører beskrev manøvren som instinktiv—næsten kreativ. Dermed var beslutnings­paritet en realitet: øjeblikket hvor maskinen ikke blot regner hurtigere, men tænker på højde med sin menneskelige modpart i et komplekst, dynamisk miljø.",
         "decisionCycles": "AlphaDogfight blev vendepunktet, der skubbede forsvars­verdenen ind i Digital Integration-æraen. Fra nu af handlede spørgsmålet ikke om, om AI kunne kæmpe, men om hvordan mennesker og maskiner skulle dele førersædet—og hvor længe mennesket overhovedet kunne blive siddende.",
         "tryGame": "Vil du selv prøve? Lige herunder kan du teste en lille AI Dogfight simulator og flyve mod en simpel AI, som gradvist bliver bedre."
       },
       "gradualDominance": {
         "title": "Gradvis Dominans og Menneskelig Marginalisering",
-        "intro": "Efter AlphaDogfight rykkede algoritmerne hurtigt ind i felten, men de stjal ikke straks showet. Omkring fire ud af fem beslutninger blev stadig truffet af mennesker; alligevel var retningen tydelig. Første skred kom, da Forward Air Controller-opgaver blev semi-automatiske: et AI-modul flettede drone-feeds, satellitbilleder og laserdata, udarbejdede en komplet 9-Line og sendte forslaget til operatøren, som blot trykkede Godkend. Årtiers special­træning kogt ned til ét klik—men kun, hvis mennesket sagde ja.",
+        "intro": "Efter AlphaDogfight rykkede algoritmerne hurtigt ud i felten, men de stjal ikke straks showet. Omkring fire ud af fem beslutninger blev stadig truffet af mennesker; alligevel var retningen tydelig. Første skred kom, da Forward Air Controller-opgaver blev semi-automatiske: et AI-modul flettede drone-feeds, satellitbilleder og laserdata, udarbejdede en komplet 9-Line og sendte forslaget til operatøren, som blot trykkede Godkend. Årtiers special­træning kogt ned til ét klik—men kun, hvis mennesket sagde ja.",
         "complexTasks": "Samtidig sneg neurale netværk sig ind i staben. Planlægnings-AI'er simulerede hundreder af kampforløb på minutter, mens logistik­modeller fordelte brændstof og reservedele bedre end nogen Excel-major. De foreslog, mennesker overtjekkede. Resultatet blev, at officererne gled fra forfattere til redaktører: de justerede et etisk loft eller et politisk constraint og godkendte. 20 % af taktiske beslutninger lå nu hos koden, 80 % hos folk af kød og blod – men balancen var begyndt at tippe. Algoritmen var stadig rådgiver, men man kunne allerede ane dens fremtidige rolle som dirigent."
       },
       "trustToDependency": {

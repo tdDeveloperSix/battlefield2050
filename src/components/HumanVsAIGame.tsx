@@ -80,10 +80,10 @@ function defineHumanVsAIGame(): void {
         <button class="mode js-mode" data-k="hard" aria-pressed="false">Svær</button>
       </div>
 
-      <div class="arena wait" aria-live="polite">
+      <div class="arena ready" aria-live="polite">
         <div class="msg js-msg">
-          <h2>Vent til GRØN</h2>
-          <p>Tryk så hurtigt du kan. For tidlig tap = fejlstart.</p>
+          <h2>Klar?</h2>
+          <p>Tryk på "Start match"</p>
         </div>
       </div>
 
@@ -121,7 +121,6 @@ function defineHumanVsAIGame(): void {
   };
 
   class HumanVsAIGame extends HTMLElement{
-    private $!: (s: string) => any;
     private ui!: any;
     private state: any;
     constructor(){
@@ -129,7 +128,6 @@ function defineHumanVsAIGame(): void {
       this.attachShadow({mode:'open'});
       this.shadowRoot!.appendChild(TEMPLATE.content.cloneNode(true));
       const $ = (s: string) => this.shadowRoot!.querySelector(s as any);
-      this.$ = $;
       this.ui = {
         arena: $('.arena'), msg: $('.js-msg'), round: $('.js-round'),
         start: $('.js-start'), reset: $('.js-reset'), result: $('.js-result'),
@@ -238,11 +236,14 @@ function defineHumanVsAIGame(): void {
     }
 
     onPointer(_e?: PointerEvent){
+      // Ignorér tryk i for-start ("ready") tilstand
       if (this.state.waiting){
-        this.state.early = true;
-        const ai = this.sampleAI();
-        // Tving AI-sejr og vis tydelig besked om fejlstart
-        this.showRoundResult(999, Math.min(ai, 450), { early: true });
+        if (this.ui.arena.classList.contains('wait')){
+          this.state.early = true;
+          const ai = this.sampleAI();
+          // Tving AI-sejr og vis tydelig besked om fejlstart
+          this.showRoundResult(999, Math.min(ai, 450), { early: true });
+        }
         return;
       }
       if (!this.state.goAt){ return; }
