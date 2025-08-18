@@ -175,7 +175,7 @@
       "raceLogic": {
         "title": "Kapløbets Logik og den Første Eskalationsspiral",
         "intro": "Så snart Ukraine-krigen viste, at selv 20 % AI drevne beslutninger kunne vende slagets gang, blev kapløbet selvforstærkende: hvis ét land rykkede bare ét skridt foran, måtte rivalerne kopiere eller acceptere strategisk mindrevær. Hvert gennembrud – en hurtigere kill-chain, et skarpere logistik-net – udløste et endnu dyrere modtræk, og spiralen snurrede hurtigere for hver måned.",
-        "editorRole": "I felten betød det, at officerer nu primært fungerede som redaktører. De rettede stavefejl i AI-genererede OPLAN'er, justerede et par etiske parametre – men opdagede, at egne \"forbedringer\" ofte gjorde planen langsommere eller mindre præcis. Det var første gang, mennesket mærkede den kolde logik i maskinens overmatch: jo mere komplekst problemet blev, desto tydeligere faldt den menneskelige hænderysten igennem.",
+        "editorRole": "I felten betød det, at officerer nu primært fungerede som redaktører. De rettede stavefejl i AI-genererede OPLAN'er, justerede et par etiske parametre – men opdagede, at egne \"forbedringer\" ofte gjorde planen langsommere eller mindre præcis. Det var første gang, mennesket mærkede den kolde logik i maskinens overmatch.",
         "finalGame": "Beslutningsparitet havde altså blot været startskuddet. Nu trak overmatch-motoren systematisk beslutningstid væk fra mennesker. Og med den fart, spiralen allerede havde taget i 2028-29, lå næste fase lige for: Autonom Assistance (2030-2035) – perioden hvor AI ikke nøjes med at foreslå, men begynder at handle selv, mens vi kun griber ind, hvis noget går galt."
       }
     },
@@ -563,8 +563,8 @@
       "raceLogic": {
         "title": "Kapløbets Logik og den Første Eskalationsspiral",
         "intro": "Så snart Ukraine-krigen viste, at selv 20 % AI drevne beslutninger kunne vende slagets gang, blev kapløbet selvforstærkende: hvis ét land rykkede bare ét skridt foran, måtte rivalerne kopiere eller acceptere strategisk mindrevær. Hvert gennembrud – en hurtigere kill-chain, et skarpere logistik-net – udløste et endnu dyrere modtræk, og spiralen snurrede hurtigere for hver måned.",
-        "editorRole": "I felten betød det, at officerer nu primært fungerede som redaktører. De rettede stavefejl i AI-genererede OPLAN'er, justerede et par etiske parametre – men opdagede, at egne \"forbedringer\" ofte gjorde planen langsommere eller mindre præcis. Det var første gang, mennesket mærkede den kolde logik i maskinens overmatch: jo mere komplekst problemet blev, desto tydeligere faldt den menneskelige hænderysten igennem.",
-        "finalGame": "Beslutningsparitet havde altså blot været startskuddet. Nu trak overmatch-motoren systematisk beslutningstid væk fra mennesker. Og med den fart, spiralen allerede havde taget i 2028-29, lå næste fase lige for: Autonom Assistance (2030-2035) – perioden hvor AI ikke nøjes med at foreslå, men begynder at handle selv, mens vi kun griber ind, hvis noget går galt."
+        "editorRole": "I felten betød det, at officerer nu primært fungerede som redaktører. De rettede stavefejl i AI-genererede OPLAN'er, justerede et par etiske parametre – men opdagede, at egne \"forbedringer\" ofte gjorde planen langsommere eller mindre præcis. Det var første gang, mennesket mærkede den kolde logik i maskinens overmatch.",
+        "finalGame": "Beslutningsparitet havde altså blot været startskuddet. Nu trak overmatch-motoren systematisk beslutningstid væk fra mennesker, som langsomt måtte se sig slået af maskinel regnekraft. Og med den fart, spiralen allerede havde taget i 2028-29, lå næste fase lige for: Autonom Assistance (2030-2035) – perioden hvor AI ikke nøjes med at foreslå, men begynder at handle selv, mens vi kun griber ind, hvis noget går galt."
       }
     },
     "autonomousAssistance": {

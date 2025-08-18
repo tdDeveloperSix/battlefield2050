@@ -634,11 +634,7 @@ function App() {
                       <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-4 sm:mb-6">
                         {t('detailedSections.digitalIntegration.raceLogic.finalGame')}
                       </p>
-                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                        Som opvarmning til næste kapitel kan du lige under denne boks prøve et lille eksperiment: kast en
-                        mønt tusindvis af gange i realtid og se, hvordan tilfældig støj glatter ud til stabile mønstre. Det
-                        er den samme statistik, vi bygger på, når autonome assistenter skal være robuste i praksis.
-                      </p>
+                      {/* Fjernet opvarmningsafsnit om mønt-eksperiment */}
                     </div>
 
                     {/* Plat & Krone er flyttet til "Algoritmens tåge" sektionen */}
