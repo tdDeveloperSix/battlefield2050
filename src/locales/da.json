@@ -155,8 +155,7 @@
       },
       "gradualDominance": {
         "title": "Gradvis Dominans og Menneskelig Marginalisering",
-        "intro": "Efter AlphaDogfight rykkede algoritmerne hurtigt ud i felten, men de stjal ikke straks showet. Omkring fire ud af fem beslutninger blev stadig truffet af mennesker; alligevel var retningen tydelig. Første skred kom, da Forward Air Controller-opgaver blev semi-automatiske: Et AI-modul kombinerede drone-feeds, satellitbilleder med operatørens laserdata, algoritmen udarbejdede en komplet 9-Liner og sendte forslaget til operatøren, som blot trykkede Godkend. Årtiers special­træning kogt ned til ét klik, men kun, hvis mennesket sagde ja.",
-        "complexTasks": "Samtidig sneg neurale netværk sig ind i staben. Planlægnings-AI'er simulerede hundreder af kampforløb på minutter, mens logistik­modeller fordelte brændstof og reservedele bedre end nogen logistikofficer kunne følge med i excel. AI foreslog, mennesker overtjekkede. Resultatet blev, at officererne gled fra forfattere til redaktører: de justerede blot en etisk tolerencetærskel eller et politisk forbehold og godkendte. 20 % af taktiske beslutninger lå nu hos koden, 80 % hos folk af kød og blod – men balancen var begyndt at tippe. Algoritmen var stadig rådgiver, men man kunne allerede ane dens fremtidige rolle som dirigent."
+        "intro": "Efter AlphaDogfight rykkede algoritmerne hurtigt ud i felten, men de stjal ikke straks showet. Omkring fire ud af fem beslutninger blev stadig truffet af mennesker; alligevel var retningen tydelig. Første skred kom, da Forward Air Controller-opgaver blev semi-automatiske: Et AI-modul kombinerede drone-feeds, satellitbilleder med operatørens laserdata, algoritmen udarbejdede en komplet 9-Liner og sendte forslaget til operatøren, som blot trykkede Godkend. Årtiers special­træning kogt ned til ét klik, men kun, hvis mennesket sagde ja."
       },
       "trustToDependency": {
         "title": "Fra Tillid til Afhængighed",
