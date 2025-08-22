@@ -232,6 +232,10 @@ function App() {
             {t('subtitle')}
           </p>
 
+          <p className="text-base md:text-lg text-slate-400 italic mb-8 max-w-4xl mx-auto leading-relaxed">
+            “how does one restrict bad actors access to these powerful systems, whether they’re individuals or even rogue states, but enable access at the same time to good actors to maximally build on top of? It’s pretty tricky problem that I’ve not heard a clear solution to” – Demis Hassabis, Nobel Price Winner, Head of Google Deep Mind, August 2025
+          </p>
+
           <p className="text-lg text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
             {t('description')}
           </p>
