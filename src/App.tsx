@@ -482,6 +482,28 @@ function App() {
                   )}
                 </div>
 
+                {/* For Human Dominance: vis Overblikskassen før de to bokse */}
+                {section.id === 'human-dominance' && (
+                  <div className="bg-slate-800/30 backdrop-blur-sm border border-emerald-700/60 rounded-xl p-6 sm:p-8 mb-8">
+                    <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-emerald-400 flex items-center drop-shadow">
+                      <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-emerald-400 flex-shrink-0" />
+                      {t('timeline.overviewTitle')}
+                    </h4>
+                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed">{t('timeline.humanDominance.overviewSummaryText')}</p>
+                    <div className="mt-6 border-t border-emerald-500/30 pt-6">
+                      <h5 className="text-lg font-semibold text-white mb-3">Tidslinje</h5>
+                      <ul className="space-y-3">
+                        {(t('timeline.humanDominance.overviewTimeline', { returnObjects: true }) as string[]).map((item, idx) => (
+                          <li key={idx} className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-slate-300 leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+
                 {/* Content Grid */}
                 <div className="grid gap-6 sm:gap-8 lg:gap-12 lg:grid-cols-2">
                   {/* Key Developments */}

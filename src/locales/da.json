@@ -87,6 +87,19 @@
       "title": "Menneskelig Dominans",
       "subtitle": "Traditionelle kommandostrukturer med mennesker i centrum",
       "description": "I denne periode dominerer mennesker stadig alle aspekter af militær planlægning og udførelse. Beslutningstagning sker gennem etablerede hierarkier, hvor erfaring og intuition vægtes højt.",
+      "overviewSummaryText": "AI træder ind som beslutningsstøtte i ISR og måludpegning – mennesker godkender. Forsøg som Project Convergence og FIRESTORM accelererer kill‑chain fra minutter til sekunder, men human‑in‑the‑loop bevares. Ukraine‑krigen afslører dronedominans og netværkssårbarhed – kravet om Edge AI vokser.",
+      "overviewSummary": [
+        "AI træder ind som beslutningsstøtte i ISR og måludpegning – mennesker godkender.",
+        "Forsøg som Project Convergence/FIRESTORM accelererer kill-chain, men human-in-the-loop bevares.",
+        "Ukraine afslører dronedominans og netværkssårbarhed – krav om Edge AI vokser."
+      ],
+      "overviewTimeline": [
+        "Tidlig 2020’ere: AI bliver almindelig i ISR og måludpegning (forslag → menneskelig godkendelse).",
+        "2020–2021: Project Convergence / FIRESTORM viser kill-chain-acceleration (20 min → 32 sek.), men med human-in-the-loop.",
+        "2022–2026: Ukraine-krigen → massiv dronebrug, EW-dueller, afhængighed af Starlink. Blackout viser sårbarhed.",
+        "Midt-2020’erne: AI co-piloter testes i bemandede platforme.",
+        "Global hændelse (2025): Kommunikationsnedbrud afslører farlig afhængighed af cloud og netværk → øget krav om Edge AI og lokale beslutningsfunktioner."
+      ],
       "narrative": {
         "title": "Arizonaørkenen, juli 2021",
         "content": "Det var før daggry i Arizonas ørken. Kaptajn Sarah Miller sad alene i det mobile kommandotelt, da den første støvsky rullede hen over lejren og efterlod en fin, rødlig film på bordet ved siden af hendes feltkrus. Hun rakte ud efter kaffen, men et rødt blink på displayet stjal opmærksomheden: <em>ENEMY ARMOR DETECTED – 40 KM NE</em>.<br><br>I gamle dage ville Miller have grebet radioen, fået bekræftelse fra efterretningscellen, ventet på bekræftelse fra dronen og først derefter sendt beskeden videre til artilleristaben. Under ideelle forhold kunne det tage fem–seks minutter – i praksis som regel tyve, før de første granater lå inde i målet. Men i dag var Project Convergence 2021 i fuld gang, og ved hendes side kørte det nye AI-system <span class=\"text-emerald-400 font-semibold\">FIRESTORM</span>.<br><br>På brøkdele af et sekund slugte FIRESTORM rådata fra satellitbaner, Predator-feeds og jordradarer. Skærmen skiftede fra rødt til grønt og præsenterede ét forslag: <em>“Batteri Bravo – 122 mm – fire for effect.”</em> Miller nåede dårligt at blinke, før hun trykkede <em>GODKEND</em>. Klokken på væggen viste, at der gik 18 sekunder fra første sensorhit, til haubits-batteriet sendte sin salve af sted. Granaterne var stadig i luften, da systemet genererede næste målprioritet.<br><br>Miller lænede sig tilbage og mærkede et uventet sug i maven. Hun havde lige oplevet, at den klassiske “kill chain” – fjendemelding, vurdering, ordre, ild – var krympet fra et kvarter til under et halvt minut. Den ene tast på en touch-skærm var alt, hvad der adskilte en fjendtlig panserdivision fra et præcist artillerilag. Og mens hun så status-ikonet skifte fra <em>in‑progress</em> til <em>neutralized</em>, gik det op for hende: tempoet på fremtidens kampplads styres ikke længere af mennesker, men af algoritmer – og at slagmarken aldrig vil blive den samme igen."
