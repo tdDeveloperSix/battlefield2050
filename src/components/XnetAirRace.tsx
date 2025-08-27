@@ -496,7 +496,7 @@ export default function XnetAirRace(){
                   <div className="text-zinc-300 mb-4">{t('dogfight.over.tryAgain','Vil du spille igen?')}</div>
                   <div className="flex gap-2 justify-center">
                     <button onClick={()=>{ setPScore(0); setAScore(0); resetRound(); setGameOver(false); }} className="rounded-lg border border-emerald-400 bg-emerald-600/80 px-4 py-2 text-black font-semibold hover:bg-emerald-500">{t('dogfight.over.playAgain','Spil igen')}</button>
-                    <button onClick={()=>setGameOver(false)} className="rounded-lg border border-white/10 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700">{t('dogfight.over.close','Luk')}</button>
+                    <button onClick={()=>{ setLearning(false); setPScore(0); setAScore(0); resetRound(); setGameOver(false); setShowRules(true); }} className="rounded-lg border border-white/10 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700">{t('dogfight.over.close','Luk')}</button>
                   </div>
                 </div>
               </div>

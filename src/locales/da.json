@@ -139,7 +139,7 @@
     "digitalIntegration": {
       "title": "Digital Integration",
       "subtitle": "Første bølge af AI-assisterede systemer introduceres",
-      "description": "Kunstig intelligens begynder at spille en større rolle i beslutningsstøtte. Automatiserede systemer hjælper med dataanalyse og situationsbevidsthed, men mennesker bevarer den endelige beslutningskompetence.",
+      "description": "Kunstig intelligens begynder at spille en større rolle i beslutningsstøtte. Automatiserede systemer hjælper med dataanalyse og Situational Awareness, men mennesker bevarer den endelige beslutningskompetence.",
       "overviewTimeline": [
         "2025: Semi-autonome systemer tages i brug i defensive roller (C-UAS, missilforsvar).",
         "2026–2027: NATO og PLA afprøver digitaliserede kill-chains med integrerede sensorer, AI-analyse og menneskelig godkendelse.",
@@ -155,7 +155,7 @@
         "Predictive analytics begynder at påvirke taktisk planlægning"
       ],
       "characteristics": [
-        "Forbedret situationsbevidsthed gennem AI-analyse",
+        "Forbedret Situational Awareness gennem AI-analyse",
         "Hurtigere dataprocessering og informationsdeling",
         "Mennesker bevarer kontrol over kritiske beslutninger",
         "Øget afhængighed af teknologiske systemer",
