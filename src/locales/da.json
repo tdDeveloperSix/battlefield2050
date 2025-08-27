@@ -203,6 +203,14 @@
       "title": "Autonom Assistance",
       "subtitle": "AI overtager flere operative funktioner",
       "description": "Autonome systemer begynder at træffe selvstændige beslutninger inden for definerede parametre. Menneskers rolle skifter fra direkte kontrol til supervision og strategisk planlægning.",
+      "overviewSummaryText": "Stigende brug af edge AI på tværs af platforme betyder, at systemer kan fortsætte missioner lokalt uden netværk. Autonome sværme optræder i flere regioner (Ukraine, Mellemøsten, Indo‑Pac). De første tilfælde af selvsrænket adfærd mellem AI‑systemer ses – med uventede eskalationer til følge.",
+      "overviewTimeline": [
+        "2031: USA gennemfører øvelse med en hel brigade styret af AI‑C2; reaktionstiden halveres i forhold til klassisk føring.",
+        "2033: Kina udstyrer nye jagerfly med AI‑co‑pilot, der kan overtage ved hypersoniske manøvrer.",
+        "2033: Rusland præsenterer Suvorov‑systemet – et hypereffektivt AI‑netværk til koordinering af artilleri, EW og droner.",
+        "2034: Lokale hændelser i Indo‑Pacific viser de første autonome AI‑sværm‑mod‑AI‑sværm dueller.",
+        "2035: AI integreres i logistik og cyberangreb; menneskets rolle reduceres til rammesætning og overordnet kontrol."
+      ],
       "details": [
         "Autonome våbensystemer opererer inden for foruddefinerede regler",
         "AI træffer taktiske beslutninger i realtid",
