@@ -140,6 +140,13 @@
       "title": "Digital Integration",
       "subtitle": "Første bølge af AI-assisterede systemer introduceres",
       "description": "Kunstig intelligens begynder at spille en større rolle i beslutningsstøtte. Automatiserede systemer hjælper med dataanalyse og situationsbevidsthed, men mennesker bevarer den endelige beslutningskompetence.",
+      "overviewTimeline": [
+        "2025: Semi-autonome systemer tages i brug i defensive roller (C-UAS, missilforsvar).",
+        "2026–2027: NATO og PLA afprøver digitaliserede kill-chains med integrerede sensorer, AI-analyse og menneskelig godkendelse.",
+        "2027: PLA beskriver sværmkrigsførelse (集群作战) som officiel udviklingsretning; Rusland anslås at råde over 30 % ubemandede systemer i arsenalet.",
+        "2028: NATO integrerer AI i luftforsvar (laservåben, automatisk tracking); beslutningstempoet overstiger menneskelig reaktionstid.",
+        "2030: Nye doktriner indføres – Mission Command 2.0: chefen fastsætter fortsat intention men også grænser, AI beregner detaljer inden for rammerne."
+      ],
       "details": [
         "AI-systemer introduceres som beslutningsstøttende værktøjer",
         "Automatiseret dataindsamling og -analyse implementeres",
