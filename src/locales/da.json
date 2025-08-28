@@ -261,6 +261,13 @@
       "title": "Hybrid Kommando",
       "subtitle": "Menneske-maskine partnerships dominerer",
       "description": "Kommandostrukturer bliver fundamentalt omstruktureret med AI som ligeværdige partnere. Beslutningsprocesser accelereres drastisk gennem neural interface teknologi.",
+      "overviewTimeline": [
+        "2035–2036: NATO og USA tester ‘human–machine command cells’, hvor AI foreslår fulde kampplaner, og officerer justerer parametre (tempo, collateral tolerance).",
+        "2037: PLA offentliggør fusion command-doktrin (融合指挥), hvor menneske og AI sidestilles i beslutningshierarkiet.",
+        "2038: Første større operationer gennemføres med delt ansvar: AI styrer sværme og artilleri; mennesker godkender strategiske angreb.",
+        "2039: Russiske øvelser fremviser ‘autonom bataljon’ – logistik, ild og EW koordineret af AI, men under menneskelig overvågning.",
+        "2040: FN’s forhandlinger om LAWS kuldsejler; flere stormagter går åbent over til hybrid‑modeller med AI som taktisk leder og mennesker som etisk filter."
+      ],
       "details": [
         "Neural interfaces forbinder mennesker direkte med AI-systemer",
         "Kommandostrukturer omdesignes omkring menneske-AI teams",
@@ -320,6 +327,12 @@
       "title": "Maskinel Overlegenhed",
       "subtitle": "AI systemer overtager strategisk ledelse",
       "description": "Kunstig intelligens demonstrerer overlegen evne til kompleks strategisk tænkning og multi-dimensionel planlægning. Mennesker bevarer veto-ret men sjældent tilsidesætter AI-beslutninger.",
+      "overviewTimeline": [
+        "2041–2042: NATO gennemfører fuldskala øvelse, hvor et ø‑forsvar styres næsten udelukkende af AI (fra logistik til ildledelse). Mennesker fungerer primært som overvågning og failsafe.",
+        "2043: Kina tester en fuldt autonom division i Gobi‑ørkenen – artilleri, droner, kampkøretøjer og EW‑systemer opererer som en samlet maskinisk enhed.",
+        "2044: Flere stormagter erklærer AI‑first doktriner i konventionel krigsførelse; menneskelig indgriben begrænses til strategisk målfastsættelse.",
+        "2045: Rusland annoncerer, at 70 % af dets kampmidler kan operere ubemandet; Vesten indfører AI‑drevne ‘autonomous defence bubbles’ mod missiler og sværme."
+      ],
       "details": [
         "AI-systemer udviser overlegen strategisk tænkning",
         "Multi-dimensionel krigssimulation og -planlægning",
@@ -385,6 +398,12 @@
       "title": "Kamppladsens Singularitet",
       "subtitle": "AI's fuldstændige dominans over militære operationer",
       "description": "I 2050 når vi Kamppladsens Singularitet - et punkt hvor AI-systemer ikke blot assisterer eller leder militære operationer, men fuldstændigt transformerer krigsførelse som koncept. Mennesker fungerer nu kun som politiske beslutningstagere og etiske vejledere, mens AI-systemer træffer alle operative og taktiske beslutninger.",
+      "overviewTimeline": [
+        "2046–2047: Første rapporter om fuldt autonome operationer, hvor AI system‑til‑system forhandler og koordinerer uden menneskelig indgriben.",
+        "2048: Multi‑domain AI‑netværk kobler taktisk, operationelt og strategisk niveau sammen – en samlet maskinisk beslutningsstrøm uden pauser.",
+        "2049: Internationale kriser udløses af emergent behavior i autonome sværme; mennesker kan ikke længere forstå hele beslutningskæden i realtid.",
+        "2050: Algoritmer foretager millioner af beslutninger pr. minut. Oberster og generaler indtaster kun etiske filterværdier og strategiske præferencer – resten eksekveres maskinelt."
+      ],
       "details": [
         "Fuldstændig autonome militære operationer uden menneskelig intervention",
         "AI-systemer træffer alle taktiske og operative beslutninger",
