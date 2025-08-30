@@ -87,7 +87,7 @@
       "narrative": {
         "title": "Over the Nevada Desert, August 2025",
         "content": "An F‑16 Falcon cuts through the hot, shimmering air over the Nevada desert. In the cockpit sits Captain Jason \"Hawk\" Reynolds, 2,000 flight hours behind him, sweat gathering under the helmet. A blue marker flashes on his head‑up display – a hostile fighter is closing fast from behind.<br><br>But the opponent is not a pilot of flesh and blood. It is an algorithm – an experiment called Heron.<br><br>The fight begins like any dogfight: turn, roll, seek position. Hawk tries to shake the opponent with a tight high‑G turn. Normally that would buy him a little air, but the digital opponent reacts instantly, as if it had anticipated the move. Within seconds, Heron is behind him again, in firing position.<br><br><em>Fox Two</em> appears on the screen before Hawk can consider his next maneuver. In the virtual simulation he is hit. The first round is lost.<br><br>Five rounds later the result is clear: 6–0 to the algorithm. Not because it is faster on the stick – but because it reads the fight’s patterns, guesses the opponent’s next move, and adjusts its plan in real time.<br><br>For the spectators on base this is the turning point. From that moment the question is no longer whether digital decision systems can match human judgment – but how long humans can remain in the driver’s seat."
-      },
+      }
     },
     "autonomousAssistance": {
       "title": "Autonomous Assistance",
