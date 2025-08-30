@@ -63,6 +63,13 @@
       "title": "Digital Integration",
       "subtitle": "First wave of AI-assisted systems introduced",
       "description": "Artificial intelligence begins to play a larger role as decision support. Automated systems help with data analysis and situational awareness, but humans retain final decision-making authority.",
+      "overviewTimeline": [
+        "2025: Semi-autonomous systems are deployed in defensive roles (C-UAS, missile defense).",
+        "2026–2027: NATO and the PLA trial digitized kill-chains with integrated sensors, AI analysis, and human authorization.",
+        "2027: The PLA describes swarm warfare (集群作战) as an official development direction; Russia is estimated to field over 30% unmanned systems in its arsenal.",
+        "2028: NATO integrates AI into air defense (laser weapons, automatic tracking); decision tempo surpasses human reaction time.",
+        "2030: New doctrines introduced — Mission Command 2.0: the commander still sets intent but also boundaries; AI computes the details within those constraints."
+      ],
       "details": [],
       "characteristics": []
     },
