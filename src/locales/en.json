@@ -38,7 +38,26 @@
         "Ability for creative problem-solving",
         "Limitations in speed and data processing",
         "Risk of human error under pressure"
-      ]
+      ],
+      "narrative": {
+        "title": "Arizona Desert, July 2021",
+        "content": "Before dawn in the Arizona desert. Captain Sarah Miller sat alone in the mobile command tent when the first dust cloud rolled over the camp, leaving a fine reddish film on the table beside her field mug. She reached for the coffee, but a red flash on the display stole her attention: <em>ENEMY ARMOR DETECTED – 40 KM NE</em>.<br><br>In the old days, Miller would have grabbed the radio, received confirmation from the intel cell, waited for confirmation from the drone and only then relayed the message to the artillery staff. Under ideal conditions it could take five–six minutes – in practice closer to twenty – before the first shells were on target. But today, Project Convergence 2021 was in full swing, and at her side ran the new AI system <span class=\"text-emerald-400 font-semibold\">FIRESTORM</span>.<br><br>In fractions of a second, FIRESTORM ingested raw data from satellites, Predator feeds and ground radars. The screen flipped from red to green and presented a single recommendation: <em>“Battery Bravo – 122 mm – fire for effect.”</em> Miller barely blinked before tapping <em>APPROVE</em>. The wall clock showed 18 seconds from the first sensor hit until the howitzer battery sent its salvo. The shells were still in the air when the system generated the next target priority.<br><br>Miller leaned back, feeling a sudden pull in her stomach. She had just watched the classic kill chain – sensor cue, assessment, order, fire – shrink from a quarter hour to under thirty seconds. One tap on a touch screen was all that separated an enemy armored formation from a precise artillery defeat. And as the status icon shifted from <em>in‑progress</em> to <em>neutralized</em>, it dawned on her: the tempo of tomorrow’s battlefield would no longer be set by humans, but by algorithms – and the battlespace would never be the same again."
+      },
+      "edgeAI": {
+        "title": "Edge AI and local decisions",
+        "intro": "In this period, humans still dominate all aspects of military planning and execution. Decision‑making occurs through established hierarchies, where experience, intuition and political judgment are highly valued. AI is used primarily as decision support – a fast, data‑driven assistant – but without independent authority to engage targets.",
+        "sentryTowers": "At bases and outposts, autonomous sentry towers began to be tested. Cameras and sensors could identify vehicle types, read movement patterns, and alert on suspicious activity. But the decision to open fire still rested with a human guard.<br><br>An important lesson from the Ukraine war was how quickly dependence on digital networks could become a weakness. Ukrainian forces became heavily reliant on thousands of Starlink terminals for communications and drone control. When the network went down globally in July 2025, missions had to be aborted and several units lost the video feed from their drones. As one Ukrainian operator put it:<br><br><em>\"If the connection to the internet goes down, the ability to wage war practically disappears.\"</em><br><br>This created a new requirement: Edge AI. Systems had to be able to function locally even if the link to cloud or satellite networks was cut. In practice, this meant AI models and ROE rules had to run on the drone, the vehicle, or the sensor itself – not only in distant cloud infrastructure. By the end of the period, Edge AI had therefore become a central development track."
+      },
+      "swarmCoordination": {
+        "title": "Swarm coordination in miniature",
+        "intro": "Experimental drones could already in the early 2020s distribute reconnaissance tasks among themselves, but without weapons autonomy.",
+        "chineseCapabilities": "Reports of Chinese field trials with swarms pressured the West to accelerate – an early warning of the race that followed."
+      },
+      "oodaLoop": {
+        "title": "OODA loop still central",
+        "intro": "Observe–Orient–Decide–Act still served as the mental model for command; AI merely delivered faster observations and suggested options.",
+        "aiAdvantage": "Even here it became clear that algorithms could compress the OODA cycle – an edge that later became decisive."
+      }
     },
     "digitalIntegration": {
       "title": "Digital Integration",
