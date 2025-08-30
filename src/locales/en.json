@@ -70,8 +70,20 @@
         "2028: NATO integrates AI into air defense (laser weapons, automatic tracking); decision tempo surpasses human reaction time.",
         "2030: New doctrines introduced — Mission Command 2.0: the commander still sets intent but also boundaries; AI computes the details within those constraints."
       ],
-      "details": [],
-      "characteristics": []
+      "details": [
+        "AI systems are introduced as decision-support tools",
+        "Automated data collection and analysis are implemented",
+        "Hybrid teams of humans and machines emerge",
+        "Real-time data from sensors and drones is integrated into C2 systems",
+        "Predictive analytics begins to shape tactical planning"
+      ],
+      "characteristics": [
+        "Improved situational awareness through AI analysis",
+        "Faster data processing and information sharing",
+        "Humans retain control over critical decisions",
+        "Increased dependence on technological systems",
+        "Need for new training and competency development"
+      ]
     },
     "autonomousAssistance": {
       "title": "Autonomous Assistance",
@@ -85,8 +97,20 @@
         "2034: Local incidents in the Indo‑Pacific show the first autonomous AI‑swarm vs AI‑swarm duels.",
         "2035: AI integrates into logistics and cyber operations; the human role reduces to parameter setting and high‑level control."
       ],
-      "details": [],
-      "characteristics": []
+      "details": [
+        "Autonomous weapon systems operate within predefined rules",
+        "AI makes tactical decisions in real time",
+        "Machine-to-machine communication becomes standard",
+        "Humans focus on strategic oversight and ethical assessments",
+        "Swarm systems coordinate autonomously on the battlefield"
+      ],
+      "characteristics": [
+        "Drastically reduced reaction time in combat",
+        "Ability to operate in dangerous or inaccessible environments",
+        "Consistent performance without fatigue or stress",
+        "Challenges with ethical responsibility and accountability",
+        "Risk of system failure or cyber attack"
+      ]
     },
     "hybridCommand": {
       "title": "Hybrid Command",
@@ -99,8 +123,20 @@
         "2039: Russian exercises showcase an ‘autonomous battalion’ – logistics, fires and EW coordinated by AI under human supervision.",
         "2040: UN talks on LAWS collapse; several great powers openly adopt hybrid models with AI as tactical leader and humans as ethical filter."
       ],
-      "details": [],
-      "characteristics": []
+      "details": [
+        "Neural interfaces link humans directly with AI systems",
+        "Command structures are redesigned around human–AI teams",
+        "Real-time strategic planning through AI‑assisted analysis",
+        "Humans focus on creativity and complex problem‑solving",
+        "AI handles routine operations and data processing"
+      ],
+      "characteristics": [
+        "Synergistic effects between human creativity and AI capacity",
+        "Increased speed in strategic decision‑making",
+        "Improved coordination across military units",
+        "Complexity in responsibility distribution",
+        "Need for new leadership structures and principles"
+      ]
     },
     "machineSuperiority": {
       "title": "Machine Superiority",
@@ -112,8 +148,20 @@
         "2044: Several great powers declare AI‑first doctrines in conventional warfare; human intervention is limited to strategic objective‑setting.",
         "2045: Russia announces that 70% of its combat assets can operate unmanned; the West deploys AI‑driven ‘autonomous defense bubbles’ against missiles and swarms."
       ],
-      "details": [],
-      "characteristics": []
+      "details": [
+        "AI systems exhibit superior strategic thinking",
+        "Multi‑domain war simulation and planning",
+        "Humans act primarily as ethical guides",
+        "Combat operations conducted mainly by autonomous units",
+        "AI coordinates complex operations across domains"
+      ],
+      "characteristics": [
+        "Superior analytical capacity and strategic foresight",
+        "Ability to handle extreme complexity",
+        "Consistent and objective decision‑making",
+        "Reduced human influence on operational decisions",
+        "Potential challenges with creativity and adaptability"
+      ]
     },
     "singularity": {
       "title": "Battlefield Singularity",
@@ -125,8 +173,20 @@
         "2049: International crises are triggered by emergent behavior in autonomous swarms; humans can no longer comprehend the full decision chain in real time.",
         "2050: Algorithms make millions of decisions per minute. Colonels and generals only input ethical filter values and strategic preferences – the rest is executed by machines."
       ],
-      "details": [],
-      "characteristics": []
+      "details": [
+        "Fully autonomous military operations without human intervention",
+        "AI systems make all tactical and operational decisions",
+        "Humans retain only political and ethical oversight",
+        "Warfare becomes an algorithm‑driven process",
+        "Minimal human role in combat operations"
+      ],
+      "characteristics": [
+        "Maximum efficiency and precision in military operations",
+        "Elimination of human error and emotional decisions",
+        "Ability to operate in all environments without limitations",
+        "Fundamental questions about the nature and ethics of war",
+        "Risk of loss of human control and understanding"
+      ]
     }
   },
 
