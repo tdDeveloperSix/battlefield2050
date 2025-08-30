@@ -50,13 +50,13 @@
       },
       "swarmCoordination": {
         "title": "Swarm coordination in miniature",
-        "intro": "Experimental drones could already in the early 2020s distribute reconnaissance tasks among themselves, but without weapons autonomy.",
-        "chineseCapabilities": "Reports of Chinese field trials with swarms pressured the West to accelerate – an early warning of the race that followed."
+        "intro": "Already in the early 2020s, experimental drones could distribute reconnaissance tasks among themselves. They flew like the murmurations of starlings, but without any weapons autonomy — a technological trial balloon rather than a fully fledged weapon system.",
+        "chineseCapabilities": "At the same time, Chinese military academies reported actual swarm exercises under the banner of ‘智能化作战’ (intelligentized warfare). PLA theorists highlighted swarm attacks (集群作战) as a central future capability, in which hundreds of units could strike adaptively and in parallel. Many in the West noticed the spectacular Chinese New Year shows with thousands of drones painting the sky with light. Behind the festive glow lay a serious signal: the technology to coordinate large swarms was no longer science fiction, but under active military development.<br><br>Russia also signaled ambitions: according to open sources, up to 30% of the arsenal’s weapon systems were to be unmanned by 2025. This target underlined that swarms were not merely a theoretical concept but a political priority for great powers.<br><br>Experience from the Ukraine war likewise showed that the swarm concept was already operational in practice. In 2023, Ukraine’s army used an estimated 10,000 drones per month for reconnaissance, artillery cueing, and kamikaze strikes. The drones were coordinated through improvised digital networks and Starlink links — a shadow of tomorrow’s swarm warfare, driven by necessity.<br><br>For the West, this became a wake‑up call. The prospect of adversaries mass‑producing thousands of cheap, coordinated drones pushed investments upward. A new race had begun — one that quickly started to shift the balance of power on the battlefield."
       },
       "oodaLoop": {
         "title": "OODA loop still central",
-        "intro": "Observe–Orient–Decide–Act still served as the mental model for command; AI merely delivered faster observations and suggested options.",
-        "aiAdvantage": "Even here it became clear that algorithms could compress the OODA cycle – an edge that later became decisive."
+        "intro": "The OODA cycle — Observe, Orient, Decide, Act — remained the fundamental mental model for military command. It describes the classic decision loop: first observe the situation, then orient and build situational understanding, after which a decision is taken and finally action is executed. The art is to run this loop faster and more accurately than the opponent.",
+        "aiAdvantage": "With artificial intelligence, the tempo increased dramatically. Algorithms could, in moments, ingest, sort, and fuse enormous volumes of information that would have taken humans far longer to process. They could even propose courses of action before the decision‑maker had finished orienting."
       }
     },
     "digitalIntegration": {
