@@ -18,8 +18,20 @@
       "subtitle": "Traditional command structures with humans at the center",
       "description": "In this period, humans still dominate all aspects of military planning and execution. Decision-making occurs through established hierarchies, where experience and intuition are highly valued.",
       "overviewSummaryText": "Rising use of edge AI across platforms means systems can continue missions locally without networks. Autonomous swarms appear across regions (Ukraine, Middle East, Indo‑Pac). First cases of emergent behavior between AI systems are observed – with unexpected escalations.",
-      "details": [],
-      "characteristics": []
+      "details": [
+        "Command structures are built on decades of experience and established doctrines",
+        "Decision processes are hierarchical and based on human judgment",
+        "Technology functions primarily as a supporting tool",
+        "Situational Awareness depends on human analysis and reporting",
+        "Tactical decisions are typically made by experienced officers based on training and intuition"
+      ],
+      "characteristics": [
+        "High degree of flexibility in unpredictable situations",
+        "Strong ethical and moral judgment",
+        "Ability for creative problem-solving",
+        "Limitations in speed and data processing",
+        "Risk of human error under pressure"
+      ]
     },
     "digitalIntegration": {
       "title": "Digital Integration",

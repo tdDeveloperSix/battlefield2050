@@ -233,7 +233,7 @@ function App() {
           </p>
 
           <p className="text-base md:text-lg text-slate-400 italic mb-8 max-w-4xl mx-auto leading-relaxed">
-            “My betting is, that it is just classical computing that's going on in the brain, which suggests... That all the phenomena are modelable or mimicable by a classical computer” – Demis Hassabis, Nobel Price Winner, Head of Google Deep Mind, August 2025
+            "My betting is, that it is just classical computing that's going on in the brain, which suggests... That all the phenomena are modelable or mimicable by a classical computer" – Demis Hassabis, Nobel Price Winner, Head of Google Deep Mind, August 2025
           </p>
 
           <p className="text-lg text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
@@ -491,7 +491,7 @@ function App() {
                     </h4>
                     <p className="text-base sm:text-lg text-slate-300 leading-relaxed">{t('timeline.humanDominance.overviewSummaryText')}</p>
                     <div className="mt-6 border-t border-emerald-500/30 pt-6">
-                      <h5 className="text-lg font-semibold text-white mb-3">Tidslinje</h5>
+                      <h5 className="text-lg font-semibold text-white mb-3">{i18n.language === 'da' ? 'Tidslinje' : 'Timeline'}</h5>
                       <ul className="space-y-3">
                         {(t('timeline.humanDominance.overviewTimeline', { returnObjects: true }) as string[]).map((item, idx) => (
                           <li key={idx} className="flex items-start space-x-3">
@@ -511,7 +511,7 @@ function App() {
                     </h4>
                     <p className="text-base sm:text-lg text-slate-300 leading-relaxed">{section.description}</p>
                     <div className="mt-6 border-t border-emerald-500/30 pt-6">
-                      <h5 className="text-lg font-semibold text-white mb-3">Tidslinje</h5>
+                      <h5 className="text-lg font-semibold text-white mb-3">{i18n.language === 'da' ? 'Tidslinje' : 'Timeline'}</h5>
                       <ul className="space-y-3">
                         {(t('timeline.digitalIntegration.overviewTimeline', { returnObjects: true }) as string[]).map((item, idx) => (
                           <li key={idx} className="flex items-start space-x-3">
@@ -531,7 +531,7 @@ function App() {
                     </h4>
                     <p className="text-base sm:text-lg text-slate-300 leading-relaxed">{t('timeline.autonomousAssistance.overviewSummaryText')}</p>
                     <div className="mt-6 border-t border-emerald-500/30 pt-6">
-                      <h5 className="text-lg font-semibold text-white mb-3">Tidslinje</h5>
+                      <h5 className="text-lg font-semibold text-white mb-3">{i18n.language === 'da' ? 'Tidslinje' : 'Timeline'}</h5>
                       <ul className="space-y-3">
                         {(t('timeline.autonomousAssistance.overviewTimeline', { returnObjects: true }) as string[]).map((item, idx) => (
                           <li key={idx} className="flex items-start space-x-3">
@@ -553,7 +553,7 @@ function App() {
                     </h4>
                     <p className="text-base sm:text-lg text-slate-300 leading-relaxed">{section.description}</p>
                     <div className="mt-6 border-t border-emerald-500/30 pt-6">
-                      <h5 className="text-lg font-semibold text-white mb-3">Tidslinje</h5>
+                      <h5 className="text-lg font-semibold text-white mb-3">{i18n.language === 'da' ? 'Tidslinje' : 'Timeline'}</h5>
                       <ul className="space-y-3">
                         {(t('timeline.hybridCommand.overviewTimeline', { returnObjects: true }) as string[]).map((item, idx) => (
                           <li key={idx} className="flex items-start space-x-3">
@@ -573,7 +573,7 @@ function App() {
                     </h4>
                     <p className="text-base sm:text-lg text-slate-300 leading-relaxed">{section.description}</p>
                     <div className="mt-6 border-t border-emerald-500/30 pt-6">
-                      <h5 className="text-lg font-semibold text-white mb-3">Tidslinje</h5>
+                      <h5 className="text-lg font-semibold text-white mb-3">{i18n.language === 'da' ? 'Tidslinje' : 'Timeline'}</h5>
                       <ul className="space-y-3">
                         {(t('timeline.machineSuperiority.overviewTimeline', { returnObjects: true }) as string[]).map((item, idx) => (
                           <li key={idx} className="flex items-start space-x-3">
@@ -593,7 +593,7 @@ function App() {
                     </h4>
                     <p className="text-base sm:text-lg text-slate-300 leading-relaxed">{section.description}</p>
                     <div className="mt-6 border-t border-emerald-500/30 pt-6">
-                      <h5 className="text-lg font-semibold text-white mb-3">Tidslinje</h5>
+                      <h5 className="text-lg font-semibold text-white mb-3">{i18n.language === 'da' ? 'Tidslinje' : 'Timeline'}</h5>
                       <ul className="space-y-3">
                         {(t('timeline.singularity.overviewTimeline', { returnObjects: true }) as string[]).map((item, idx) => (
                           <li key={idx} className="flex items-start space-x-3">
@@ -1144,7 +1144,7 @@ function App() {
                         __html: sanitizeHtml(t('timeline.humanDominance.narrative.content'))
                       }} />
                     </div>
-                    {/* Fjernet overlappende “overblik”-tekst for Human Dominance pr. brugerønske */}
+                    {/* Fjernet overlappende "overblik"-tekst for Human Dominance pr. brugerønske */}
 
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                       <h4 className="text-2xl font-bold mb-6 text-white flex items-center">
