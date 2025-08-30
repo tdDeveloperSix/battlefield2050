@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import i18n from '../i18n';
 
 function defineHumanVsAIGame(): void {
   if (typeof window === 'undefined') return;
@@ -63,7 +64,7 @@ function defineHumanVsAIGame(): void {
         <div class="logo">⚡</div>
         <div>
           <h1>Human vs AI</h1>
-          <p class="small">Reaktionstest – bedst af 5</p>
+          <p class="small js-sub">Reaktionstest – bedst af 5</p>
         </div>
       </div>
       <div class="score">
@@ -74,7 +75,7 @@ function defineHumanVsAIGame(): void {
     </header>
 
     <section class="content">
-      <div class="modes" role="group" aria-label="Sværhedsgrad">
+      <div class="modes js-modes" role="group" aria-label="Sværhedsgrad">
         <button class="mode js-mode" data-k="easy" aria-pressed="false">Let</button>
         <button class="mode js-mode" data-k="med" aria-pressed="true">Mellem</button>
         <button class="mode js-mode" data-k="hard" aria-pressed="false">Svær</button>
@@ -82,8 +83,8 @@ function defineHumanVsAIGame(): void {
 
       <div class="arena ready" aria-live="polite">
         <div class="msg js-msg">
-          <h2>Klar?</h2>
-          <p>Tryk på "Start match"</p>
+          <h2 class="js-ready-h">Klar?</h2>
+          <p class="js-ready-p">Tryk på "Start match"</p>
         </div>
       </div>
 
@@ -102,7 +103,7 @@ function defineHumanVsAIGame(): void {
     <div class="card">
       <h3 class="js-ov-title">Runde 1</h3>
       <div class="times">
-        <div class="box"><h4>Menneske</h4><div class="val js-ht">–</div></div>
+        <div class="box"><h4 class="js-human-h">Menneske</h4><div class="val js-ht">–</div></div>
         <div class="box"><h4>AI</h4><div class="val js-at">–</div></div>
       </div>
       <div class="winner js-winner"></div>
@@ -148,6 +149,36 @@ function defineHumanVsAIGame(): void {
       this.load();
       this.renderHeader();
       this.bind();
+      this.applyLocale();
+      i18n.on('languageChanged', ()=> this.applyLocale());
+    }
+    tr(da: string, en: string){ return i18n.language.startsWith('en') ? en : da; }
+
+    applyLocale(){
+      const sub = this.shadowRoot!.querySelector('.js-sub') as HTMLElement;
+      if (sub) sub.textContent = this.tr('Reaktionstest – bedst af 5','Reaction test – best of 5');
+      const round = this.ui.round as HTMLElement;
+      round.textContent = this.tr(`Runde ${this.state.round}/${this.state.bestOf}`, `Round ${this.state.round}/${this.state.bestOf}`);
+      const pb = this.ui.humanPB as HTMLElement;
+      if (pb) pb.setAttribute('title', this.tr('Din bedste tid','Your best time'));
+      const aimu = this.ui.aimu as HTMLElement;
+      if (aimu) aimu.setAttribute('title', this.tr('AI-reaktion (μ)','AI reaction (μ)'));
+      const modesWrap = this.shadowRoot!.querySelector('.js-modes') as HTMLElement;
+      if (modesWrap) modesWrap.setAttribute('aria-label', this.tr('Sværhedsgrad','Difficulty'));
+      const [mEasy, mMed, mHard] = Array.from(this.ui.modes) as HTMLElement[];
+      if (mEasy) mEasy.textContent = this.tr('Let','Easy');
+      if (mMed) mMed.textContent = this.tr('Mellem','Medium');
+      if (mHard) mHard.textContent = this.tr('Svær','Hard');
+      (this.ui.start as HTMLElement).textContent = this.tr('Start match','Start match');
+      (this.ui.reset as HTMLElement).textContent = this.tr('Nulstil','Reset');
+      const rh = this.shadowRoot!.querySelector('.js-ready-h') as HTMLElement;
+      const rp = this.shadowRoot!.querySelector('.js-ready-p') as HTMLElement;
+      if (rh) rh.textContent = this.tr('Klar?','Ready?');
+      if (rp) rp.textContent = this.tr('Tryk på "Start match"','Tap "Start match"');
+      const hh = this.shadowRoot!.querySelector('.js-human-h') as HTMLElement;
+      if (hh) hh.textContent = this.tr('Menneske','Human');
+      (this.ui.next as HTMLElement).textContent = this.tr('Næste runde','Next round');
+      (this.ui.end as HTMLElement).textContent = this.tr('Afslut','Finish');
     }
 
     bind(){
@@ -200,9 +231,13 @@ function defineHumanVsAIGame(): void {
       const sum = (arr:number[]) => arr.reduce((a,b)=>a+b,0);
       const humanAvg = this.state.humanTimes.length ? Math.round(sum(this.state.humanTimes)/this.state.humanTimes.length) : 0;
       const aiAvg = this.state.aiTimes.length ? Math.round(sum(this.state.aiTimes)/this.state.aiTimes.length) : 0;
-      const msg = humanWins>aiWins? `Du vandt ${humanWins}-${aiWins}!` : humanWins<aiWins? `AI vandt ${aiWins}-${humanWins}.` : 'Uafgjort!';
+      const msg = humanWins>aiWins
+        ? this.tr(`Du vandt ${humanWins}-${aiWins}!`, `You won ${humanWins}-${aiWins}!`)
+        : humanWins<aiWins
+          ? this.tr(`AI vandt ${aiWins}-${humanWins}.`, `AI won ${aiWins}-${humanWins}.`)
+          : this.tr('Uafgjort!','Draw!');
       this.ui.result.innerHTML = `
-        <div><strong>${msg}</strong> Gennemsnit: Menneske ${humanAvg} ms · AI ${aiAvg} ms</div>
+        <div><strong>${msg}</strong> ${this.tr('Gennemsnit','Average')}: ${this.tr('Menneske','Human')} ${humanAvg} ms · AI ${aiAvg} ms</div>
       `;
       this.resetArena();
     }
@@ -213,7 +248,10 @@ function defineHumanVsAIGame(): void {
       this.state.waiting = true; this.state.early = false; this.state.goAt = 0;
       this.ui.arena.classList.remove('go');
       this.ui.arena.classList.add('wait');
-      this.ui.msg.innerHTML = `<h2>Vent til GRØN</h2><p>For tidlig tap = fejlstart</p>`;
+      this.ui.msg.innerHTML = this.tr(
+        `<h2>Vent til GRØN</h2><p>For tidlig tap = fejlstart</p>`,
+        `<h2>Wait for GREEN</h2><p>Early tap = false start</p>`
+      );
       clearTimeout(this.state.goTimer);
       this.state.goTimer = window.setTimeout(()=> this.goSignal(), jitter);
     }
@@ -223,14 +261,20 @@ function defineHumanVsAIGame(): void {
       this.state.goAt = performance.now();
       this.ui.arena.classList.remove('wait');
       this.ui.arena.classList.add('go');
-      this.ui.msg.innerHTML = `<h2>TAP NU!</h2><p>Reagér så hurtigt du kan</p>`;
+      this.ui.msg.innerHTML = this.tr(
+        `<h2>TAP NU!</h2><p>Reagér så hurtigt du kan</p>`,
+        `<h2>TAP NOW!</h2><p>React as fast as you can</p>`
+      );
       this.vibrate(20);
     }
 
     resetArena(){
       this.ui.arena.classList.remove('go','wait');
       this.ui.arena.classList.add('ready');
-      this.ui.msg.innerHTML = `<h2>Klar?</h2><p>Tryk på "Start match"</p>`;
+      this.ui.msg.innerHTML = this.tr(
+        `<h2>Klar?</h2><p>Tryk på "Start match"</p>`,
+        `<h2>Ready?</h2><p>Tap \"Start match\"</p>`
+      );
       clearTimeout(this.state.goTimer);
       this.state.goAt = 0; this.state.waiting = true;
     }
@@ -273,28 +317,33 @@ function defineHumanVsAIGame(): void {
       this.renderHeader();
       const humanWin = !opts?.early && humanMs < aiMs;
       this.ui.ovTitle.textContent = `Runde ${this.state.round}`;
-      this.ui.ht.textContent = opts?.early ? 'Fejlstart' : (humanMs + ' ms');
+      this.ui.ht.textContent = opts?.early ? this.tr('Fejlstart','False start') : (humanMs + ' ms');
       this.ui.at.textContent = aiMs + ' ms';
       this.ui.winner.innerHTML = humanWin
-        ? `<span class="win">Du vinder runden!</span>`
+        ? `<span class="win">${this.tr('Du vinder runden!','You win the round!')}</span>`
         : (opts?.early
-            ? `<span class="lose">Fejlstart – AI vinder runden.</span>`
-            : `<span class="lose">AI vinder runden.</span>`);
+            ? `<span class="lose">${this.tr('Fejlstart – AI vinder runden.','False start – AI wins the round.')}</span>`
+            : `<span class="lose">${this.tr('AI vinder runden.','AI wins the round.')}</span>`);
       this.ui.ov.classList.add('show');
       // Stop måling og ignorér tryk indtil næste runde
       this.state.goAt = 0; this.state.waiting = true;
       this.state.round += 1;
-      this.ui.round.textContent = `Runde ${Math.min(this.state.round, this.state.bestOf)}/${this.state.bestOf}`;
+      this.ui.round.textContent = this.tr(
+        `Runde ${Math.min(this.state.round, this.state.bestOf)}/${this.state.bestOf}`,
+        `Round ${Math.min(this.state.round, this.state.bestOf)}/${this.state.bestOf}`
+      );
       const w = Math.min(100, ((this.state.round-1)/this.state.bestOf)*100);
       (this.ui.roundbar as HTMLElement).style.setProperty('--w', w+'%');
       this.save();
-      this.ui.next.textContent = this.state.round > this.state.bestOf ? 'Se resultat' : 'Næste runde';
+      this.ui.next.textContent = this.state.round > this.state.bestOf
+        ? this.tr('Se resultat','See result')
+        : this.tr('Næste runde','Next round');
     }
 
     hideOverlay(){ this.ui.ov.classList.remove('show'); }
 
     renderHeader(){
-      this.ui.round.textContent = `Runde ${this.state.round}/${this.state.bestOf}`;
+      this.ui.round.textContent = this.tr(`Runde ${this.state.round}/${this.state.bestOf}`, `Round ${this.state.round}/${this.state.bestOf}`);
       this.ui.humanPB.textContent = 'PB: ' + (this.state.humanPB ? this.state.humanPB + ' ms' : '–');
       const mu = DIFFS[this.state.difficulty].aiMu;
       this.ui.aimu.textContent = 'AI μ: ' + Math.round(mu) + ' ms';
