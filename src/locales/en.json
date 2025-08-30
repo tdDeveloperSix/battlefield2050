@@ -6,6 +6,84 @@
   "interactiveTimelineTitle": "Evolution Timeline",
   "interactiveTimelineSubtitle": "Follow the transformation of military operations through six critical phases, from human dominance to total automation. Each phase represents a fundamental shift in how warfare is planned, executed, and controlled.",
   "followDevelopment": "follow the development towards 2050",
+  "timeline": {
+    "title": "Timeline: The Digital Revolution of the Battlefield",
+    "subtitle": "From human to machine warfare",
+    "scrollHint": "Scroll down to start the walkthrough",
+    "overviewTitle": "Overview",
+    "keyDevelopments": "Key Developments",
+    "characteristics": "Characteristics",
+    "humanDominance": {
+      "title": "Human Dominance",
+      "subtitle": "Traditional command structures with humans at the center",
+      "description": "In this period, humans still dominate all aspects of military planning and execution. Decision-making occurs through established hierarchies, where experience and intuition are highly valued.",
+      "overviewSummaryText": "Rising use of edge AI across platforms means systems can continue missions locally without networks. Autonomous swarms appear across regions (Ukraine, Middle East, Indo‑Pac). First cases of emergent behavior between AI systems are observed – with unexpected escalations.",
+      "details": [],
+      "characteristics": []
+    },
+    "digitalIntegration": {
+      "title": "Digital Integration",
+      "subtitle": "First wave of AI-assisted systems introduced",
+      "description": "Artificial intelligence begins to play a larger role as decision support. Automated systems help with data analysis and situational awareness, but humans retain final decision-making authority.",
+      "details": [],
+      "characteristics": []
+    },
+    "autonomousAssistance": {
+      "title": "Autonomous Assistance",
+      "subtitle": "AI takes over routine decisions, humans handle strategic choices",
+      "description": "AI systems become trusted partners in military operations, handling routine and time-critical decisions while humans focus on strategic and ethical considerations.",
+      "overviewSummaryText": "Rising use of edge AI on all platforms allows systems to continue missions locally without networks. Autonomous swarms appear in multiple regions (Ukraine, Middle East, Indo‑Pac). First cases of emergent behavior between AI systems are reported – with unexpected escalations.",
+      "overviewTimeline": [
+        "2031: The US conducts an exercise with an entire brigade run by AI‑C2; reaction time is halved versus classic command.",
+        "2033: China equips new fighters with an AI co‑pilot that can take over during hypersonic maneuvers.",
+        "2033: Russia unveils the Suvorov system – a hyper‑efficient AI network coordinating artillery, EW and drones.",
+        "2034: Local incidents in the Indo‑Pacific show the first autonomous AI‑swarm vs AI‑swarm duels.",
+        "2035: AI integrates into logistics and cyber operations; the human role reduces to parameter setting and high‑level control."
+      ],
+      "details": [],
+      "characteristics": []
+    },
+    "hybridCommand": {
+      "title": "Hybrid Command",
+      "subtitle": "Human-machine partnerships dominate",
+      "description": "Command structures are fundamentally restructured with AI as equal partners. Decision processes are drastically accelerated through neural interface technology.",
+      "overviewTimeline": [
+        "2035–2036: NATO and the US test ‘human–machine command cells’ where AI proposes complete battle plans and officers adjust parameters (tempo, collateral tolerance).",
+        "2037: The PLA publishes a fusion command doctrine (融合指挥) placing humans and AI side-by-side in the decision hierarchy.",
+        "2038: First major operations conducted with shared responsibility: AI controls swarms and artillery; humans approve strategic strikes.",
+        "2039: Russian exercises showcase an ‘autonomous battalion’ – logistics, fires and EW coordinated by AI under human supervision.",
+        "2040: UN talks on LAWS collapse; several great powers openly adopt hybrid models with AI as tactical leader and humans as ethical filter."
+      ],
+      "details": [],
+      "characteristics": []
+    },
+    "machineSuperiority": {
+      "title": "Machine Superiority",
+      "subtitle": "AI systems surpass humans in most domains",
+      "description": "AI systems demonstrate clear superiority over human decision-making in most military domains. Humans are relegated to setting ethical boundaries and strategic objectives.",
+      "overviewTimeline": [
+        "2041–2042: NATO conducts a full‑scale exercise where an island defense is run almost entirely by AI (from logistics to fire control). Humans primarily supervise and act as failsafe.",
+        "2043: China tests a fully autonomous division in the Gobi desert – artillery, drones, armored vehicles and EW systems operate as one machine unit.",
+        "2044: Several great powers declare AI‑first doctrines in conventional warfare; human intervention is limited to strategic objective‑setting.",
+        "2045: Russia announces that 70% of its combat assets can operate unmanned; the West deploys AI‑driven ‘autonomous defense bubbles’ against missiles and swarms."
+      ],
+      "details": [],
+      "characteristics": []
+    },
+    "singularity": {
+      "title": "Battlefield Singularity",
+      "subtitle": "Complete transformation of warfare's nature and human role",
+      "description": "The final phase where human involvement becomes largely irrelevant to the conduct of warfare. Machines make virtually all tactical and operational decisions at superhuman speed.",
+      "overviewTimeline": [
+        "2046–2047: First reports of fully autonomous operations where AI negotiates and coordinates system‑to‑system without human involvement.",
+        "2048: Multi‑domain AI networks link tactical, operational and strategic levels – a single unbroken machine decision stream.",
+        "2049: International crises are triggered by emergent behavior in autonomous swarms; humans can no longer comprehend the full decision chain in real time.",
+        "2050: Algorithms make millions of decisions per minute. Colonels and generals only input ethical filter values and strategic preferences – the rest is executed by machines."
+      ],
+      "details": [],
+      "characteristics": []
+    }
+  },
 
   "jamming": {
     "title": "Jamming demo: SNR and readability",
