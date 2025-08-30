@@ -18,6 +18,13 @@
       "subtitle": "Traditional command structures with humans at the center",
       "description": "In this period, humans still dominate all aspects of military planning and execution. Decision-making occurs through established hierarchies, where experience and intuition are highly valued.",
       "overviewSummaryText": "Rising use of edge AI across platforms means systems can continue missions locally without networks. Autonomous swarms appear across regions (Ukraine, Middle East, Indo‑Pac). First cases of emergent behavior between AI systems are observed – with unexpected escalations.",
+      "overviewTimeline": [
+        "Early 2020s: AI becomes common in ISR and target designation (recommendation → human approval).",
+        "2020–2021: Project Convergence / FIRESTORM shows kill‑chain acceleration (20 min → 32 sec), but with human‑in‑the‑loop.",
+        "2022–2026: Ukraine war → massive drone use, EW duels, dependence on Starlink. Blackout exposes vulnerability.",
+        "Mid‑2020s: AI co‑pilots are tested in manned platforms.",
+        "Global event (2025): Communications outage reveals dangerous dependence on cloud and networks → increased demand for Edge AI and local decision functions."
+      ],
       "details": [
         "Command structures are built on decades of experience and established doctrines",
         "Decision processes are hierarchical and based on human judgment",
