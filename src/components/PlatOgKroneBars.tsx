@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
+import i18n from '../i18n';
 
 // "Plat & Krone" — to søjlediagrammer, der afspiller kast løbende (udfalds-baseret)
 // Tilpasset XNET-temaet: mørk baggrund, grøn/cyan accent, kort-layout som resten af siden.
 
 export default function PlatOgKroneBars(): JSX.Element {
+  const tr = (da: string, en: string) => (i18n.language.startsWith('en') ? en : da);
   // Mål (hvor mange spil vi vil nå)
   const [targetN, setTargetN] = useState<number>(50000);
   // Hastighed (kast pr. sekund)
@@ -86,7 +88,6 @@ export default function PlatOgKroneBars(): JSX.Element {
     return { lo: Math.max(0, center - half), hi: Math.min(1, center + half) };
   }
 
-  const pHat = played > 0 ? heads / played : 0;
   const pValue = played > 0 ? binomPValueTwoSided(heads, played, 0.5) : 1;
   const signif = played > 0 && pValue < 0.05;
   const ci = played > 0 ? wilsonCI(heads, played) : { lo: 0, hi: 1 };
@@ -141,7 +142,7 @@ export default function PlatOgKroneBars(): JSX.Element {
   }, [playing, speed, p, targetN, played]);
 
   // Farver
-  const txt = '#E6EEF8';
+  // const txt = '#E6EEF8';
   const sub = '#9AB0C9';
   const accentFrom = '#22d3ee'; // cyan-400
   const accentTo = '#22c55e'; // emerald-500
@@ -163,7 +164,7 @@ export default function PlatOgKroneBars(): JSX.Element {
 
   const headsPct = played > 0 ? Math.round((heads / played) * 100) : 0;
   const tailsPct = 100 - headsPct;
-  const pHatPct = Math.round(pHat * 100);
+  // const pHatPct = Math.round(pHat * 100);
 
   // Kontrol-handlers
   const togglePlay = () => {
@@ -185,23 +186,23 @@ export default function PlatOgKroneBars(): JSX.Element {
       <div className="space-y-6">
         {/* Header */}
         <header className="flex items-center justify-between">
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight">Plat & Krone — udfald i realtid</h3>
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight">{tr('Plat & Krone — udfald i realtid','Heads & Tails — outcomes in real time')}</h3>
           <div className="flex gap-2">
             <button
               onClick={togglePlay}
               className="px-3 py-2 rounded-xl text-sm font-medium"
               style={{ background: `linear-gradient(90deg, ${accentFrom}, ${accentTo})`, color: '#061016' }}
-              title={played >= targetN ? 'Mål nået' : playing ? 'Pause' : 'Afspil'}
+              title={played >= targetN ? tr('Mål nået','Target reached') : playing ? tr('Pause','Pause') : tr('Afspil','Play')}
             >
-              {played >= targetN ? 'Færdig' : playing ? 'Pause' : 'Afspil'}
+              {played >= targetN ? tr('Færdig','Done') : playing ? tr('Pause','Pause') : tr('Afspil','Play')}
             </button>
             <button
               onClick={resetAll}
               className="px-3 py-2 rounded-xl text-sm font-medium"
               style={{ background: '#0A1220', color: '#fca5a5', border: '1px solid #46262a' }}
-              title="Nulstil (sæt alt til 0)"
+              title={tr('Nulstil (sæt alt til 0)','Reset (set everything to 0)')}
             >
-              Nulstil
+              {tr('Nulstil','Reset')}
             </button>
           </div>
         </header>
@@ -209,7 +210,7 @@ export default function PlatOgKroneBars(): JSX.Element {
         {/* Kontroller */}
         <section className="grid md:grid-cols-3 gap-4">
           <div>
-            <label className="text-sm" style={{ color: sub }}>Mål (antal spil)</label>
+            <label className="text-sm" style={{ color: sub }}>{tr('Mål (antal spil)','Target (number of trials)')}</label>
             <div className="flex items-center gap-3 mt-2">
               <input
                 type="range"
@@ -230,11 +231,11 @@ export default function PlatOgKroneBars(): JSX.Element {
                 onChange={(e) => setTargetN(Math.max(1, Math.min(50000, parseInt(e.target.value || '1'))))}
               />
             </div>
-            <div className="text-xs mt-1" style={{ color: sub }}>Spillet stopper automatisk ved målet.</div>
+            <div className="text-xs mt-1" style={{ color: sub }}>{tr('Spillet stopper automatisk ved målet.','The simulation stops automatically at the target.')}</div>
           </div>
 
           <div>
-            <label className="text-sm" style={{ color: sub }}>Hastighed (kast/sek.)</label>
+            <label className="text-sm" style={{ color: sub }}>{tr('Hastighed (kast/sek.)','Speed (casts/sec)')}</label>
             <div className="flex items-center gap-3 mt-2">
               <input
                 type="range"
@@ -257,7 +258,7 @@ export default function PlatOgKroneBars(): JSX.Element {
           </div>
 
           <div>
-            <label className="text-sm" style={{ color: sub }}>Sandsynlighed for krone (p)</label>
+            <label className="text-sm" style={{ color: sub }}>{tr('Sandsynlighed for krone (p)','Probability of heads (p)')}</label>
             <div className="flex items-center gap-3 mt-2">
               <input
                 type="range"
@@ -278,18 +279,18 @@ export default function PlatOgKroneBars(): JSX.Element {
                 onChange={(e) => setP(Math.max(0, Math.min(1, parseFloat(e.target.value || '0'))))}
               />
             </div>
-            <div className="text-xs mt-1" style={{ color: sub }}>Brug p til at lave en "rigged" mønt (fx 0.55).</div>
+            <div className="text-xs mt-1" style={{ color: sub }}>{tr('Brug p til at lave en "rigged" mønt (fx 0.55).','Use p to make a "rigged" coin (e.g., 0.55).')}</div>
           </div>
         </section>
 
         {/* Statuslinje */}
         <section className="grid sm:grid-cols-4 gap-4">
-          <Stat label="Kast spillet" value={`${played.toLocaleString()} / ${targetN.toLocaleString()}`} />
-          <Stat label="Krone" value={`${heads.toLocaleString()}`} />
-          <Stat label="Plat" value={`${tails.toLocaleString()}`} />
+          <Stat label={tr('Kast spillet','Casts played')} value={`${played.toLocaleString()} / ${targetN.toLocaleString()}`} />
+          <Stat label={tr('Krone','Heads')} value={`${heads.toLocaleString()}`} />
+          <Stat label={tr('Plat','Tails')} value={`${tails.toLocaleString()}`} />
           <div className="flex items-center justify-between px-3 py-2 rounded-lg" style={{ background: '#0A1220' }}>
             <div>
-              <div className="opacity-80 text-xs">p-værdi (to-sidet, H₀: 50%)</div>
+              <div className="opacity-80 text-xs">{tr('p-værdi (to-sidet, H₀: 50%)','p-value (two-sided, H₀: 50%)')}</div>
               <div className="font-medium tabular-nums text-lg">{played ? (pValue < 0.001 ? '< 0.001' : pValue.toFixed(3)) : '—'}</div>
               <div className="opacity-80 text-xs mt-1">{played ? `95% CI (Wilson): ${(ci.lo*100).toFixed(1)}–${(ci.hi*100).toFixed(1)}%` : ' '}</div>
             </div>
@@ -297,17 +298,17 @@ export default function PlatOgKroneBars(): JSX.Element {
               className="px-2 py-1 rounded-md text-xs font-semibold"
               style={{ background: signif ? '#10b98120' : '#f59e0b20', color: signif ? '#34d399' : '#fbbf24' }}
             >
-              {signif ? 'Signifikant' : 'Ikke signifikant'}
+              {signif ? tr('Signifikant','Significant') : tr('Ikke signifikant','Not significant')}
             </span>
           </div>
         </section>
 
         {/* Søjlediagram #1: Antal krone vs. plat */}
         <section>
-          <h4 className="text-lg font-semibold mb-2">Fordeling: Krone vs. Plat</h4>
+          <h4 className="text-lg font-semibold mb-2">{tr('Fordeling: Krone vs. Plat','Distribution: Heads vs. Tails')}</h4>
           <p className="text-sm mb-4" style={{ color: sub }}>
-            Ved få sessioner ses tilfældige udsving — roligere, tydeligere
-            mønstre ses først, når der er mange kast.
+            {tr('Ved få sessioner ses tilfældige udsving — roligere, tydeligere','With few sessions you see random swings — calmer, clearer')}
+            {tr('mønstre ses først, når der er mange kast.','patterns only emerge when many casts are made.')}
           </p>
           <div style={barWrap}>
             <div title={`Krone: ${heads} (${headsPct}%)`} style={{ ...barBase, height: `${Math.max(2, headsPct)}%` }} />
@@ -317,16 +318,18 @@ export default function PlatOgKroneBars(): JSX.Element {
             />
           </div>
           <div className="mt-3 grid grid-cols-2 gap-4 text-sm">
-            <Stat label="Krone (andel)" value={`${played ? Math.round((heads / played) * 100) : 0}%`} />
-            <Stat label="Plat (andel)" value={`${played ? Math.round((tails / played) * 100) : 0}%`} />
+            <Stat label={tr('Krone (andel)','Heads (share)')} value={`${played ? Math.round((heads / played) * 100) : 0}%`} />
+            <Stat label={tr('Plat (andel)','Tails (share)')} value={`${played ? Math.round((tails / played) * 100) : 0}%`} />
           </div>
         </section>
 
         {/* Sektion med andel vs. reference er bevidst fjernet for et mere fokuseret UI */}
 
         <footer className="text-xs" style={{ color: sub }}>
-          Alt, du ser, er resultatet af <span className="font-semibold">faktiske kast</span> (tilfældige udfald). p-værdien er
-          en praktisk indikator, ikke et bevis — Du ser at det kræver mange kast for at skelne signifikans fra tilfældighed.
+          {tr('Alt, du ser, er resultatet af ','Everything you see is the result of ')}
+          <span className="font-semibold">{tr('faktiske kast','actual casts')}</span>
+          {tr(' (tilfældige udfald). p-værdien er',' (random outcomes). The p‑value is')}
+          {tr(' en praktisk indikator, ikke et bevis — Du ser at det kræver mange kast for at skelne signifikans fra tilfældighed.',' a practical indicator, not proof — You can see it takes many casts to separate significance from chance.')}
         </footer>
       </div>
     </div>
