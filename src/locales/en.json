@@ -83,7 +83,11 @@
         "Humans retain control over critical decisions",
         "Increased dependence on technological systems",
         "Need for new training and competency development"
-      ]
+      ],
+      "narrative": {
+        "title": "Over the Nevada Desert, August 2025",
+        "content": "An F‑16 Falcon cuts through the hot, shimmering air over the Nevada desert. In the cockpit sits Captain Jason \"Hawk\" Reynolds, 2,000 flight hours behind him, sweat gathering under the helmet. A blue marker flashes on his head‑up display – a hostile fighter is closing fast from behind.<br><br>But the opponent is not a pilot of flesh and blood. It is an algorithm – an experiment called Heron.<br><br>The fight begins like any dogfight: turn, roll, seek position. Hawk tries to shake the opponent with a tight high‑G turn. Normally that would buy him a little air, but the digital opponent reacts instantly, as if it had anticipated the move. Within seconds, Heron is behind him again, in firing position.<br><br><em>Fox Two</em> appears on the screen before Hawk can consider his next maneuver. In the virtual simulation he is hit. The first round is lost.<br><br>Five rounds later the result is clear: 6–0 to the algorithm. Not because it is faster on the stick – but because it reads the fight’s patterns, guesses the opponent’s next move, and adjusts its plan in real time.<br><br>For the spectators on base this is the turning point. From that moment the question is no longer whether digital decision systems can match human judgment – but how long humans can remain in the driver’s seat."
+      },
     },
     "autonomousAssistance": {
       "title": "Autonomous Assistance",
@@ -250,9 +254,9 @@
       },
       "raceLogic": {
         "title": "Race Logic and the First Escalation Spiral",
-        "intro": "As soon as the Ukraine war showed that even a 20% AI share could turn the tide of battle, the race became self-reinforcing: if one country moved just one step ahead, rivals had to copy or accept strategic inferiority. Each breakthrough – a faster kill-chain, a sharper logistics network – triggered an even more expensive countermove, and the spiral spun faster with each passing month.",
-        "editorRole": "In the field, this meant that officers now primarily functioned as editors. They corrected typos in AI-generated OPLANs, adjusted a few ethical parameters – but discovered that their own \"improvements\" often made the plan slower or less precise. It was the first time humans felt the cold logic of machine overmatch: the more complex the problem became, the more clearly human hand-trembling showed through.",
-        "finalGame": "Decision parity had thus been merely the starting shot. Now the overmatch engine systematically pulled decision time away from humans. And with the speed the spiral had already gained in 2028-29, the next phase lay ahead: Autonomous Assistance (2030-2035) – the period where AI no longer just suggests, but begins to act independently, while we only intervene if something goes wrong."
+        "intro": "As soon as the Ukraine war showed that even 20% AI‑driven decisions could swing the outcome, the race became self‑reinforcing: if one country moved a single step ahead, rivals had to copy or accept strategic inferiority. Every breakthrough – a faster kill‑chain, a sharper logistics network – triggered an even costlier countermove, and the spiral tightened month by month.",
+        "editorRole": "In the field, officers increasingly acted as editors. They corrected typos in AI‑generated OPLANs and tweaked a couple of ethical parameters – only to find that their \"improvements\" often made the plan slower or less precise. It was the first time humans felt the cold logic of machine overmatch.",
+        "finalGame": "Decision parity was only the starting gun. The overmatch engine now systematically pulled decision time away from humans, who slowly had to watch machine compute power outpace them. With the momentum already built up in 2028–29, the next phase was inevitable: Autonomous Assistance (2030–2035) – the period where AI stops merely proposing and begins to act, with humans intervening only when something goes wrong."
       }
     },
     "autonomousAssistance": {
