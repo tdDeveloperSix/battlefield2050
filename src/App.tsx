@@ -14,7 +14,6 @@ import {
 } from 'lucide-react';
 
 import DecisionWeightBar from './components/DecisionWeightBar';
-import HighlightedText from './components/HighlightedText';
 import { highlightText } from './utils/textHighlighter';
 import { sanitizeHtml } from './utils/sanitizeHtml';
 
@@ -78,9 +77,24 @@ function App() {
   const [activeSection, setActiveSection] = useState<string>('');
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+  // Track last active section to avoid unnecessary setState during scroll
+  const lastActiveRef = useRef<string>('');
   
   // Get translated implications (memoized)
   const implications = useMemo(() => getImplications(t), [t]);
+
+  // Dynamisk fanebladstitel og meta description
+  useEffect(() => {
+    const title = t('pageTitle');
+    if (title && typeof title === 'string') {
+      document.title = title;
+    }
+    const meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    const description = t('metaDescription');
+    if (meta && description && typeof description === 'string') {
+      meta.setAttribute('content', description);
+    }
+  }, [t, i18n.language]);
 
   // Create translated timeline sections (memoized factory)
   const timelineSections = useMemo((): TimelineSection[] => [
@@ -183,7 +197,7 @@ function App() {
         }
       }
 
-      if (currentSection !== activeSection) {
+      if (currentSection !== lastActiveRef.current) {
         setActiveSection(currentSection);
       }
     };
@@ -193,6 +207,10 @@ function App() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    lastActiveRef.current = activeSection;
+  }, [activeSection]);
 
 
 
@@ -292,7 +310,7 @@ function App() {
 
               {/* Podcast Player */}
               <div className="mt-12">
-                <Suspense fallback={<div className="bg-slate-800/30 border border-slate-700 rounded-xl p-6 text-slate-400">Loading podcast…</div>}>
+                <Suspense fallback={<div className="bg-slate-800/30 border border-slate-700 rounded-xl p-6 text-slate-400">{t('loading.podcast')}</div>}>
                   <PodcastPlayer />
                 </Suspense>
               </div>
@@ -1196,7 +1214,7 @@ function App() {
                     </div>
 
                   {/* Mini-spillet placeres nedenfor afsnittet – ikke indlejret */}
-                  <Suspense fallback={<div className="text-slate-400">Loading game…</div>}>
+                  <Suspense fallback={<div className="text-slate-400">{t('loading.game')}</div>}>
                     <HumanVsAIGame />
                   </Suspense>
 
@@ -1406,7 +1424,7 @@ function App() {
       </section>
 
       {/* Kilder nederst */}
-      <Suspense fallback={<div className="text-slate-400 px-4">Loading sources…</div>}>
+      <Suspense fallback={<div className="text-slate-400 px-4">{t('loading.sources')}</div>}>
         <Sources />
       </Suspense>
 
