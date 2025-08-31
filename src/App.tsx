@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   Users,
@@ -18,14 +18,16 @@ import HighlightedText from './components/HighlightedText';
 import { highlightText } from './utils/textHighlighter';
 import { sanitizeHtml } from './utils/sanitizeHtml';
 
-import PodcastPlayer from './components/PodcastPlayer';
 import MatrixRain from './components/MatrixRain';
 import BackToTop from './components/BackToTop';
 import XnetAirRace from './components/XnetAirRace';
-import JammingControl from './components/JammingControl';
-import HumanVsAIGame from './components/HumanVsAIGame';
-import Sources from './components/Sources';
-import PlatOgKroneBars from './components/PlatOgKroneBars';
+
+// Progressive (lazy) loading for heavier, below-the-fold components
+const PodcastPlayer = lazy(() => import('./components/PodcastPlayer'));
+const JammingControl = lazy(() => import('./components/JammingControl'));
+const HumanVsAIGame = lazy(() => import('./components/HumanVsAIGame'));
+const Sources = lazy(() => import('./components/Sources'));
+const PlatOgKroneBars = lazy(() => import('./components/PlatOgKroneBars'));
 
 
 interface TimelineSection {
@@ -290,7 +292,9 @@ function App() {
 
               {/* Podcast Player */}
               <div className="mt-12">
-                <PodcastPlayer />
+                <Suspense fallback={<div className="bg-slate-800/30 border border-slate-700 rounded-xl p-6 text-slate-400">Loading podcast…</div>}>
+                  <PodcastPlayer />
+                </Suspense>
               </div>
             </div>
           </div>
@@ -889,7 +893,9 @@ function App() {
 
                     {/* Plat & Krone eksperiment (spillet forbliver her under "Algoritmens tåge") */}
                     <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-6 sm:p-8">
-                      <PlatOgKroneBars />
+                      <Suspense fallback={<div className="text-slate-400">Loading experiment…</div>}>
+                        <PlatOgKroneBars />
+                      </Suspense>
                     </div>
                   </div>
                 )}
@@ -1190,7 +1196,9 @@ function App() {
                     </div>
 
                   {/* Mini-spillet placeres nedenfor afsnittet – ikke indlejret */}
-                  <HumanVsAIGame />
+                  <Suspense fallback={<div className="text-slate-400">Loading game…</div>}>
+                    <HumanVsAIGame />
+                  </Suspense>
 
 
                   </div>
@@ -1282,7 +1290,9 @@ function App() {
       </section>
 
       {/* Side Jamming Control */}
-      <JammingControl />
+      <Suspense fallback={null}>
+        <JammingControl />
+      </Suspense>
 
       {/* AI Dogfight simulator er nu indlejret i tidslinjen (Decision Parity). Den tidligere bundsektion er fjernet. */}
 
@@ -1396,7 +1406,9 @@ function App() {
       </section>
 
       {/* Kilder nederst */}
-      <Sources />
+      <Suspense fallback={<div className="text-slate-400 px-4">Loading sources…</div>}>
+        <Sources />
+      </Suspense>
 
       {/* Footer */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-slate-800">

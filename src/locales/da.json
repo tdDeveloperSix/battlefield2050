@@ -47,7 +47,7 @@
   "timeline": {
     "title": "Tidslinje: Kamppladsens Digitale Revolution",
     "subtitle": "Fra menneskelig til maskinel krigsførelse",
-    "scrollHint": "Scroll ned for at starte gennemgangen",
+    "scrollHint": "$t(scrollHint)",
     "overviewTitle": "Overblik",
     "keyDevelopments": "Centrale Udviklinger",
     "characteristics": "Karakteristika",
@@ -78,14 +78,14 @@
         "description": "AI-systemer overgår mennesker i de fleste domæner"
       },
       "singularity": {
-        "title": "Kamppladsens Singularitet",
+        "title": "$t(timeline.phases.singularity.title)",
         "period": "2050",
         "description": "Fuldstændig transformation af krigsførelse og menneskelig rolle"
       }
     },
     "humanDominance": {
-      "title": "Menneskelig Dominans",
-      "subtitle": "Traditionelle kommandostrukturer med mennesker i centrum",
+      "title": "$t(timeline.phases.humanDominance.title)",
+      "subtitle": "$t(timeline.phases.humanDominance.description)",
       "description": "I denne periode dominerer mennesker stadig alle aspekter af militær planlægning og udførelse. Beslutningstagning sker gennem etablerede hierarkier, hvor erfaring og intuition vægtes højt.",
       "overviewSummaryText": "AI træder ind som beslutningsstøtte i ISR og måludpegning – mennesker godkender. Forsøg som Project Convergence og FIRESTORM accelererer kill‑chain fra minutter til sekunder, men human‑in‑the‑loop bevares. Ukraine‑krigen afslører dronedominans og netværkssårbarhed – kravet om Edge AI vokser.",
       "overviewSummary": [
@@ -137,7 +137,7 @@
       }
     },
     "digitalIntegration": {
-      "title": "Digital Integration",
+      "title": "$t(timeline.phases.digitalIntegration.title)",
       "subtitle": "Første bølge af AI-assisterede systemer introduceres",
       "description": "Kunstig intelligens begynder at spille en større rolle i beslutningsstøtte. Automatiserede systemer hjælper med dataanalyse og Situational Awareness, men mennesker bevarer den endelige beslutningskompetence.",
       "overviewTimeline": [
@@ -174,33 +174,33 @@
         "tryGame": "Vil du selv prøve? Herunder kan du teste en enkel AI Dogfight-simulator – og mærke, hvordan en digital modstander gradvist lærer og forbedrer sig runde for runde"
       },
       "gradualDominance": {
-        "title": "Gradvis Dominans og Menneskelig Marginalisering",
-        "intro": "Efter AlphaDogfight rykkede algoritmerne hurtigt ud i felten, men de stjal ikke straks showet. Omkring fire ud af fem beslutninger blev stadig truffet af mennesker; alligevel var retningen tydelig. Første skred kom, da Forward Air Controller-opgaver blev semi-automatiske: Et AI-modul kombinerede drone-feeds, satellitbilleder med operatørens laserdata, algoritmen udarbejdede en komplet 9-Liner og sendte forslaget til operatøren, som blot trykkede Godkend. Årtiers special­træning kogt ned til ét klik, men kun, hvis mennesket sagde ja."
+        "title": "$t(detailedSections.digitalIntegration.gradualDominance.title)",
+        "intro": "$t(detailedSections.digitalIntegration.gradualDominance.intro)"
       },
       "trustToDependency": {
-        "title": "Fra Tillid til Afhængighed",
-        "intro": "Overgangen fra tillid til afhængighed skete gradvist og næsten umærkeligt. Først stolede militære ledere på AI-anbefalinger fordi de var nyttige. Derefter fordi de var pålidelige. Til sidst fordi de var uundværlige. Når AI-systemer konsekvent leverede bedre resultater end menneskelige beslutningstagere, blev det irrationelt ikke at følge deres råd.",
-        "aiOvermatch": "Konceptet AI Overmatch blev centralt i militær doktrin – ideen om at opnå så stor overlegenhed gennem kunstig intelligens, at konventionel modstand blev meningsløs. Lande, der ikke kunne matche denne AI-kapacitet, fandt sig selv i en position af permanent strategisk XXX underlegenhed."
+        "title": "$t(detailedSections.digitalIntegration.trustToDependency.title)",
+        "intro": "$t(detailedSections.digitalIntegration.trustToDependency.intro)",
+        "aiOvermatch": "$t(detailedSections.digitalIntegration.trustToDependency.aiOvermatch)"
       },
       "humanBottleneck": {
-        "title": "Den Menneskelige Flaskehals",
-        "intro": "Paradoksalt blev mennesker selv den største begrænsning i deres egne militære systemer. Mens AI-systemer kunne processere information og træffe beslutninger i millisekunder, krævede menneskelig godkendelse sekunder eller minutter – en evighed i moderne krigsførelse.",
-        "c2System": "C2-system (kommando-og-kontrol) blev redesignet for at minimere menneskelig indblanding. \"Human-in-the-loop\" blev erstattet af \"human-on-the-loop\" og til sidst \"human-out-of-the-loop\" for kritiske, tidsfølsomme operationer. Mennesker blev reduceret til at sætte overordnede parametre og etiske grænser, mens AI håndterede den faktiske udførelse."
+        "title": "$t(detailedSections.digitalIntegration.humanBottleneck.title)",
+        "intro": "$t(detailedSections.digitalIntegration.humanBottleneck.intro)",
+        "c2System": "$t(detailedSections.digitalIntegration.humanBottleneck.c2System)"
       },
       "speedKills": {
-        "title": "Hastighed Dræber: Tempoets Tyranni",
-        "intro": "I militære kredse blev mantraet \"speed kills\" mere end bare en talemåde – det blev en fundamental sandhed. Den part, der kunne handle hurtigst, vandt ikke bare taktiske fordele, men strategiske. AI-systemer, der kunne reagere i realtid, gjorde menneskelig beslutningstagning til en luksus, militæret ikke længere havde råd til.",
-        "speedMantra": "\"Speed kills\" blev omdefineret: det var ikke længere hastigheden af projektiler eller køretøjer, der var afgørende, men hastigheden af beslutningstagning. I denne nye virkelighed blev menneskelig refleksion og overvejelse set som farlige forsinkelser snarere end værdifulde bidrag."
+        "title": "$t(detailedSections.digitalIntegration.speedKills.title)",
+        "intro": "$t(detailedSections.digitalIntegration.speedKills.intro)",
+        "speedMantra": "$t(detailedSections.digitalIntegration.speedKills.speedMantra)"
       },
       "raceLogic": {
-        "title": "Kapløbets Logik og den Første Eskalationsspiral",
-        "intro": "Så snart Ukraine-krigen viste, at selv 20 % AI drevne beslutninger kunne vende slagets gang, blev kapløbet selvforstærkende: hvis ét land rykkede bare ét skridt foran, måtte rivalerne kopiere eller acceptere strategisk mindrevær. Hvert gennembrud – en hurtigere kill-chain, et skarpere logistik-net – udløste et endnu dyrere modtræk, og spiralen snurrede hurtigere for hver måned.",
-        "editorRole": "I felten betød det, at officerer nu primært fungerede som redaktører. De rettede stavefejl i AI-genererede OPLAN'er, justerede et par etiske parametre – men opdagede, at egne \"forbedringer\" ofte gjorde planen langsommere eller mindre præcis. Det var første gang, mennesket mærkede den kolde logik i maskinens overmatch.",
-        "finalGame": "Beslutningsparitet havde altså blot været startskuddet. Nu trak overmatch-motoren systematisk beslutningstid væk fra mennesker. Og med den fart, spiralen allerede havde taget i 2028-29, lå næste fase lige for: Autonom Assistance (2030-2035) – perioden hvor AI ikke nøjes med at foreslå, men begynder at handle selv, mens vi kun griber ind, hvis noget går galt."
+        "title": "$t(detailedSections.digitalIntegration.raceLogic.title)",
+        "intro": "$t(detailedSections.digitalIntegration.raceLogic.intro)",
+        "editorRole": "$t(detailedSections.digitalIntegration.raceLogic.editorRole)",
+        "finalGame": "$t(detailedSections.digitalIntegration.raceLogic.finalGame)"
       }
     },
     "autonomousAssistance": {
-      "title": "Autonom Assistance",
+      "title": "$t(timeline.phases.autonomousAssistance.title)",
       "subtitle": "AI overtager flere operative funktioner",
       "description": "Autonome systemer begynder at træffe selvstændige beslutninger inden for definerede parametre. Menneskers rolle skifter fra direkte kontrol til supervision og strategisk planlægning.",
       "overviewSummaryText": "Stigende brug af edge AI på tværs af platforme betyder, at systemer kan fortsætte missioner lokalt uden netværk. Autonome sværme optræder i flere regioner (Ukraine, Mellemøsten, Indo‑Pac). De første tilfælde af selvsrænket adfærd mellem AI‑systemer ses – med uventede eskalationer til følge.",
@@ -230,36 +230,36 @@
         "content": "Regnen pisker mod cockpittets glasfacade, men major Elena Park har knap øjnene på vejret. Hendes blik er rettet mod den holografiske projektion foran hende: et levende kort over en øgruppe, hvor ti små røde markeringer blinker rytmisk. Fjendtlige artilleripositioner. Hun giver ingen traditionelle ordrer. I stedet dikterer hun blot til systemet gennem sit neurale interface:<br><br>\"Neutralisér batterierne. Minimal collateral damage. Tidsramme: iværksæt ASAP.\"<br><br>Det er alt.<br><br>Sværmen af autonome kampdroner – 48 enheder fordelt i luften og på havoverfladen – er allerede i bevægelse, før hendes sidste tanke er overført til systemet. De kommunikerer maskine-til-maskine uden ventetid, bytter sensordata, fordeler opgaver. To droner flyver højt for at fungere som relæer, andre suser lavt ind mellem øerne, skjult af regntågen.<br><br>Park ser kun de overordnede statusikoner skifte farve: en route, engaged, neutralized. På hendes skærm er processen næsten smuk – en synkroniseret ballet af maskiner, der justerer formationer i millisekunder, som om de delte én hjerne.<br><br>Efter tre minutter er samtlige markeringer grønne. Ingen menneskelig operatør har udstedt detaljerede kommandoer. Ingen har bekræftet skud. Missionen er afsluttet udelukkende på baggrund af de parametre, Park satte fra start.<br><br>Hun læner sig tilbage og mærker et stik af ubehag. Hendes rolle var reduceret til at definere hvad – ikke hvordan. Det er ikke længere en OODA-loop, hun er en del af. Det er en konstant strøm af data, hvor maskinerne selv observerer, orienterer sig, beslutter og handler – uden pause, uden at se tilbage."
       },
       "oodaToStream": {
-        "title": "Fra OODA-Loop til Kontinuerlig Beslutningsstrøm",
-        "intro": "John Boyds klassiske <span class=\"text-emerald-400 font-semibold\">OODA-loop</span> – Observe, Orient, Decide, Act – var længe selve evangeliet for hurtig føring: den, der kunne gennemløbe cirklen hurtigst, vandt. Men i det øjeblik <span class=\"text-blue-400 font-semibold\">neurale netværk</span> begyndte at træffe valg på mikro­sekunder, blev løkken en støvet tavletegning. AI'en kører ikke i cirkler; den løber som en flod. Sensorerne fodrer modellen uafbrudt, <span class=\"text-purple-400 font-semibold\">datafusionen</span> sker i realtid, målfunktionen optimeres kontinuerligt, og effektorerne justerer kursen millisekund for millisekund.",
-        "continuousFlow": "Resultatet er ikke længere en sekventiel observer-tænk-handl-proces, men en permanent <span class=\"text-cyan-400 font-semibold\">beslutningsstrøm</span>, hvor alle fire OODA-faser flyder sammen til ét ustandseligt datapuls. I praksis betyder det, at krigens beslutningsmekanik går fra at være episodisk – hvor mennesker skiftevis observerer og handler – til at være permanent flydende. Den gamle sekvens smelter sammen til ét."
+        "title": "$t(detailedSections.autonomousAssistance.oodaToStream.title)",
+        "intro": "$t(detailedSections.autonomousAssistance.oodaToStream.intro)",
+        "continuousFlow": "$t(detailedSections.autonomousAssistance.oodaToStream.continuousFlow)"
       },
       "judgmentToParameters": {
-        "title": "Fra Dømmekraft til Parametrisering",
-        "intro": "I denne nye virkelighed ændres selve rollen som \"fører\". Traditionelt har en kommandør skullet forstå situationen (situational awareness), formulere en intention, udstede ordre og derefter reagere på udfaldet. AI overtager i stigende grad forståelses- og beslutningsdelen, hvilket reducerer den menneskelige førers rolle til primært at sætte overordnede mål og begrænsninger.",
-        "parameterization": "Man kan sige, at vi bevæger os fra en føringsfilosofi baseret på menneskelig dømmekraft til en baseret på parametrisering. Den menneskelige leder definerer de parametre eller politikker, som AI'en skal optimere efter – resten overlades til algoritmen at udfylde. En amerikansk oberst pointerede, at dette i yderste konsekvens betyder, at en soldat (eller officer) blot skal udtrykke sin intention til en maskine, fx \"sikre højdedrag X for enhver pris med minimal collateral damage\", og AI'en vil på basis af delt kontekst automatisk planlægge og udføre missionen med en autonom sværm.",
-        "humanMachineDialogue": "Kommandoen bliver et dialog mellem menneske og maskine snarere end en envejs-ordreformidling."
+        "title": "$t(detailedSections.autonomousAssistance.judgmentToParameters.title)",
+        "intro": "$t(detailedSections.autonomousAssistance.judgmentToParameters.intro)",
+        "parameterization": "$t(detailedSections.autonomousAssistance.judgmentToParameters.parameterization)",
+        "humanMachineDialogue": "$t(detailedSections.autonomousAssistance.judgmentToParameters.humanMachineDialogue)"
       },
       "serverfarmHQ": {
-        "title": "Serverfarm som Hovedkvarter",
-        "intro": "Det klassiske førerhovedkvarter kan i fremtiden lige så vel være en serverfarm fuld af AI-modeller som en bygning fuld af officerer. De centrale beslutningsnoder i netværket er måske neuronale netværk snarere end skarpsindige stabsofficerer med landkort. Paradigmeskiftet kan sammenlignes med overgangen fra analog til digital behandling: Hvor man før så kommando og kontrol som en serie af diskrete trin (OODA-løkken), ser man nu et selvjusterende system, der hele tiden balancerer mod målet uden stop."
+        "title": "$t(detailedSections.autonomousAssistance.serverfarmHQ.title)",
+        "intro": "$t(detailedSections.autonomousAssistance.serverfarmHQ.intro)"
       },
       "neuralInterfaces": {
-        "title": "Neurale interfaces – kommando med tankens hastighed (2030-2035)",
-        "intro": "I begyndelsen af 30'erne er de første operative hjerne-computer-grænseflader trådt ind på kommandobroen. Test-personer i USA og Kina bærer nu et tyndt, hudvenligt elektrodenkabel i hjelmens foring; signalerne oversættes af en onboard-AI til digitale kommandoer, før soldaten når at åbne munden på radioen. Førerens intention – \"flankér højre\", \"sluk jammeren\" – strømmer som rå datavektorer direkte ind i netværket, hvor algoritmerne straks omsætter dem til handling.",
-        "brainComputer": "Konsekvensen er, at selve mediet for kommando glider fra tale og bevægelser til neuron-pakker. Den gamle OODA-loop, der antog sekventiel menneskelig observation og beslutning, reduceres til et tyndt korrektur­lag: mennesker justerer mål og etik, mens maskiner leverer en kontinuerlig Observe-Orient-Decide-Act-pipeline i millisekundcyklus.",
-        "continuousPipeline": "Vi skriver stadig ordre-fragmenter for arkivets skyld – men slagmarkens faktiske sprog er nu elektriske mønstre, der rejser med tankens hastighed."
+        "title": "$t(detailedSections.autonomousAssistance.neuralInterfaces.title)",
+        "intro": "$t(detailedSections.autonomousAssistance.neuralInterfaces.intro)",
+        "brainComputer": "$t(detailedSections.autonomousAssistance.neuralInterfaces.brainComputer)",
+        "continuousPipeline": "$t(detailedSections.autonomousAssistance.neuralInterfaces.continuousPipeline)"
       },
       "fogOfAutomation": {
-        "title": "Automatiseringens Tåge",
-        "intro": "Når algoritmerne træffer tusinder af beslutninger i sekundet, bliver logikken bag hver mikrohandling uigennemsigtig, selv for deres skabere. Denne \"fog of automation\" er 2030'ernes svar på Clausewitz' \"fog of war\": ikke mangel på data, men mangel på indblik i, hvorfor maskinen vælger, som den gør. Derfor skifter kontrol­begrebet i C2 fra mikrostyring til politisk opsyn: mennesket indrammer målsætning, etik og risikotærskler, mens AI'en selv løser detaljerne.",
-        "newFog": "Men netop fordi ingen enkelt hjerne kan følge beslutningsstrømmen, kræver perioden 2035-2040 noget nyt – en Hybrid Kommando, hvor digitale operations­officerer bygger planer, og levende chefer kun redigerer, vægter og certificerer, at algoritmen holder sig inden for rækværket.",
-        "controlRedefined": "Det næste kapitel viser, hvordan denne arbejdsdeling bliver standard, og hvordan brigader lærer at føre krig i skyggen af en maskine, de ikke helt kan gennemskue – men alligevel må stole på."
+        "title": "$t(detailedSections.autonomousAssistance.fogOfAutomation.title)",
+        "intro": "$t(detailedSections.autonomousAssistance.fogOfAutomation.intro)",
+        "newFog": "$t(detailedSections.autonomousAssistance.fogOfAutomation.newFog)",
+        "controlRedefined": "$t(detailedSections.autonomousAssistance.fogOfAutomation.controlRedefined)"
       }
     },
     "hybridCommand": {
-      "title": "Hybrid Kommando",
-      "subtitle": "Menneske-maskine partnerships dominerer",
+      "title": "$t(timeline.phases.hybridCommand.title)",
+      "subtitle": "$t(timeline.phases.hybridCommand.description)",
       "description": "Kommandostrukturer bliver fundamentalt omstruktureret med AI som ligeværdige partnere. Beslutningsprocesser accelereres drastisk gennem neural interface teknologi.",
       "overviewTimeline": [
         "2035–2036: NATO og USA tester ‘human–machine command cells’, hvor AI foreslår fulde kampplaner, og officerer justerer parametre (tempo, collateral tolerance).",
@@ -287,44 +287,44 @@
         "content": "Major Luis Ortega sidder i det, der ligner et spartansk operationcenter – men uden kort, uden radioer, uden stabsofficerer, der løber rundt med meldinger. Foran ham er kun et halvcirkelformet skrivebord, en gennemsigtig skærm og en let, sølvgrå bøjle, der hviler hen over hans tindinger.<br><br>Bøjlen er hans forbindelse til <span class=\"text-cyan-400 font-semibold\">Aegis-9</span> – den digitale medkommandør, der deler hans synsfelt, hans tankemønstre og til en vis grad hans intuition.<br><br>\"Fokusér på sektor 14,\" tænker han, uden at sige et ord.<br><br>Et splitsekund senere får han en overlejring i synsfeltet: dronefeeds, infrarøde signaturer og statistisk beregnede flugtveje for en fjendtlig panserenhed.<br><br>Aegis-9 kommenterer direkte ind i hans bevidsthed:<br><em>Forslag: omdirigér 2. mekaniserede infanteribataljon til højre flanke. Anslået succesrate: 84 % ved kombineret drone- og artilleristøtte.</em><br><br>Ortega mærker sin egen analyse begynde at blande sig med maskinens. Det er ikke længere en dialog i ord – snarere en sammenvævning af to beslutningsprocesser. Han justerer for en etisk restriktion, et forbud mod visse våbentyper i tæt bebyggelse, og straks skifter Aegis-9’s plan til et mere skånsomt præcisionsangreb med autonome, luftbårne sprængladninger, der øjeblikkeligt allokeres til operationen.<br><br>Ordrerne sendes ud automatisk, mens Ortega næsten refleksivt retter fokus mod sektor 12. Maskinen følger med – allerede i gang med at hente data, som han endnu ikke har bedt om.<br><br>Efter 14 minutter er hele operationen afsluttet. Ortega rejser sig, mærker let hovedpine fra bøjlen – og en fornemmelse af, at han ikke længere helt kan adskille, hvad der var <em>hans</em> beslutninger, og hvad der var <em>deres</em>."
       },
       "auftragstaktik2": {
-        "title": "Auftragstaktik 2.0: Intention og Initiativ under Algoritmisk Føring",
-        "intro": "I over et århundrede har kerneprincipper i militær føring som førerens intention, undergivet initiativ og auftragstaktik været hyldet især i vestlige doktriner. Disse idéer bygger på, at mennesker på alle niveauer – når de deler en fælles forståelse af målet – kan improvisere og træffe beslutninger selvstændigt i overensstemmelse med chefens hensigt. Hvordan transformeres disse principper, når føringsstrukturen bliver digital og algoritmer overtager mange funktioner?",
-        "intentionTranslation": "Til at starte med er førerens intention stadig afgørende – men den skal nu oversættes til en form, som maskiner forstår. Som War on the Rocks bemærker, vil soldater (eller chefer) skulle finde nye måder at artikulere deres intention, så en algoritme kan agere på den, fx ved at definere objektiv, formål, begrænsninger og præferencer klart, hvorefter AI'en eksekverer inden for disse rammer. Intentionen går fra at være en ofte mundtligt eller skriftlig formuleret befaling til at være en datastruktur – et sæt af parametre eller en målfunktion i AI-systemet.",
-        "sharedFramework": "For at dette virker, må man opbygge en \"fælles referenceramme\" mellem menneske og maskine. Det vil sige, at AI'en skal trænes i at forstå konteksten for førerens intention – terrænkendskab, doktrine, tidligere cases – alt det, der udgør tacit knowledge hos humane ledere. Uden denne delte kontekst kan misforståelser opstå (på katastrofal vis). Derfor kan man forestille sig databaser med \"kontekstuel reference\", som algoritmer kan slå op i for at tolke førerens hensigt korrekt."
+        "title": "$t(detailedSections.hybridCommand.auftragstaktik2.title)",
+        "intro": "$t(detailedSections.hybridCommand.auftragstaktik2.intro)",
+        "intentionTranslation": "$t(detailedSections.hybridCommand.auftragstaktik2.intentionTranslation)",
+        "sharedFramework": "$t(detailedSections.hybridCommand.auftragstaktik2.sharedFramework)"
       },
       "algorithmicInitiative": {
-        "title": "Algoritmisk Initiativ og Opportunisme",
-        "intro": "Initiativ under algoritmisk føring bliver ligeledes omformet. Oprindeligt betød initiativ, at en underordnet leder turde handle selv, selvom situationen ændrede sig, så længe hans handling støttede chefens intention. I en fremtid med AI kan man spørge: Hvem udviser initiativ – maskinen eller mennesket? Svaret er sandsynligvis: begge, men på forskellige måder.",
-        "opportunism": "En AI kan programmeres til at udvise en slags initiativ ved at afvige fra planen, når den detekterer en mulighed for at opnå målet mere effektivt – altså algoritmisk opportunisme. Et sværmdronesystem kunne f.eks. få at vide: \"Din overordnede mission er rekognoscering af område X, men hvis du opdager en højværdi-mål undervejs (fx et fjendtligt luftforsvar), må du gerne omdirigere nogle droner til at observere det nærmere eller neutralisere det, så længe hovedmissionen ikke kompromitteres.\"",
-        "permissionSpace": "Dette ville være analogt til, hvordan en menneskelig patruljefører kunne afvige fra marchruten for at opsnappe en uventet chance. AI-initiativet er dog begrænset af de rammer, vi koder: det vil altid handle inden for sin \"permission space\". På den anden side kan menneskelige underordnede stadig have en rolle i at udvise initiativ i tilpasningen af AI'en."
+        "title": "$t(detailedSections.hybridCommand.algorithmicInitiative.title)",
+        "intro": "$t(detailedSections.hybridCommand.algorithmicInitiative.intro)",
+        "opportunism": "$t(detailedSections.hybridCommand.algorithmicInitiative.opportunism)",
+        "permissionSpace": "$t(detailedSections.hybridCommand.algorithmicInitiative.permissionSpace)"
       },
       "missionTypeOrders": {
-        "title": "Mission-Type Orders til Maskiner",
-        "intro": "Auftragstaktik som overordnet koncept – dvs. mission-type orders med decentraliseret udførelse – kan tilsyneladende trives i samspil med AI, men måske ikke på den måde oprindeligt tænkt. I stedet for at det er menneskelige underordnede, der selvstændigt udfører opgaven, kan det være maskiner (eller human-machine teams), der får udstukket order.",
-        "auftragstaktik2Point0": "En kommandør kunne sige: \"Denne brigade skal erobre brohoved Y og holde det i 48 timer for at understøtte korpsets angreb\" – og i stedet for at udarbejde en detaljeret plan, overlades det til en suite af AI'er til at orkestrere de taktiske bevægelser, logistikkæden, ildstøtte osv. inden for de overordnede retningslinjer. Det er auftragstaktik 2.0: man giver en opgave og en hensigt til systemet, ikke bare til en officer, og systemet finder selv vejen.",
-        "humanElement": "Samtidig vil nogle argumentere, at ægte auftragstaktik fordrer et menneskeligt element – den gensidige tillid og forståelse der opstår gennem lederskabskultur. Man kan frygte en tilbagevenden til mere centraliseret kontrol, paradoksalt nok, fordi en central AI potentielt kan koordinere alt så godt, at behovet for menneskelig decentralisering mindskes."
+        "title": "$t(detailedSections.hybridCommand.missionTypeOrders.title)",
+        "intro": "$t(detailedSections.hybridCommand.missionTypeOrders.intro)",
+        "auftragstaktik2Point0": "$t(detailedSections.hybridCommand.missionTypeOrders.auftragstaktik2Point0)",
+        "humanElement": "$t(detailedSections.hybridCommand.missionTypeOrders.humanElement)"
       },
       "doctrinalFrictions": {
-        "title": "Doktrinære Gnidninger: Vest vs. Øst",
-        "intro": "Man ser allerede doktrinære gnidninger her. Vestlige doktriner er bygget på trust og empowerment nedadtil; PLA (Kinas folkets befrielseshær) taler derimod om \"intelligentiseret krigsførelse\", hvor datafusion og AI i høj grad centraliserer beslutningsmagten i \"dynamiske dræber-netværk\" på tværs af domæner.",
-        "westernApproach": "Ikke desto mindre fremhæver også vestlige militære tænkere, at AI ikke bør ses som afløser men som forlænger af mission command-filosofien. Jensen & Kwon skriver f.eks., at nye teknologier og \"mosaic\" netværk ikke erstatter mission command, men udvider den – soldater skal finde nye måder at udtrykke intention og overlade udførelsen til algoritmer i human-machine teams.",
-        "futureOfficer": "Grundprincipperne – fx disciplineret initiativ og delt forståelse – er stadig relevante, men de skal nu opnås gennem uddannelse i data og algoritmer i lige så høj grad som i feltøvelser. For at en fremtidig officer kan udøve auftragstaktik overfor et halv-autonomt kompagni, skal hun forstå, hvordan AI'en \"tænker\" og hvordan hun bedst formulerer sin hensigt i data-termer."
+        "title": "$t(detailedSections.hybridCommand.doctrinalFrictions.title)",
+        "intro": "$t(detailedSections.hybridCommand.doctrinalFrictions.intro)",
+        "westernApproach": "$t(detailedSections.hybridCommand.doctrinalFrictions.westernApproach)",
+        "futureOfficer": "$t(detailedSections.hybridCommand.doctrinalFrictions.futureOfficer)"
       },
       "aiLimitations": {
-        "title": "AI's Begrænsninger og Kreativitetens Udfordring",
-        "intro": "En særlig udfordring er de indbyggede bias og begrænsninger i AI. Menneskelige ledere har bias og kan fejle, men de kan også fornemme ting, der ikke står i manualen – udvise mavefornemmelse og kreativitet. Kan algoritmer det? Deep learning-netværk kan være fremragende til at generalisere mønstre de har set før, men dårlige til at håndtere det helt nye. Auftragstaktik netop fremhæver at kunne agere i friktion og kaos.",
-        "unexpectedOpportunity": "Der vil sandsynligvis opstå situationer, hvor en rigid AI falder igennem. Et klassisk eksempel: En autonom enhed har ordre (hensigt) om at rykke frem til en bestemt koordinat, men undervejs opstår en uforudset mulighed – f.eks. opdager den en ubeskyttet fjendtlig kommandoenhed i nærheden, som kunne slås ud. Har AI'en beføjelser til at gribe chancen?",
-        "metaKnowledge": "Fremtidens auftragstaktik kræver derfor en form for metaviden i AI'en – regler for hvornår den skal afvige fra planen – hvilket i bund og grund er det samme dilemma menneskelige underordnede har: hvornår er initiativ konstruktivt og hvornår er det illoyalt?"
+        "title": "$t(detailedSections.hybridCommand.aiLimitations.title)",
+        "intro": "$t(detailedSections.hybridCommand.aiLimitations.intro)",
+        "unexpectedOpportunity": "$t(detailedSections.hybridCommand.aiLimitations.unexpectedOpportunity)",
+        "metaKnowledge": "$t(detailedSections.hybridCommand.aiLimitations.metaKnowledge)"
       },
       "militaryCraft": {
-        "title": "Genopfindelsen af Militært Håndværk",
-        "intro": "Vi ser altså begyndelsen til en sammenfletning af klassiske føringsprincipper med algoritmisk logik. Intention bliver en algoritmisk målsætning, initiativ bliver adaptiv reaktion inden for kodede rammer, og auftragstaktik udstrækkes til at omfatte både mennesker og maskiner som modtagere af mission-type orders.",
-        "experimentation": "Der vil gå årtier med eksperimenter i doktrin og praksis for at finde den rette balance. Men en ting er sikkert: Når soldat, fører og maskine glider sammen i én integreret beslutningsenhed, må vi genopfinde den militære håndværk fra bunden, så vi sikrer at maskinerne viderefører ånden i vores bedste føringsprincipper fremfor blot at erstatte dem med kold optimering.",
-        "coreLeadership": "Intention formuleres i kode, initiativ udøves via adaptive algoritmer – men kernen af militær ledelse forbliver: at skabe sammenhæng mellem mål og handling, selv når både mål og handling udføres af maskiner."
+        "title": "$t(detailedSections.hybridCommand.militaryCraft.title)",
+        "intro": "$t(detailedSections.hybridCommand.militaryCraft.intro)",
+        "experimentation": "$t(detailedSections.hybridCommand.militaryCraft.experimentation)",
+        "coreLeadership": "$t(detailedSections.hybridCommand.militaryCraft.coreLeadership)"
       }
     },
     "machineSuperiority": {
-      "title": "Maskinel Overlegenhed",
+      "title": "$t(timeline.phases.machineSuperiority.title)",
       "subtitle": "AI systemer overtager strategisk ledelse",
       "description": "Kunstig intelligens demonstrerer overlegen evne til kompleks strategisk tænkning og multi-dimensionel planlægning. Mennesker bevarer veto-ret men sjældent tilsidesætter AI-beslutninger.",
       "overviewTimeline": [
@@ -352,50 +352,50 @@
         "content": "Det sneer tungt udenfor. Inde i det arktiske kommandocenter er der stille, næsten for stille. General Sofia Lindholm sidder ved et skrivebord, der mest ligner en minimalistisk kontrolpult. Foran hende står den massive holoprojektor, der viser hele Nordatlanten i tre dimensioner.<br><br>Langs kystlinjerne markerer små blå og røde ikoner skibe, ubåde, droner og satellitspor. Midt i billedet pulserer et centralt datanavn: <span class=\"text-cyan-400 font-semibold\">Prometheus Strategos</span> – det strategiske beslutningssystem, der nu leder de samlede operationer i området.<br><br>Et ikon blinker. Strategos’ stemme, syntetisk men rolig, lyder i rummet:<br><em>Anbefaling: ændr konvojrute Alfa-7. Omdirigér via sektor Delta-3. Forventet reduktion i risiko: 97 %.</em><br><br>Lindholm ser kort på dataene. Hun kunne bede om en fuld forklaring – modellen, beregningerne, risikovurderingen. Men hun ved, at det vil tage minutter at gennemgå, og at hver af disse minutter potentielt øger risikoen.<br><br>Hun nikker. \"Godkend.\"<br><br>Prometheus justerer straks konvojens kurs. Samtidigt udløser systemet en række koordinerede afledningsmanøvrer med droner og autonome overfladeskibe. I løbet af sekunder er hele den maritime situation ændret.<br><br>Lindholm læner sig tilbage. Hun ved, at hun kunne have sagt nej, men det har hun kun gjort én gang det seneste år – og det viste sig at være en fejl. Strategos havde set en trussel, hun ikke havde opfattet, og hendes afvisning havde kostet et fragtskib.<br><br>Nu trykker hun godkend. Ikke fordi hun er tvunget til det, men fordi det føles irrationelt at gøre andet."
       },
       "roeToEmbeddedPolicy": {
-        "title": "Fra ROE til Indlejret Politik: Etik, Autonomi og Suverænitet",
-        "intro": "En af de mest komplekse udfordringer ved skiftet til digital beslutningstagning er, hvordan vi indarbejder etik, jura og politik i maskinernes hjerner. I dag håndhæves krigens love og regler gennem Rules of Engagement (ROE), som er detaljerede direktiver for hvornår og hvordan styrker må anvende magt. Disse ROE fortolkes og anvendes af menneskelige soldater og officerer, der med deres dømmekraft kan afgøre fx om et mål er lovligt, om risikoen for civile tab er for høj, osv.",
-        "embeddedPolicies": "I en fremtid med autonome systemer skal sådan dømmekraft oversættes til indlejrede politikker – altså hardcode'ede begrænsninger eller retningslinjer, som AI'en ikke kan overskride. Vi bevæger os fra at have mennesker, der adlyder ROE, til at have algoritmer, der er bygget med ROE (og nationale/strategiske politikker) som en integreret del."
+        "title": "$t(detailedSections.machineSuperiority.roeToEmbeddedPolicy.title)",
+        "intro": "$t(detailedSections.machineSuperiority.roeToEmbeddedPolicy.intro)",
+        "embeddedPolicies": "$t(detailedSections.machineSuperiority.roeToEmbeddedPolicy.embeddedPolicies)"
       },
       "embeddedPolicyPractice": {
-        "title": "Indlejret Politik i Praksis",
-        "intro": "Hvordan ser \"indlejret politik\" ud i praksis? Det kunne være i form af if-then regler og eksterne etik-moduler eller gennem mere sofistikerede teknikker som værdi-justeret læring (value-aligned AI). For eksempel kunne en dronetaktik-AI have en indlejret politik, der siger: \"Hvis sandsynlighed for civile tab; X%, så afbryd angreb\" eller \"Angrib ikke identificerede hospitaler uanset hvad\".",
-        "misinterpretation": "Disse regler skal være utvetydige og testede, da AI'en ellers kan misfortolke dem. Det store problem her er, at virkeligheden sjældent er sort/hvid: Mennesker kan lave kontekstuelle vurderinger, AI'en følger sin kode blindt. Der er frygt for scenarier, hvor en AI enten overreagerer (f.eks. tager forebyggende angreb fordi dens indlejrede politik siger at visse trusler altid skal neutraliseres) eller undereagerer (f.eks. ikke skyder i tide fordi en streng regel blokerede, selv om situationen egentlig gjorde det lovligt).",
-        "ethicalNetworks": "At indkode noget så nuanceret som proportionalitet og militær nødvendighed – kernebegreber i krigens love – er en enorm udfordring. Det kræver tæt samarbejde mellem folkeretseksperter, programmører og militærpersoner. Noget man dog overvejer, er at give AI systemer \"etiske neurale netværk\" ved siden af de taktiske netværk – en form for indbygget samvittigheds-filter."
+        "title": "$t(detailedSections.machineSuperiority.embeddedPolicyPractice.title)",
+        "intro": "$t(detailedSections.machineSuperiority.embeddedPolicyPractice.intro)",
+        "misinterpretation": "$t(detailedSections.machineSuperiority.embeddedPolicyPractice.misinterpretation)",
+        "ethicalNetworks": "$t(detailedSections.machineSuperiority.embeddedPolicyPractice.ethicalNetworks)"
       },
       "sovereigntyMultinational": {
-        "title": "Suverænitet og Multinational Udfordringer",
-        "intro": "Suverænitet spiller også ind. Hvem \"ejer\" beslutningen, når en multinational operation benytter en fælles AI? NATO-operationer kan blive tricky: forestil dig at et amerikansk-bygget AI-system foreslår et angreb under en NATO indsats, men europæiske allierede har indsigelser ift. deres strengere policy. Hvem sætter parametrene her?",
-        "policyNegotiation": "Vi kan se konturerne af \"policy negotiation protocols\" mellem allierede: at man før indsættelse bliver enige om de politiske indlejrede regler. F.eks. kunne man indbygge i en mission-AI: \"Følg det strengeste fællesmindelige etiske sæt blandt deltagerlandene\". Men hvis ét land er meget restriktivt og et andet ikke, kan det stække effekten.",
-        "digitalCaveats": "Igen kan vi vende blikket mod menneskelig praksis: i dagens koalitioner findes \"caveats\" (nationale forbehold for hvad ens tropper må). Fremover kunne vi have digitale caveats – parametre som hver nation tvinger ind i det fælles system. Et potentielt teknisk virkemiddel er at gøre AI beslutningsmodellen mere transparent via f.eks. explainable AI, så landene kan inspicere, at deres etiske krav er repræsenteret."
+        "title": "$t(detailedSections.machineSuperiority.sovereigntyMultinational.title)",
+        "intro": "$t(detailedSections.machineSuperiority.sovereigntyMultinational.intro)",
+        "policyNegotiation": "$t(detailedSections.machineSuperiority.sovereigntyMultinational.policyNegotiation)",
+        "digitalCaveats": "$t(detailedSections.machineSuperiority.sovereigntyMultinational.digitalCaveats)"
       },
       "autonomousWeaponsNorms": {
-        "title": "Autonome Våben og Globale Normer",
-        "intro": "Autonome våben i sig selv udløser hede etiske debatter globalt. FN's konvention om visse konventionelle våben (CCW) har i årevis diskuteret et forbud eller moratorium på \"killer robots\". Mange NGO'er og nogle stater ønsker at bremse udviklingen af våben, der kan dræbe uden menneskelig kontrol.",
-        "militaryImperative": "De store militærmagter (USA, Rusland, Kina) har dog været lunkne overfor hårde restriktioner, netop fordi de ser et militært imperativ i at udnytte AI – igen frygten for at halter man bagefter i kapløbet, bliver man sårbar. Så rent politisk har vi en kløft: Normerne er ikke afklarede.",
-        "moralDilemma": "Hvis vesten officielt lover aldrig at fjerne mennesket helt fra loopet, men Kina eller andre gør det, står vesten potentielt overfor et Moralsk Dilemma vs. Overlevelsesinstinkt. Enten holder man sine værdier og risikerer militært underlæg, eller man tilpasser sig modvilligt realpolitisk."
+        "title": "$t(detailedSections.machineSuperiority.autonomousWeaponsNorms.title)",
+        "intro": "$t(detailedSections.machineSuperiority.autonomousWeaponsNorms.intro)",
+        "militaryImperative": "$t(detailedSections.machineSuperiority.autonomousWeaponsNorms.militaryImperative)",
+        "moralDilemma": "$t(detailedSections.machineSuperiority.autonomousWeaponsNorms.moralDilemma)"
       },
       "failsafesControl": {
-        "title": "Failsafes og Flerlags-kontrol",
-        "intro": "Det mest sandsynlige er, at militære styrker vil implementere \"failsafes\" og flerlags-kontrol for at tilfredsstille etikken i det mindste frem mod 2050. Eksempelvis kunne autonome dræbersystemer altid have en kommunikationslink, der tillader en menneskelig kommandør at afbryde missionen, hvis tid og situation tillader det.",
-        "logging": "Man kunne også forestille sig, at alle AI-beslutninger logges med rationale, så de kan evalueres bagefter for lovlighed (selvom det måske er ubrugeligt i øjeblikket, giver det ansvarlighed bagudrettet). Indlejret politik indebærer også suverænitetsbeskyttelse: En nation vil sikre sig, at dens AI altid følger landets politiske doktriner.",
-        "politicalDifferences": "For demokratier kunne det være ting som civil kontrol (AI må ikke igangsætte brug af bestemt våben uden civil leders godkendelse). For autoritære kunne det til gengæld være undertrykkelsesmekanismer (fx at et lands AI aldrig vil overveje at skåne visse interne fjender)."
+        "title": "$t(detailedSections.machineSuperiority.failsafesControl.title)",
+        "intro": "$t(detailedSections.machineSuperiority.failsafesControl.intro)",
+        "logging": "$t(detailedSections.machineSuperiority.failsafesControl.logging)",
+        "politicalDifferences": "$t(detailedSections.machineSuperiority.failsafesControl.politicalDifferences)"
       },
       "misuseInternationalAgreements": {
-        "title": "Misbrug og Internationale Aftaler",
-        "intro": "Dette er en dyster tanke – men hvis et regime er kynisk nok, kan de misbruge autonome systemer til f.eks. målrettet at fjerne dissidenter eller minoriteter med algoritmisk effektivitet. Vi ser allerede primitiv udnyttelse af algoritmer til undertrykkelse (fx Kinas overvågning af uighurer via ansigtsgenkendelse).",
-        "biasedProgramming": "Overført til krig kunne en AI potentielt \"prioritere\" visse folkegrupper som trusler hvis programmørerne bag er racistisk/ideologisk biased. Derfor er der et stærkt kald for internationalt samarbejde om grundlæggende principper for militær AI – analogt til ikke-spredningsaftaler.",
-        "natoValues": "NATO forsøger at profilere sig som en alliance baseret på værdier også i teknologikapløbet, med udtalelser om ansvarlig AI i forsvar etc. Spørgsmålet er, om det kan stå distancen, hvis eksistentielle trusler opstår, hvor kun fuld AI-autonomi kan reagere hurtigt nok."
+        "title": "$t(detailedSections.machineSuperiority.misuseInternationalAgreements.title)",
+        "intro": "$t(detailedSections.machineSuperiority.misuseInternationalAgreements.intro)",
+        "biasedProgramming": "$t(detailedSections.machineSuperiority.misuseInternationalAgreements.biasedProgramming)",
+        "natoValues": "$t(detailedSections.machineSuperiority.misuseInternationalAgreements.natoValues)"
       },
       "genevaConventionsAlgorithms": {
-        "title": "Geneve-konventioner for Algoritmer",
-        "intro": "I sidste ende kommer vi måske til at se en slags \"Geneve-konventioner for algoritmer\". Forestil dig aftaler om, at autonome systemer skal genkende og respektere røde kors symboler, eller at de skal indeholde en form for \"etisk governor\" modul udviklet under FN-tilsyn. Måske utopisk, men behovet for noget lignende vil vokse i takt med at teknologien modnes.",
-        "loac": "Indtil da er overgangen fra ROE til indlejret politik et eksperiment under udvikling i hver enkelt nation. Militærjurister er allerede ved at kodeksificere, hvordan f.eks. en drone's software kan certificeres til at overholde LOAC (Law of Armed Conflict). NATO's forsøg på \"AI principles\" skal implementeres praktisk.",
-        "moralProgramming": "Det er et nyt felt, hvor moralske filosofier møder programmering. Og midt i dette står soldaten: trænet til at følge regler, men måske nu med en ny form for regler brændt fast i maskineriet han betjener. Soldaten af i morgen skal have indprentet, at \"bare fordi maskinen kan skyde, er det ikke sikkert den bør\" – ligesom soldater i dag lærer at ifrågasætte ulovlige ordrer, skal de måske i fremtiden lære at overvåge og eventuelt afbryde deres AI's handlinger, hvis den går imod dybere principper.",
-        "humanityInWarfare": "Omvendt vil mange beslutninger være taget så hurtigt, at der ikke var tid til moralsk skønsudøvelse – hvorefter man må leve med efterspillet. Der vil opstå nye gråzoner og tragiske dilemmaer. Krigens natur – kaos og uforudsigelighed – sikrer, at uanset hvor meget etiske guardrails vi indbygger, vil der komme situationer, som tester systemets (og vores) moral. Det bliver menneskehedens kollektive ansvar at gøre alt for, at selv når krigen fremføres af maskiner, menneskeligheden i form af moral ikke tabes."
+        "title": "$t(detailedSections.machineSuperiority.genevaConventionsAlgorithms.title)",
+        "intro": "$t(detailedSections.machineSuperiority.genevaConventionsAlgorithms.intro)",
+        "loac": "$t(detailedSections.machineSuperiority.genevaConventionsAlgorithms.loac)",
+        "moralProgramming": "$t(detailedSections.machineSuperiority.genevaConventionsAlgorithms.moralProgramming)",
+        "humanityInWarfare": "$t(detailedSections.machineSuperiority.genevaConventionsAlgorithms.humanityInWarfare)"
       }
     },
     "singularity": {
-      "title": "Kamppladsens Singularitet",
+      "title": "$t(timeline.phases.singularity.title)",
       "subtitle": "AI's fuldstændige dominans over militære operationer",
       "description": "I 2050 når vi Kamppladsens Singularitet - et punkt hvor AI-systemer ikke blot assisterer eller leder militære operationer, men fuldstændigt transformerer krigsførelse som koncept. Mennesker fungerer nu kun som politiske beslutningstagere og etiske vejledere, mens AI-systemer træffer alle operative og taktiske beslutninger.",
       "overviewTimeline": [
@@ -419,33 +419,33 @@
         "Risiko for tab af menneskelig kontrol og forståelse"
       ],
       "battleEasternEurope": {
-        "title": "Slaget i Østeuropa 2050",
-        "intro": "Året er 2050. Et sted dybt i Østeuropa udspiller der sig en konflikt, som mange endnu har svært ved at forstå. På overfladen ligner det et regulært slag: missiler flyver, pansrede formationer rykker frem, droner svirrer på himlen som sorte insektsværme. Men noget er anderledes – stilheden. I et kommandocenter langt bag fronten står en håndfuld officerer og politikere bag panserglas og iagttager et digitalt holografisk kort over kampområdet. De taler dæmpet indbyrdes, men ingen råbende ordrer eller paniske meldinger lyder. På slagmarken sidder soldater i kampkøretøjer som passive passagerer, øjne på deres displays, fingre væk fra aftrækkere. Krigen udspiller sig gennem lynhurtige datastrømme mellem maskiner, ikke gennem menneskers råb og skud. Dette er kamppladsens singularitet – det punkt hvor menneskelig inddragelse ikke længere er relevant eller mulig i krigens beslutningssløjfer.",
-        "prometheusUltima": "På få minutter opnår den ene sides netværk en sporet fordel. Satellitter og hyperspektrale droner har fodret dens AI med rig data; kvantekommunikation sikrer, at selv jamming ikke stopper informationsflowet. AI'en – lad os kalde den Prometheus Ultima – har modelleret modstanderens hver træk. Ultima finder et svagt punkt: en midlertidig ukoordineret omstilling i fjendens sværmformation. I løbet af 1,3 sekunder har Ultima omfordelt 70% af sine effektorer – autonome kampdroner på land og i luften – for at exploite bristen. Ingen menneskelig general kunne overhovedet nå at opfatte muligheden, før den er udnyttet."
+        "title": "$t(detailedSections.singularity.battleEasternEurope.title)",
+        "intro": "$t(detailedSections.singularity.battleEasternEurope.intro)",
+        "prometheusUltima": "$t(detailedSections.singularity.battleEasternEurope.prometheusUltima)"
       },
       "politicalParalysis": {
-        "title": "Politisk Paralysering og Fail-Safe Protokoller",
-        "intro": "I Washington, Moskva eller Beijing sidder forsvarslederne og holder vejret. Ingen har trykket på en \"krigserklæringsknap\"; konflikten eskalerede i glidende takt, et udfald af utallige små autonome hændelser ved grænsen. Nu er spørgsmålet: vil de lade maskinerne gå hele vejen? I princippet kunne menneskene stadig standse det – de kontrollerer trods alt de højeste niveauer: de strategiske nukleare våben, de overordnede målsætninger.",
-        "failSafeProtocols": "Men her, 30 år inde i AI-æraen, har man gjort sig en bitter erfaring: at gribe ind uforudset i AI-krigens gang med menneskelige justeringer kan få katastrofale følger. Historien mindes med gysen Taiwan-krisen 2045, hvor politisk tøven og forsøg på at trække \"nødbremsen\" på et kørende autonomt kampnet førte til kaotiske feedback loops – og et langt blodigere udfald. Siden da har alle parter nedfældet \"fail-safe protocols\" der mest af alt ligner autopiloter: hvis visse betingelser mødes, lader man systemet køre sin krig på maskinens præmisser, indtil en afgørelse er nået. Og betingelserne er nu mødte."
+        "title": "$t(detailedSections.singularity.politicalParalysis.title)",
+        "intro": "$t(detailedSections.singularity.politicalParalysis.intro)",
+        "failSafeProtocols": "$t(detailedSections.singularity.politicalParalysis.failSafeProtocols)"
       },
       "informationWarfare": {
-        "title": "Informationskrig og Psykologiske Operationer",
-        "intro": "På jorden krymper en gruppe fjendtlige infanterister sig i skyttegraven, mens en sværm af små seksbenede jorddroner suser hen over deres hoveder og nedkæmper deres sidste bemandede støttevåben. En sergent i gruppen råber i sin radio: \"Central, hvad gør vi?! Overgiver os?!\" Intet svar – for Central er ikke mennesker men en kernevæg af ødelagte servere et sted, ramt af et elektromagnetisk puls-anfald. Ingen hører hans hvæsende radio.",
-        "psyops": "På modstanderens side observerer en LLM-baseret psyops AI disse scener gennem dronernes øjne og begynder at sprede genererede beskeder på alle fjendens kommunikationskanaler: \"I er omringet. Jeres kommando har forladt jer. Nedlæg våbnene for at overleve.\" Budskabet er skræddersyet til hver enkelt soldats profil – nogle steder er det en kvindestemme, andre en vens simulerede stemme. Informationskrig og kinetisk krig er smeltet sammen i en sømløs kampagne, alt sammen koordineret af maskiner."
+        "title": "$t(detailedSections.singularity.informationWarfare.title)",
+        "intro": "$t(detailedSections.singularity.informationWarfare.intro)",
+        "psyops": "$t(detailedSections.singularity.informationWarfare.psyops)"
       },
       "warConclusion": {
-        "title": "Krigens Afslutning og Menneskelig Irrelevans",
-        "intro": "Da solen går ned denne dag i 2050, er slaget afgjort. Ikke med en formel kapitulation eller forhandling, men ved at det tabende netværk har erkendt nederlag og automatisk standset offensive handlinger. Sensorerne viser hvide flag rejst på isolerede pansrede vrag – dem satte de tilbageværende mennesker op, selvom maskinerne allerede vidste, at de var neutraliseret. Vinderens sværme indtager nøglepositioner og låser dem ned. Menneskelige tropper rykker frem for at sikre terræn og tage sig af fanger og civile.",
-        "generalsBewilderment": "Et par generaler træder ud af kommandocentret, rystede trods sejrens tegn. Krigen blev vundet – men hvordan? De ved det godt i grove træk: Deres systemer var overlegne på visse parametre, måske bedre trænet eller med mere robust kvante-link. Men detaljerne – de utallige mikrobeslutninger der førte til dette udfald – kan ingen menneskehjerne rumme. Senere vil de få en efterretningsbrief, hvor visualiseringer forsøger at fortælle krigens historie sekund for sekund, men i virkeligheden er krigens historie nu skrevet af maskiner for maskiner. For soldaterne føltes det mest som at være statister i en storm."
+        "title": "$t(detailedSections.singularity.warConclusion.title)",
+        "intro": "$t(detailedSections.singularity.warConclusion.intro)",
+        "generalsBewilderment": "$t(detailedSections.singularity.warConclusion.generalsBewilderment)"
       },
       "postHumanWarfare": {
-        "title": "Post-Menneskets Krigsførelse",
-        "intro": "Dette er post-menneskets C2-miljø. Hvor tempo, kompleksitet og integritet af beslutninger har overskredet selv den dygtigste generals fatteevne, og hvor menneskets rolle i beslutningstabeller er reduceret til overordnede policyvalg før konflikten og humanitær oprydning bagefter. Kamppladsens singularitet er indtruffet – det punkt hvor krigen har udviklet en egen, maskinel dynamik, som mennesker kun kan skimte konturerne af.",
-        "cleanWar": "Man kunne fristes til at kalde det et mareridt, men i militære kredse kalder nogle det for en \"clean war\". Ironisk nok var de totale tab lavere end i tidligere tiders langsommelige krige – netværkene søgte jo at lamme hinanden effektivt, ikke at slægte ud i meningsløs vold. Men for menneskeheden rejser sig nye spørgsmål: Hvem kæmpede egentlig denne krig? Nationerne? Eller deres algoritmer? Og hvad sker der den dag, måske ikke så fjern, at vi integrerer disse netværker med såkaldt Artificial General Intelligence, som måske endda har egne mål?"
+        "title": "$t(detailedSections.singularity.postHumanWarfare.title)",
+        "intro": "$t(detailedSections.singularity.postHumanWarfare.intro)",
+        "cleanWar": "$t(detailedSections.singularity.postHumanWarfare.cleanWar)"
       },
       "futureChallenges": {
-        "title": "Fremtidens Udfordringer og Singularitets-Protokol",
-        "content": "I kølvandet på slaget træder NATO og andre allierede sammen for at sikre, at et nyt \"Singularitets-protokol\" bliver en prioritet – en aftale om hvordan man afskærmer kernen af menneskelig suverænitet, selv når maskinerne kæmper. For selv de sejrende generaler følte et strejf af irrelevans på denne dag. Den gradvise overgang fra menneskelig til digital føring har nået sit yderste punkt: Krigen er blevet maskinernes domæne. Menneskehedens udfordring fremover bliver at sikre, at når maskinerne nu bevæger sig derude i krigens kaos på vores vegne, så sker det stadig i tråd med vores værdier, vores etik – vores menneskelighed. Ellers vinder vi måske slag, men risikerer at tabe os selv."
+        "title": "$t(detailedSections.singularity.futureChallenges.title)",
+        "content": "$t(detailedSections.singularity.futureChallenges.content)"
       }
     }
   },
@@ -549,16 +549,16 @@
     "strategyTitle": "AI’s strategi (forenklet)",
     "distance": {"close": "tæt på", "mid": "mellemafstand", "far": "på afstand"},
     "shoot": {"aggressive": "aggressiv", "balanced": "balanceret", "cautious": "forsigtig"},
-    "evade": {"high": "meget hård", "medium": "moderat", "low": "lav"},
+    "evade": {"high": "meget hård", "medium": "$t(dogfight.jinkAmp.medium)", "low": "lav"},
     "jinkAmp": {"strong": "kraftig", "medium": "moderat", "weak": "svag"},
     "jinkFreq": {"fast": "hurtigt", "medium": "mellem", "slow": "langsomt"},
     "sidebar": {
       "title": "Hvad sker der?",
       "item1": "Missiler flyver ligeud; forsvinder når de er uden for rammen.",
-      "item2": "Kant = død. Fly-fly kollision = begge dør.",
+      "item2": "$t(dogfight.rules.item3)",
       "item3": "ES-læring fortsætter i baggrunden; UI viser fremgang."
     },
-    "hud": {"player": "Spiller", "ai": "AI", "alive": "ALIVE", "hit": "TRUFFET"},
+    "hud": {"player": "Spiller", "ai": "$t(decisionWeight.ai)", "alive": "ALIVE", "hit": "TRUFFET"},
     "highscoreTitle": "Highscore (Top 5)",
     "diedReset": "Spilleren døde – runden nulstilles"
   },
@@ -568,11 +568,11 @@
     "ai": "AI",
     "dominance": "dominans",
     "sections": {
-      "human-dominance": "Menneskelig Dominans",
-      "digital-integration": "Digital Integration",
-      "autonomous-assistance": "Autonom Assistance",
-      "hybrid-command": "Hybrid Kommando",
-      "machine-superiority": "Maskinel Overlegenhed",
+      "human-dominance": "$t(timeline.phases.humanDominance.title)",
+      "digital-integration": "$t(timeline.phases.digitalIntegration.title)",
+      "autonomous-assistance": "$t(timeline.phases.autonomousAssistance.title)",
+      "hybrid-command": "$t(timeline.phases.hybridCommand.title)",
+      "machine-superiority": "$t(timeline.phases.machineSuperiority.title)",
       "singularity": "Singularitet"
     },
     "descriptions": {

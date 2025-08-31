@@ -9,7 +9,7 @@
   "timeline": {
     "title": "Timeline: The Digital Revolution of the Battlefield",
     "subtitle": "From human to machine warfare",
-    "scrollHint": "Scroll down to start the walkthrough",
+    "scrollHint": "$t(scrollHint)",
     "overviewTitle": "Overview",
     "keyDevelopments": "Key Developments",
     "characteristics": "Characteristics",
@@ -44,19 +44,19 @@
         "content": "Before dawn in the Arizona desert. Captain Sarah Miller sat alone in the mobile command tent when the first dust cloud rolled over the camp, leaving a fine reddish film on the table beside her field mug. She reached for the coffee, but a red flash on the display stole her attention: <em>ENEMY ARMOR DETECTED – 40 KM NE</em>.<br><br>In the old days, Miller would have grabbed the radio, received confirmation from the intel cell, waited for confirmation from the drone and only then relayed the message to the artillery staff. Under ideal conditions it could take five–six minutes – in practice closer to twenty – before the first shells were on target. But today, Project Convergence 2021 was in full swing, and at her side ran the new AI system <span class=\"text-emerald-400 font-semibold\">FIRESTORM</span>.<br><br>In fractions of a second, FIRESTORM ingested raw data from satellites, Predator feeds and ground radars. The screen flipped from red to green and presented a single recommendation: <em>“Battery Bravo – 122 mm – fire for effect.”</em> Miller barely blinked before tapping <em>APPROVE</em>. The wall clock showed 18 seconds from the first sensor hit until the howitzer battery sent its salvo. The shells were still in the air when the system generated the next target priority.<br><br>Miller leaned back, feeling a sudden pull in her stomach. She had just watched the classic kill chain – sensor cue, assessment, order, fire – shrink from a quarter hour to under thirty seconds. One tap on a touch screen was all that separated an enemy armored formation from a precise artillery defeat. And as the status icon shifted from <em>in‑progress</em> to <em>neutralized</em>, it dawned on her: the tempo of tomorrow’s battlefield would no longer be set by humans, but by algorithms – and the battlespace would never be the same again."
       },
       "edgeAI": {
-        "title": "Edge AI and local decisions",
-        "intro": "In this period, humans still dominate all aspects of military planning and execution. Decision‑making occurs through established hierarchies, where experience, intuition and political judgment are highly valued. AI is used primarily as decision support – a fast, data‑driven assistant – but without independent authority to engage targets.",
-        "sentryTowers": "At bases and outposts, autonomous sentry towers began to be tested. Cameras and sensors could identify vehicle types, read movement patterns, and alert on suspicious activity. But the decision to open fire still rested with a human guard.<br><br>An important lesson from the Ukraine war was how quickly dependence on digital networks could become a weakness. Ukrainian forces became heavily reliant on thousands of Starlink terminals for communications and drone control. When the network went down globally in July 2025, missions had to be aborted and several units lost the video feed from their drones. As one Ukrainian operator put it:<br><br><em>\"If the connection to the internet goes down, the ability to wage war practically disappears.\"</em><br><br>This created a new requirement: Edge AI. Systems had to be able to function locally even if the link to cloud or satellite networks was cut. In practice, this meant AI models and ROE rules had to run on the drone, the vehicle, or the sensor itself – not only in distant cloud infrastructure. By the end of the period, Edge AI had therefore become a central development track."
+        "title": "$t(timeline.humanDominance.edgeAI.title)",
+        "intro": "$t(timeline.humanDominance.edgeAI.intro)",
+        "sentryTowers": "$t(timeline.humanDominance.edgeAI.sentryTowers)"
       },
       "swarmCoordination": {
-        "title": "Swarm coordination in miniature",
-        "intro": "Already in the early 2020s, experimental drones could distribute reconnaissance tasks among themselves. They flew like the murmurations of starlings, but without any weapons autonomy — a technological trial balloon rather than a fully fledged weapon system.",
-        "chineseCapabilities": "At the same time, Chinese military academies reported actual swarm exercises under the banner of ‘智能化作战’ (intelligentized warfare). PLA theorists highlighted swarm attacks (集群作战) as a central future capability, in which hundreds of units could strike adaptively and in parallel. Many in the West noticed the spectacular Chinese New Year shows with thousands of drones painting the sky with light. Behind the festive glow lay a serious signal: the technology to coordinate large swarms was no longer science fiction, but under active military development.<br><br>Russia also signaled ambitions: according to open sources, up to 30% of the arsenal’s weapon systems were to be unmanned by 2025. This target underlined that swarms were not merely a theoretical concept but a political priority for great powers.<br><br>Experience from the Ukraine war likewise showed that the swarm concept was already operational in practice. In 2023, Ukraine’s army used an estimated 10,000 drones per month for reconnaissance, artillery cueing, and kamikaze strikes. The drones were coordinated through improvised digital networks and Starlink links — a shadow of tomorrow’s swarm warfare, driven by necessity.<br><br>For the West, this became a wake‑up call. The prospect of adversaries mass‑producing thousands of cheap, coordinated drones pushed investments upward. A new race had begun — one that quickly started to shift the balance of power on the battlefield."
+        "title": "$t(timeline.humanDominance.swarmCoordination.title)",
+        "intro": "$t(timeline.humanDominance.swarmCoordination.intro)",
+        "chineseCapabilities": "$t(timeline.humanDominance.swarmCoordination.chineseCapabilities)"
       },
       "oodaLoop": {
-        "title": "OODA loop still central",
-        "intro": "The OODA cycle — Observe, Orient, Decide, Act — remained the fundamental mental model for military command. It describes the classic decision loop: first observe the situation, then orient and build situational understanding, after which a decision is taken and finally action is executed. The art is to run this loop faster and more accurately than the opponent.",
-        "aiAdvantage": "With artificial intelligence, the tempo increased dramatically. Algorithms could, in moments, ingest, sort, and fuse enormous volumes of information that would have taken humans far longer to process. They could even propose courses of action before the decision‑maker had finished orienting."
+        "title": "$t(timeline.humanDominance.oodaLoop.title)",
+        "intro": "$t(timeline.humanDominance.oodaLoop.intro)",
+        "aiAdvantage": "$t(timeline.humanDominance.oodaLoop.aiAdvantage)"
       }
     },
     "digitalIntegration": {
@@ -97,16 +97,16 @@
       }
     },
     "autonomousAssistance": {
-      "title": "Autonomous Assistance",
-      "subtitle": "AI takes over routine decisions, humans handle strategic choices",
-      "description": "AI systems become trusted partners in military operations, handling routine and time-critical decisions while humans focus on strategic and ethical considerations.",
-      "overviewSummaryText": "Rising use of edge AI on all platforms allows systems to continue missions locally without networks. Autonomous swarms appear in multiple regions (Ukraine, Middle East, Indo‑Pac). First cases of emergent behavior between AI systems are reported – with unexpected escalations.",
+      "title": "$t(autonomousAssistance.title)",
+      "subtitle": "$t(autonomousAssistance.subtitle)",
+      "description": "$t(autonomousAssistance.description)",
+      "overviewSummaryText": "$t(autonomousAssistance.overviewSummaryText)",
       "overviewTimeline": [
-        "2031: The US conducts an exercise with an entire brigade run by AI‑C2; reaction time is halved versus classic command.",
-        "2033: China equips new fighters with an AI co‑pilot that can take over during hypersonic maneuvers.",
-        "2033: Russia unveils the Suvorov system – a hyper‑efficient AI network coordinating artillery, EW and drones.",
-        "2034: Local incidents in the Indo‑Pacific show the first autonomous AI‑swarm vs AI‑swarm duels.",
-        "2035: AI integrates into logistics and cyber operations; the human role reduces to parameter setting and high‑level control."
+        "$t(autonomousAssistance.overviewTimeline.0)",
+        "$t(autonomousAssistance.overviewTimeline.1)",
+        "$t(autonomousAssistance.overviewTimeline.2)",
+        "$t(autonomousAssistance.overviewTimeline.3)",
+        "$t(autonomousAssistance.overviewTimeline.4)"
       ],
       "details": [
         "Autonomous weapon systems operate within predefined rules",
@@ -143,7 +143,7 @@
       }
     },
     "hybridCommand": {
-      "title": "Hybrid Command",
+      "title": "$t(hybridCommand.title)",
       "subtitle": "Human-machine partnerships dominate",
       "description": "Command structures are fundamentally restructured with AI as equal partners. Decision processes are drastically accelerated through neural interface technology.",
       "overviewTimeline": [
@@ -173,7 +173,7 @@
       }
     },
     "machineSuperiority": {
-      "title": "Machine Superiority",
+      "title": "$t(machineSuperiority.title)",
       "subtitle": "AI systems surpass humans in most domains",
       "description": "AI systems demonstrate clear superiority over human decision-making in most military domains. Humans are relegated to setting ethical boundaries and strategic objectives.",
       "overviewTimeline": [
@@ -341,11 +341,11 @@
       "subtitle": "Shared decision-making between human and AI",
       "description": "In a future where command and control are digital, human leaders and AI systems work together to make decisions. This section explores how traditional command principles are adapted and how the relationship between humans and machines evolves.",
       "overviewTimeline": [
-        "2030: NATO conducts a joint exercise with AI‑C2, demonstrating the ability to coordinate multiple autonomous systems.",
-        "2032: China develops a new generation of fighter jets with integrated AI systems.",
-        "2033: Russia unveils the Suvorov system – a hyper‑efficient AI network coordinating artillery, EW and drones.",
-        "2034: Local incidents in the Indo‑Pacific show the first autonomous AI‑swarm vs AI‑swarm duels.",
-        "2035: AI integrates into logistics and cyber operations; the human role reduces to parameter setting and high‑level control."
+        "$t(detailedSections.hybridCommand.overviewTimeline.0)",
+        "$t(detailedSections.hybridCommand.overviewTimeline.1)",
+        "$t(detailedSections.hybridCommand.overviewTimeline.2)",
+        "$t(detailedSections.hybridCommand.overviewTimeline.3)",
+        "$t(detailedSections.hybridCommand.overviewTimeline.4)"
       ],
       "details": [
 
@@ -390,13 +390,13 @@
     "machineSuperiority": {
       "title": "Machine Superiority",
       "subtitle": "AI leads with minimal human oversight",
-      "description": "In a future where AI systems dominate decision-making, human leaders must rely on robust ethical frameworks and careful oversight to ensure that machines act in accordance with human values and strategic goals.",
+      "description": "$t(detailedSections.singularity.description)",
       "overviewTimeline": [
-        "2030: NATO conducts a joint exercise with AI‑C2, demonstrating the ability to coordinate multiple autonomous systems.",
-        "2032: China develops a new generation of fighter jets with integrated AI systems.",
-        "2033: Russia unveils the Suvorov system – a hyper‑efficient AI network coordinating artillery, EW and drones.",
-        "2034: Local incidents in the Indo‑Pacific show the first autonomous AI‑swarm vs AI‑swarm duels.",
-        "2035: AI integrates into logistics and cyber operations; the human role reduces to parameter setting and high‑level control."
+        "$t(detailedSections.machineSuperiority.overviewTimeline.0)",
+        "$t(detailedSections.machineSuperiority.overviewTimeline.1)",
+        "$t(detailedSections.machineSuperiority.overviewTimeline.2)",
+        "$t(detailedSections.machineSuperiority.overviewTimeline.3)",
+        "$t(detailedSections.machineSuperiority.overviewTimeline.4)"
       ],
       "details": [
 
@@ -445,15 +445,15 @@
       }
     },
     "singularity": {
-      "title": "Singularity",
+      "title": "$t(tiles.singularity.title)",
       "subtitle": "Complete AI-dominated decision-making",
       "description": "In a future where AI systems dominate decision-making, human leaders must rely on robust ethical frameworks and careful oversight to ensure that machines act in accordance with human values and strategic goals.",
       "overviewTimeline": [
-        "2030: NATO conducts a joint exercise with AI‑C2, demonstrating the ability to coordinate multiple autonomous systems.",
-        "2032: China develops a new generation of fighter jets with integrated AI systems.",
-        "2033: Russia unveils the Suvorov system – a hyper‑efficient AI network coordinating artillery, EW and drones.",
-        "2034: Local incidents in the Indo‑Pacific show the first autonomous AI‑swarm vs AI‑swarm duels.",
-        "2035: AI integrates into logistics and cyber operations; the human role reduces to parameter setting and high‑level control."
+        "$t(detailedSections.singularity.overviewTimeline.0)",
+        "$t(detailedSections.singularity.overviewTimeline.1)",
+        "$t(detailedSections.singularity.overviewTimeline.2)",
+        "$t(detailedSections.singularity.overviewTimeline.3)",
+        "$t(detailedSections.singularity.overviewTimeline.4)"
       ],
       "details": [
 
@@ -556,20 +556,20 @@
     "ai": "AI",
     "dominance": "dominance",
     "sections": {
-      "human-dominance": "Human Dominance",
-      "digital-integration": "Digital Integration", 
-      "autonomous-assistance": "Autonomous Assistance",
-      "hybrid-command": "Hybrid Command",
-      "machine-superiority": "Machine Superiority",
+      "human-dominance": "$t(timeline.humanDominance.title)",
+      "digital-integration": "$t(digitalIntegration.title)", 
+      "autonomous-assistance": "$t(autonomousAssistance.title)",
+      "hybrid-command": "$t(hybridCommand.title)",
+      "machine-superiority": "$t(machineSuperiority.title)",
       "singularity": "Singularity"
     },
     "descriptions": {
       "human-dominance": "Humans make all critical decisions",
       "digital-integration": "AI assists with data analysis and recommendations",
       "autonomous-assistance": "AI performs routine tasks independently",
-      "hybrid-command": "Shared decision-making between human and AI",
-      "machine-superiority": "AI leads with minimal human oversight",
-      "singularity": "Complete AI-dominated decision-making"
+      "hybrid-command": "$t(detailedSections.hybridCommand.subtitle)",
+      "machine-superiority": "$t(detailedSections.machineSuperiority.subtitle)",
+      "singularity": "$t(detailedSections.singularity.subtitle)"
     }
   },
 
@@ -587,7 +587,7 @@
       "title": "Rules",
       "start": "Start",
       "item1": "Steer with ← → ↑ ↓, fire with Space.",
-      "item2": "Missiles fly straight and disappear off the field.",
+      "item2": "$t(dogfight.rules.item3)",
       "item3": "Edge = death. Plane-plane collision = both die.",
       "item4": "Score shown top-right. AI learns continuously."
     },
@@ -618,14 +618,14 @@
     "shoot": {"aggressive": "aggressive", "balanced": "balanced", "cautious": "cautious"},
     "evade": {"high": "very hard", "medium": "moderate", "low": "low"},
     "jinkAmp": {"strong": "strong", "medium": "medium", "weak": "weak"},
-    "jinkFreq": {"fast": "fast", "medium": "medium", "slow": "slow"},
+    "jinkFreq": {"fast": "fast", "medium": "$t(dogfight.jinkAmp.medium)", "slow": "slow"},
     "sidebar": {
       "title": "What's happening?",
       "item1": "Missiles fly straight; disappear when off screen.",
-      "item2": "Edge = death. Plane-plane collision = both die.",
+      "item2": "$t(dogfight.rules.item3)",
       "item3": "ES-learning runs in the background; UI shows progress."
     },
-    "hud": {"player": "Player", "ai": "AI", "alive": "ALIVE", "hit": "HIT"},
+    "hud": {"player": "Player", "ai": "$t(decisionWeight.ai)", "alive": "ALIVE", "hit": "HIT"},
     "highscoreTitle": "Highscore (Top 5)",
     "diedReset": "Player died – resetting round"
   }

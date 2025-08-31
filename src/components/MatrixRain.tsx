@@ -106,7 +106,7 @@ const MatrixRain: React.FC = () => {
     }
 
     const handleResize = () => {
-      if (resizeTimeoutRef.current) cancelAnimationFrame(resizeTimeoutRef.current);
+      if (resizeTimeoutRef.current) clearTimeout(resizeTimeoutRef.current);
       resizeTimeoutRef.current = window.setTimeout(() => {
         setSize();
         initColumns();
@@ -121,6 +121,7 @@ const MatrixRain: React.FC = () => {
 
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      if (resizeTimeoutRef.current) clearTimeout(resizeTimeoutRef.current);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
