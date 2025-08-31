@@ -77,7 +77,7 @@ function App() {
   const [activeSection, setActiveSection] = useState<string>('');
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
-  // Track last active section to avoid unnecessary setState during scroll
+  // Track last active section to avoid unnecessary setState
   const lastActiveRef = useRef<string>('');
   
   // Get translated implications (memoized)
@@ -172,47 +172,44 @@ function App() {
   },
  ], [t, i18n.language]);
  
-   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = scrollTop / docHeight;
-      setScrollProgress(progress);
-
-      // Find active section
-      const sections = Object.entries(sectionRefs.current);
-      let currentSection = '';
-
-      for (const [id, element] of sections) {
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (
-            rect.top <= window.innerHeight / 2 &&
-            rect.bottom >= window.innerHeight / 2
-          ) {
-            currentSection = id;
-            break;
-          }
-        }
-      }
-
-      if (currentSection !== lastActiveRef.current) {
-        setActiveSection(currentSection);
-      }
+  // Passive, throttled scroll handler for progress only
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+        setScrollProgress(progress);
+        ticking = false;
+      });
     };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial call
-
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll as EventListener);
   }, []);
 
+  // IntersectionObserver to set active section without layout thrash
   useEffect(() => {
-    lastActiveRef.current = activeSection;
-  }, [activeSection]);
+    const observer = new IntersectionObserver((entries) => {
+      let best: { id: string; ratio: number } | null = null;
+      for (const entry of entries) {
+        const id = (entry.target as HTMLElement).id;
+        const ratio = entry.intersectionRatio;
+        if (!best || ratio > best.ratio) best = { id, ratio };
+      }
+      if (best && best.id !== lastActiveRef.current) {
+        lastActiveRef.current = best.id;
+        setActiveSection(best.id);
+      }
+    }, { root: null, threshold: [0, 0.25, 0.5, 0.75, 1] });
 
-
+    const nodes = Object.values(sectionRefs.current).filter(Boolean) as HTMLElement[];
+    nodes.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [i18n.language]);
 
   return (
     <div className="min-h-screen matrix-theme text-green-400 relative">
@@ -292,8 +289,6 @@ function App() {
                 </p>
               </div>
 
-
-
               <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                 <p className="text-lg text-slate-300 leading-relaxed">
                   {t('heroIntro.transition.paragraph1')}
@@ -316,11 +311,7 @@ function App() {
               </div>
             </div>
           </div>
-
-
         </div>
-
-
       </section>
 
       {/* Interactive Timeline Overview */}
@@ -342,13 +333,13 @@ function App() {
             
             {/* Timeline Items */}
             <div className="relative flex justify-between items-center">
-                          {timelineSections.map((section: TimelineSection) => (
-              <div key={section.id} className="flex flex-col items-center group cursor-pointer" onClick={() => {
-                  const element = sectionRefs.current[section.id];
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}>
+              {timelineSections.map((section: TimelineSection) => (
+                <div key={section.id} className="flex flex-col items-center group cursor-pointer" onClick={() => {
+                    const element = sectionRefs.current[section.id];
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}>
                   {/* Timeline Node */}
                   <div className={`relative z-10 w-16 h-16 rounded-full bg-gradient-to-r ${section.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 mb-4`}>
                     <div className="text-white text-xl">
@@ -396,7 +387,7 @@ function App() {
                   <div className="text-white">
                     {section.icon}
                   </div>
-        </div>
+                </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
@@ -431,9 +422,9 @@ function App() {
 
           {/* Progress Indicator */}
           <div className="mt-12 sm:mt-16">
-                            <div className="text-center mb-4">
-                  <span className="text-sm text-slate-400">{t('timeline.scrollHint')}</span>
-                </div>
+            <div className="text-center mb-4">
+              <span className="text-sm text-slate-400">{t('timeline.scrollHint')}</span>
+            </div>
             <div className="flex justify-center">
               <div className="animate-bounce">
                 <svg className="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
