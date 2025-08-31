@@ -47,6 +47,8 @@ const BackToTop: React.FC = () => {
       title={i18n.language.startsWith('en') ? 'Back to top' : 'Til toppen'}
       onClick={handleClick}
       style={{ bottom: `calc(env(safe-area-inset-bottom, 0px) + ${bottomOffset}px)` }}
+      aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
       className={`fixed right-4 sm:right-6 z-50 rounded-full border border-emerald-400/50 text-emerald-300 bg-black/40 hover:bg-black/60 px-3 py-2 sm:px-4 sm:py-3 shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 pointer-events-none translate-y-3'
       }`}
