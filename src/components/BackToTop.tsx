@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import i18n from '../i18n';
 
 const BackToTop: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -42,15 +43,15 @@ const BackToTop: React.FC = () => {
   return (
     <button
       type="button"
-      aria-label="Til toppen"
-      title="Til toppen"
+      aria-label={i18n.language.startsWith('en') ? 'Back to top' : 'Til toppen'}
+      title={i18n.language.startsWith('en') ? 'Back to top' : 'Til toppen'}
       onClick={handleClick}
       style={{ bottom: `calc(env(safe-area-inset-bottom, 0px) + ${bottomOffset}px)` }}
       className={`fixed right-4 sm:right-6 z-50 rounded-full border border-emerald-400/50 text-emerald-300 bg-black/40 hover:bg-black/60 px-3 py-2 sm:px-4 sm:py-3 shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 pointer-events-none translate-y-3'
       }`}
     >
-      <span className="hidden sm:inline font-semibold">Til top</span>
+      <span className="hidden sm:inline font-semibold">{i18n.language.startsWith('en') ? 'Top' : 'Til top'}</span>
       <svg
         className="sm:hidden w-5 h-5"
         fill="none"
