@@ -445,7 +445,7 @@
       }
     },
     "singularity": {
-      "title": "$t(tiles.singularity.title)",
+      "title": "$t(timeline.singularity.title)",
       "subtitle": "Complete AI-dominated decision-making",
       "description": "In a future where AI systems dominate decision-making, human leaders must rely on robust ethical frameworks and careful oversight to ensure that machines act in accordance with human values and strategic goals.",
       "overviewTimeline": [

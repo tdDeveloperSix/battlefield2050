@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "validate:links": "node scripts/validate_sources.mjs"
+    "validate:links": "node scripts/validate_sources.mjs",
+    "validate:i18n": "node scripts/check_i18n_refs.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
