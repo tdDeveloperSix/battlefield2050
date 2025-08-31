@@ -1,4 +1,9 @@
 {
+  "loading": {
+    "podcast": "Loading podcast…",
+    "game": "Loading game…",
+    "sources": "Loading sources…"
+  },
   "title": "The Digital Revolution of the Battlefield",
   "subtitle": "How Artificial Intelligence is Transforming Military Command and Control",
   "description": "A fictional narrative about future military units and command structures, where human decision-making is gradually replaced by digital and autonomous intelligence.",
@@ -390,13 +395,12 @@
     "machineSuperiority": {
       "title": "Machine Superiority",
       "subtitle": "AI leads with minimal human oversight",
-      "description": "$t(detailedSections.singularity.description)",
+      "description": "Artificial intelligence demonstrates superior capability in complex, multi‑domain planning and execution. Humans retain veto power but rarely override AI decisions.",
       "overviewTimeline": [
-        "$t(detailedSections.machineSuperiority.overviewTimeline.0)",
-        "$t(detailedSections.machineSuperiority.overviewTimeline.1)",
-        "$t(detailedSections.machineSuperiority.overviewTimeline.2)",
-        "$t(detailedSections.machineSuperiority.overviewTimeline.3)",
-        "$t(detailedSections.machineSuperiority.overviewTimeline.4)"
+        "$t(timeline.machineSuperiority.overviewTimeline.0)",
+        "$t(timeline.machineSuperiority.overviewTimeline.1)",
+        "$t(timeline.machineSuperiority.overviewTimeline.2)",
+        "$t(timeline.machineSuperiority.overviewTimeline.3)"
       ],
       "details": [
 
