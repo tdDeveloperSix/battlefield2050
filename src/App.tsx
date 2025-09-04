@@ -193,18 +193,32 @@ function App() {
 
   // IntersectionObserver to set active section without layout thrash
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      let best: { id: string; ratio: number } | null = null;
-      for (const entry of entries) {
-        const id = (entry.target as HTMLElement).id;
-        const ratio = entry.intersectionRatio;
-        if (!best || ratio > best.ratio) best = { id, ratio };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the section whose center is closest to the viewport center
+        const viewportCenter = window.innerHeight / 2;
+        let best: { id: string; distance: number } | null = null;
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const rect = entry.boundingClientRect;
+          const center = rect.top + rect.height / 2;
+          const distance = Math.abs(center - viewportCenter);
+          const id = (entry.target as HTMLElement).id;
+          if (!best || distance < best.distance) {
+            best = { id, distance };
+          }
+        }
+        if (best && best.id !== lastActiveRef.current) {
+          lastActiveRef.current = best.id;
+          setActiveSection(best.id);
+        }
+      },
+      {
+        root: null,
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+        rootMargin: '0px 0px -10% 0px',
       }
-      if (best && best.id !== lastActiveRef.current) {
-        lastActiveRef.current = best.id;
-        setActiveSection(best.id);
-      }
-    }, { root: null, threshold: [0, 0.25, 0.5, 0.75, 1] });
+    );
 
     const nodes = Object.values(sectionRefs.current).filter(Boolean) as HTMLElement[];
     nodes.forEach((el) => observer.observe(el));
@@ -1431,8 +1445,8 @@ function App() {
         </div>
       </footer>
 
-      {/* Decision Weight Bar */}
-      <DecisionWeightBar activeSection={activeSection} />
+      {/* Decision Weight Bar: only after narrative starts */}
+      <DecisionWeightBar activeSection={activeSection} started={activeSection === 'human-dominance' || activeSection === 'digital-integration' || activeSection === 'autonomous-assistance' || activeSection === 'hybrid-command' || activeSection === 'machine-superiority' || activeSection === 'singularity'} />
 
       {/* Back To Top */}
       {/* Placeres sidst for høj z-index over indhold men under evt. modaler */}

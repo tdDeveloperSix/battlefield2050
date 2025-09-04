@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 interface DecisionWeightBarProps {
   activeSection: string;
+  started?: boolean;
 }
 
 interface SectionWeights {
@@ -12,7 +13,7 @@ interface SectionWeights {
   };
 }
 
-const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) => {
+const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection, started = false }) => {
   const { t } = useTranslation();
   const [currentWeights, setCurrentWeights] = useState({ human: 80, ai: 20 });
   const [isVisible, setIsVisible] = useState(false);
@@ -28,17 +29,22 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
   }), []);
 
   useEffect(() => {
-    // Show bar starting from "human-dominance" section and keep it visible once shown
-    if (activeSection && sectionWeights[activeSection]) {
+    // Show only when narrative has started explicitly
+    if (started && activeSection && sectionWeights[activeSection]) {
       setIsVisible(true);
       setLastValidSection(activeSection);
     }
-  }, [activeSection, sectionWeights]);
+  }, [activeSection, started, sectionWeights]);
 
   useEffect(() => {
     if (activeSection && sectionWeights[activeSection]) {
       const weights = sectionWeights[activeSection];
-      setCurrentWeights({ human: weights.human, ai: weights.ai });
+      // Avoid flicker: only update if actually changed
+      setCurrentWeights((prev) => (
+        prev.human !== weights.human || prev.ai !== weights.ai
+          ? { human: weights.human, ai: weights.ai }
+          : prev
+      ));
     }
   }, [activeSection, sectionWeights]);
 
@@ -50,9 +56,10 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
     return t(`decisionWeight.descriptions.${sectionId}`);
   };
 
-  const displaySection = (activeSection && sectionWeights[activeSection]) 
-    ? activeSection 
-    : (lastValidSection || 'human-dominance');
+  // Only show once the narrative starts (controlled by parent)
+  const displaySection = started && activeSection && sectionWeights[activeSection]
+    ? activeSection
+    : (lastValidSection && sectionWeights[lastValidSection] ? lastValidSection : '');
 
   const currentSectionTitle = getSectionTitle(displaySection);
   const currentSectionDescription = getSectionDescription(displaySection);
@@ -62,7 +69,7 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection }) 
       role="region" aria-label="Decision weight bar"
       data-role="decision-weight-bar"
       className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+        isVisible && displaySection && started ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
     >
