@@ -61,6 +61,11 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection, st
     ? activeSection
     : (lastValidSection && sectionWeights[lastValidSection] ? lastValidSection : '');
 
+  // Guard: if no valid displaySection, render nothing (prevents early paint)
+  if (!displaySection) {
+    return null;
+  }
+
   const currentSectionTitle = getSectionTitle(displaySection);
   const currentSectionDescription = getSectionDescription(displaySection);
 

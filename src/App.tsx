@@ -193,29 +193,50 @@ function App() {
 
   // IntersectionObserver to set active section without layout thrash
   useEffect(() => {
+    // Keep a snapshot of currently visible sections with last ratios
+    const visible = new Map<string, { ratio: number; centerDist: number }>();
+
+    const computeBest = () => {
+      let bestId = '';
+      let bestRatio = -1;
+      let bestCenter = Infinity;
+      for (const [id, info] of visible) {
+        if (info.ratio > bestRatio || (Math.abs(info.ratio - bestRatio) < 0.02 && info.centerDist < bestCenter)) {
+          bestId = id;
+          bestRatio = info.ratio;
+          bestCenter = info.centerDist;
+        }
+      }
+      return { bestId, bestRatio };
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
-        // Find the section whose center is closest to the viewport center
         const viewportCenter = window.innerHeight / 2;
-        let best: { id: string; distance: number } | null = null;
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          const rect = entry.boundingClientRect;
-          const center = rect.top + rect.height / 2;
-          const distance = Math.abs(center - viewportCenter);
+        entries.forEach((entry) => {
           const id = (entry.target as HTMLElement).id;
-          if (!best || distance < best.distance) {
-            best = { id, distance };
+          if (entry.isIntersecting) {
+            const rect = entry.boundingClientRect;
+            const centerDist = Math.abs(rect.top + rect.height / 2 - viewportCenter);
+            visible.set(id, { ratio: entry.intersectionRatio, centerDist });
+          } else {
+            visible.delete(id);
           }
-        }
-        if (best && best.id !== lastActiveRef.current) {
-          lastActiveRef.current = best.id;
-          setActiveSection(best.id);
+        });
+
+        const { bestId, bestRatio } = computeBest();
+        // Hysterese: skift først når kandidaten fylder ≥35% eller > sidste med margin
+        if (bestId && bestId !== lastActiveRef.current) {
+          const shouldSwitch = bestRatio >= 0.35;
+          if (shouldSwitch) {
+            lastActiveRef.current = bestId;
+            setActiveSection(bestId);
+          }
         }
       },
       {
         root: null,
-        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+        threshold: [0, 0.1, 0.2, 0.3, 0.35, 0.5, 0.75, 1],
         rootMargin: '0px 0px -10% 0px',
       }
     );
