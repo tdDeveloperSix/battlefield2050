@@ -224,19 +224,22 @@ function App() {
           }
         });
 
-        const { bestId, bestRatio } = computeBest();
-        // Hysterese: skift først når kandidaten fylder ≥35% eller > sidste med margin
-        if (bestId && bestId !== lastActiveRef.current) {
-          const shouldSwitch = bestRatio >= 0.35;
-          if (shouldSwitch) {
-            lastActiveRef.current = bestId;
-            setActiveSection(bestId);
+        const { bestId } = computeBest();
+        // Hvis ingen sektion er synlig, ryd aktiv sektion (til toppen/hero)
+        if (visible.size === 0) {
+          if (lastActiveRef.current !== '') {
+            lastActiveRef.current = '';
+            setActiveSection('');
           }
+        } else if (bestId && bestId !== lastActiveRef.current) {
+          // Skift til den sektion, der er tættest på viewport-centret
+          lastActiveRef.current = bestId;
+          setActiveSection(bestId);
         }
       },
       {
         root: null,
-        threshold: [0, 0.1, 0.2, 0.3, 0.35, 0.5, 0.75, 1],
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.75, 1],
         rootMargin: '0px 0px -10% 0px',
       }
     );
@@ -245,6 +248,16 @@ function App() {
     nodes.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, [i18n.language]);
+
+  // Afledt flag: narrativet er aktivt, når en tidslinjesektion er aktiv
+  const narrativeActive = (
+    activeSection === 'human-dominance' ||
+    activeSection === 'digital-integration' ||
+    activeSection === 'autonomous-assistance' ||
+    activeSection === 'hybrid-command' ||
+    activeSection === 'machine-superiority' ||
+    activeSection === 'singularity'
+  );
 
   return (
     <div className="min-h-screen matrix-theme text-green-400 relative">
@@ -1466,8 +1479,8 @@ function App() {
         </div>
       </footer>
 
-      {/* Decision Weight Bar: only after narrative starts */}
-      <DecisionWeightBar activeSection={activeSection} started={activeSection === 'human-dominance' || activeSection === 'digital-integration' || activeSection === 'autonomous-assistance' || activeSection === 'hybrid-command' || activeSection === 'machine-superiority' || activeSection === 'singularity'} />
+      {/* Decision Weight Bar: vises kun når en tidslinjesektion er aktiv */}
+      <DecisionWeightBar activeSection={activeSection} started={narrativeActive} />
 
       {/* Back To Top */}
       {/* Placeres sidst for høj z-index over indhold men under evt. modaler */}

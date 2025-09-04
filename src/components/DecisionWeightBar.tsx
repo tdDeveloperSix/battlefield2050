@@ -29,10 +29,13 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection, st
   }), []);
 
   useEffect(() => {
-    // Show only when narrative has started explicitly
+    // Vis bar kun når narrativet er aktivt (started) og vi har en gyldig sektion
     if (started && activeSection && sectionWeights[activeSection]) {
       setIsVisible(true);
       setLastValidSection(activeSection);
+    } else if (!started) {
+      // Når brugeren scroller op til hero, skjul igen
+      setIsVisible(false);
     }
   }, [activeSection, started, sectionWeights]);
 
@@ -57,7 +60,7 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection, st
   };
 
   // Only show once the narrative starts (controlled by parent)
-  const displaySection = started && activeSection && sectionWeights[activeSection]
+  const displaySection = (started && activeSection && sectionWeights[activeSection])
     ? activeSection
     : (lastValidSection && sectionWeights[lastValidSection] ? lastValidSection : '');
 
@@ -74,7 +77,7 @@ const DecisionWeightBar: React.FC<DecisionWeightBarProps> = ({ activeSection, st
       role="region" aria-label="Decision weight bar"
       data-role="decision-weight-bar"
       className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${
-        isVisible && displaySection && started ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+        isVisible && displaySection ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
     >
