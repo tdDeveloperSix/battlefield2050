@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import i18n from '../i18n';
+import { useTranslation } from 'react-i18next';
 
 const BackToTop: React.FC = () => {
+  const { i18n } = useTranslation();
   const [visible, setVisible] = useState(false);
   const [bottomOffset, setBottomOffset] = useState<number>(112); // default ~7rem
 
@@ -67,4 +68,4 @@ const BackToTop: React.FC = () => {
   );
 };
 
-export default React.memo(BackToTop); 
+export default BackToTop; 
