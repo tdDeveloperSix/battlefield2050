@@ -25,6 +25,9 @@ const JammingSlider: React.FC = () => {
   const noiseSrcRef = useRef<Nullable<AudioBufferSourceNode>>(null);
   const noiseGainRef = useRef<Nullable<GainNode>>(null);
   const masterGainRef = useRef<Nullable<GainNode>>(null);
+  const isStartingRef = useRef(false);
+  const signalStartedRef = useRef(false);
+  const noiseStartedRef = useRef(false);
 
   const jOverS = useMemo(() => 0.1 * ratio, [ratio]); // 0..10
   const jOverSdb = useMemo(() => (jOverS > 0 ? 10 * Math.log10(jOverS) : -Infinity), [jOverS]);
@@ -62,16 +65,50 @@ const JammingSlider: React.FC = () => {
     noiseSrcRef.current = noiseSrc;
     noiseGainRef.current = noiseGain;
     masterGainRef.current = master;
+    signalStartedRef.current = false;
+    noiseStartedRef.current = false;
   }
 
-  function startAudio() {
+  const startAudio = async () => {
+    if (isStartingRef.current) return;
+
     setupAudio();
-    const ctx = audioContextRef.current!;
-    if (ctx.state === 'suspended') ctx.resume();
-    signalOscRef.current!.start();
-    noiseSrcRef.current!.start();
-    setIsPlaying(true);
-  }
+    const ctx = audioContextRef.current;
+    if (!ctx) return;
+
+    if (signalStartedRef.current && noiseStartedRef.current) {
+      if (ctx.state === 'suspended') {
+        try {
+          await ctx.resume();
+        } catch (error) {
+          console.error('Error resuming jamming audio context', error);
+        }
+      }
+      setIsPlaying(true);
+      return;
+    }
+
+    isStartingRef.current = true;
+    try {
+      if (ctx.state === 'suspended') {
+        await ctx.resume();
+      }
+      if (signalOscRef.current && !signalStartedRef.current) {
+        signalOscRef.current.start();
+        signalStartedRef.current = true;
+      }
+      if (noiseSrcRef.current && !noiseStartedRef.current) {
+        noiseSrcRef.current.start();
+        noiseStartedRef.current = true;
+      }
+      setIsPlaying(true);
+    } catch (error) {
+      console.error('Error starting jamming audio', error);
+      stopAudio();
+    } finally {
+      isStartingRef.current = false;
+    }
+  };
 
   function stopAudio() {
     const ctx = audioContextRef.current;
@@ -85,6 +122,9 @@ const JammingSlider: React.FC = () => {
     noiseSrcRef.current = null;
     noiseGainRef.current = null;
     masterGainRef.current = null;
+    signalStartedRef.current = false;
+    noiseStartedRef.current = false;
+    isStartingRef.current = false;
     setIsPlaying(false);
   }
 
@@ -149,5 +189,4 @@ const JammingSlider: React.FC = () => {
 };
 
 export default JammingSlider;
-
 

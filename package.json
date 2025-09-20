@@ -12,12 +12,12 @@
     "validate:i18n": "node scripts/check_i18n_refs.mjs"
   },
   "dependencies": {
-    "lucide-react": "^0.344.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "i18next": "^25.2.1",
     "i18next-browser-languagedetector": "^8.2.0",
+    "lucide-react": "^0.344.0",
     "posthog-js": "^1.259.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-i18next": "^15.5.3"
   },
   "devDependencies": {
@@ -27,6 +27,7 @@
     "@vitejs/plugin-react": "4.5.2",
     "autoprefixer": "^10.4.18",
     "eslint": "^9.9.1",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
     "globals": "^15.9.0",
