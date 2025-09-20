@@ -200,11 +200,12 @@ function defineHumanVsAIGame(): void {
       end.addEventListener('click', ()=> { this.hideOverlay(); this.endMatch(); });
     }
 
-    vibrate(ms:number){ try { if ((navigator as any).vibrate) (navigator as any).vibrate(ms); } catch(_){} }
+    vibrate(ms:number){ try { if ((navigator as any).vibrate) (navigator as any).vibrate(ms); } catch (error) { void error; } }
 
-    save(){ try { localStorage.setItem('hvai-v1', JSON.stringify(this.state, (k,v)=> (k==='goTimer'?undefined:v))); } catch(_){} }
-    load(){ try { const raw = localStorage.getItem('hvai-v1'); if (raw){ const d = JSON.parse(raw); Object.assign(this.state, d); } } catch(_){}
+    save(){ try { localStorage.setItem('hvai-v1', JSON.stringify(this.state, (k,v)=> (k==='goTimer'?undefined:v))); } catch (error) { void error; } }
+    load(){ try { const raw = localStorage.getItem('hvai-v1'); if (raw){ const d = JSON.parse(raw); Object.assign(this.state, d); } } catch (error) { void error; }
       if (!DIFFS[this.state.difficulty]) this.state.difficulty = 'med';
+    }
     }
 
     setDifficulty(k:string){
@@ -273,13 +274,13 @@ function defineHumanVsAIGame(): void {
       this.ui.arena.classList.add('ready');
       this.ui.msg.innerHTML = this.tr(
         `<h2>Klar?</h2><p>Tryk på "Start match"</p>`,
-        `<h2>Ready?</h2><p>Tap \"Start match\"</p>`
+        `<h2>Ready?</h2><p>Tap "Start match"</p>`
       );
       clearTimeout(this.state.goTimer);
       this.state.goAt = 0; this.state.waiting = true;
     }
 
-    onPointer(_e?: PointerEvent){
+    onPointer(){
       // Ignorér tryk i for-start ("ready") tilstand
       if (this.state.waiting){
         if (this.ui.arena.classList.contains('wait')){
@@ -368,7 +369,6 @@ export default function HumanVsAIGame(): JSX.Element {
   useEffect(()=>{ defineHumanVsAIGame(); },[]);
   return (
     <div className="relative rounded-xl overflow-hidden ring-1 ring-white/10">
-      {/* eslint-disable-next-line react/no-unknown-property */}
       <human-vs-ai-game style={{display:'block'}} />
     </div>
   );
@@ -381,5 +381,3 @@ declare global {
     }
   }
 }
-
-
